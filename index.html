@@ -516,23 +516,6 @@
 
     audio.volume = Number(volume.value);
     renderStations();
-
-    // ── 在线统计 ──
-    // 1) 本地服务器实时统计（仅 localhost 生效）
-    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
-      (function connectWs() {
-        const proto = location.protocol === "https:" ? "wss" : "ws";
-        const url = `${proto}://${location.host}`;
-        let ws = null;
-        function open() {
-          try { ws = new WebSocket(url); } catch { return setTimeout(open, 5000); }
-          ws.onclose = () => { ws = null; setTimeout(open, 5000); };
-          ws.onerror = () => { ws && ws.close(); };
-        }
-        open();
-      })();
-    }
-
   </script>
 </body>
 </html>
