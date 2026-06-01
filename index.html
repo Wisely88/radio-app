@@ -329,6 +329,7 @@
 
         <audio id="audio" controls preload="none"></audio>
         <p class="hint">m3u8 频道通过 HLS.js 播放；个别浏览器可能会因混合内容策略限制 http 音频源。</p>
+        <p style="margin:10px 2px 0;color:var(--muted);font-size:13px;">👁️ 总访问 <span id="busuanzi_value_site_pv">···</span> 次 · 今日 <span id="busuanzi_value_site_uv">···</span> 人</p>
       </section>
 
       <section class="channels" aria-label="频道列表">
@@ -515,6 +516,28 @@
 
     audio.volume = Number(volume.value);
     renderStations();
+
+    // ── 在线统计 ──
+    // 1) 本地服务器实时统计（仅 localhost 生效）
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+      (function connectWs() {
+        const proto = location.protocol === "https:" ? "wss" : "ws";
+        const url = `${proto}://${location.host}`;
+        let ws = null;
+        function open() {
+          try { ws = new WebSocket(url); } catch { return setTimeout(open, 5000); }
+          ws.onclose = () => { ws = null; setTimeout(open, 5000); };
+          ws.onerror = () => { ws && ws.close(); };
+        }
+        open();
+      })();
+    }
+
+    // 2) 不蒜子网页统计（GitHub Pages 上生效）
+    var bsz = document.createElement("script");
+    bsz.async = true;
+    bsz.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+    document.body.appendChild(bsz);
   </script>
 </body>
 </html>

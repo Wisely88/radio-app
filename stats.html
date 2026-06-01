@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>电台统计 · 管理后台</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --panel-2: #1f2630;
+      --text: #f0f6fc;
+      --muted: #8b949e;
+      --line: #30363d;
+      --accent: #2f81f7;
+      --green: #3fb950;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: radial-gradient(circle at top left, rgba(47,129,247,.18), transparent 30rem), var(--bg);
+      color: var(--text);
+      display: flex; align-items: center; justify-content: center;
+    }
+    main {
+      width: min(640px, calc(100% - 32px));
+      padding: 40px 0;
+    }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    .sub { color: var(--muted); margin: 0 0 28px; font-size: 14px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .card {
+      background: rgba(22,27,34,.86);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(18px);
+    }
+    .card .num {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .card .lbl {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+    .green { color: var(--green); }
+    .blue { color: var(--accent); }
+    .chart-wrap {
+      background: rgba(22,27,34,.86);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 20px;
+      backdrop-filter: blur(18px);
+    }
+    .chart-wrap h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+    canvas {
+      display: block;
+      width: 100%;
+      height: 200px;
+      border-radius: 6px;
+    }
+    .meta {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>📊 电台统计</h1>
+    <p class="sub" id="lastUpdate">加载中…</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="num green" id="activeNum">—</div>
+        <div class="lbl">当前在线</div>
+      </div>
+      <div class="card">
+        <div class="num blue" id="peakNum">—</div>
+        <div class="lbl">今日峰值</div>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <h2>📈 在线人数趋势（近30分钟）</h2>
+      <canvas id="chart"></canvas>
+    </div>
+
+    <p class="meta">数据每 10 秒自动刷新 · 连接超过 60 秒无心跳视为离线</p>
+  </main>
+
+  <script>
+    const activeEl = document.getElementById("activeNum");
+    const peakEl = document.getElementById("peakNum");
+    const lastEl = document.getElementById("lastUpdate");
+    const canvas = document.getElementById("chart");
+    const ctx = canvas.getContext("2d");
+
+    function resizeCanvas() {
+      const rect = canvas.getBoundingClientRect();
+      canvas.width = rect.width * window.devicePixelRatio;
+      canvas.height = rect.height * window.devicePixelRatio;
+      ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+    }
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    function drawChart(history) {
+      const w = canvas.width / window.devicePixelRatio;
+      const h = canvas.height / window.devicePixelRatio;
+      ctx.clearRect(0, 0, w, h);
+
+      const recent = history.slice(-30); // 最近 30 个点
+      if (recent.length < 2) {
+        ctx.fillStyle = "#8b949e";
+        ctx.font = "14px -apple-system, sans-serif";
+        ctx.textAlign = "center";
+        ctx.fillText("等待更多数据…", w / 2, h / 2 + 5);
+        return;
+      }
+
+      const values = recent.map(p => p.n);
+      const max = Math.max(1, ...values);
+      const pad = 20;
+      const graphW = w - pad * 2;
+      const graphH = h - pad * 2;
+
+      // 网格线
+      ctx.strokeStyle = "#21262d";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = pad + (graphH / 4) * i;
+        ctx.beginPath();
+        ctx.moveTo(pad, Math.round(y) + 0.5);
+        ctx.lineTo(w - pad, Math.round(y) + 0.5);
+        ctx.stroke();
+      }
+
+      // 折线
+      ctx.beginPath();
+      ctx.strokeStyle = "#2f81f7";
+      ctx.lineWidth = 2;
+      ctx.lineJoin = "round";
+      for (let i = 0; i < values.length; i++) {
+        const x = pad + (i / (values.length - 1)) * graphW;
+        const y = pad + graphH - (values[i] / max) * graphH;
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // 填充面积
+      ctx.lineTo(pad + graphW, pad + graphH);
+      ctx.lineTo(pad, pad + graphH);
+      ctx.closePath();
+      const grad = ctx.createLinearGradient(0, pad, 0, pad + graphH);
+      grad.addColorStop(0, "rgba(47,129,247,.25)");
+      grad.addColorStop(1, "rgba(47,129,247,.02)");
+      ctx.fillStyle = grad;
+      ctx.fill();
+
+      // Y 轴标注
+      ctx.fillStyle = "#8b949e";
+      ctx.font = "11px -apple-system, sans-serif";
+      ctx.textAlign = "right";
+      for (let i = 0; i <= 4; i++) {
+        const y = pad + (graphH / 4) * i;
+        const val = Math.round(max - (max / 4) * i);
+        ctx.fillText(val, pad - 6, y + 4);
+      }
+    }
+
+    async function refresh() {
+      try {
+        const res = await fetch("/stats");
+        const data = await res.json();
+        activeEl.textContent = data.active;
+        peakEl.textContent = data.peakToday;
+        lastEl.textContent = `最后更新: ${new Date().toLocaleTimeString("zh-CN")} · 今日 ${data.today}`;
+        drawChart(data.history);
+      } catch {
+        activeEl.textContent = "—";
+        peakEl.textContent = "—";
+        lastEl.textContent = "无法连接服务器";
+      }
+    }
+
+    refresh();
+    setInterval(refresh, 10_000);
+  </script>
+</body>
+</html>
