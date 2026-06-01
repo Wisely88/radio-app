@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>中文电台在线收听</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #161b22;
+      --panel-2: #1f2630;
+      --text: #f0f6fc;
+      --muted: #8b949e;
+      --line: #30363d;
+      --accent: #2f81f7;
+      --accent-2: #56d364;
+      --danger: #f85149;
+      --shadow: 0 22px 70px rgba(0, 0, 0, .35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(47, 129, 247, .22), transparent 30rem),
+        linear-gradient(145deg, #090c10 0%, var(--bg) 48%, #111820 100%);
+      color: var(--text);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .player,
+    .channels {
+      background: rgba(22, 27, 34, .86);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .player {
+      position: sticky;
+      top: 24px;
+      padding: 24px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent-2);
+      font-size: 13px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 24px;
+      font-size: clamp(28px, 5vw, 46px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .now {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      min-height: 176px;
+      border-radius: 8px;
+      background: linear-gradient(145deg, rgba(47, 129, 247, .18), rgba(86, 211, 100, .08));
+      border: 1px solid rgba(139, 148, 158, .24);
+    }
+
+    .station-name {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.22;
+    }
+
+    .station-desc {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--muted);
+      box-shadow: 0 0 0 5px rgba(139, 148, 158, .1);
+    }
+
+    .dot.playing {
+      background: var(--accent-2);
+      box-shadow: 0 0 0 5px rgba(86, 211, 100, .16);
+    }
+
+    .dot.error {
+      background: var(--danger);
+      box-shadow: 0 0 0 5px rgba(248, 81, 73, .16);
+    }
+
+    .controls {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      min-height: 46px;
+      color: #fff;
+      background: var(--panel-2);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .14s ease, background .14s ease, opacity .14s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      background: #2b3542;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .48;
+      transform: none;
+    }
+
+    .primary {
+      background: var(--accent);
+    }
+
+    .primary:hover {
+      background: #3f8cff;
+    }
+
+    label {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    .channels {
+      padding: 10px;
+    }
+
+    .channel-list {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .channel {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 16px;
+      text-align: left;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text);
+    }
+
+    .channel:hover {
+      background: rgba(139, 148, 158, .1);
+      transform: none;
+    }
+
+    .channel.active {
+      background: rgba(47, 129, 247, .16);
+      border-color: rgba(47, 129, 247, .42);
+    }
+
+    .channel strong {
+      display: block;
+      margin-bottom: 4px;
+      overflow-wrap: anywhere;
+      font-size: 16px;
+    }
+
+    .channel span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .badge {
+      min-width: 54px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(139, 148, 158, .16);
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .channel.active .badge {
+      background: rgba(86, 211, 100, .16);
+      color: var(--accent-2);
+    }
+
+    .hint {
+      margin: 18px 2px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 820px) {
+      main {
+        padding: 24px 0;
+      }
+
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      .player {
+        position: static;
+      }
+    }
+
+    @media (max-width: 460px) {
+      main {
+        width: min(100% - 20px, 1120px);
+      }
+
+      .player {
+        padding: 18px;
+      }
+
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+
+      .channel {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        width: fit-content;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">LIVE RADIO</p>
+    <h1>中文电台在线收听</h1>
+
+    <div class="shell">
+      <section class="player" aria-label="播放器">
+        <div class="now">
+          <div>
+            <h2 class="station-name" id="stationName">选择一个频道</h2>
+            <p class="station-desc" id="stationDesc">点击右侧频道开始播放。</p>
+          </div>
+          <div class="status-row" aria-live="polite">
+            <span class="dot" id="statusDot"></span>
+            <span id="statusText">未播放</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <div class="buttons">
+            <button class="primary" id="playBtn" type="button" disabled>播放</button>
+            <button id="pauseBtn" type="button" disabled>暂停</button>
+          </div>
+
+          <label>
+            音量 <span id="volumeText">80%</span>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+          </label>
+        </div>
+
+        <audio id="audio" controls preload="none"></audio>
+        <p class="hint">m3u8 频道通过 HLS.js 播放；个别浏览器可能会因混合内容策略限制 http 音频源。</p>
+      </section>
+
+      <section class="channels" aria-label="频道列表">
+        <ul class="channel-list" id="channelList"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const stations = [
+      {
+        name: "BBC World Service",
+        location: "国际新闻与全球专题",
+        url: "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8"
+      },
+      {
+        name: "CNR-1 中国之声",
+        location: "中央广播电视总台",
+        url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3"
+      },
+      {
+        name: "CNR-3 音乐之声",
+        location: "流行音乐与音乐资讯",
+        url: "https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8"
+      },
+      {
+        name: "上海动感101",
+        location: "上海流行音乐广播",
+        url: "https://lhttp.qingting.fm/live/274/64k.mp3"
+      },
+      {
+        name: "轻松调频 CRI EZFM",
+        location: "英语资讯与轻松音乐",
+        url: "https://sk.cri.cn/905.m3u8"
+      },
+      {
+        name: "华语金曲电台",
+        location: "经典华语流行音乐",
+        url: "https://lhttp.qingting.fm/live/5022397/64k.mp3"
+      },
+      {
+        name: "广东音乐之声",
+        location: "广东流行音乐频道",
+        url: "https://lhttp.qtfm.cn/live/1254/64k.mp3"
+      },
+      {
+        name: "深圳飞扬971",
+        location: "深圳都市音乐广播",
+        url: "https://lhttp.qtfm.cn/live/1270/64k.mp3"
+      },
+      {
+        name: "江苏音乐广播",
+        location: "江苏音乐与娱乐资讯",
+        url: "https://lhttp.qtfm.cn/live/4915/64k.mp3"
+      },
+      {
+        name: "浙江音乐调频",
+        location: "浙江流行音乐广播",
+        url: "https://lhttp.qtfm.cn/live/4522/64k.mp3"
+      }
+    ];
+
+    const audio = document.getElementById("audio");
+    const stationName = document.getElementById("stationName");
+    const stationDesc = document.getElementById("stationDesc");
+    const statusText = document.getElementById("statusText");
+    const statusDot = document.getElementById("statusDot");
+    const channelList = document.getElementById("channelList");
+    const playBtn = document.getElementById("playBtn");
+    const pauseBtn = document.getElementById("pauseBtn");
+    const volume = document.getElementById("volume");
+    const volumeText = document.getElementById("volumeText");
+
+    let hls = null;
+    let currentIndex = -1;
+
+    function isHls(url) {
+      return /\.m3u8($|\?)/i.test(url);
+    }
+
+    function setStatus(text, state) {
+      statusText.textContent = text;
+      statusDot.className = "dot" + (state ? ` ${state}` : "");
+    }
+
+    function renderStations() {
+      const items = stations.map((station, index) => {
+        const type = isHls(station.url) ? "HLS" : "MP3";
+        return `
+          <li>
+            <button class="channel" type="button" data-index="${index}">
+              <span>
+                <strong>${station.name}</strong>
+                <span>${station.location}</span>
+              </span>
+              <span class="badge">${type}</span>
+            </button>
+          </li>
+        `;
+      });
+      channelList.innerHTML = items.join("");
+    }
+
+    function markActive() {
+      document.querySelectorAll(".channel").forEach((button) => {
+        button.classList.toggle("active", Number(button.dataset.index) === currentIndex);
+      });
+    }
+
+    function destroyHls() {
+      if (hls) {
+        hls.destroy();
+        hls = null;
+      }
+    }
+
+    async function playCurrent() {
+      try {
+        await audio.play();
+        setStatus("正在播放", "playing");
+      } catch (error) {
+        setStatus("播放被浏览器拦截或音源暂不可用", "error");
+      }
+    }
+
+    function loadStation(index) {
+      const station = stations[index];
+      currentIndex = index;
+      markActive();
+      destroyHls();
+      audio.pause();
+      audio.removeAttribute("src");
+      audio.load();
+
+      stationName.textContent = station.name;
+      stationDesc.textContent = station.location;
+      playBtn.disabled = false;
+      pauseBtn.disabled = false;
+      setStatus("正在连接", "");
+
+      if (isHls(station.url) && window.Hls && Hls.isSupported()) {
+        hls = new Hls({
+          enableWorker: true,
+          lowLatencyMode: false
+        });
+        hls.loadSource(station.url);
+        hls.attachMedia(audio);
+        hls.on(Hls.Events.MANIFEST_PARSED, playCurrent);
+        hls.on(Hls.Events.ERROR, (_event, data) => {
+          if (data.fatal) {
+            setStatus("HLS 播放失败", "error");
+          }
+        });
+      } else {
+        audio.src = station.url;
+        playCurrent();
+      }
+    }
+
+    channelList.addEventListener("click", (event) => {
+      const button = event.target.closest(".channel");
+      if (!button) return;
+      loadStation(Number(button.dataset.index));
+    });
+
+    playBtn.addEventListener("click", playCurrent);
+
+    pauseBtn.addEventListener("click", () => {
+      audio.pause();
+      setStatus("已暂停", "");
+    });
+
+    volume.addEventListener("input", () => {
+      audio.volume = Number(volume.value);
+      volumeText.textContent = `${Math.round(audio.volume * 100)}%`;
+    });
+
+    audio.addEventListener("playing", () => setStatus("正在播放", "playing"));
+    audio.addEventListener("waiting", () => setStatus("缓冲中", ""));
+    audio.addEventListener("pause", () => {
+      if (currentIndex >= 0) setStatus("已暂停", "");
+    });
+    audio.addEventListener("error", () => setStatus("音源加载失败", "error"));
+
+    audio.volume = Number(volume.value);
+    renderStations();
+  </script>
+</body>
+</html>
