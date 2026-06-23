@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>中文电台在线收听</title>
+  <title>小伟的快乐加油站 ⚡</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     :root {
@@ -66,6 +66,13 @@
     .header {
       text-align: center;
       margin-bottom: 32px;
+    }
+
+    .avatar {
+      width: clamp(60px, 10vw, 90px);
+      height: auto;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 0 16px rgba(247,211,78,.35));
     }
 
     .scanline-text {
@@ -133,7 +140,7 @@
     }
 
     .now-playing::after {
-      content: "NOW PLAYING";
+      content: "⚡ ON AIR";
       position: absolute;
       top: -9px;
       left: 12px;
@@ -492,8 +499,32 @@
   <main>
     <!-- Header -->
     <div class="header">
-      <div class="scanline-text">📻 在线电台</div>
-      <div class="subtitle">CHINESE RADIO STREAMING</div>
+      <svg class="avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <!-- face -->
+        <ellipse cx="60" cy="65" rx="50" ry="48" fill="#F7D34E" stroke="#D4A017" stroke-width="3"/>
+        <!-- cheeks -->
+        <circle cx="24" cy="72" r="10" fill="#FF6B4A" opacity=".85"/>
+        <circle cx="96" cy="72" r="10" fill="#FF6B4A" opacity=".85"/>
+        <!-- ears -->
+        <ellipse cx="16" cy="18" rx="16" ry="28" fill="#F7D34E" stroke="#D4A017" stroke-width="3" transform="rotate(-18 16 18)"/>
+        <ellipse cx="104" cy="18" rx="16" ry="28" fill="#F7D34E" stroke="#D4A017" stroke-width="3" transform="rotate(18 104 18)"/>
+        <!-- ear tips (black) -->
+        <ellipse cx="16" cy="-2" rx="9" ry="12" fill="#222" transform="rotate(-18 16 -2)"/>
+        <ellipse cx="104" cy="-2" rx="9" ry="12" fill="#222" transform="rotate(18 104 -2)"/>
+        <!-- eyes -->
+        <circle cx="43" cy="52" r="7" fill="#222"/>
+        <circle cx="77" cy="52" r="7" fill="#222"/>
+        <circle cx="45" cy="50" r="2.5" fill="#fff"/>
+        <circle cx="79" cy="50" r="2.5" fill="#fff"/>
+        <!-- nose -->
+        <ellipse cx="60" cy="62" rx="3" ry="2" fill="#222"/>
+        <!-- mouth -->
+        <path d="M50 70 Q60 80 70 70" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- top head highlight -->
+        <ellipse cx="60" cy="38" rx="30" ry="12" fill="rgba(255,255,255,.2)"/>
+      </svg>
+      <div class="scanline-text">⚡ 小伟的快乐加油站</div>
+      <div class="subtitle">XIAOWEI'S HAPPY FUEL STATION</div>
     </div>
 
     <div class="shell">
