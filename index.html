@@ -20,15 +20,12 @@
       --shadow: 0 22px 70px rgba(0, 0, 0, .35);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-        "Microsoft YaHei", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
       background:
         radial-gradient(circle at top left, rgba(47, 129, 247, .22), transparent 30rem),
         linear-gradient(145deg, #090c10 0%, var(--bg) 48%, #111820 100%);
@@ -48,8 +45,7 @@
       align-items: start;
     }
 
-    .player,
-    .channels {
+    .player, .channels {
       background: rgba(22, 27, 34, .86);
       border: 1px solid var(--line);
       border-radius: 8px;
@@ -116,16 +112,8 @@
       background: var(--muted);
       box-shadow: 0 0 0 5px rgba(139, 148, 158, .1);
     }
-
-    .dot.playing {
-      background: var(--accent-2);
-      box-shadow: 0 0 0 5px rgba(86, 211, 100, .16);
-    }
-
-    .dot.error {
-      background: var(--danger);
-      box-shadow: 0 0 0 5px rgba(248, 81, 73, .16);
-    }
+    .dot.playing { background: var(--accent-2); box-shadow: 0 0 0 5px rgba(86, 211, 100, .16); }
+    .dot.error { background: var(--danger); box-shadow: 0 0 0 5px rgba(248, 81, 73, .16); }
 
     .controls {
       display: grid;
@@ -150,25 +138,11 @@
       cursor: pointer;
       transition: transform .14s ease, background .14s ease, opacity .14s ease;
     }
+    button:hover { transform: translateY(-1px); background: #2b3542; }
+    button:disabled { cursor: not-allowed; opacity: .48; transform: none; }
 
-    button:hover {
-      transform: translateY(-1px);
-      background: #2b3542;
-    }
-
-    button:disabled {
-      cursor: not-allowed;
-      opacity: .48;
-      transform: none;
-    }
-
-    .primary {
-      background: var(--accent);
-    }
-
-    .primary:hover {
-      background: #3f8cff;
-    }
+    .primary { background: var(--accent); }
+    .primary:hover { background: #3f8cff; }
 
     label {
       display: grid;
@@ -182,6 +156,50 @@
       accent-color: var(--accent);
     }
 
+    /* ── Stats ── */
+    .stats {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      background: rgba(139, 148, 158, .08);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .stats strong { color: var(--text); font-size: 15px; }
+
+    /* ── Category tabs ── */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      padding: 12px 14px 0;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .14s ease;
+    }
+    .tab:hover { background: rgba(139, 148, 158, .12); }
+    .tab.active {
+      background: rgba(47, 129, 247, .18);
+      border-color: rgba(47, 129, 247, .5);
+      color: var(--accent);
+    }
+    .tab-count {
+      margin-left: 4px;
+      font-size: 12px;
+      opacity: .7;
+    }
+
     .channels {
       padding: 10px;
     }
@@ -189,8 +207,8 @@
     .channel-list {
       display: grid;
       gap: 8px;
-      margin: 0;
-      padding: 0;
+      margin: 10px 0 0;
+      padding: 0 10px 10px;
       list-style: none;
     }
 
@@ -206,24 +224,14 @@
       background: transparent;
       color: var(--text);
     }
-
-    .channel:hover {
-      background: rgba(139, 148, 158, .1);
-      transform: none;
-    }
-
-    .channel.active {
-      background: rgba(47, 129, 247, .16);
-      border-color: rgba(47, 129, 247, .42);
-    }
-
+    .channel:hover { background: rgba(139, 148, 158, .1); transform: none; }
+    .channel.active { background: rgba(47, 129, 247, .16); border-color: rgba(47, 129, 247, .42); }
     .channel strong {
       display: block;
       margin-bottom: 4px;
       overflow-wrap: anywhere;
       font-size: 16px;
     }
-
     .channel span {
       display: block;
       color: var(--muted);
@@ -242,11 +250,20 @@
       font-size: 12px;
       font-weight: 800;
     }
+    .channel.active .badge { background: rgba(86, 211, 100, .16); color: var(--accent-2); }
 
-    .channel.active .badge {
-      background: rgba(86, 211, 100, .16);
-      color: var(--accent-2);
+    .cat-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
     }
+    .cat-news { background: rgba(47,129,247,.2); color: var(--accent); }
+    .cat-music { background: rgba(86,211,100,.18); color: var(--accent-2); }
+    .cat-traffic { background: rgba(248,129,73,.18); color: #f88149; }
+    .cat-general { background: rgba(163,113,247,.18); color: #a371f7; }
 
     .hint {
       margin: 18px 2px 0;
@@ -255,149 +272,107 @@
       line-height: 1.6;
     }
 
-    audio {
-      width: 100%;
-      margin-top: 18px;
-    }
+    audio { width: 100%; margin-top: 18px; }
 
     @media (max-width: 820px) {
-      main {
-        padding: 24px 0;
-      }
-
-      .shell {
-        grid-template-columns: 1fr;
-      }
-
-      .player {
-        position: static;
-      }
-    }
-
-    @media (max-width: 460px) {
-      main {
-        width: min(100% - 20px, 1120px);
-      }
-
-      .player {
-        padding: 18px;
-      }
-
-      .buttons {
-        grid-template-columns: 1fr;
-      }
-
-      .channel {
-        grid-template-columns: 1fr;
-      }
-
-      .badge {
-        width: fit-content;
-      }
+      main { padding: 24px 0; }
+      .shell { grid-template-columns: 1fr; }
+      .player { position: static; }
     }
   </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">LIVE RADIO</p>
-    <h1>中文电台在线收听</h1>
-
     <div class="shell">
       <section class="player" aria-label="播放器">
+        <p class="eyebrow">📻 中文电台</p>
+        <h1>在线收听</h1>
         <div class="now">
-          <div>
-            <h2 class="station-name" id="stationName">选择一个频道</h2>
-            <p class="station-desc" id="stationDesc">点击右侧频道开始播放。</p>
-          </div>
-          <div class="status-row" aria-live="polite">
+          <h2 class="station-name" id="stationName">选择一个电台</h2>
+          <p class="station-desc" id="stationDesc">左右滑动浏览频道列表</p>
+          <div class="status-row">
             <span class="dot" id="statusDot"></span>
-            <span id="statusText">未播放</span>
+            <span id="statusText">就绪</span>
           </div>
         </div>
-
         <div class="controls">
           <div class="buttons">
-            <button class="primary" id="playBtn" type="button" disabled>播放</button>
-            <button id="pauseBtn" type="button" disabled>暂停</button>
+            <button class="primary" id="playBtn" disabled>▶ 播放</button>
+            <button id="pauseBtn" disabled>⏸ 暂停</button>
           </div>
-
           <label>
             音量 <span id="volumeText">80%</span>
             <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
           </label>
         </div>
-
         <audio id="audio" controls preload="none"></audio>
+
+        <!-- Visit Stats -->
+        <div class="stats" id="stats">
+          <div>今日访问<br><strong id="todayVisits">-</strong> 次</div>
+          <div>今日访客<br><strong id="todayVisitors">-</strong> 人</div>
+          <div>累计访问<br><strong id="totalVisits">-</strong> 次</div>
+        </div>
+
         <p class="hint">m3u8 频道通过 HLS.js 播放；个别浏览器可能会因混合内容策略限制 http 音频源。</p>
-        
       </section>
 
       <section class="channels" aria-label="频道列表">
+        <!-- Category Tabs -->
+        <div class="tabs" id="tabs"></div>
         <ul class="channel-list" id="channelList"></ul>
       </section>
     </div>
   </main>
 
   <script>
+    // ────── Station Data ──────
+    const categories = {
+      news:    { label: "📡 资讯", cls: "cat-news" },
+      music:   { label: "🎵 音乐", cls: "cat-music" },
+      traffic: { label: "🚗 交通", cls: "cat-traffic" },
+      general: { label: "🌐 综合", cls: "cat-general" },
+    };
+
     const stations = [
-      {
-        name: "BBC World Service",
-        location: "国际新闻与全球专题",
-        url: "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8"
-      },
-      {
-        name: "CNR-1 中国之声",
-        location: "中央广播电视总台",
-        url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3"
-      },
-      {
-        name: "CNR-3 音乐之声",
-        location: "流行音乐与音乐资讯",
-        url: "https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8"
-      },
-      {
-        name: "上海动感101",
-        location: "上海流行音乐广播",
-        url: "https://lhttp.qingting.fm/live/274/64k.mp3"
-      },
-      {
-        name: "轻松调频 CRI EZFM",
-        location: "英语资讯与轻松音乐",
-        url: "https://sk.cri.cn/905.m3u8"
-      },
-      {
-        name: "华语金曲电台",
-        location: "经典华语流行音乐",
-        url: "https://lhttp.qingting.fm/live/5022397/64k.mp3"
-      },
-      {
-        name: "广东音乐之声",
-        location: "广东流行音乐频道",
-        url: "https://lhttp.qtfm.cn/live/1254/64k.mp3"
-      },
-      {
-        name: "深圳飞扬971",
-        location: "深圳都市音乐广播",
-        url: "https://lhttp.qtfm.cn/live/1270/64k.mp3"
-      },
-      {
-        name: "江苏音乐广播",
-        location: "江苏音乐与娱乐资讯",
-        url: "https://lhttp.qtfm.cn/live/4915/64k.mp3"
-      },
-      {
-        name: "浙江音乐调频",
-        location: "浙江流行音乐广播",
-        url: "https://lhttp.qtfm.cn/live/4522/64k.mp3"
-      }
+      // ── 资讯 ──
+      { cat: "news", name: "CNR-1 中国之声",        desc: "中央广播电视总台·新闻综合",  url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3" },
+      { cat: "news", name: "CNR-2 经济之声",        desc: "中央广播电视总台·财经新闻",  url: "https://lhttp.qtfm.cn/live/15318318/64k.mp3" },
+      { cat: "news", name: "BBC World Service",     desc: "国际新闻与全球专题 (英语)",  url: "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8" },
+      { cat: "news", name: "轻松调频 CRI EZFM",     desc: "英语资讯与轻松音乐",          url: "https://sk.cri.cn/905.m3u8" },
+      { cat: "news", name: "环球资讯广播",           desc: "国际新闻深度报道",            url: "https://lhttp.qtfm.cn/live/1170/64k.mp3" },
+
+      // ── 音乐 ──
+      { cat: "music", name: "CNR-3 音乐之声",        desc: "流行音乐与音乐资讯",          url: "https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8" },
+      { cat: "music", name: "CNR-15 经典音乐广播",   desc: "经典老歌与怀旧金曲",          url: "https://lhttp.qtfm.cn/live/386/64k.mp3" },
+      { cat: "music", name: "上海动感101",           desc: "上海流行音乐广播",            url: "https://lhttp.qingting.fm/live/274/64k.mp3" },
+      { cat: "music", name: "华语金曲电台",          desc: "经典华语流行音乐",            url: "https://lhttp.qingting.fm/live/5022397/64k.mp3" },
+      { cat: "music", name: "广东音乐之声",          desc: "广东流行音乐频道",            url: "https://lhttp.qtfm.cn/live/1254/64k.mp3" },
+      { cat: "music", name: "深圳飞扬971",          desc: "深圳都市音乐广播",            url: "https://lhttp.qtfm.cn/live/1270/64k.mp3" },
+      { cat: "music", name: "江苏音乐广播",          desc: "江苏音乐与娱乐资讯",          url: "https://lhttp.qtfm.cn/live/4915/64k.mp3" },
+      { cat: "music", name: "浙江音乐调频 968",     desc: "浙江流行音乐广播",            url: "https://lhttp.qtfm.cn/live/4522/64k.mp3" },
+      { cat: "music", name: "天津音乐广播 99",      desc: "天津经典音乐电台",            url: "https://lhttp.qtfm.cn/live/377/64k.mp3" },
+
+      // ── 交通 ──
+      { cat: "traffic", name: "北京交通广播 103.9",  desc: "北京路况信息与出行服务",     url: "https://lhttp.qtfm.cn/live/335/64k.mp3" },
+      { cat: "traffic", name: "上海交通广播 105.7",  desc: "上海交通信息与都市资讯",     url: "https://lhttp.qtfm.cn/live/275/64k.mp3" },
+      { cat: "traffic", name: "深圳交通广播 106.2",  desc: "深圳路况与交通服务",          url: "https://lhttp.qtfm.cn/live/1271/64k.mp3" },
+      { cat: "traffic", name: "中国交通广播",        desc: "全国高速路况与出行指南",     url: "https://lhttp.qtfm.cn/live/4952/64k.mp3" },
+
+      // ── 综合 ──
+      { cat: "general", name: "CNR-5 中华之声",      desc: "对台广播·两岸资讯",           url: "https://lhttp.qtfm.cn/live/15318321/64k.mp3" },
+      { cat: "general", name: "CNR-7 华夏之声",      desc: "粤港澳大湾区资讯",            url: "https://lhttp.qtfm.cn/live/15318323/64k.mp3" },
+      { cat: "general", name: "CRI HIT FM 88.7",    desc: "国际流行音乐 (双语)",          url: "https://sk.cri.cn/887.m3u8" },
     ];
 
+    // ────── DOM ──────
     const audio = document.getElementById("audio");
     const stationName = document.getElementById("stationName");
     const stationDesc = document.getElementById("stationDesc");
     const statusText = document.getElementById("statusText");
     const statusDot = document.getElementById("statusDot");
     const channelList = document.getElementById("channelList");
+    const tabsRow = document.getElementById("tabs");
     const playBtn = document.getElementById("playBtn");
     const pauseBtn = document.getElementById("pauseBtn");
     const volume = document.getElementById("volume");
@@ -405,45 +380,74 @@
 
     let hls = null;
     let currentIndex = -1;
+    let activeCat = "all";
+    let filteredIndices = [];
 
-    function isHls(url) {
-      return /\.m3u8($|\?)/i.test(url);
-    }
+    function isHls(url) { return /\.m3u8($|\?)/i.test(url); }
 
     function setStatus(text, state) {
       statusText.textContent = text;
       statusDot.className = "dot" + (state ? ` ${state}` : "");
     }
 
+    // ────── Category Tabs ──────
+    function renderTabs() {
+      const counts = {};
+      counts.all = stations.length;
+      stations.forEach(s => { counts[s.cat] = (counts[s.cat] || 0) + 1; });
+
+      let html = `<button class="tab active" data-cat="all">全部<span class="tab-count">${counts.all}</span></button>`;
+      for (const [key, cat] of Object.entries(categories)) {
+        html += `<button class="tab" data-cat="${key}">${cat.label}<span class="tab-count">${counts[key] || 0}</span></button>`;
+      }
+      tabsRow.innerHTML = html;
+
+      tabsRow.addEventListener("click", (e) => {
+        const tab = e.target.closest(".tab");
+        if (!tab) return;
+        activeCat = tab.dataset.cat;
+        document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === tab));
+        renderStations();
+      });
+    }
+
     function renderStations() {
-      const items = stations.map((station, index) => {
-        const type = isHls(station.url) ? "HLS" : "MP3";
+      filteredIndices = [];
+      const items = stations.map((s, i) => {
+        if (activeCat !== "all" && s.cat !== activeCat) return null;
+        filteredIndices.push(i);
+        const type = isHls(s.url) ? "HLS" : "MP3";
+        const catInfo = categories[s.cat];
         return `
           <li>
-            <button class="channel" type="button" data-index="${index}">
+            <button class="channel" type="button" data-index="${i}">
               <span>
-                <strong>${station.name}</strong>
-                <span>${station.location}</span>
+                <strong>${s.name}</strong>
+                <span>${s.desc}</span>
+                <span class="cat-badge ${catInfo.cls}">${catInfo.label}</span>
               </span>
               <span class="badge">${type}</span>
             </button>
           </li>
         `;
-      });
-      channelList.innerHTML = items.join("");
+      }).filter(Boolean);
+
+      if (items.length === 0) {
+        channelList.innerHTML = '<li style="padding:24px;color:var(--muted);text-align:center">该分类暂无电台</li>';
+      } else {
+        channelList.innerHTML = items.join("");
+      }
+      markActive();
     }
 
     function markActive() {
-      document.querySelectorAll(".channel").forEach((button) => {
-        button.classList.toggle("active", Number(button.dataset.index) === currentIndex);
+      document.querySelectorAll(".channel").forEach((btn) => {
+        btn.classList.toggle("active", Number(btn.dataset.index) === currentIndex);
       });
     }
 
     function destroyHls() {
-      if (hls) {
-        hls.destroy();
-        hls = null;
-      }
+      if (hls) { hls.destroy(); hls = null; }
     }
 
     async function playCurrent() {
@@ -456,7 +460,7 @@
     }
 
     function loadStation(index) {
-      const station = stations[index];
+      const s = stations[index];
       currentIndex = index;
       markActive();
       destroyHls();
@@ -464,43 +468,34 @@
       audio.removeAttribute("src");
       audio.load();
 
-      stationName.textContent = station.name;
-      stationDesc.textContent = station.location;
+      stationName.textContent = s.name;
+      stationDesc.textContent = s.desc;
       playBtn.disabled = false;
       pauseBtn.disabled = false;
       setStatus("正在连接", "");
 
-      if (isHls(station.url) && window.Hls && Hls.isSupported()) {
-        hls = new Hls({
-          enableWorker: true,
-          lowLatencyMode: false
-        });
-        hls.loadSource(station.url);
+      if (isHls(s.url) && window.Hls && Hls.isSupported()) {
+        hls = new Hls({ enableWorker: true, lowLatencyMode: false });
+        hls.loadSource(s.url);
         hls.attachMedia(audio);
         hls.on(Hls.Events.MANIFEST_PARSED, playCurrent);
         hls.on(Hls.Events.ERROR, (_event, data) => {
-          if (data.fatal) {
-            setStatus("HLS 播放失败", "error");
-          }
+          if (data.fatal) setStatus("HLS 播放失败", "error");
         });
       } else {
-        audio.src = station.url;
+        audio.src = s.url;
         playCurrent();
       }
     }
 
     channelList.addEventListener("click", (event) => {
-      const button = event.target.closest(".channel");
-      if (!button) return;
-      loadStation(Number(button.dataset.index));
+      const btn = event.target.closest(".channel");
+      if (!btn) return;
+      loadStation(Number(btn.dataset.index));
     });
 
     playBtn.addEventListener("click", playCurrent);
-
-    pauseBtn.addEventListener("click", () => {
-      audio.pause();
-      setStatus("已暂停", "");
-    });
+    pauseBtn.addEventListener("click", () => { audio.pause(); setStatus("已暂停", ""); });
 
     volume.addEventListener("input", () => {
       audio.volume = Number(volume.value);
@@ -509,13 +504,53 @@
 
     audio.addEventListener("playing", () => setStatus("正在播放", "playing"));
     audio.addEventListener("waiting", () => setStatus("缓冲中", ""));
-    audio.addEventListener("pause", () => {
-      if (currentIndex >= 0) setStatus("已暂停", "");
-    });
+    audio.addEventListener("pause", () => { if (currentIndex >= 0) setStatus("已暂停", ""); });
     audio.addEventListener("error", () => setStatus("音源加载失败", "error"));
 
     audio.volume = Number(volume.value);
+
+    // ────── Visitor Stats (localStorage) ──────
+    function updateStats() {
+      const STORAGE_KEY = "radio_app_stats";
+      const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+      let data;
+      try {
+        data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+      } catch { data = {}; }
+
+      // Initialize visitor ID (per-device unique)
+      if (!data.visitorId) {
+        data.visitorId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+      }
+
+      // Initialize daily stats
+      if (!data.days) data.days = {};
+
+      const dayData = data.days[today] || { visits: 0, visitors: [] };
+      dayData.visits += 1;
+      if (!dayData.visitors.includes(data.visitorId)) {
+        dayData.visitors.push(data.visitorId);
+      }
+      data.days[today] = dayData;
+
+      // Calculate totals
+      let totalVisits = 0;
+      for (const d of Object.values(data.days)) {
+        totalVisits += d.visits || 0;
+      }
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+      document.getElementById("todayVisits").textContent = dayData.visits;
+      document.getElementById("todayVisitors").textContent = dayData.visitors.length;
+      document.getElementById("totalVisits").textContent = totalVisits;
+    }
+
+    // ────── Init ──────
+    renderTabs();
     renderStations();
+    updateStats();
   </script>
 </body>
 </html>
