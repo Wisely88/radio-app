@@ -7,318 +7,542 @@
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0d1117;
-      --panel: #161b22;
-      --panel-2: #1f2630;
-      --text: #f0f6fc;
-      --muted: #8b949e;
-      --line: #30363d;
-      --accent: #2f81f7;
-      --accent-2: #56d364;
-      --danger: #f85149;
-      --shadow: 0 22px 70px rgba(0, 0, 0, .35);
+      --bg: #0a0e17;
+      --panel: #0f1520;
+      --panel-2: #162030;
+      --text: #e0f0ff;
+      --muted: #6a8aaa;
+      --line: #1e3048;
+      --accent: #00e5ff;
+      --accent-2: #39ff14;
+      --danger: #ff3b5c;
+      --glow: 0 0 18px rgba(0,229,255,.3);
+      --glow-green: 0 0 14px rgba(57,255,20,.3);
     }
 
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @font-face {
+      font-family: 'SciFi';
+      src: local('Orbitron');
+      /* fallback: system mono */
+    }
 
     body {
-      margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(47, 129, 247, .22), transparent 30rem),
-        linear-gradient(145deg, #090c10 0%, var(--bg) 48%, #111820 100%);
+      font-family: "Courier New", "Menlo", "SF Mono", monospace;
       color: var(--text);
+      background:
+        /* grid lines */
+        linear-gradient(rgba(0,229,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,.03) 1px, transparent 1px),
+        /* radial glow */
+        radial-gradient(ellipse at 50% 0%, rgba(0,229,255,.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(57,255,20,.04) 0%, transparent 50%),
+        var(--bg);
+      background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+      /* scanline */
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px
+      );
     }
 
     main {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1200px, calc(100% - 24px));
       margin: 0 auto;
-      padding: 40px 0;
+      padding: 32px 0 48px;
     }
 
+    /* ── Header ── */
+    .header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .scanline-text {
+      display: inline-block;
+      font-size: clamp(24px, 5vw, 46px);
+      font-weight: 900;
+      letter-spacing: 4px;
+      background: linear-gradient(180deg, var(--accent) 0%, #0088aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: none;
+      filter: drop-shadow(0 0 20px rgba(0,229,255,.4));
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    /* ── Layout ── */
     .shell {
       display: grid;
-      grid-template-columns: minmax(0, 380px) minmax(0, 1fr);
-      gap: 22px;
+      grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+      gap: 20px;
       align-items: start;
     }
 
-    .player, .channels {
-      background: rgba(22, 27, 34, .86);
+    /* ── Panel Base ── */
+    .panel {
+      background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(18px);
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
     }
 
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: .5;
+    }
+
+    /* ── Player ── */
     .player {
       position: sticky;
       top: 24px;
-      padding: 24px;
+      padding: 28px 24px;
     }
 
-    .eyebrow {
-      margin: 0 0 10px;
-      color: var(--accent-2);
-      font-size: 13px;
-      letter-spacing: 0;
-      font-weight: 700;
+    .now-playing {
+      padding: 20px;
+      margin: 8px 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(0,229,255,.04);
+      position: relative;
     }
 
-    h1 {
-      margin: 0 0 24px;
-      font-size: clamp(28px, 5vw, 46px);
-      line-height: 1.08;
-      letter-spacing: 0;
-    }
-
-    .now {
-      display: grid;
-      gap: 14px;
-      padding: 18px;
-      min-height: 176px;
-      border-radius: 8px;
-      background: linear-gradient(145deg, rgba(47, 129, 247, .18), rgba(86, 211, 100, .08));
-      border: 1px solid rgba(139, 148, 158, .24);
+    .now-playing::after {
+      content: "NOW PLAYING";
+      position: absolute;
+      top: -9px;
+      left: 12px;
+      background: var(--panel);
+      padding: 0 8px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--accent);
+      opacity: .8;
     }
 
     .station-name {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.22;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+      color: #fff;
     }
 
     .station-desc {
-      margin: 0;
+      font-size: 13px;
       color: var(--muted);
-      line-height: 1.6;
+      margin-bottom: 14px;
+      line-height: 1.5;
     }
 
     .status-row {
       display: flex;
       align-items: center;
-      gap: 10px;
-      min-height: 28px;
+      gap: 8px;
+      font-size: 13px;
       color: var(--muted);
-      font-size: 14px;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 999px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
       background: var(--muted);
-      box-shadow: 0 0 0 5px rgba(139, 148, 158, .1);
     }
-    .dot.playing { background: var(--accent-2); box-shadow: 0 0 0 5px rgba(86, 211, 100, .16); }
-    .dot.error { background: var(--danger); box-shadow: 0 0 0 5px rgba(248, 81, 73, .16); }
+    .dot.playing { background: var(--accent-2); box-shadow: 0 0 8px var(--accent-2); }
+    .dot.error { background: var(--danger); box-shadow: 0 0 8px var(--danger); }
 
-    .controls {
-      display: grid;
-      gap: 18px;
-      margin-top: 22px;
-    }
+    /* ── Controls ── */
+    .controls { margin-top: 18px; }
 
-    .buttons {
+    .btn-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
-    button {
-      border: 0;
-      border-radius: 8px;
-      min-height: 46px;
-      color: #fff;
-      background: var(--panel-2);
-      font: inherit;
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      min-height: 44px;
+      font-family: inherit;
+      font-size: 14px;
       font-weight: 700;
       cursor: pointer;
-      transition: transform .14s ease, background .14s ease, opacity .14s ease;
+      transition: all .15s;
+      color: var(--text);
+      background: var(--panel-2);
+      letter-spacing: 1px;
     }
-    button:hover { transform: translateY(-1px); background: #2b3542; }
-    button:disabled { cursor: not-allowed; opacity: .48; transform: none; }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn:active { transform: scale(.97); }
+    .btn:disabled { opacity: .3; cursor: not-allowed; border-color: var(--line); color: var(--muted); }
 
-    .primary { background: var(--accent); }
-    .primary:hover { background: #3f8cff; }
+    .btn-primary {
+      background: rgba(0,229,255,.1);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: var(--glow);
+    }
+    .btn-primary:hover { background: rgba(0,229,255,.18); }
 
-    label {
-      display: grid;
-      gap: 10px;
+    .vol-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
       color: var(--muted);
-      font-size: 14px;
+    }
+
+    .vol-label {
+      letter-spacing: 2px;
+    }
+
+    .vol-value {
+      min-width: 36px;
+      color: var(--accent);
+      font-weight: 700;
+      text-align: right;
     }
 
     input[type="range"] {
-      width: 100%;
+      flex: 1;
       accent-color: var(--accent);
+      height: 4px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 18px;
+      height: 36px;
+      border-radius: 4px;
+      opacity: .85;
     }
 
     /* ── Stats ── */
     .stats {
-      display: flex;
-      gap: 18px;
-      margin-top: 18px;
-      padding: 14px 16px;
-      border-radius: 8px;
-      background: rgba(139, 148, 158, .08);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      padding: 14px 12px;
       border: 1px solid var(--line);
-      font-size: 13px;
-      color: var(--muted);
+      border-radius: 4px;
+      background: rgba(0,0,0,.2);
     }
-    .stats strong { color: var(--text); font-size: 15px; }
 
-    /* ── Category tabs ── */
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(0,229,255,.3);
+    }
+
+    /* ── Channels Panel ── */
+    .channels-panel {
+      padding: 0;
+    }
+
+    /* ── Tabs ── */
     .tabs {
       display: flex;
-      gap: 6px;
-      padding: 12px 14px 0;
-      flex-wrap: wrap;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      border-bottom: 1px solid var(--line);
+      padding: 0 4px;
+      -webkit-overflow-scrolling: touch;
     }
+
+    .tabs::-webkit-scrollbar { display: none; }
+
     .tab {
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: transparent;
+      flex-shrink: 0;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
       color: var(--muted);
-      font-size: 14px;
-      font-weight: 600;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
       cursor: pointer;
-      transition: all .14s ease;
+      transition: all .15s;
     }
-    .tab:hover { background: rgba(139, 148, 158, .12); }
+
+    .tab:hover { color: var(--text); }
     .tab.active {
-      background: rgba(47, 129, 247, .18);
-      border-color: rgba(47, 129, 247, .5);
       color: var(--accent);
+      border-bottom-color: var(--accent);
+      text-shadow: 0 0 8px rgba(0,229,255,.3);
     }
+
     .tab-count {
       margin-left: 4px;
-      font-size: 12px;
-      opacity: .7;
+      font-size: 11px;
+      opacity: .6;
     }
 
-    .channels {
-      padding: 10px;
-    }
-
+    /* ── Channel List ── */
     .channel-list {
-      display: grid;
-      gap: 8px;
-      margin: 10px 0 0;
-      padding: 0 10px 10px;
       list-style: none;
+      padding: 8px;
     }
 
     .channel {
       width: 100%;
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
       align-items: center;
-      padding: 16px;
+      padding: 14px 16px;
+      margin-bottom: 4px;
       text-align: left;
       border: 1px solid transparent;
+      border-radius: 4px;
       background: transparent;
       color: var(--text);
+      font-family: inherit;
+      cursor: pointer;
+      transition: all .15s;
     }
-    .channel:hover { background: rgba(139, 148, 158, .1); transform: none; }
-    .channel.active { background: rgba(47, 129, 247, .16); border-color: rgba(47, 129, 247, .42); }
-    .channel strong {
-      display: block;
-      margin-bottom: 4px;
-      overflow-wrap: anywhere;
-      font-size: 16px;
+
+    .channel:hover {
+      background: rgba(0,229,255,.04);
+      border-color: rgba(0,229,255,.15);
     }
-    .channel span {
+
+    .channel.active {
+      background: rgba(0,229,255,.08);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(0,229,255,.1);
+    }
+
+    .channel-info strong {
       display: block;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 3px;
+      letter-spacing: .5px;
+    }
+
+    .channel-info .ch-desc {
+      display: block;
+      font-size: 12px;
       color: var(--muted);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.45;
+      line-height: 1.4;
+    }
+
+    .ch-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
     }
 
     .badge {
-      min-width: 54px;
-      padding: 6px 8px;
-      border-radius: 999px;
-      background: rgba(139, 148, 158, .16);
-      color: var(--muted);
-      text-align: center;
-      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 3px;
+      font-size: 10px;
       font-weight: 800;
+      letter-spacing: 1px;
+      border: 1px solid;
     }
-    .channel.active .badge { background: rgba(86, 211, 100, .16); color: var(--accent-2); }
 
-    .cat-badge {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      margin-top: 4px;
+    /* Format badges */
+    .badge-hls {
+      color: var(--accent-2);
+      border-color: rgba(57,255,20,.3);
+      background: rgba(57,255,20,.06);
     }
-    .cat-news { background: rgba(47,129,247,.2); color: var(--accent); }
-    .cat-music { background: rgba(86,211,100,.18); color: var(--accent-2); }
-    .cat-traffic { background: rgba(248,129,73,.18); color: #f88149; }
-    .cat-general { background: rgba(163,113,247,.18); color: #a371f7; }
+
+    .badge-mp3 {
+      color: var(--accent);
+      border-color: rgba(0,229,255,.3);
+      background: rgba(0,229,255,.06);
+    }
+
+    /* Category tags */
+    .cat-tag {
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .cat-news    { color: #ff6b9d; border: 1px solid rgba(255,107,157,.3); }
+    .cat-music   { color: var(--accent-2); border: 1px solid rgba(57,255,20,.3); }
+    .cat-traffic { color: #ff9f43; border: 1px solid rgba(255,159,67,.3); }
+    .cat-general { color: #a29bfe; border: 1px solid rgba(162,155,254,.3); }
 
     .hint {
-      margin: 18px 2px 0;
+      margin-top: 16px;
+      font-size: 11px;
       color: var(--muted);
-      font-size: 13px;
       line-height: 1.6;
+      letter-spacing: .5px;
     }
 
-    audio { width: 100%; margin-top: 18px; }
+    /* ── Mobile Adapt ── */
+    @media (max-width: 768px) {
+      body { font-size: 14px; }
+      main { padding: 16px 0 32px; }
 
-    @media (max-width: 820px) {
-      main { padding: 24px 0; }
-      .shell { grid-template-columns: 1fr; }
-      .player { position: static; }
+      .shell {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .player {
+        position: static;
+        padding: 20px 16px;
+      }
+
+      .now-playing {
+        padding: 16px;
+        margin: 4px 0 16px;
+      }
+
+      .station-name { font-size: 20px; }
+
+      .btn {
+        min-height: 48px;
+        font-size: 16px;
+      }
+
+      .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        padding: 12px 8px;
+      }
+
+      .stat-value { font-size: 18px; }
+
+      .tab {
+        padding: 10px 12px;
+        font-size: 12px;
+      }
+
+      .channel {
+        padding: 12px 12px;
+      }
+
+      .channel-info strong { font-size: 14px; }
+
+      .channels-panel {
+        border-radius: 6px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .btn-row { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 10px 6px; }
+      .stat-label { font-size: 9px; letter-spacing: 1px; }
+      .stat-value { font-size: 16px; }
+    }
+
+    /* ── Tablet ── */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .shell {
+        grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+      }
     }
   </style>
 </head>
 <body>
   <main>
+    <!-- Header -->
+    <div class="header">
+      <div class="scanline-text">📻 在线电台</div>
+      <div class="subtitle">CHINESE RADIO STREAMING</div>
+    </div>
+
     <div class="shell">
-      <section class="player" aria-label="播放器">
-        <p class="eyebrow">📻 中文电台</p>
-        <h1>在线收听</h1>
-        <div class="now">
-          <h2 class="station-name" id="stationName">选择一个电台</h2>
-          <p class="station-desc" id="stationDesc">左右滑动浏览频道列表</p>
+      <!-- Player -->
+      <section class="player panel">
+        <div class="now-playing">
+          <div class="station-name" id="stationName">选择频道</div>
+          <div class="station-desc" id="stationDesc">点击右侧列表开始收听</div>
           <div class="status-row">
             <span class="dot" id="statusDot"></span>
-            <span id="statusText">就绪</span>
+            <span id="statusText">待机中</span>
           </div>
         </div>
+
         <div class="controls">
-          <div class="buttons">
-            <button class="primary" id="playBtn" disabled>▶ 播放</button>
-            <button id="pauseBtn" disabled>⏸ 暂停</button>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="playBtn" disabled>▶ PLAY</button>
+            <button class="btn" id="pauseBtn" disabled>⏸ PAUSE</button>
           </div>
-          <label>
-            音量 <span id="volumeText">80%</span>
+          <div class="vol-group">
+            <span class="vol-label">VOL</span>
             <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
-          </label>
+            <span class="vol-value" id="volumeText">80%</span>
+          </div>
         </div>
+
         <audio id="audio" controls preload="none"></audio>
 
-        <!-- Visit Stats -->
+        <!-- Stats -->
         <div class="stats" id="stats">
-          <div>今日访问<br><strong id="todayVisits">-</strong> 次</div>
-          <div>今日访客<br><strong id="todayVisitors">-</strong> 人</div>
-          <div>累计访问<br><strong id="totalVisits">-</strong> 次</div>
+          <div class="stat-item">
+            <div class="stat-label">今日访问</div>
+            <div class="stat-value" id="todayVisits">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">今日访客</div>
+            <div class="stat-value" id="todayVisitors">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">累计</div>
+            <div class="stat-value" id="totalVisits">-</div>
+          </div>
         </div>
 
-        <p class="hint">m3u8 频道通过 HLS.js 播放；个别浏览器可能会因混合内容策略限制 http 音频源。</p>
+        <p class="hint">// HLS(m3u8) 通过 HLS.js 解码 · 部分 HTTP 音源可能被浏览器拦截 · 建议使用 HTTPS 环境下打开</p>
       </section>
 
-      <section class="channels" aria-label="频道列表">
-        <!-- Category Tabs -->
+      <!-- Channels -->
+      <section class="channels-panel panel">
         <div class="tabs" id="tabs"></div>
         <ul class="channel-list" id="channelList"></ul>
       </section>
@@ -326,7 +550,7 @@
   </main>
 
   <script>
-    // ────── Station Data ──────
+    // ── Category defs ──
     const categories = {
       news:    { label: "📡 资讯", cls: "cat-news" },
       music:   { label: "🎵 音乐", cls: "cat-music" },
@@ -334,43 +558,41 @@
       general: { label: "🌐 综合", cls: "cat-general" },
     };
 
+    // ── Stations ──
     const stations = [
-      // ── 资讯 ──
-      { cat: "news", name: "CNR-1 中国之声",        desc: "中央广播电视总台·新闻综合",  url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3" },
-      { cat: "news", name: "CNR-2 经济之声",        desc: "中央广播电视总台·财经新闻",  url: "https://lhttp.qtfm.cn/live/15318318/64k.mp3" },
-      { cat: "news", name: "BBC World Service",     desc: "国际新闻与全球专题 (英语)",  url: "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8" },
-      { cat: "news", name: "轻松调频 CRI EZFM",     desc: "英语资讯与轻松音乐",          url: "https://sk.cri.cn/905.m3u8" },
-      { cat: "news", name: "环球资讯广播",           desc: "国际新闻深度报道",            url: "https://lhttp.qtfm.cn/live/1170/64k.mp3" },
-
-      // ── 音乐 ──
-      { cat: "music", name: "CNR-3 音乐之声",        desc: "流行音乐与音乐资讯",          url: "https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8" },
-      { cat: "music", name: "CNR-15 经典音乐广播",   desc: "经典老歌与怀旧金曲",          url: "https://lhttp.qtfm.cn/live/386/64k.mp3" },
-      { cat: "music", name: "上海动感101",           desc: "上海流行音乐广播",            url: "https://lhttp.qingting.fm/live/274/64k.mp3" },
-      { cat: "music", name: "华语金曲电台",          desc: "经典华语流行音乐",            url: "https://lhttp.qingting.fm/live/5022397/64k.mp3" },
-      { cat: "music", name: "广东音乐之声",          desc: "广东流行音乐频道",            url: "https://lhttp.qtfm.cn/live/1254/64k.mp3" },
-      { cat: "music", name: "深圳飞扬971",          desc: "深圳都市音乐广播",            url: "https://lhttp.qtfm.cn/live/1270/64k.mp3" },
-      { cat: "music", name: "江苏音乐广播",          desc: "江苏音乐与娱乐资讯",          url: "https://lhttp.qtfm.cn/live/4915/64k.mp3" },
-      { cat: "music", name: "浙江音乐调频 968",     desc: "浙江流行音乐广播",            url: "https://lhttp.qtfm.cn/live/4522/64k.mp3" },
-      { cat: "music", name: "天津音乐广播 99",      desc: "天津经典音乐电台",            url: "https://lhttp.qtfm.cn/live/377/64k.mp3" },
-
-      // ── 交通 ──
-      { cat: "traffic", name: "北京交通广播 103.9",  desc: "北京路况信息与出行服务",     url: "https://lhttp.qtfm.cn/live/335/64k.mp3" },
-      { cat: "traffic", name: "上海交通广播 105.7",  desc: "上海交通信息与都市资讯",     url: "https://lhttp.qtfm.cn/live/275/64k.mp3" },
-      { cat: "traffic", name: "深圳交通广播 106.2",  desc: "深圳路况与交通服务",          url: "https://lhttp.qtfm.cn/live/1271/64k.mp3" },
-      { cat: "traffic", name: "中国交通广播",        desc: "全国高速路况与出行指南",     url: "https://lhttp.qtfm.cn/live/4952/64k.mp3" },
-
-      // ── 综合 ──
-      { cat: "general", name: "CNR-5 中华之声",      desc: "对台广播·两岸资讯",           url: "https://lhttp.qtfm.cn/live/15318321/64k.mp3" },
-      { cat: "general", name: "CNR-7 华夏之声",      desc: "粤港澳大湾区资讯",            url: "https://lhttp.qtfm.cn/live/15318323/64k.mp3" },
-      { cat: "general", name: "CRI HIT FM 88.7",    desc: "国际流行音乐 (双语)",          url: "https://sk.cri.cn/887.m3u8" },
+      // 资讯
+      { cat: "news", name: "CNR-1 中国之声",        desc: "中央广播电视总台 · 新闻综合",  url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3" },
+      { cat: "news", name: "CNR-2 经济之声",        desc: "中央广播电视总台 · 财经新闻",  url: "https://lhttp.qtfm.cn/live/15318318/64k.mp3" },
+      { cat: "news", name: "BBC World Service",     desc: "国际新闻与全球专题 (英语)",     url: "https://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/nonuk/sbr_low/ak/bbc_world_service.m3u8" },
+      { cat: "news", name: "轻松调频 CRI EZFM",     desc: "英语资讯与轻松音乐",             url: "https://sk.cri.cn/905.m3u8" },
+      { cat: "news", name: "环球资讯广播",           desc: "国际新闻深度报道",               url: "https://lhttp.qtfm.cn/live/1170/64k.mp3" },
+      // 音乐
+      { cat: "music", name: "CNR-3 音乐之声",        desc: "流行音乐与音乐资讯",             url: "https://satellitepull.cnr.cn/live/wxyyzs/playlist.m3u8" },
+      { cat: "music", name: "CNR-15 经典音乐广播",   desc: "经典老歌与怀旧金曲",             url: "https://lhttp.qtfm.cn/live/386/64k.mp3" },
+      { cat: "music", name: "上海动感101",           desc: "上海流行音乐广播",               url: "https://lhttp.qingting.fm/live/274/64k.mp3" },
+      { cat: "music", name: "华语金曲电台",          desc: "经典华语流行音乐",               url: "https://lhttp.qingting.fm/live/5022397/64k.mp3" },
+      { cat: "music", name: "广东音乐之声",          desc: "广东流行音乐频道",               url: "https://lhttp.qtfm.cn/live/1254/64k.mp3" },
+      { cat: "music", name: "深圳飞扬971",          desc: "深圳都市音乐广播",               url: "https://lhttp.qtfm.cn/live/1270/64k.mp3" },
+      { cat: "music", name: "江苏音乐广播",          desc: "江苏音乐与娱乐资讯",             url: "https://lhttp.qtfm.cn/live/4915/64k.mp3" },
+      { cat: "music", name: "浙江音乐调频 968",     desc: "浙江流行音乐广播",               url: "https://lhttp.qtfm.cn/live/4522/64k.mp3" },
+      { cat: "music", name: "天津音乐广播 99",      desc: "天津经典音乐电台",               url: "https://lhttp.qtfm.cn/live/377/64k.mp3" },
+      // 交通
+      { cat: "traffic", name: "北京交通广播 103.9",  desc: "北京路况信息与出行服务",         url: "https://lhttp.qtfm.cn/live/335/64k.mp3" },
+      { cat: "traffic", name: "上海交通广播 105.7",  desc: "上海交通信息与都市资讯",         url: "https://lhttp.qtfm.cn/live/275/64k.mp3" },
+      { cat: "traffic", name: "深圳交通广播 106.2",  desc: "深圳路况与交通服务",             url: "https://lhttp.qtfm.cn/live/1271/64k.mp3" },
+      { cat: "traffic", name: "中国交通广播",        desc: "全国高速路况与出行指南",         url: "https://lhttp.qtfm.cn/live/4952/64k.mp3" },
+      // 综合
+      { cat: "general", name: "CNR-5 中华之声",      desc: "对台广播 · 两岸资讯",           url: "https://lhttp.qtfm.cn/live/15318321/64k.mp3" },
+      { cat: "general", name: "CNR-7 华夏之声",      desc: "粤港澳大湾区资讯",               url: "https://lhttp.qtfm.cn/live/15318323/64k.mp3" },
+      { cat: "general", name: "CRI HIT FM 88.7",    desc: "国际流行音乐 (双语)",             url: "https://sk.cri.cn/887.m3u8" },
     ];
 
-    // ────── DOM ──────
+    // ── DOM ──
     const audio = document.getElementById("audio");
-    const stationName = document.getElementById("stationName");
-    const stationDesc = document.getElementById("stationDesc");
-    const statusText = document.getElementById("statusText");
-    const statusDot = document.getElementById("statusDot");
+    const elName = document.getElementById("stationName");
+    const elDesc = document.getElementById("stationDesc");
+    const elStatus = document.getElementById("statusText");
+    const elDot = document.getElementById("statusDot");
     const channelList = document.getElementById("channelList");
     const tabsRow = document.getElementById("tabs");
     const playBtn = document.getElementById("playBtn");
@@ -381,22 +603,20 @@
     let hls = null;
     let currentIndex = -1;
     let activeCat = "all";
-    let filteredIndices = [];
 
     function isHls(url) { return /\.m3u8($|\?)/i.test(url); }
 
     function setStatus(text, state) {
-      statusText.textContent = text;
-      statusDot.className = "dot" + (state ? ` ${state}` : "");
+      elStatus.textContent = text;
+      elDot.className = "dot" + (state ? ` ${state}` : "");
     }
 
-    // ────── Category Tabs ──────
+    // ── Tabs ──
     function renderTabs() {
-      const counts = {};
-      counts.all = stations.length;
+      const counts = { all: stations.length };
       stations.forEach(s => { counts[s.cat] = (counts[s.cat] || 0) + 1; });
 
-      let html = `<button class="tab active" data-cat="all">全部<span class="tab-count">${counts.all}</span></button>`;
+      let html = `<button class="tab active" data-cat="all">ALL<span class="tab-count">${counts.all}</span></button>`;
       for (const [key, cat] of Object.entries(categories)) {
         html += `<button class="tab" data-cat="${key}">${cat.label}<span class="tab-count">${counts[key] || 0}</span></button>`;
       }
@@ -406,42 +626,42 @@
         const tab = e.target.closest(".tab");
         if (!tab) return;
         activeCat = tab.dataset.cat;
-        document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === tab));
+        tabsRow.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === tab));
         renderStations();
       });
     }
 
     function renderStations() {
-      filteredIndices = [];
-      const items = stations.map((s, i) => {
-        if (activeCat !== "all" && s.cat !== activeCat) return null;
-        filteredIndices.push(i);
+      const items = [];
+      stations.forEach((s, i) => {
+        if (activeCat !== "all" && s.cat !== activeCat) return;
         const type = isHls(s.url) ? "HLS" : "MP3";
+        const badgeCls = type === "HLS" ? "badge-hls" : "badge-mp3";
         const catInfo = categories[s.cat];
-        return `
+        items.push(`
           <li>
             <button class="channel" type="button" data-index="${i}">
-              <span>
+              <span class="channel-info">
                 <strong>${s.name}</strong>
-                <span>${s.desc}</span>
-                <span class="cat-badge ${catInfo.cls}">${catInfo.label}</span>
+                <span class="ch-desc">${s.desc}</span>
               </span>
-              <span class="badge">${type}</span>
+              <span class="ch-meta">
+                <span class="badge ${badgeCls}">${type}</span>
+                <span class="cat-tag ${catInfo.cls}">${catInfo.label}</span>
+              </span>
             </button>
           </li>
-        `;
-      }).filter(Boolean);
+        `);
+      });
 
-      if (items.length === 0) {
-        channelList.innerHTML = '<li style="padding:24px;color:var(--muted);text-align:center">该分类暂无电台</li>';
-      } else {
-        channelList.innerHTML = items.join("");
-      }
+      channelList.innerHTML = items.length
+        ? items.join("")
+        : '<li style="padding:32px;color:var(--muted);text-align:center;font-size:13px;letter-spacing:1px">// NO STATIONS IN THIS CATEGORY</li>';
       markActive();
     }
 
     function markActive() {
-      document.querySelectorAll(".channel").forEach((btn) => {
+      channelList.querySelectorAll(".channel").forEach(btn => {
         btn.classList.toggle("active", Number(btn.dataset.index) === currentIndex);
       });
     }
@@ -453,9 +673,9 @@
     async function playCurrent() {
       try {
         await audio.play();
-        setStatus("正在播放", "playing");
-      } catch (error) {
-        setStatus("播放被浏览器拦截或音源暂不可用", "error");
+        setStatus("LIVE", "playing");
+      } catch (err) {
+        setStatus("ERR: 播放被拦截", "error");
       }
     }
 
@@ -468,19 +688,19 @@
       audio.removeAttribute("src");
       audio.load();
 
-      stationName.textContent = s.name;
-      stationDesc.textContent = s.desc;
+      elName.textContent = s.name;
+      elDesc.textContent = s.desc;
       playBtn.disabled = false;
       pauseBtn.disabled = false;
-      setStatus("正在连接", "");
+      setStatus("CONNECTING...", "");
 
       if (isHls(s.url) && window.Hls && Hls.isSupported()) {
         hls = new Hls({ enableWorker: true, lowLatencyMode: false });
         hls.loadSource(s.url);
         hls.attachMedia(audio);
         hls.on(Hls.Events.MANIFEST_PARSED, playCurrent);
-        hls.on(Hls.Events.ERROR, (_event, data) => {
-          if (data.fatal) setStatus("HLS 播放失败", "error");
+        hls.on(Hls.Events.ERROR, (_e, d) => {
+          if (d.fatal) setStatus("ERR: HLS 解码失败", "error");
         });
       } else {
         audio.src = s.url;
@@ -488,66 +708,54 @@
       }
     }
 
-    channelList.addEventListener("click", (event) => {
-      const btn = event.target.closest(".channel");
+    channelList.addEventListener("click", (e) => {
+      const btn = e.target.closest(".channel");
       if (!btn) return;
       loadStation(Number(btn.dataset.index));
     });
 
     playBtn.addEventListener("click", playCurrent);
-    pauseBtn.addEventListener("click", () => { audio.pause(); setStatus("已暂停", ""); });
+    pauseBtn.addEventListener("click", () => { audio.pause(); setStatus("PAUSED", ""); });
 
     volume.addEventListener("input", () => {
       audio.volume = Number(volume.value);
       volumeText.textContent = `${Math.round(audio.volume * 100)}%`;
     });
 
-    audio.addEventListener("playing", () => setStatus("正在播放", "playing"));
-    audio.addEventListener("waiting", () => setStatus("缓冲中", ""));
-    audio.addEventListener("pause", () => { if (currentIndex >= 0) setStatus("已暂停", ""); });
-    audio.addEventListener("error", () => setStatus("音源加载失败", "error"));
+    audio.addEventListener("playing", () => setStatus("LIVE", "playing"));
+    audio.addEventListener("waiting", () => setStatus("BUFFERING...", ""));
+    audio.addEventListener("pause", () => { if (currentIndex >= 0) setStatus("PAUSED", ""); });
+    audio.addEventListener("error", () => setStatus("ERR: 音源不可达", "error"));
 
     audio.volume = Number(volume.value);
 
-    // ────── Visitor Stats (localStorage) ──────
+    // ── Stats (localStorage) ──
     function updateStats() {
-      const STORAGE_KEY = "radio_app_stats";
-      const today = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+      const KEY = "***";
+      const today = new Date().toISOString().slice(0, 10);
 
       let data;
-      try {
-        data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      } catch { data = {}; }
+      try { data = JSON.parse(localStorage.getItem(KEY)) || {}; } catch { data = {}; }
 
-      // Initialize visitor ID (per-device unique)
-      if (!data.visitorId) {
-        data.visitorId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
-      }
-
-      // Initialize daily stats
+      if (!data.visitorId) data.visitorId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
       if (!data.days) data.days = {};
 
-      const dayData = data.days[today] || { visits: 0, visitors: [] };
-      dayData.visits += 1;
-      if (!dayData.visitors.includes(data.visitorId)) {
-        dayData.visitors.push(data.visitorId);
-      }
-      data.days[today] = dayData;
+      const day = data.days[today] || { visits: 0, visitors: [] };
+      day.visits += 1;
+      if (!day.visitors.includes(data.visitorId)) day.visitors.push(data.visitorId);
+      data.days[today] = day;
 
-      // Calculate totals
-      let totalVisits = 0;
-      for (const d of Object.values(data.days)) {
-        totalVisits += d.visits || 0;
-      }
+      let total = 0;
+      for (const d of Object.values(data.days)) total += d.visits || 0;
 
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      localStorage.setItem(KEY, JSON.stringify(data));
 
-      document.getElementById("todayVisits").textContent = dayData.visits;
-      document.getElementById("todayVisitors").textContent = dayData.visitors.length;
-      document.getElementById("totalVisits").textContent = totalVisits;
+      document.getElementById("todayVisits").textContent = day.visits;
+      document.getElementById("todayVisitors").textContent = day.visitors.length;
+      document.getElementById("totalVisits").textContent = total;
     }
 
-    // ────── Init ──────
+    // ── Init ──
     renderTabs();
     renderStations();
     updateStats();
