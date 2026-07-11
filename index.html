@@ -68,11 +68,48 @@
       margin-bottom: 32px;
     }
 
-    .avatar {
-      width: clamp(60px, 10vw, 90px);
-      height: auto;
-      margin-bottom: 8px;
-      filter: drop-shadow(0 0 16px rgba(247,211,78,.35));
+    .pixel-radio {
+      position: relative;
+      width: 88px;
+      height: 72px;
+      margin: 14px auto 16px;
+      border: 5px solid #081014;
+      border-radius: 4px;
+      background: #f6c445;
+      box-shadow:
+        0 0 0 3px var(--accent),
+        8px 8px 0 rgba(0, 229, 255, .18),
+        0 0 24px rgba(0, 229, 255, .28);
+      image-rendering: pixelated;
+    }
+
+    .pixel-radio::before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 18px;
+      width: 36px;
+      height: 30px;
+      border: 4px solid #081014;
+      background:
+        linear-gradient(90deg, transparent 5px, #081014 5px 8px, transparent 8px 13px, #081014 13px 16px, transparent 16px 21px, #081014 21px 24px, transparent 24px);
+    }
+
+    .pixel-radio::after {
+      content: "";
+      position: absolute;
+      right: 11px;
+      top: 18px;
+      width: 13px;
+      height: 13px;
+      border: 4px solid #081014;
+      border-radius: 50%;
+      background: #ff4f87;
+      box-shadow:
+        0 25px 0 -2px #00e5ff,
+        -48px -38px 0 -4px #00e5ff,
+        -40px -46px 0 -4px #00e5ff,
+        -32px -54px 0 -4px #00e5ff;
     }
 
     .scanline-text {
@@ -499,30 +536,7 @@
   <main>
     <!-- Header -->
     <div class="header">
-      <svg class="avatar" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-        <!-- face -->
-        <ellipse cx="60" cy="65" rx="50" ry="48" fill="#F7D34E" stroke="#D4A017" stroke-width="3"/>
-        <!-- cheeks -->
-        <circle cx="24" cy="72" r="10" fill="#FF6B4A" opacity=".85"/>
-        <circle cx="96" cy="72" r="10" fill="#FF6B4A" opacity=".85"/>
-        <!-- ears -->
-        <ellipse cx="16" cy="18" rx="16" ry="28" fill="#F7D34E" stroke="#D4A017" stroke-width="3" transform="rotate(-18 16 18)"/>
-        <ellipse cx="104" cy="18" rx="16" ry="28" fill="#F7D34E" stroke="#D4A017" stroke-width="3" transform="rotate(18 104 18)"/>
-        <!-- ear tips (black) -->
-        <ellipse cx="16" cy="-2" rx="9" ry="12" fill="#222" transform="rotate(-18 16 -2)"/>
-        <ellipse cx="104" cy="-2" rx="9" ry="12" fill="#222" transform="rotate(18 104 -2)"/>
-        <!-- eyes -->
-        <circle cx="43" cy="52" r="7" fill="#222"/>
-        <circle cx="77" cy="52" r="7" fill="#222"/>
-        <circle cx="45" cy="50" r="2.5" fill="#fff"/>
-        <circle cx="79" cy="50" r="2.5" fill="#fff"/>
-        <!-- nose -->
-        <ellipse cx="60" cy="62" rx="3" ry="2" fill="#222"/>
-        <!-- mouth -->
-        <path d="M50 70 Q60 80 70 70" fill="none" stroke="#222" stroke-width="2.5" stroke-linecap="round"/>
-        <!-- top head highlight -->
-        <ellipse cx="60" cy="38" rx="30" ry="12" fill="rgba(255,255,255,.2)"/>
-      </svg>
+      <div class="pixel-radio" role="img" aria-label="像素风网络收音机"></div>
       <div class="scanline-text">⚡ 小伟的快乐加油站</div>
       <div class="subtitle">XIAOWEI'S HAPPY FUEL STATION</div>
     </div>
@@ -607,6 +621,7 @@
       { cat: "music", name: "江苏音乐广播",          desc: "江苏音乐与娱乐资讯",             url: "https://lhttp.qtfm.cn/live/4915/64k.mp3" },
       { cat: "music", name: "浙江音乐调频 968",     desc: "浙江流行音乐广播",               url: "https://lhttp.qtfm.cn/live/4522/64k.mp3" },
       { cat: "music", name: "天津音乐广播 99",      desc: "天津经典音乐电台",               url: "https://lhttp.qingting.fm/live/5022062/64k.mp3" },
+      { cat: "music", name: "Radio Paradise",       desc: "人工编排 · 世界音乐 / 摇滚 / 民谣", url: "https://stream.radioparadise.com/aac-320" },
       // 交通
       { cat: "traffic", name: "北京交通广播 103.9",  desc: "北京路况信息与出行服务",         url: "https://lhttp.qtfm.cn/live/335/64k.mp3" },
       { cat: "traffic", name: "上海交通广播 105.7",  desc: "上海交通信息与都市资讯",         url: "https://lhttp.qtfm.cn/live/275/64k.mp3" },
