@@ -250,6 +250,40 @@
     .metric strong { display: block; margin-bottom: 3px; color: var(--accent); font-size: 19px; }
     .metric span { color: var(--muted); font-size: 11px; }
 
+    .access-record {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+    }
+
+    .access-record-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 0 9px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 750;
+    }
+
+    .local-badge {
+      padding: 3px 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 650;
+    }
+
+    .access-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .access-stats .metric strong { color: var(--success); }
+
     .shortcut-hint {
       margin: 16px 0 0;
       color: var(--muted);
@@ -528,6 +562,18 @@
           <div class="metric"><strong id="currentFormat">--</strong><span>当前格式</span></div>
         </div>
 
+        <section class="access-record" aria-labelledby="accessRecordTitle">
+          <h3 class="access-record-title" id="accessRecordTitle">
+            <span>设备访问记录</span>
+            <span class="local-badge">仅保存在本机浏览器</span>
+          </h3>
+          <div class="access-stats">
+            <div class="metric"><strong id="todayVisits">-</strong><span>今日访问</span></div>
+            <div class="metric"><strong id="todayVisitors">-</strong><span>今日设备</span></div>
+            <div class="metric"><strong id="totalVisits">-</strong><span>累计访问</span></div>
+          </div>
+        </section>
+
         <p class="shortcut-hint">快捷键：空格播放/暂停 · ←/→ 切台 · / 搜索</p>
         <audio id="audio" preload="none"></audio>
       </section>
@@ -610,6 +656,7 @@
     const FAVORITES_KEY = "xiaowei-radio-favorites-v2";
     const RECENTS_KEY = "xiaowei-radio-recents-v2";
     const VOLUME_KEY = "xiaowei-radio-volume-v2";
+    const ACCESS_STATS_KEY = "***";
 
     const audio = document.getElementById("audio");
     const channelList = document.getElementById("channelList");
@@ -660,6 +707,36 @@
       document.getElementById("stationTotal").textContent = stations.length;
       document.getElementById("favoriteTotal").textContent = favorites.length;
       document.getElementById("currentFormat").textContent = currentIndex >= 0 ? stationFormat(stations[currentIndex]) : "--";
+    }
+
+    function updateAccessStats() {
+      const now = new Date();
+      const today = [
+        now.getFullYear(),
+        String(now.getMonth() + 1).padStart(2, "0"),
+        String(now.getDate()).padStart(2, "0"),
+      ].join("-");
+
+      let data;
+      try { data = JSON.parse(localStorage.getItem(ACCESS_STATS_KEY)) || {}; } catch { data = {}; }
+
+      if (!data.visitorId) {
+        data.visitorId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+      }
+      if (!data.days) data.days = {};
+
+      const day = data.days[today] || { visits: 0, visitors: [] };
+      day.visits += 1;
+      if (!Array.isArray(day.visitors)) day.visitors = [];
+      if (!day.visitors.includes(data.visitorId)) day.visitors.push(data.visitorId);
+      data.days[today] = day;
+
+      const totalVisits = Object.values(data.days).reduce((total, item) => total + (Number(item.visits) || 0), 0);
+      localStorage.setItem(ACCESS_STATS_KEY, JSON.stringify(data));
+
+      document.getElementById("todayVisits").textContent = day.visits;
+      document.getElementById("todayVisitors").textContent = day.visitors.length;
+      document.getElementById("totalVisits").textContent = totalVisits;
     }
 
     function renderTabs() {
@@ -898,6 +975,7 @@
     renderTabs();
     renderStations();
     updateMetrics();
+    updateAccessStats();
   </script>
 </body>
 </html>
