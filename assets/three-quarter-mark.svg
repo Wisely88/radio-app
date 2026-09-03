@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="3/4梦想电台">
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#F5A623" stroke-width="5" stroke-linecap="round" stroke-dasharray="108.4 36.1" transform="rotate(-90 32 32)"/>
+  <circle cx="32" cy="32" r="5" fill="#F5A623"/>
+  <circle cx="32" cy="32" r="13" fill="none" stroke="#F0F0F0" stroke-opacity=".2" stroke-width="1"/>
+</svg>
