@@ -617,13 +617,13 @@
 
         <section class="access-record" aria-labelledby="accessRecordTitle">
           <h3 class="access-record-title" id="accessRecordTitle">
-            <span>设备访问记录</span>
+            <span>本机使用记录</span>
             <span class="local-badge">仅保存在本机浏览器</span>
           </h3>
           <div class="access-stats">
-            <div class="metric"><strong id="todayVisits">-</strong><span>今日访问</span></div>
-            <div class="metric"><strong id="todayVisitors">-</strong><span>今日设备</span></div>
-            <div class="metric"><strong id="totalVisits">-</strong><span>累计访问</span></div>
+            <div class="metric"><strong id="todayOpens">-</strong><span>今日打开</span></div>
+            <div class="metric"><strong id="todayPlays">-</strong><span>今日播放</span></div>
+            <div class="metric"><strong id="totalPlays">-</strong><span>累计播放</span></div>
           </div>
         </section>
 
@@ -734,7 +734,8 @@
     const RECENTS_KEY = "xiaowei-radio-recents-v2";
     const VOLUME_KEY = "xiaowei-radio-volume-v2";
     const SLEEP_TIMER_KEY = "xiaowei-radio-sleep-timer-v1";
-    const ACCESS_STATS_KEY = "***";
+    const USAGE_STATS_KEY = "xiaowei-radio-usage-v1";
+    const PAGE_SESSION_KEY = "xiaowei-radio-page-session-v1";
 
     const audio = document.getElementById("audio");
     const channelList = document.getElementById("channelList");
@@ -757,6 +758,7 @@
     let sleepTimerInterval = null;
     let sleepTimerDeadline = 0;
     let sleepTimerExpired = false;
+    let pendingPlayRecord = false;
     let favorites = loadStoredArray(FAVORITES_KEY);
     let recents = loadStoredArray(RECENTS_KEY);
 
@@ -836,34 +838,57 @@
       document.getElementById("currentFormat").textContent = currentIndex >= 0 ? stationFormat(stations[currentIndex]) : "--";
     }
 
-    function updateAccessStats() {
+    function todayKey() {
       const now = new Date();
-      const today = [
+      return [
         now.getFullYear(),
         String(now.getMonth() + 1).padStart(2, "0"),
         String(now.getDate()).padStart(2, "0"),
       ].join("-");
+    }
 
-      let data;
-      try { data = JSON.parse(localStorage.getItem(ACCESS_STATS_KEY)) || {}; } catch { data = {}; }
+    function loadUsageStats() {
+      try {
+        const data = JSON.parse(localStorage.getItem(USAGE_STATS_KEY));
+        if (data && typeof data === "object" && data.days && typeof data.days === "object") return data;
+      } catch {}
+      return { days: {}, totalPlays: 0 };
+    }
 
-      if (!data.visitorId) {
-        data.visitorId = crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2);
+    function renderUsageStats(data) {
+      const day = data.days[todayKey()] || {};
+      document.getElementById("todayOpens").textContent = Number(day.opens) || 0;
+      document.getElementById("todayPlays").textContent = Number(day.plays) || 0;
+      document.getElementById("totalPlays").textContent = Number(data.totalPlays) || 0;
+    }
+
+    function registerPageOpen() {
+      const today = todayKey();
+      const data = loadUsageStats();
+      const day = data.days[today] || { opens: 0, plays: 0 };
+
+      if (sessionStorage.getItem(PAGE_SESSION_KEY) !== today) {
+        day.opens = (Number(day.opens) || 0) + 1;
+        sessionStorage.setItem(PAGE_SESSION_KEY, today);
       }
-      if (!data.days) data.days = {};
 
-      const day = data.days[today] || { visits: 0, visitors: [] };
-      day.visits += 1;
-      if (!Array.isArray(day.visitors)) day.visitors = [];
-      if (!day.visitors.includes(data.visitorId)) day.visitors.push(data.visitorId);
       data.days[today] = day;
+      localStorage.setItem(USAGE_STATS_KEY, JSON.stringify(data));
+      renderUsageStats(data);
+    }
 
-      const totalVisits = Object.values(data.days).reduce((total, item) => total + (Number(item.visits) || 0), 0);
-      localStorage.setItem(ACCESS_STATS_KEY, JSON.stringify(data));
+    function recordSuccessfulPlay() {
+      if (!pendingPlayRecord) return;
+      pendingPlayRecord = false;
 
-      document.getElementById("todayVisits").textContent = day.visits;
-      document.getElementById("todayVisitors").textContent = day.visitors.length;
-      document.getElementById("totalVisits").textContent = totalVisits;
+      const today = todayKey();
+      const data = loadUsageStats();
+      const day = data.days[today] || { opens: 0, plays: 0 };
+      day.plays = (Number(day.plays) || 0) + 1;
+      data.days[today] = day;
+      data.totalPlays = (Number(data.totalPlays) || 0) + 1;
+      localStorage.setItem(USAGE_STATS_KEY, JSON.stringify(data));
+      renderUsageStats(data);
     }
 
     function renderTabs() {
@@ -979,6 +1004,7 @@
       audio.pause();
       audio.removeAttribute("src");
       audio.load();
+      pendingPlayRecord = true;
       setStatus("连接中", "loading");
 
       if (isHls(station.url) && window.Hls && Hls.isSupported()) {
@@ -1071,6 +1097,7 @@
     });
 
     audio.addEventListener("playing", () => {
+      recordSuccessfulPlay();
       setStatus("直播中", "playing");
       playToggleBtn.textContent = "⏸ 暂停";
     });
@@ -1129,7 +1156,7 @@
     renderTabs();
     renderStations();
     updateMetrics();
-    updateAccessStats();
+    registerPageOpen();
   </script>
 </body>
 </html>
