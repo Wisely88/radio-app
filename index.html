@@ -232,6 +232,47 @@
 
     input[type="range"] { width: 100%; accent-color: var(--accent); }
 
+    .timer-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 9px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .timer-select {
+      width: 100%;
+      min-height: 38px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: var(--panel-2);
+    }
+
+    .timer-btn {
+      min-width: 78px;
+      min-height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      background: var(--panel-2);
+      cursor: pointer;
+    }
+
+    .timer-btn:hover { border-color: var(--accent); background: var(--panel-3); }
+
+    .timer-status {
+      grid-column: 2 / 4;
+      min-height: 18px;
+      color: var(--muted);
+    }
+
+    .timer-status.active { color: var(--warning); }
+
     .format-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -556,6 +597,18 @@
           <strong id="volumeText">80%</strong>
         </div>
 
+        <div class="timer-row">
+          <label for="sleepTimerSelect">睡眠定时</label>
+          <select class="timer-select" id="sleepTimerSelect">
+            <option value="15">15 分钟</option>
+            <option value="30" selected>30 分钟</option>
+            <option value="60">60 分钟</option>
+            <option value="90">90 分钟</option>
+          </select>
+          <button class="timer-btn" id="sleepTimerBtn" type="button">⏱ 启动</button>
+          <span class="timer-status" id="sleepTimerStatus" aria-live="polite">未设置</span>
+        </div>
+
         <div class="format-stats" aria-label="频道概览">
           <div class="metric"><strong id="stationTotal">0</strong><span>全部频道</span></div>
           <div class="metric"><strong id="favoriteTotal">0</strong><span>我的收藏</span></div>
@@ -640,7 +693,7 @@
       { cat: "music", region: "北京", name: "北京音乐广播 FM97.4", desc: "北京经典流行音乐电台", url: "https://lhttp.qingting.fm/live/332/64k.mp3" },
       { cat: "music", region: "上海", name: "上海动感101", desc: "上海流行音乐广播", url: "https://lhttp.qingting.fm/live/274/64k.mp3" },
       { cat: "music", region: "华语", name: "华语金曲电台", desc: "经典华语流行音乐", url: "https://lhttp.qingting.fm/live/5022397/64k.mp3" },
-      { cat: "music", region: "广东", name: "广东音乐之声", desc: "广东流行音乐频道", url: "https://lhttp.qtfm.cn/live/1254/64k.mp3" },
+      { cat: "music", region: "广东", name: "广东音乐之声", desc: "广东流行音乐频道", url: "https://lhttp.qtfm.cn/live/1260/64k.mp3" },
       { cat: "music", region: "深圳", name: "深圳飞扬971", desc: "深圳都市音乐广播", url: "https://lhttp.qtfm.cn/live/1270/64k.mp3" },
       { cat: "music", region: "江苏", name: "江苏音乐广播", desc: "江苏音乐与娱乐资讯", url: "https://lhttp.qtfm.cn/live/4915/64k.mp3" },
       { cat: "music", region: "浙江", name: "浙江音乐调频968", desc: "浙江流行音乐广播", url: "https://lhttp.qtfm.cn/live/4522/64k.mp3" },
@@ -651,11 +704,27 @@
       { cat: "general", region: "全国", name: "CNR-5 中华之声", desc: "两岸资讯与文化节目", url: "https://lhttp.qingting.fm/live/4976/64k.mp3" },
       { cat: "general", region: "湾区", name: "CNR-7 华夏之声", desc: "粤港澳大湾区资讯", url: "https://lhttp.qingting.fm/live/5022025/64k.mp3" },
       { cat: "general", region: "国际", name: "CRI HIT FM 88.7", desc: "国际流行音乐（双语）", url: "https://lhttp.qingting.fm/live/1161/64k.mp3" },
+
+      // 扩充频道（统一追加，保持既有收藏索引兼容）
+      { cat: "news", region: "国际", name: "REPLAY NEWS 中文", desc: "每五分钟更新的中文国际新闻", url: "https://replaynewszh.ice.infomaniak.ch/replaynewszh-128.mp3" },
+      { cat: "news", region: "国际", name: "CGTN Radio", desc: "中国国际电视台英语新闻广播", url: "https://sk.cri.cn/am846.m3u8" },
+      { cat: "news", region: "广东", name: "广东新闻广播", desc: "广东新闻、民生与公共资讯", url: "https://lhttp.qtfm.cn/live/1254/64k.mp3" },
+      { cat: "news", region: "上海", name: "上海第一财经 FM90.9", desc: "财经资讯、市场与商业报道", url: "https://lhttp-hw.qtfm.cn/live/276/64k.mp3" },
+      { cat: "news", region: "广东", name: "广东珠江经济台", desc: "粤语财经、生活与城市资讯", url: "https://lhttp.qtfm.cn/live/1259/64k.mp3" },
+      { cat: "traffic", region: "广东", name: "茂名交通广播", desc: "茂名路况、交通与本地服务", url: "https://lhttp.qingting.fm/live/20211574/64k.mp3" },
+      { cat: "music", region: "上海", name: "上海经典947", desc: "古典音乐与艺术赏析", url: "https://lhttp.qingting.fm/live/267/64k.mp3" },
+      { cat: "music", region: "上海", name: "上海经典金曲 FM103.7", desc: "经典华语与怀旧流行音乐", url: "https://lhttp-hw.qtfm.cn/live/273/64k.mp3" },
+      { cat: "music", region: "江苏", name: "江苏经典流行音乐广播", desc: "经典流行与华语金曲", url: "https://lhttp.qtfm.cn/live/4938/64k.mp3" },
+      { cat: "music", region: "华语", name: "CityFM 城市音乐台", desc: "都市流行音乐与轻松陪伴", url: "https://lhttp.qtfm.cn/live/20500153/64k.mp3" },
+      { cat: "music", region: "国际", name: "华夏古典音乐", desc: "中国传统器乐与古典音乐", url: "https://radio.chinesemusicworld.com/chinesemusic.mp3" },
+      { cat: "general", region: "北京", name: "北京文艺广播", desc: "文化、文艺与城市生活节目", url: "https://lhttp.qtfm.cn/live/333/64k.mp3" },
+      { cat: "general", region: "安徽", name: "安徽小说评书广播", desc: "小说、评书与声音故事", url: "https://lhttp.qtfm.cn/live/1951/64k.mp3" },
     ];
 
     const FAVORITES_KEY = "xiaowei-radio-favorites-v2";
     const RECENTS_KEY = "xiaowei-radio-recents-v2";
     const VOLUME_KEY = "xiaowei-radio-volume-v2";
+    const SLEEP_TIMER_KEY = "xiaowei-radio-sleep-timer-v1";
     const ACCESS_STATS_KEY = "***";
 
     const audio = document.getElementById("audio");
@@ -667,12 +736,18 @@
     const nextBtn = document.getElementById("nextBtn");
     const volume = document.getElementById("volume");
     const volumeText = document.getElementById("volumeText");
+    const sleepTimerSelect = document.getElementById("sleepTimerSelect");
+    const sleepTimerBtn = document.getElementById("sleepTimerBtn");
+    const sleepTimerStatus = document.getElementById("sleepTimerStatus");
     const toast = document.getElementById("toast");
 
     let hls = null;
     let currentIndex = -1;
     let activeCat = "all";
     let toastTimer = null;
+    let sleepTimerInterval = null;
+    let sleepTimerDeadline = 0;
+    let sleepTimerExpired = false;
     let favorites = loadStoredArray(FAVORITES_KEY);
     let recents = loadStoredArray(RECENTS_KEY);
 
@@ -701,6 +776,49 @@
       toast.classList.add("show");
       window.clearTimeout(toastTimer);
       toastTimer = window.setTimeout(() => toast.classList.remove("show"), 1800);
+    }
+
+    function formatRemaining(milliseconds) {
+      const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    }
+
+    function clearSleepTimer(notify = false) {
+      window.clearInterval(sleepTimerInterval);
+      sleepTimerInterval = null;
+      sleepTimerDeadline = 0;
+      localStorage.removeItem(SLEEP_TIMER_KEY);
+      sleepTimerStatus.textContent = "未设置";
+      sleepTimerStatus.classList.remove("active");
+      sleepTimerBtn.textContent = "⏱ 启动";
+      if (notify) showToast("睡眠定时已取消");
+    }
+
+    function updateSleepTimer() {
+      const remaining = sleepTimerDeadline - Date.now();
+      if (remaining <= 0) {
+        clearSleepTimer(false);
+        sleepTimerExpired = true;
+        audio.pause();
+        setStatus("定时结束");
+        playToggleBtn.textContent = "▶ 继续播放";
+        showToast("睡眠定时结束，播放已停止");
+        return;
+      }
+      sleepTimerStatus.textContent = `剩余 ${formatRemaining(remaining)} 后停止播放`;
+      sleepTimerStatus.classList.add("active");
+    }
+
+    function startSleepTimer(minutes, restoredDeadline = 0) {
+      window.clearInterval(sleepTimerInterval);
+      sleepTimerDeadline = restoredDeadline || Date.now() + minutes * 60 * 1000;
+      localStorage.setItem(SLEEP_TIMER_KEY, JSON.stringify({ minutes, deadline: sleepTimerDeadline }));
+      sleepTimerSelect.value = String(minutes);
+      sleepTimerBtn.textContent = "取消定时";
+      updateSleepTimer();
+      sleepTimerInterval = window.setInterval(updateSleepTimer, 1000);
     }
 
     function updateMetrics() {
@@ -921,6 +1039,21 @@
     playToggleBtn.addEventListener("click", togglePlayback);
     prevBtn.addEventListener("click", () => stepStation(-1));
     nextBtn.addEventListener("click", () => stepStation(1));
+    sleepTimerBtn.addEventListener("click", () => {
+      if (sleepTimerDeadline) {
+        clearSleepTimer(true);
+        return;
+      }
+      const minutes = Number(sleepTimerSelect.value);
+      startSleepTimer(minutes);
+      showToast(`已设置 ${minutes} 分钟睡眠定时`);
+    });
+    sleepTimerSelect.addEventListener("change", () => {
+      if (!sleepTimerDeadline) return;
+      const minutes = Number(sleepTimerSelect.value);
+      startSleepTimer(minutes);
+      showToast(`睡眠定时已更新为 ${minutes} 分钟`);
+    });
 
     volume.addEventListener("input", () => {
       audio.volume = Number(volume.value);
@@ -935,7 +1068,8 @@
     audio.addEventListener("waiting", () => setStatus("缓冲中", "loading"));
     audio.addEventListener("pause", () => {
       if (currentIndex < 0) return;
-      setStatus("已暂停");
+      setStatus(sleepTimerExpired ? "定时结束" : "已暂停");
+      sleepTimerExpired = false;
       playToggleBtn.textContent = "▶ 继续播放";
     });
     audio.addEventListener("error", () => {
@@ -971,6 +1105,17 @@
     }
     audio.volume = Number(volume.value);
     volumeText.textContent = `${Math.round(audio.volume * 100)}%`;
+
+    try {
+      const storedTimer = JSON.parse(localStorage.getItem(SLEEP_TIMER_KEY));
+      if (storedTimer && Number(storedTimer.deadline) > Date.now()) {
+        startSleepTimer(Number(storedTimer.minutes) || 30, Number(storedTimer.deadline));
+      } else {
+        localStorage.removeItem(SLEEP_TIMER_KEY);
+      }
+    } catch {
+      localStorage.removeItem(SLEEP_TIMER_KEY);
+    }
 
     renderTabs();
     renderStations();
