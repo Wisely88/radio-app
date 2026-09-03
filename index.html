@@ -663,6 +663,7 @@
       traffic: { label: "交通", icon: "🚗" },
       music:   { label: "音乐", icon: "🎵" },
       general: { label: "综合", icon: "🌐" },
+      audio:   { label: "有声", icon: "📖" },
     };
 
     const stations = [
@@ -719,6 +720,14 @@
       { cat: "music", region: "国际", name: "华夏古典音乐", desc: "中国传统器乐与古典音乐", url: "https://radio.chinesemusicworld.com/chinesemusic.mp3" },
       { cat: "general", region: "北京", name: "北京文艺广播", desc: "文化、文艺与城市生活节目", url: "https://lhttp.qtfm.cn/live/333/64k.mp3" },
       { cat: "general", region: "安徽", name: "安徽小说评书广播", desc: "小说、评书与声音故事", url: "https://lhttp.qtfm.cn/live/1951/64k.mp3" },
+
+      // 有声内容（统一追加，保持既有收藏索引兼容）
+      { cat: "audio", region: "上海", name: "阿基米德故事会", desc: "故事、广播剧与声音节目", url: "https://lhttp.qtfm.cn/live/20500182/64k.mp3" },
+      { cat: "audio", region: "山东", name: "济南故事广播", desc: "文学故事、文化与科普节目", url: "https://lhttp.qtfm.cn/live/1672/64k.mp3" },
+      { cat: "audio", region: "河北", name: "河北故事广播", desc: "故事、文化与生活节目", url: "https://radio.pull.hebtv.com/live/hebjj.m3u8" },
+      { cat: "audio", region: "河北", name: "衡水交通评书广播", desc: "传统评书、故事与交通服务", url: "https://lhttp.qtfm.cn/live/5021940/64k.mp3" },
+      { cat: "audio", region: "四川", name: "成都故事广播", desc: "城市故事、文化与声音陪伴", url: "https://lhttp-hw.qtfm.cn/live/5022004/64k.mp3" },
+      { cat: "audio", region: "华语", name: "德云社相声合集", desc: "传统相声连续播放", url: "https://stream.zeno.fm/yqawwmweq8mtv" },
     ];
 
     const FAVORITES_KEY = "xiaowei-radio-favorites-v2";
