@@ -1,0 +1,14 @@
+[
+  {"id": "story-fm", "feed": "https://feeds.storyfm.cn/storyfm.xml"},
+  {"id": "shengdongjixi", "feed": "https://feeds.fireside.fm/shengdongjixi/rss"},
+  {"id": "huzuohuyou", "feed": "https://feed.xyzfm.space/cv4bkgpuglwp"},
+  {"id": "ritanwuyu", "feed": "https://feed.xyzfm.space/87x9n4x77fpy"},
+  {"id": "wenhuayouxian", "feed": "https://s1.proxy.wavpub.com/weknownothing.xml"},
+  {"id": "buheshiyi", "feed": "https://feed.xyzfm.space/ww7cqnybekty"},
+  {"id": "zonghengsihai", "feed": "https://www.ximalaya.com/album/67531569.xml"},
+  {"id": "business-is-like-this", "feed": "https://www.ximalaya.com/album/46587439.xml"},
+  {"id": "dive-in", "feed": "https://feeds.storyfm.cn/dive-in.xml"},
+  {"id": "name-the-question", "feed": "https://feed.xyzfm.space/veblnumvyghb"},
+  {"id": "mianji", "feed": "https://feed.xyzfm.space/6hpdgggtxpxb"},
+  {"id": "beyond-football", "feed": "https://s1.proxy.wavpub.com/beyondfootball.xml"}
+]

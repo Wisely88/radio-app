@@ -323,6 +323,10 @@
     .section-heading h2 { margin: 0; font-size: 30px; font-weight: 650; }
     .section-heading > span { color: var(--weak); font-family: Georgia, "Times New Roman", serif; font-size: 12px; }
 
+    .content-modes { width: fit-content; display: flex; gap: 4px; margin: 0 0 22px; padding: 4px; border: 1px solid var(--line); border-radius: 8px; background: rgba(34, 34, 58, .62); }
+    .content-mode { min-height: 40px; padding: 0 16px; border: 0; border-radius: 6px; color: var(--muted); background: transparent; cursor: pointer; font-size: 12px; font-weight: 760; }
+    .content-mode.active { color: #251704; background: var(--accent); }
+
     .now-card {
       position: relative;
       top: auto;
@@ -375,6 +379,7 @@
     }
 
     .vinyl img { width: 76px; height: 76px; opacity: .3; }
+    .vinyl.on-demand-cover img { width: 126px; height: 126px; border-radius: 50%; object-fit: cover; opacity: .92; }
     .vinyl.playing, .mini-disc.playing { animation: vinyl-spin 15s linear infinite; }
 
     @keyframes vinyl-spin { to { transform: rotate(360deg); } }
@@ -432,6 +437,15 @@
     .btn-primary:hover:not(:disabled) { color: #251704; background: #ffc158; }
 
     .shortcut-hint { margin: 16px 0 0; color: var(--weak); font-size: 10px; line-height: 1.5; }
+
+    .on-demand-tools { margin-top: 16px; }
+    .on-demand-tools[hidden] { display: none; }
+    .progress-row { display: grid; grid-template-columns: 42px minmax(0, 1fr) 42px; align-items: center; gap: 9px; color: var(--weak); font-size: 9px; }
+    .progress-row input { width: 100%; }
+    .seek-controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 10px; }
+    .seek-controls button,
+    .speed-select { min-height: 36px; padding: 0 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(26, 26, 46, .72); cursor: pointer; font-size: 11px; }
+    .seek-controls button:hover { border-color: rgba(245, 166, 35, .42); color: var(--accent); }
 
     .player-options {
       padding-left: 28px;
@@ -619,6 +633,33 @@
 
     .empty-state { min-height: 280px; display: grid; grid-column: 1 / -1; place-items: center; padding: 30px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(34, 34, 58, .4); text-align: center; line-height: 1.7; }
 
+    .on-demand-panel { min-width: 0; margin-top: 76px; }
+    .on-demand-panel[hidden], .catalog-detail[hidden] { display: none; }
+    .catalog-status { margin: 0 0 18px; color: var(--weak); font-size: 11px; }
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+    .catalog-card { min-width: 0; min-height: 106px; display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 13px; align-items: center; padding: 13px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: rgba(34, 34, 58, .68); text-align: left; cursor: pointer; transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+    .catalog-card:hover { transform: translateY(-3px); border-color: rgba(245, 166, 35, .3); background: rgba(36, 36, 62, .92); }
+    .catalog-card.active { border-color: rgba(245, 166, 35, .55); background: rgba(245, 166, 35, .06); }
+    .catalog-cover { width: 72px; height: 72px; border-radius: 6px; object-fit: cover; background: var(--panel-3); }
+    .catalog-card strong, .catalog-card span { display: block; overflow: hidden; text-overflow: ellipsis; }
+    .catalog-card strong { font-size: 13px; line-height: 1.4; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+    .catalog-card span { margin-top: 7px; color: var(--muted); font-size: 10px; white-space: nowrap; }
+    .catalog-detail { margin-top: 34px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .detail-head { display: grid; grid-template-columns: 126px minmax(0, 1fr); gap: 22px; align-items: start; margin-bottom: 22px; }
+    .detail-head img { width: 126px; aspect-ratio: 1; border-radius: 8px; object-fit: cover; background: var(--panel-3); }
+    .detail-head h3 { margin: 2px 0 8px; font-size: 23px; }
+    .detail-meta { color: var(--accent); font-size: 11px; font-weight: 750; }
+    .detail-description { max-width: 760px; margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .detail-source { display: inline-block; margin-top: 12px; color: var(--weak); font-size: 10px; text-decoration: underline; text-underline-offset: 3px; }
+    .episode-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .episode-button { width: 100%; min-height: 64px; display: grid; grid-template-columns: 38px minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; color: var(--text); background: rgba(34, 34, 58, .52); text-align: left; cursor: pointer; }
+    .episode-button:hover, .episode-button.active { border-color: rgba(245, 166, 35, .38); background: rgba(245, 166, 35, .055); }
+    .episode-number { color: var(--accent); font-size: 11px; font-weight: 800; text-align: center; }
+    .episode-copy { min-width: 0; }
+    .episode-copy strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
+    .episode-copy span { display: block; margin-top: 5px; overflow: hidden; color: var(--weak); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+    .episode-duration { color: var(--muted); font-size: 10px; white-space: nowrap; }
+
     .site-footer {
       width: min(1280px, calc(100% - 40px));
       min-height: 220px;
@@ -714,6 +755,7 @@
     .live-track::after { content: "LIVE SIGNAL"; }
     .live-track.active { color: var(--accent); }
     .live-track.active::before { background: var(--accent); animation: live-breathe 2s ease-in-out infinite; box-shadow: 0 0 9px rgba(245, 166, 35, .42); }
+    .live-track.on-demand::after { content: "ON DEMAND"; }
 
     @keyframes live-breathe { 50% { opacity: .42; } }
 
@@ -780,6 +822,8 @@
       .player-options > * + * { margin-top: 14px; }
       .access-record { padding-top: 14px; border-top: 1px solid var(--line); }
       .channels-panel { margin-top: 56px; }
+      .on-demand-panel { margin-top: 56px; }
+      .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .list-header { padding: 0; }
       .channel-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 0; }
       .channel { padding: 15px 38px 14px 13px; }
@@ -820,6 +864,11 @@
       .timer-row { grid-template-columns: auto minmax(0, 1fr) 62px; }
       .timer-btn { min-width: 62px; padding: 0 8px; }
       .channel-list { grid-template-columns: 1fr; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .detail-head { grid-template-columns: 88px minmax(0, 1fr); gap: 14px; }
+      .detail-head img { width: 88px; }
+      .detail-head h3 { font-size: 19px; }
+      .episode-button { grid-template-columns: 32px minmax(0, 1fr) auto; }
       .channel-row { min-height: 124px; }
       .channel { min-height: 122px; }
       .list-title-row p { display: block; }
@@ -833,6 +882,7 @@
     body.drive-mode { min-height: 100dvh; padding-bottom: 0; overflow: hidden; }
     .drive-mode .hero,
     .drive-mode .section-heading,
+    .drive-mode .content-modes,
     .drive-mode .player-options,
     .drive-mode .list-title-row,
     .drive-mode .search-wrap,
@@ -862,6 +912,19 @@
     .drive-mode .main-control { grid-template-columns: 68px minmax(150px, 1fr) 68px; clear: both; gap: 12px; margin-top: 20px; }
     .drive-mode .main-control .btn { min-height: 68px; font-size: 20px; }
     .drive-mode .channels-panel { min-height: 0; margin-top: 0; }
+    .drive-mode .on-demand-panel { min-height: 0; margin-top: 0; overflow-y: auto; }
+    .drive-mode .on-demand-panel .list-title-row,
+    .drive-mode .catalog-status { display: none; }
+    .drive-mode .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+    .drive-mode .catalog-card { min-height: 94px; grid-template-columns: 58px minmax(0, 1fr); }
+    .drive-mode .catalog-cover { width: 58px; height: 58px; }
+    .drive-mode .catalog-detail { margin-top: 18px; padding-top: 16px; }
+    .drive-mode .detail-head { display: none; }
+    .drive-mode .episode-list { max-height: calc(100dvh - 170px); overflow-y: auto; }
+    .drive-mode.on-demand-playing .vinyl-stage,
+    .drive-mode.on-demand-playing .catalog-grid { display: none; }
+    .drive-mode.on-demand-playing .catalog-detail { margin-top: 0; padding-top: 0; border-top: 0; }
+    .drive-mode.on-demand-playing .now-playing { min-height: 168px; }
     .drive-mode .list-header { position: static; margin: 0; padding: 0; border: 0; background: transparent; backdrop-filter: none; }
     .drive-mode .tabs { padding: 0 0 10px; }
     .drive-mode .tab { min-height: 50px; padding: 0 16px; font-size: 14px; }
@@ -882,6 +945,7 @@
       .drive-mode .main-control { grid-template-columns: 60px minmax(130px, 1fr) 60px; }
       .drive-mode .main-control .btn { min-height: 60px; }
       .drive-mode .channel-list { max-height: calc(100dvh - 138px); grid-template-columns: 1fr; }
+      .drive-mode .catalog-grid { grid-template-columns: 1fr; }
       .drive-mode .channel-row,
       .drive-mode .channel { min-height: 92px; }
       .drive-mode .ch-desc { -webkit-line-clamp: 1; }
@@ -909,6 +973,9 @@
       .drive-mode .tabs { padding-bottom: 12px; }
       .drive-mode .tab { min-height: 44px; padding: 0 13px; font-size: 13px; }
       .drive-mode .channel-list { max-height: none; grid-template-columns: 1fr; gap: 10px; overflow: visible; }
+      .drive-mode .on-demand-panel { overflow: visible; }
+      .drive-mode .catalog-grid { grid-template-columns: 1fr; }
+      .drive-mode .episode-list { max-height: none; overflow: visible; }
       .drive-mode .channel-row,
       .drive-mode .channel { min-height: 104px; }
       .drive-mode .channel-info strong { overflow-wrap: normal; word-break: keep-all; }
@@ -974,12 +1041,18 @@
         <span>深夜 · 声音 · 未完成</span>
       </div>
 
+      <nav class="content-modes" aria-label="收听内容">
+        <button class="content-mode active" type="button" data-content-mode="live" aria-pressed="true">直播电台</button>
+        <button class="content-mode" type="button" data-content-mode="audiobooks" aria-pressed="false">有声书</button>
+        <button class="content-mode" type="button" data-content-mode="podcasts" aria-pressed="false">播客</button>
+      </nav>
+
       <section class="player now-card" aria-labelledby="playerHeading">
         <div class="vinyl-stage" aria-hidden="true">
           <div class="vinyl" id="vinylRecord">
             <img src="assets/three-quarter-mark.svg" alt="">
           </div>
-          <span>LIVE SIGNAL</span>
+          <span id="signalLabel">LIVE SIGNAL</span>
         </div>
 
         <div class="now-column">
@@ -996,6 +1069,24 @@
             <button class="btn" id="prevBtn" type="button" disabled aria-label="上一个频道" title="上一个频道">←</button>
             <button class="btn btn-primary" id="playToggleBtn" type="button" disabled>▶ 播放</button>
             <button class="btn" id="nextBtn" type="button" disabled aria-label="下一个频道" title="下一个频道">→</button>
+          </div>
+          <div class="on-demand-tools" id="onDemandTools" hidden>
+            <div class="progress-row">
+              <span id="elapsedTime">00:00</span>
+              <input id="episodeProgress" type="range" min="0" max="100" step="1" value="0" aria-label="播放进度">
+              <span id="durationTime">00:00</span>
+            </div>
+            <div class="seek-controls">
+              <button id="seekBackBtn" type="button" aria-label="后退15秒">−15秒</button>
+              <select class="speed-select" id="playbackSpeed" aria-label="播放速度">
+                <option value="0.75">0.75×</option>
+                <option value="1" selected>1×</option>
+                <option value="1.25">1.25×</option>
+                <option value="1.5">1.5×</option>
+                <option value="2">2×</option>
+              </select>
+              <button id="seekForwardBtn" type="button" aria-label="快进30秒">+30秒</button>
+            </div>
           </div>
           <p class="shortcut-hint">快捷键：空格播放/暂停 · ←/→ 切台 · / 搜索</p>
         </div>
@@ -1060,6 +1151,34 @@
           <nav class="tabs" id="tabs" aria-label="频道分类"></nav>
         </div>
         <ul class="channel-list" id="channelList" aria-live="polite"></ul>
+      </section>
+
+      <section class="on-demand-panel" id="onDemandPanel" aria-labelledby="catalogHeading" hidden>
+        <div class="list-title-row">
+          <div>
+            <p id="catalogOverline">LISTEN AT YOUR PACE</p>
+            <h2 id="catalogHeading">声音书房</h2>
+          </div>
+          <span class="result-count" id="catalogCount">读取中</span>
+        </div>
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input class="search-input" id="catalogSearch" type="search" placeholder="搜索书名、作者或节目" autocomplete="off" aria-label="搜索有声书或播客">
+        </div>
+        <p class="catalog-status" id="catalogStatus" role="status">正在读取点播目录</p>
+        <div class="catalog-grid" id="catalogGrid"></div>
+        <section class="catalog-detail" id="catalogDetail" aria-labelledby="detailTitle" hidden>
+          <div class="detail-head">
+            <img id="detailCover" src="assets/three-quarter-mark.svg" alt="">
+            <div>
+              <p class="detail-meta" id="detailMeta"></p>
+              <h3 id="detailTitle"></h3>
+              <p class="detail-description" id="detailDescription"></p>
+              <a class="detail-source" id="detailSource" href="#" target="_blank" rel="noopener">查看内容来源</a>
+            </div>
+          </div>
+          <ul class="episode-list" id="episodeList"></ul>
+        </section>
       </section>
     </section>
 
@@ -1214,6 +1333,8 @@
     const toast = document.getElementById("toast");
 
     let hls = null;
+    let playbackKind = "live";
+    let onDemandControls = null;
     let hlsRetryTimer = null;
     let hlsNetworkRetries = 0;
     let hlsMediaRecoveries = 0;
@@ -1573,6 +1694,24 @@
       const station = stations[index];
       if (!station) return;
 
+      playbackKind = "live";
+      document.body.classList.remove("on-demand-playing");
+      document.getElementById("onDemandTools").hidden = true;
+      document.getElementById("signalLabel").textContent = "LIVE SIGNAL";
+      liveTrack.classList.remove("on-demand");
+      vinylRecord.classList.remove("on-demand-cover");
+      vinylRecord.querySelector("img").src = "assets/three-quarter-mark.svg";
+      dockDisc.querySelector("img").src = "assets/three-quarter-mark.svg";
+      audio.playbackRate = 1;
+      prevBtn.setAttribute("aria-label", "上一个频道");
+      prevBtn.title = "上一个频道";
+      nextBtn.setAttribute("aria-label", "下一个频道");
+      nextBtn.title = "下一个频道";
+      if ("mediaSession" in navigator) {
+        try { navigator.mediaSession.setActionHandler("seekbackward", null); } catch {}
+        try { navigator.mediaSession.setActionHandler("seekforward", null); } catch {}
+        try { navigator.mediaSession.setActionHandler("seekto", null); } catch {}
+      }
       currentIndex = index;
       localStorage.setItem(LAST_STATION_KEY, stationId(station));
       rememberRecent(index);
@@ -1634,6 +1773,10 @@
     }
 
     function togglePlayback() {
+      if (playbackKind !== "live" && onDemandControls) {
+        onDemandControls.toggle();
+        return;
+      }
       if (currentIndex < 0) return;
       if (statusState === "error" || (!audio.hasAttribute("src") && !hls)) loadStation(currentIndex);
       else if (audio.paused) playCurrent();
@@ -1641,6 +1784,10 @@
     }
 
     function stepStation(direction) {
+      if (playbackKind !== "live" && onDemandControls) {
+        onDemandControls.step(direction);
+        return;
+      }
       const visible = filteredIndexes();
       if (!visible.length) return;
       const position = visible.indexOf(currentIndex);
@@ -1794,13 +1941,13 @@
 
     audio.addEventListener("playing", () => {
       hlsNetworkRetries = 0;
-      recordSuccessfulPlay();
-      setStatus("直播中", "playing");
+      if (playbackKind === "live") recordSuccessfulPlay();
+      setStatus(playbackKind === "live" ? "直播中" : "播放中", "playing");
       setPlaybackControls("playing");
     });
     audio.addEventListener("waiting", () => setStatus("缓冲中", "loading"));
     audio.addEventListener("pause", () => {
-      if (currentIndex < 0) return;
+      if (playbackKind === "live" && currentIndex < 0) return;
       setStatus(sleepTimerExpired ? "定时结束" : "已暂停");
       sleepTimerExpired = false;
       setPlaybackControls("paused");
@@ -1821,6 +1968,10 @@
     if ("mediaSession" in navigator) {
       const handlers = {
         play: () => {
+          if (playbackKind !== "live" && onDemandControls) {
+            onDemandControls.play();
+            return;
+          }
           if (currentIndex < 0) loadStation(recents[0] ?? favorites[0] ?? 0);
           else if (!audio.hasAttribute("src") && !hls) loadStation(currentIndex);
           else playCurrent();
@@ -1885,5 +2036,6 @@
     registerPageOpen();
     loadStationHealth();
   </script>
+  <script src="scripts/on-demand.js"></script>
 </body>
 </html>
