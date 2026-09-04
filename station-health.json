@@ -1,0 +1,307 @@
+{
+  "generatedAt": "2026-09-04T03:02:07+00:00",
+  "stationCount": 50,
+  "availableCount": 50,
+  "stations": {
+    "audio|上海|阿基米德故事会": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 789,
+      "error": ""
+    },
+    "audio|华语|德云社相声合集": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 4889,
+      "error": ""
+    },
+    "audio|四川|成都故事广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 499,
+      "error": ""
+    },
+    "audio|山东|济南故事广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 849,
+      "error": ""
+    },
+    "audio|河北|河北故事广播": {
+      "ok": true,
+      "status": 206,
+      "latencyMs": 282,
+      "error": ""
+    },
+    "audio|河北|衡水交通评书广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 468,
+      "error": ""
+    },
+    "general|全国|CNR-5 中华之声": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 927,
+      "error": ""
+    },
+    "general|北京|北京文艺广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1026,
+      "error": ""
+    },
+    "general|国际|CRI HIT FM 88.7": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 971,
+      "error": ""
+    },
+    "general|安徽|安徽小说评书广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1047,
+      "error": ""
+    },
+    "general|湾区|CNR-7 华夏之声": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 711,
+      "error": ""
+    },
+    "music|上海|上海动感101": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 560,
+      "error": ""
+    },
+    "music|上海|上海经典947": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 208,
+      "error": ""
+    },
+    "music|上海|上海经典金曲 FM103.7": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 878,
+      "error": ""
+    },
+    "music|全国|CNR-3 音乐之声": {
+      "ok": true,
+      "status": 206,
+      "latencyMs": 95,
+      "error": ""
+    },
+    "music|北京|北京音乐广播 FM97.4": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 918,
+      "error": ""
+    },
+    "music|华语|CityFM 城市音乐台": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 662,
+      "error": ""
+    },
+    "music|华语|华语金曲电台": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 492,
+      "error": ""
+    },
+    "music|国际|Radio Paradise": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 2192,
+      "error": ""
+    },
+    "music|国际|华夏古典音乐": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1709,
+      "error": ""
+    },
+    "music|天津|天津音乐广播 FM99": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 719,
+      "error": ""
+    },
+    "music|广东|广东音乐之声": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 538,
+      "error": ""
+    },
+    "music|江苏|江苏经典流行音乐广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 2021,
+      "error": ""
+    },
+    "music|江苏|江苏音乐广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 679,
+      "error": ""
+    },
+    "music|浙江|浙江音乐调频968": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 335,
+      "error": ""
+    },
+    "music|深圳|深圳飞扬971": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 380,
+      "error": ""
+    },
+    "news|上海|上海新闻广播 FM93.4": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1013,
+      "error": ""
+    },
+    "news|上海|上海第一财经 FM90.9": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 392,
+      "error": ""
+    },
+    "news|全国|CNR-1 中国之声": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 976,
+      "error": ""
+    },
+    "news|全国|CNR-2 经济之声": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 616,
+      "error": ""
+    },
+    "news|全国|环球资讯广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1021,
+      "error": ""
+    },
+    "news|北京|北京新闻广播 AM828": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 698,
+      "error": ""
+    },
+    "news|四川|四川新闻广播 FM106.1": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 875,
+      "error": ""
+    },
+    "news|国际|BBC World Service": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 2203,
+      "error": ""
+    },
+    "news|国际|CGTN Radio": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 74,
+      "error": ""
+    },
+    "news|国际|REPLAY NEWS 中文": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 3063,
+      "error": ""
+    },
+    "news|国际|轻松调频 CRI EZFM": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 79,
+      "error": ""
+    },
+    "news|广东|广东新闻广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 732,
+      "error": ""
+    },
+    "news|广东|广东珠江经济台": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 637,
+      "error": ""
+    },
+    "news|江西|江西新闻广播 FM104.4": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 845,
+      "error": ""
+    },
+    "traffic|上海|上海交通广播 FM105.7": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1041,
+      "error": ""
+    },
+    "traffic|全国|中国交通广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 347,
+      "error": ""
+    },
+    "traffic|北京|北京交通广播 FM103.9": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 1004,
+      "error": ""
+    },
+    "traffic|四川|四川交通广播 FM101.7": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 945,
+      "error": ""
+    },
+    "traffic|安徽|安徽交通广播 FM90.8": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 946,
+      "error": ""
+    },
+    "traffic|广东|广东交通之声 FM105.2": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 670,
+      "error": ""
+    },
+    "traffic|广东|茂名交通广播": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 909,
+      "error": ""
+    },
+    "traffic|深圳|深圳交通广播 FM106.2": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 508,
+      "error": ""
+    },
+    "traffic|湖北|湖北楚天交通广播 FM92.7": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 136,
+      "error": ""
+    },
+    "traffic|郑州|郑州交通广播 FM91.2": {
+      "ok": true,
+      "status": 200,
+      "latencyMs": 883,
+      "error": ""
+    }
+  }
+}

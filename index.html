@@ -7,7 +7,7 @@
   <meta name="description" content="3/4梦想电台 · Wisely’s Dream FM。听见，那未尽的四分之一。">
   <link rel="icon" href="assets/three-quarter-mark.svg" type="image/svg+xml">
   <title>3/4梦想电台 · Wisely’s Dream FM</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
   <style>
 
     /* 3/4梦想电台 brand system */
@@ -134,6 +134,7 @@
 
     .site-nav a:hover,
     .site-nav button:hover { color: var(--accent); background: rgba(245, 166, 35, .07); }
+    .site-nav button.active { color: var(--accent); background: rgba(245, 166, 35, .08); }
 
     .top-status {
       min-width: 146px;
@@ -249,6 +250,34 @@
     .hero-secondary { border: 1px solid rgba(240, 240, 240, .22); color: var(--text); background: rgba(26, 26, 46, .44); }
     .hero-primary:hover, .hero-secondary:hover { transform: translateY(-2px); }
     .hero-secondary:hover { border-color: rgba(245, 166, 35, .5); background: rgba(34, 34, 58, .8); }
+
+    .hero-quick {
+      min-height: 34px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .hero-quick:empty { display: none; }
+    .hero-quick::-webkit-scrollbar { display: none; }
+    .hero-quick button {
+      min-height: 34px;
+      max-width: 180px;
+      flex: 0 0 auto;
+      padding: 0 11px;
+      overflow: hidden;
+      border: 1px solid rgba(240, 240, 240, .15);
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(26, 26, 46, .52);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .hero-quick button:hover { border-color: rgba(245, 166, 35, .42); color: var(--accent); }
 
     .hero-fraction {
       position: absolute;
@@ -461,10 +490,14 @@
 
     .metric strong { display: block; margin-bottom: 3px; color: var(--accent); font-size: 18px; }
     .metric span { color: var(--muted); font-size: 10px; }
-    .access-record { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); border-color: var(--line); }
-    .access-record-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 9px; color: var(--muted); font-size: 10px; }
+    .access-record { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line); border-color: var(--line); }
+    .access-record summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 10px; cursor: pointer; list-style: none; }
+    .access-record summary::-webkit-details-marker { display: none; }
+    .access-record summary::after { color: var(--weak); content: "+"; font-size: 14px; }
+    .access-record[open] summary::after { content: "−"; }
+    .access-record-title { display: flex; align-items: center; gap: 8px; }
     .local-badge { padding: 3px 7px; border: 1px solid var(--line); border-radius: 999px; color: var(--weak); font-size: 9px; }
-    .access-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .access-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
     .access-stats .metric strong { color: var(--text); }
 
     .channels-panel { min-width: 0; margin-top: 76px; }
@@ -480,6 +513,7 @@
     .list-title-row h2 { font-size: 30px; font-weight: 650; }
     .list-title-row h2 { margin: 0; }
     .result-count { color: var(--accent); font-size: 12px; font-weight: 750; white-space: nowrap; }
+    .list-status { display: flex; align-items: center; gap: 10px; color: var(--weak); font-size: 10px; }
 
     .search-wrap { position: relative; margin-bottom: 18px; }
     .search-icon { position: absolute; top: 50%; left: 14px; transform: translateY(-50%); color: var(--weak); pointer-events: none; }
@@ -497,7 +531,9 @@
 
     .search-input::placeholder { color: var(--weak); }
     .search-input:focus { border-color: rgba(245, 166, 35, .55); }
-    .search-key { position: absolute; top: 50%; right: 10px; transform: translateY(-50%); padding: 3px 7px; border: 1px solid var(--line); border-radius: 5px; border-color: var(--line); color: var(--weak); font-size: 9px; }
+    .search-clear { position: absolute; top: 50%; right: 10px; width: 32px; height: 32px; transform: translateY(-50%); border: 0; border-radius: 8px; color: var(--muted); background: transparent; cursor: pointer; }
+    .search-clear[hidden] { display: none; }
+    .search-clear:hover { color: var(--accent); background: rgba(245, 166, 35, .08); }
 
     .tabs { display: flex; gap: 7px; overflow-x: auto; padding-bottom: 18px; scrollbar-width: none; }
     .tabs::-webkit-scrollbar { display: none; }
@@ -577,6 +613,8 @@
     .favorite-btn { position: absolute; z-index: 2; top: 14px; right: 10px; width: 34px; height: 34px; border: 0; border-radius: 8px; color: var(--weak); background: transparent; cursor: pointer; font-size: 18px; }
     .favorite-btn:hover, .favorite-btn.active { color: var(--accent); background: rgba(245, 166, 35, .08); }
     .badge { padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; border-color: var(--line); color: var(--weak); background: rgba(26, 26, 46, .55); font-size: 9px; font-weight: 800; }
+    .health-badge.ok { color: var(--success); }
+    .health-badge.down { color: var(--danger); }
     .region { color: var(--muted); font-size: 10px; }
 
     .empty-state { min-height: 280px; display: grid; grid-column: 1 / -1; place-items: center; padding: 30px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: rgba(34, 34, 58, .4); text-align: center; line-height: 1.7; }
@@ -660,17 +698,38 @@
 
     .live-track {
       position: relative;
-      height: 2px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
       margin-top: 8px;
       overflow: visible;
-      background: rgba(240, 240, 240, .12);
+      color: var(--weak);
+      font-size: 9px;
+      font-weight: 800;
     }
 
-    .live-track span { display: block; width: 0; height: 100%; background: var(--accent); transition: width .25s ease; }
-    .live-track.active span { width: 100%; animation: live-breathe 2.8s ease-in-out infinite; }
-    .live-track i { position: absolute; top: -3px; left: 75%; width: 8px; height: 8px; border: 1px solid rgba(245, 166, 35, .55); border-radius: 50%; background: var(--bg); }
+    .live-track::before { width: 7px; height: 7px; border-radius: 50%; background: var(--weak); content: ""; }
+    .live-track::after { content: "LIVE SIGNAL"; }
+    .live-track.active { color: var(--accent); }
+    .live-track.active::before { background: var(--accent); animation: live-breathe 2s ease-in-out infinite; box-shadow: 0 0 9px rgba(245, 166, 35, .42); }
 
     @keyframes live-breathe { 50% { opacity: .42; } }
+
+    @media (min-width: 761px) {
+      .list-header {
+        position: sticky;
+        z-index: 20;
+        top: calc(var(--header-height) + 8px);
+        margin: 0 -12px 18px;
+        padding: 12px 12px 0;
+        border: 1px solid rgba(240, 240, 240, .08);
+        border-radius: 8px;
+        background: rgba(26, 26, 46, .92);
+        backdrop-filter: blur(18px);
+      }
+    }
 
     .dock-volume { display: grid; grid-template-columns: auto minmax(80px, 180px) 38px; align-items: center; justify-content: end; gap: 9px; color: var(--weak); font-size: 10px; }
     .dock-volume input { width: 100%; }
@@ -700,7 +759,7 @@
       .brand-copy small, .top-status { display: none; }
       .site-nav { gap: 0; margin: 0; }
       .site-nav a, .site-nav button { min-height: 38px; padding: 0 7px; font-size: 11px; }
-      .hero { height: min(76vh, 620px); min-height: 520px; background-position: 62% center; }
+      .hero { height: min(68vh, 520px); min-height: 430px; background-position: 62% center; }
       .hero::before { background: rgba(10, 10, 26, .48); }
       .hero-content { width: min(500px, 88%); }
       .hero h1 { font-size: 44px; }
@@ -737,14 +796,15 @@
       .nav-shell, .hero-inner, .experience, .site-footer, .sticky-inner { width: calc(100% - 20px); }
       .brand-copy strong { max-width: 104px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .site-nav a, .site-nav button { padding: 0 5px; }
-      .site-nav button[data-nav-cat="recent"] { display: none; }
-      .hero { min-height: 500px; background-position: 68% center; }
+      #navSearchBtn { display: none; }
+      .hero { min-height: 410px; background-position: 68% center; }
       .hero-content { width: 100%; }
       .hero h1 { font-size: 38px; }
       .hero-slogan { margin-top: 18px; font-size: 18px; }
-      .hero-note { max-width: 330px; font-size: 13px; }
-      .hero-actions { align-items: stretch; flex-direction: column; width: 190px; margin-top: 26px; }
+      .hero-note { max-width: 330px; font-size: 13px; line-height: 1.6; }
+      .hero-actions { width: 100%; margin-top: 22px; }
       .hero-primary, .hero-secondary { min-height: 46px; }
+      .hero-quick { margin-top: 12px; }
       .hero-scroll { bottom: 16px; }
       .section-heading h2, .list-title-row h2 { font-size: 23px; }
       .now-card { display: block; padding: 18px; }
@@ -763,12 +823,73 @@
       .channel-row { min-height: 124px; }
       .channel { min-height: 122px; }
       .list-title-row p { display: block; }
-      .search-key { display: none; }
-      .search-input { padding-right: 16px; }
+      .search-input { padding-right: 52px; }
       .dock-station strong { font-size: 12px; }
       .dock-station span { max-width: 190px; }
       .live-track { display: none; }
       .site-footer { min-height: 190px; }
+    }
+
+    body.drive-mode { min-height: 100dvh; padding-bottom: 0; overflow: hidden; }
+    .drive-mode .hero,
+    .drive-mode .section-heading,
+    .drive-mode .player-options,
+    .drive-mode .list-title-row,
+    .drive-mode .search-wrap,
+    .drive-mode .site-footer,
+    .drive-mode .sticky-player { display: none; }
+    .drive-mode .site-header { height: 72px; }
+    .drive-mode .site-nav button:not(#driveModeBtn),
+    .drive-mode .top-status { display: none; }
+    .drive-mode #driveModeBtn { min-width: 108px; min-height: 50px; border: 1px solid rgba(245, 166, 35, .36); color: var(--accent); background: rgba(245, 166, 35, .08); font-size: 14px; }
+    .drive-mode .experience {
+      width: min(100% - 32px, 1320px);
+      height: 100dvh;
+      display: grid;
+      grid-template-columns: minmax(300px, 42%) minmax(0, 1fr);
+      gap: 18px;
+      padding: 88px 0 16px;
+    }
+    .drive-mode .now-card { display: block; min-height: 0; padding: 24px; box-shadow: none; }
+    .drive-mode .vinyl-stage { float: left; margin: 0 22px 12px 0; }
+    .drive-mode .vinyl { width: 112px; height: 112px; }
+    .drive-mode .vinyl img { width: 42px; height: 42px; }
+    .drive-mode .vinyl-stage > span,
+    .drive-mode .shortcut-hint { display: none; }
+    .drive-mode .now-playing { min-height: 128px; }
+    .drive-mode .station-name { font-size: 27px; }
+    .drive-mode .station-desc { clear: both; font-size: 14px; }
+    .drive-mode .main-control { grid-template-columns: 68px minmax(150px, 1fr) 68px; clear: both; gap: 12px; margin-top: 20px; }
+    .drive-mode .main-control .btn { min-height: 68px; font-size: 20px; }
+    .drive-mode .channels-panel { min-height: 0; margin-top: 0; }
+    .drive-mode .list-header { position: static; margin: 0; padding: 0; border: 0; background: transparent; backdrop-filter: none; }
+    .drive-mode .tabs { padding: 0 0 10px; }
+    .drive-mode .tab { min-height: 50px; padding: 0 16px; font-size: 14px; }
+    .drive-mode .channel-list { max-height: calc(100dvh - 150px); min-height: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; overflow-y: auto; overscroll-behavior: contain; }
+    .drive-mode .channel-row,
+    .drive-mode .channel { min-height: 104px; }
+    .drive-mode .channel { padding: 14px 44px 12px 14px; }
+    .drive-mode .channel-info strong { font-size: 15px; }
+    .drive-mode .favorite-btn { width: 44px; height: 44px; }
+
+    @media (max-width: 780px), (max-height: 520px) {
+      .drive-mode .brand-copy small { display: none; }
+      .drive-mode .experience { width: calc(100% - 20px); grid-template-columns: minmax(270px, 44%) minmax(0, 1fr); gap: 10px; padding-top: 78px; }
+      .drive-mode .now-card { padding: 16px; }
+      .drive-mode .vinyl-stage { display: none; }
+      .drive-mode .station-name { min-height: 0; font-size: 23px; }
+      .drive-mode .station-desc { font-size: 12px; }
+      .drive-mode .main-control { grid-template-columns: 60px minmax(130px, 1fr) 60px; }
+      .drive-mode .main-control .btn { min-height: 60px; }
+      .drive-mode .channel-list { max-height: calc(100dvh - 138px); grid-template-columns: 1fr; }
+      .drive-mode .channel-row,
+      .drive-mode .channel { min-height: 92px; }
+      .drive-mode .ch-desc { -webkit-line-clamp: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -788,6 +909,7 @@
         <button type="button" data-nav-cat="favorites">收藏</button>
         <button type="button" data-nav-cat="recent">最近</button>
         <button type="button" id="navSearchBtn">搜索</button>
+        <button type="button" id="driveModeBtn" aria-pressed="false">车载</button>
       </nav>
 
       <div class="top-status" aria-live="polite">
@@ -809,6 +931,7 @@
             <button class="hero-primary" id="heroListenBtn" type="button">▶ 立即收听</button>
             <a class="hero-secondary" href="#stations">浏览 <strong id="heroStationCount">0</strong> 个频道</a>
           </div>
+          <div class="hero-quick" id="heroQuick" aria-label="常用频道"></div>
         </div>
         <div class="hero-fraction" aria-hidden="true">3/4</div>
       </div>
@@ -875,17 +998,19 @@
             <div class="metric"><strong id="currentFormat">--</strong><span>当前格式</span></div>
           </div>
 
-          <section class="access-record" aria-labelledby="accessRecordTitle">
-            <h3 class="access-record-title" id="accessRecordTitle">
+          <details class="access-record">
+            <summary>
+              <span class="access-record-title" id="accessRecordTitle">
               <span>本机使用记录</span>
               <span class="local-badge">仅存本机</span>
-            </h3>
+              </span>
+            </summary>
             <div class="access-stats">
               <div class="metric"><strong id="todayOpens">-</strong><span>今日打开</span></div>
               <div class="metric"><strong id="todayPlays">-</strong><span>今日播放</span></div>
               <div class="metric"><strong id="totalPlays">-</strong><span>累计播放</span></div>
             </div>
-          </section>
+          </details>
         </div>
       </section>
 
@@ -896,13 +1021,13 @@
               <p>FIND YOUR SIGNAL</p>
               <h2 id="channelHeading">频道列表</h2>
             </div>
-            <span class="result-count" id="resultCount">0 个频道</span>
+            <span class="list-status"><span id="healthStatus">音源检测：读取中</span><strong class="result-count" id="resultCount">0 个频道</strong></span>
           </div>
 
           <div class="search-wrap">
             <span class="search-icon" aria-hidden="true">⌕</span>
-            <input class="search-input" id="stationSearch" type="search" placeholder="搜索频道、地区或内容" autocomplete="off">
-            <span class="search-key" aria-hidden="true">/ 搜索</span>
+            <input class="search-input" id="stationSearch" type="search" placeholder="搜索频道、地区或内容" autocomplete="off" aria-label="搜索频道、地区或内容">
+            <button class="search-clear" id="searchClearBtn" type="button" aria-label="清除搜索" title="清除搜索" hidden>×</button>
           </div>
 
           <nav class="tabs" id="tabs" aria-label="频道分类"></nav>
@@ -934,7 +1059,7 @@
           <button class="dock-play" id="dockPlayBtn" type="button" disabled aria-label="播放">▶</button>
           <button id="dockNextBtn" type="button" disabled aria-label="下一个频道" title="下一个频道">→</button>
         </div>
-        <div class="live-track" aria-hidden="true"><span id="liveTrackFill"></span><i></i></div>
+        <div class="live-track" aria-hidden="true"></div>
       </div>
 
       <div class="dock-volume">
@@ -1012,7 +1137,7 @@
       { cat: "general", region: "北京", name: "北京文艺广播", desc: "文化、文艺与城市生活节目", url: "https://lhttp.qtfm.cn/live/333/64k.mp3" },
       { cat: "general", region: "安徽", name: "安徽小说评书广播", desc: "小说、评书与声音故事", url: "https://lhttp.qtfm.cn/live/1951/64k.mp3" },
 
-      // 有声内容（统一追加，保持既有收藏索引兼容）
+      // 有声内容（统一追加，保持既有频道顺序）
       { cat: "audio", region: "上海", name: "阿基米德故事会", desc: "故事、广播剧与声音节目", url: "https://lhttp.qtfm.cn/live/20500182/64k.mp3" },
       { cat: "audio", region: "山东", name: "济南故事广播", desc: "文学故事、文化与科普节目", url: "https://lhttp.qtfm.cn/live/1672/64k.mp3" },
       { cat: "audio", region: "河北", name: "河北故事广播", desc: "故事、文化与生活节目", url: "https://radio.pull.hebtv.com/live/hebjj.m3u8" },
@@ -1021,17 +1146,26 @@
       { cat: "audio", region: "华语", name: "德云社相声合集", desc: "传统相声连续播放", url: "https://stream.zeno.fm/yqawwmweq8mtv" },
     ];
 
-    const FAVORITES_KEY = "xiaowei-radio-favorites-v2";
-    const RECENTS_KEY = "xiaowei-radio-recents-v2";
+    const FAVORITES_KEY = "xiaowei-radio-favorites-v3";
+    const RECENTS_KEY = "xiaowei-radio-recents-v3";
+    const LEGACY_FAVORITES_KEY = "xiaowei-radio-favorites-v2";
+    const LEGACY_RECENTS_KEY = "xiaowei-radio-recents-v2";
     const VOLUME_KEY = "xiaowei-radio-volume-v2";
     const SLEEP_TIMER_KEY = "xiaowei-radio-sleep-timer-v1";
     const USAGE_STATS_KEY = "xiaowei-radio-usage-v1";
     const PAGE_SESSION_KEY = "xiaowei-radio-page-session-v1";
+    const LAST_STATION_KEY = "xiaowei-radio-last-station-v1";
+    const DRIVE_MODE_KEY = "xiaowei-radio-drive-mode-v1";
+    const RECENT_TIMES_KEY = "xiaowei-radio-recent-times-v1";
 
     const audio = document.getElementById("audio");
     const channelList = document.getElementById("channelList");
     const tabsRow = document.getElementById("tabs");
     const searchInput = document.getElementById("stationSearch");
+    const searchClearBtn = document.getElementById("searchClearBtn");
+    const heroListenBtn = document.getElementById("heroListenBtn");
+    const heroQuick = document.getElementById("heroQuick");
+    const driveModeBtn = document.getElementById("driveModeBtn");
     const playToggleBtn = document.getElementById("playToggleBtn");
     const prevBtn = document.getElementById("prevBtn");
     const nextBtn = document.getElementById("nextBtn");
@@ -1053,29 +1187,94 @@
     const toast = document.getElementById("toast");
 
     let hls = null;
+    let hlsRetryTimer = null;
+    let hlsNetworkRetries = 0;
+    let hlsMediaRecoveries = 0;
+    let stationLoadToken = 0;
     let currentIndex = -1;
     let activeCat = "all";
+    let statusState = "";
+    let stationHealth = null;
+    let recentTimes = loadRecentTimes();
     let toastTimer = null;
     let sleepTimerInterval = null;
     let sleepTimerDeadline = 0;
     let sleepTimerExpired = false;
     let pendingPlayRecord = false;
-    let favorites = loadStoredArray(FAVORITES_KEY);
-    let recents = loadStoredArray(RECENTS_KEY);
+    let favorites = loadStoredStationIndexes(FAVORITES_KEY, LEGACY_FAVORITES_KEY);
+    let recents = loadStoredStationIndexes(RECENTS_KEY, LEGACY_RECENTS_KEY);
 
-    function loadStoredArray(key) {
+    function stationId(station) {
+      return `${station.cat}|${station.region}|${station.name}`;
+    }
+
+    function stationIndexFromId(id) {
+      return stations.findIndex(station => stationId(station) === id);
+    }
+
+    function storeStationIndexes(key, indexes) {
+      const ids = indexes.map(index => stations[index]).filter(Boolean).map(stationId);
+      localStorage.setItem(key, JSON.stringify(ids));
+    }
+
+    function loadStoredStationIndexes(key, legacyKey) {
       try {
-        const value = JSON.parse(localStorage.getItem(key));
-        return Array.isArray(value) ? value.filter(Number.isInteger) : [];
+        const current = JSON.parse(localStorage.getItem(key));
+        if (Array.isArray(current)) {
+          return [...new Set(current.map(value => typeof value === "string" ? stationIndexFromId(value) : -1).filter(index => index >= 0))];
+        }
+
+        const legacy = JSON.parse(localStorage.getItem(legacyKey));
+        if (!Array.isArray(legacy)) return [];
+        const indexes = [...new Set(legacy.filter(index => Number.isInteger(index) && stations[index]))];
+        storeStationIndexes(key, indexes);
+        return indexes;
       } catch {
         return [];
       }
     }
 
+    function loadRecentTimes() {
+      try {
+        const value = JSON.parse(localStorage.getItem(RECENT_TIMES_KEY));
+        return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+      } catch {
+        return {};
+      }
+    }
+
+    function relativeRecentTime(value) {
+      const elapsed = Date.now() - Number(value);
+      if (!Number.isFinite(elapsed) || elapsed < 0) return "";
+      if (elapsed < 60000) return "刚刚收听";
+      if (elapsed < 3600000) return `${Math.floor(elapsed / 60000)} 分钟前`;
+      if (elapsed < 86400000) return `${Math.floor(elapsed / 3600000)} 小时前`;
+      return `${Math.floor(elapsed / 86400000)} 天前`;
+    }
+
     function isHls(url) { return /\.m3u8($|\?)/i.test(url); }
     function stationFormat(station) { return isHls(station.url) ? "HLS" : "MP3"; }
 
+    async function loadStationHealth() {
+      const healthStatus = document.getElementById("healthStatus");
+      try {
+        const response = await fetch(`station-health.json?v=${Math.floor(Date.now() / 3600000)}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const report = await response.json();
+        stationHealth = report.stations && typeof report.stations === "object" ? report.stations : null;
+        const checks = Object.values(stationHealth || {});
+        const available = checks.filter(item => item.ok).length;
+        const checkedAt = report.generatedAt ? new Date(report.generatedAt).toLocaleString("zh-CN", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit" }) : "时间未知";
+        healthStatus.textContent = `音源检测：${available}/${checks.length} · ${checkedAt}`;
+        healthStatus.title = "检测结果仅代表上次服务器检查时的状态";
+        renderStations();
+      } catch {
+        healthStatus.textContent = "音源检测：暂无报告";
+      }
+    }
+
     function setStatus(text, state = "") {
+      statusState = state;
       document.getElementById("topStatusText").textContent = text;
       document.getElementById("topStatusDot").className = `status-dot${state ? ` ${state}` : ""}`;
       const badge = document.getElementById("liveBadge");
@@ -1085,6 +1284,7 @@
       vinylRecord.classList.toggle("playing", isPlaying);
       dockDisc.classList.toggle("playing", isPlaying);
       liveTrack.classList.toggle("active", isPlaying);
+      if ("mediaSession" in navigator) navigator.mediaSession.playbackState = isPlaying ? "playing" : state === "loading" ? "none" : "paused";
     }
 
     function setPlaybackControls(mode) {
@@ -1154,6 +1354,14 @@
       document.getElementById("heroStationCount").textContent = stations.length;
       document.getElementById("favoriteTotal").textContent = favorites.length;
       document.getElementById("currentFormat").textContent = currentIndex >= 0 ? stationFormat(stations[currentIndex]) : "--";
+      renderHeroQuick();
+    }
+
+    function renderHeroQuick() {
+      const indexes = [...new Set([...recents, ...favorites])].filter(index => stations[index]).slice(0, 3);
+      heroQuick.innerHTML = indexes.map(index => `<button type="button" data-quick-index="${index}" title="播放 ${stations[index].name}">▶ ${stations[index].name}</button>`).join("");
+      const preferredIndex = currentIndex >= 0 ? currentIndex : indexes[0];
+      heroListenBtn.textContent = preferredIndex >= 0 ? `▶ 继续收听 ${stations[preferredIndex].name}` : "▶ 立即收听";
     }
 
     function todayKey() {
@@ -1224,6 +1432,11 @@
           ${label}<span class="tab-count">${counts[key] || 0}</span>
         </button>
       `).join("");
+      document.querySelectorAll("[data-nav-cat]").forEach(button => {
+        const active = button.dataset.navCat === activeCat;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
     }
 
     function filteredIndexes() {
@@ -1261,6 +1474,9 @@
         const station = stations[index];
         const category = categories[station.cat];
         const isFavorite = favorites.includes(index);
+        const health = stationHealth?.[stationId(station)];
+        const healthLabel = !health ? "" : health.ok ? '<span class="badge health-badge ok">上次可用</span>' : '<span class="badge health-badge down">待复检</span>';
+        const recentLabel = activeCat === "recent" ? relativeRecentTime(recentTimes[stationId(station)]) : "";
         return `
           <li class="channel-row">
             <button class="channel${currentIndex === index ? " active" : ""}" type="button" data-index="${index}" aria-label="播放 ${station.name}">
@@ -1269,7 +1485,7 @@
                 <strong>${station.name}</strong>
                 <span class="ch-desc">${station.desc}</span>
               </span>
-              <span class="ch-meta"><span class="region">${station.region}</span><span class="badge">${stationFormat(station)}</span></span>
+              <span class="ch-meta"><span class="region">${station.region}</span><span class="badge">${stationFormat(station)}</span>${healthLabel}${recentLabel ? `<span class="badge">${recentLabel}</span>` : ""}</span>
             </button>
             <button class="favorite-btn${isFavorite ? " active" : ""}" type="button" data-favorite-index="${index}" aria-label="${isFavorite ? "取消收藏" : "收藏"} ${station.name}" title="${isFavorite ? "取消收藏" : "收藏"}">${isFavorite ? "★" : "☆"}</button>
           </li>
@@ -1278,6 +1494,8 @@
     }
 
     function destroyHls() {
+      window.clearTimeout(hlsRetryTimer);
+      hlsRetryTimer = null;
       if (hls) {
         hls.destroy();
         hls = null;
@@ -1306,12 +1524,22 @@
       dockPlayBtn.disabled = false;
       dockPrevBtn.disabled = false;
       dockNextBtn.disabled = false;
+      if ("mediaSession" in navigator && "MediaMetadata" in window) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: station.name,
+          artist: `${categories[station.cat].label} · ${station.region}`,
+          album: "3/4梦想电台 · Wisely’s Dream FM",
+          artwork: [{ src: new URL("assets/three-quarter-mark.svg", location.href).href, sizes: "512x512", type: "image/svg+xml" }],
+        });
+      }
       updateMetrics();
     }
 
     function rememberRecent(index) {
       recents = [index, ...recents.filter(item => item !== index)].slice(0, 8);
-      localStorage.setItem(RECENTS_KEY, JSON.stringify(recents));
+      storeStationIndexes(RECENTS_KEY, recents);
+      recentTimes[stationId(stations[index])] = Date.now();
+      localStorage.setItem(RECENT_TIMES_KEY, JSON.stringify(recentTimes));
     }
 
     function loadStation(index) {
@@ -1319,6 +1547,7 @@
       if (!station) return;
 
       currentIndex = index;
+      localStorage.setItem(LAST_STATION_KEY, stationId(station));
       rememberRecent(index);
       renderTabs();
       renderStations();
@@ -1328,6 +1557,9 @@
       audio.removeAttribute("src");
       audio.load();
       pendingPlayRecord = true;
+      hlsNetworkRetries = 0;
+      hlsMediaRecoveries = 0;
+      const loadToken = ++stationLoadToken;
       setStatus("连接中", "loading");
 
       if (isHls(station.url) && window.Hls && Hls.isSupported()) {
@@ -1336,13 +1568,36 @@
         hls.attachMedia(audio);
         hls.on(Hls.Events.MANIFEST_PARSED, playCurrent);
         hls.on(Hls.Events.ERROR, (_event, data) => {
-          if (!data.fatal) return;
+          if (!data.fatal || loadToken !== stationLoadToken || !hls) return;
           if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-            setStatus("音源连接失败", "error");
+            if (hlsNetworkRetries < 2) {
+              hlsNetworkRetries += 1;
+              const delay = hlsNetworkRetries * 1500;
+              setStatus(`网络波动，${Math.round(delay / 1000)} 秒后重连`, "loading");
+              window.clearTimeout(hlsRetryTimer);
+              hlsRetryTimer = window.setTimeout(() => {
+                if (loadToken !== stationLoadToken || !hls) return;
+                hls.stopLoad();
+                hls.loadSource(station.url);
+                hls.startLoad(-1);
+              }, delay);
+            } else {
+              setStatus("音源连接失败，点击重试", "error");
+              setPlaybackControls("retry");
+            }
           } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
-            hls.recoverMediaError();
+            if (hlsMediaRecoveries < 1) {
+              hlsMediaRecoveries += 1;
+              setStatus("正在恢复音频", "loading");
+              hls.recoverMediaError();
+            } else {
+              setStatus("音频解码失败，点击重试", "error");
+              setPlaybackControls("retry");
+            }
           } else {
-            setStatus("HLS 解码失败", "error");
+            destroyHls();
+            setStatus("HLS 播放失败，点击重试", "error");
+            setPlaybackControls("retry");
           }
         });
       } else {
@@ -1353,7 +1608,8 @@
 
     function togglePlayback() {
       if (currentIndex < 0) return;
-      if (audio.paused) playCurrent();
+      if (statusState === "error" || (!audio.hasAttribute("src") && !hls)) loadStation(currentIndex);
+      else if (audio.paused) playCurrent();
       else audio.pause();
     }
 
@@ -1368,7 +1624,7 @@
     function toggleFavorite(index) {
       const wasFavorite = favorites.includes(index);
       favorites = wasFavorite ? favorites.filter(item => item !== index) : [index, ...favorites];
-      localStorage.setItem(FAVORITES_KEY, JSON.stringify(favorites));
+      storeStationIndexes(FAVORITES_KEY, favorites);
       showToast(wasFavorite ? `已取消收藏：${stations[index].name}` : `已收藏：${stations[index].name}`);
       updateMetrics();
       renderTabs();
@@ -1393,7 +1649,43 @@
       if (channel) loadStation(Number(channel.dataset.index));
     });
 
-    searchInput.addEventListener("input", renderStations);
+    function updateSearchState() {
+      searchClearBtn.hidden = !searchInput.value;
+      renderStations();
+    }
+
+    function clearSearch() {
+      searchInput.value = "";
+      updateSearchState();
+      searchInput.focus();
+    }
+
+    function setDriveMode(enabled) {
+      document.body.classList.toggle("drive-mode", enabled);
+      driveModeBtn.textContent = enabled ? "退出车载" : "车载";
+      driveModeBtn.setAttribute("aria-pressed", String(enabled));
+      localStorage.setItem(DRIVE_MODE_KEY, enabled ? "1" : "0");
+      if (enabled) {
+        activeCat = favorites.length ? "favorites" : recents.length ? "recent" : "traffic";
+        searchInput.value = "";
+        updateSearchState();
+        document.getElementById("radioApp").scrollIntoView();
+      }
+      renderTabs();
+      renderStations();
+    }
+
+    function restoreLastStation() {
+      const index = stationIndexFromId(localStorage.getItem(LAST_STATION_KEY));
+      if (index < 0) return;
+      currentIndex = index;
+      updatePlayer(stations[index]);
+      setStatus("上次收听");
+      setPlaybackControls("paused");
+    }
+
+    searchInput.addEventListener("input", updateSearchState);
+    searchClearBtn.addEventListener("click", clearSearch);
     playToggleBtn.addEventListener("click", togglePlayback);
     prevBtn.addEventListener("click", () => stepStation(-1));
     nextBtn.addEventListener("click", () => stepStation(1));
@@ -1401,11 +1693,21 @@
     dockPrevBtn.addEventListener("click", () => stepStation(-1));
     dockNextBtn.addEventListener("click", () => stepStation(1));
 
-    document.getElementById("heroListenBtn").addEventListener("click", () => {
-      if (currentIndex >= 0) playCurrent();
-      else loadStation(0);
+    heroListenBtn.addEventListener("click", () => {
+      const targetIndex = currentIndex >= 0 ? currentIndex : recents[0] ?? favorites[0] ?? 0;
+      if (currentIndex === targetIndex && (audio.hasAttribute("src") || hls)) playCurrent();
+      else loadStation(targetIndex);
       document.getElementById("radioApp").scrollIntoView({ behavior: "smooth" });
     });
+
+    heroQuick.addEventListener("click", event => {
+      const button = event.target.closest("[data-quick-index]");
+      if (!button) return;
+      loadStation(Number(button.dataset.quickIndex));
+      document.getElementById("radioApp").scrollIntoView({ behavior: "smooth" });
+    });
+
+    driveModeBtn.addEventListener("click", () => setDriveMode(!document.body.classList.contains("drive-mode")));
 
     document.getElementById("navSearchBtn").addEventListener("click", () => {
       document.getElementById("stations").scrollIntoView({ behavior: "smooth" });
@@ -1453,6 +1755,7 @@
     });
 
     audio.addEventListener("playing", () => {
+      hlsNetworkRetries = 0;
       recordSuccessfulPlay();
       setStatus("直播中", "playing");
       setPlaybackControls("playing");
@@ -1468,6 +1771,30 @@
       setStatus("音源暂时不可用", "error");
       setPlaybackControls("retry");
     });
+
+    window.addEventListener("online", () => {
+      if (currentIndex >= 0 && statusState === "error") {
+        showToast("网络已恢复，正在重新连接");
+        loadStation(currentIndex);
+      }
+    });
+    window.addEventListener("offline", () => setStatus("网络已断开", "error"));
+
+    if ("mediaSession" in navigator) {
+      const handlers = {
+        play: () => {
+          if (currentIndex < 0) loadStation(recents[0] ?? favorites[0] ?? 0);
+          else if (!audio.hasAttribute("src") && !hls) loadStation(currentIndex);
+          else playCurrent();
+        },
+        pause: () => audio.pause(),
+        previoustrack: () => stepStation(-1),
+        nexttrack: () => stepStation(1),
+      };
+      Object.entries(handlers).forEach(([action, handler]) => {
+        try { navigator.mediaSession.setActionHandler(action, handler); } catch {}
+      });
+    }
 
     document.addEventListener("keydown", event => {
       const typing = event.target.matches("input, textarea");
@@ -1486,7 +1813,7 @@
       } else if (event.key === "Escape" && document.activeElement === searchInput) {
         searchInput.value = "";
         searchInput.blur();
-        renderStations();
+        updateSearchState();
       }
     });
 
@@ -1511,10 +1838,14 @@
       localStorage.removeItem(SLEEP_TIMER_KEY);
     }
 
+    restoreLastStation();
+    const driveRequested = new URLSearchParams(location.search).get("drive") === "1" || localStorage.getItem(DRIVE_MODE_KEY) === "1";
+    if (driveRequested) setDriveMode(true);
     renderTabs();
     renderStations();
     updateMetrics();
     registerPageOpen();
+    loadStationHealth();
   </script>
 </body>
 </html>
