@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-09-04T03:37:04+00:00",
+  "generatedAt": "2026-09-04T07:05:04+00:00",
   "source": "Public podcast RSS feeds",
   "shows": [
     {
       "id": "story-fm",
       "title": "故事FM",
       "author": "寇爱哲",
+      "category": "故事纪实",
       "description": "欢迎收听故事FM 。在这里，我们用你的声音，讲述你的故事。合作邮箱：bd@storyfm.cn",
       "cover": "https://media-one.wavpub.com/covers/1ebcbf5d-9dd2-4b69-b681-b54c22541cf2/977035cf6ab63b6e.png",
       "source": "Podcast RSS",
@@ -79,9 +80,87 @@
       ]
     },
     {
+      "id": "dive-in",
+      "title": "垂直入戏",
+      "author": "故事FM",
+      "category": "故事纪实",
+      "description": "垂直入戏，深度沉迷。故事FM 推出的新栏目《垂直入戏》，每个月不定时更新，带给你关于文娱创作者最上头的音频故事。如果你还希望哪些创作者来到我们的节目，欢迎留言告诉我们。欢迎你的收听。",
+      "cover": "https://media-one.wavpub.com/covers/1a747605-5636-4bf4-8853-164b97e5d2b0/5318d3d97a719f67.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feeds.storyfm.cn/dive-in.xml",
+      "feedUrl": "https://feeds.storyfm.cn/dive-in.xml",
+      "episodes": [
+        {
+          "id": "dive-in-768865a82b0359",
+          "title": "人大教授梁鸿耗时三年，记录下这些青少年的残酷人生 | 垂直入戏14",
+          "description": "故事FM ❜ 垂直入戏 今天的节目开始之前说个通知哈，10 月 25 日故事FM 会在北京举行一场讨论母女关系的故事开放麦，如果你有满肚子的关于你和妈妈的故事，或者你和女儿的故事，欢迎给我们投稿，来现场分享你们的故事。如果你是男生，也欢迎来现场，在即兴环节分享。 你可以关注故事FM 的微信公众号，在昨天我们刚发的征集推送里，有投稿二维码。期待在现场见到你！ 爱哲按： 《 中国在梁庄》这本书大家可能都不陌生，它的作者，文学教授梁鸿，用十几年的时间，一次又一次地回到她位于河南的家乡梁庄。通过记录这个小村庄里的人情世故、变迁与流动，她为我们呈现了一个血肉丰满的",
+          "publishedAt": "2025-09-29T12:28:19+00:00",
+          "duration": 2339,
+          "url": "https://tk.wavpub.com/WPDL_HzCXqTzkknsaUKCUuphJpUhwGzcvmJfBDTUNfNsPvSRZAKfeHBLqjuveaw-82.m4a"
+        },
+        {
+          "id": "dive-in-473d1c9711c610",
+          "title": "我们应该如何与野生动物共存|垂直入戏13",
+          "description": "故事FM ❜ 垂直入戏 今天节目开始之前通知一下哈，明天我们将会在北京举办主题为「村漂「飘了」：当年轻人漂到乡村」的故事开放麦，已经抢到票的朋友记得准时到场，没有抢到票的朋友也不用着急，你可以在 故事FM 的微信公众号里关注后续的开放麦视频，现场音频不久后也会在各大音频平台播出。 今天是 4 月 8 日，国际珍稀动物保护日，请听我们为今天制作的特别节目。 — 中国是全球生物多样性最丰富的国家之一。从青藏高原的雪豹到云南雨林的亚洲象，从东北森林的东北虎到长江湿地的江豚，这片土地孕育了无数独特的生命。但与此同时， 14 亿人口的高速发展社会，也让野生动物与人",
+          "publishedAt": "2025-04-08T14:13:03+00:00",
+          "duration": 2031,
+          "url": "https://tk.wavpub.com/WPDL_LjsyzxTqpbYFCyJjaJHUvHJrCqUktcDNYReUBCumtVNuGJWexFbsFwHSQZ-d6.m4a"
+        },
+        {
+          "id": "dive-in-b7ae3c502b3136",
+          "title": "纪录片是给下一代太平盛世的备忘录｜垂直入戏11",
+          "description": "故事FM ❜ 垂直入戏 作为纪录片爱好者，CNEX 是我一定要介绍给你的一个机构。 CNEX 是一家非营利性质的民间文创组织，以支持所有华语独立纪录片创作者为宗旨，为华人世界的青年搭建纪录片创作的桥梁。「CNEX」是英文「Chinese Next」的缩写，意思是华人新世代，它于 2006 年创办，到现在的 18 年间帮助了数百位华人青年导演实现纪录片梦想。 这里是由 故事FM 出品的内容种草栏目「垂直入戏」。在每期节目中，我们会向你安利我们喜爱的作品，或是创作者。 今天我要介绍的，就是 CNEX 的创始人之一，也是目前的 CEO ，陈玲珍。 /Staff",
+          "publishedAt": "2024-10-16T08:25:58+00:00",
+          "duration": 2140,
+          "url": "https://tk.wavpub.com/WPDL_TsydctrsGVrLQhksskpQsbyZvCHbbpznmVQENRRbMxDZXASuREJShKvLLC-8f.m4a"
+        },
+        {
+          "id": "dive-in-2e1ec6fe518c75",
+          "title": "深港之间，谁能陪你过春天 | 垂直入戏 10",
+          "description": "故事FM ❜ 垂直入戏 从上个月 6 号开始，内地和香港之间终于全面、全开放地「通关」了。两地的往来也会慢慢恢复过去的热络。 关口是边境管理的基础单位，但它常常不只是物理上的一道边界。曾经听到一位身在香港的朋友感叹：有时候几秒钟走过一个关口，就注定了今后人生几十年的流变。 从 1997 年香港回归到今天，「跨越边界」背后，还有很多人生起伏和离散的故事…… 如果你去过香港，相信你一定在深港口岸见到过一群孩子背着书包、穿着校服过海关。他们被称为「跨境学童」，也就是生活在深圳，却在香港读书，拥有香港居民身份的孩子。这是一国两制制度和特殊时代背景下，一种独特的社",
+          "publishedAt": "2023-03-17T09:25:25+00:00",
+          "duration": 2252,
+          "url": "https://tk.wavpub.com/WPDL_zQqvWnZJPaBMfcDyUuhmCjNvjzNGGJuhwUFUfCuUtMxbRxWWPkbtjtRVCP-6f.m4a"
+        },
+        {
+          "id": "dive-in-1b9731b8af3ef9",
+          "title": "我拍了一百多家早餐店，发现烟火气是由八卦构成的 | 垂直入戏 09",
+          "description": "故事FM ❜ 垂直入戏 大家好，我是 故事FM 的制作人陈诗，今天想给大家安利的作品是已经更新了 100 多集的纪录片《早餐中国》。 对于我这样一个几乎不吃早餐的人来说，《早餐中国》就像打开了一个新世界的大门，让我知道在那些被我睡过去的清晨时光，还有多少充满烟火气的事情正在发生；受疫情影响鲜少出行的这几年，它又变成了一种「旅游节目」，带我和中国各个角落里最平凡却又认真生活着的普通人们相遇。 本期节目的讲述者就是《早餐中国》的导演王圣志，无论你之前有没有看过这部作品，都没关系，因为我们要聊的是每个人都不陌生的话题——早餐，以及拍了一百多家早餐店之后，王导对",
+          "publishedAt": "2022-12-07T10:09:16+00:00",
+          "duration": 2015,
+          "url": "https://tk.wavpub.com/WPDL_cauKYYJqgVUhUmNFPmgJyxJvwXCqEpFEyeKNbAmHzJYwbdLLftErnvPFqK-9d.m4a"
+        },
+        {
+          "id": "dive-in-a7975b3cb23a7f",
+          "title": "小鹿，从律师「乱撞」成扛造的脱口秀演员 | 垂直入戏 08",
+          "description": "故事FM ❜ 垂直入戏 脱口秀演员小鹿在 2018 年上 故事FM 的时候，还是个全职律师，兼职说说脱口秀。 四年多过去了，小鹿的职业生涯也发生了巨大的改变，去年她的律师证暂停了，她成为了全职的脱口秀演员。 今天这期特别节目，故事FM 就和老朋友小鹿聊聊她怎么告别了律师工作、她当下的压力和她的脱口秀创作。 /Staff/ 讲述人 | 小鹿 制作人| @寇爱哲 声音设计 | 孙泽雨 实习生 | 杨林 运营 | Yoyo 清韵 /BGM List/ 01.Starlight – 彭寒 02.Buff – 彭寒 03.Memory – 彭寒 用你的声音，讲述你",
+          "publishedAt": "2022-11-21T11:11:14+00:00",
+          "duration": 1737,
+          "url": "https://tk.wavpub.com/WPDL_TWSHkLNFyCfbjnhjqTxTAXgqELnybePWXxJKNhxBsRrpUemwaxXrtCfGyM-6f.m4a"
+        },
+        {
+          "id": "dive-in-a76d105a6eedcb",
+          "title": "魏丹：记录是我们这个时代的「方舟」｜ 垂直入戏07",
+          "description": "故事FM ❜ 垂直入戏 今天我们采访的创作者魏丹，是一名独立纪录片导演。 今年夏天，魏丹选择把自己的第一部纪录片作品《方舟》做了「网盘上映」。他说，自己真的，走到了临界点。 这个描绘了姥姥张秀华人生最后的时光，她的儿孙们是如何尽力挽救她生命的故事，让观众跟随魏丹的镜头近距离地观察到了，当疾病占领上风的时候，人的身体是如何节节溃败的，一个家庭又是如何凝集在一起抵抗死亡的侵袭。 这是一个关于「拯救」的故事，拯救生命、独立创作还有更多。 /Staff/ 讲述者 | 魏丹 主播 | @寇爱哲 制作人 | 也卜 声音设计 | 孙泽雨 文案 | 突突 也卜 运营 |",
+          "publishedAt": "2022-11-14T10:03:57+00:00",
+          "duration": 2052,
+          "url": "https://tk.wavpub.com/WPDL_PdrQSJWvenFGsUwjgnenuNFTdnTQMGgAZymyTmHfXJzCSMJgdnakrTHrmU-55.m4a"
+        },
+        {
+          "id": "dive-in-7559865f976bba",
+          "title": "顾桃：往大兴安岭深处走去 I 垂直入戏06",
+          "description": "故事FM ❜ 垂直入戏 提示：本期节目中关于鄂温克族的音频素材，均来自顾桃的纪录片，有剪辑、删减。你可以去原片中感受完整内容。 现在社会进步了 狩猎文化消失了 工业文明带来了一个悲惨的世界 如果有更文明世界的警察 向我开枪 那就 开枪吧 ——鄂温克族曾经的猎人 维加 300 年前，一支部族赶着驯鹿，从西伯利亚迁徙到了大兴安岭的西北麓。 今年 8 月，鄂温克族酋长玛利亚·索去世，终年 101 岁。中国也失去了最后一位女酋长。 滥用的酒精、失落的认同、被驯化的文明……鄂温克族曾经的猎人们说，一个民族失去了自己的文化，就等于失去了一切。 今天的讲述者，独立纪录",
+          "publishedAt": "2022-10-10T11:21:24+00:00",
+          "duration": 2786,
+          "url": "https://tk.wavpub.com/WPDL_rgeejJGLNGVvHVsUNeGREDLExHpxqLjNPfKdtQVwPXcauxpWaCgUerXxLZ-1e.m4a"
+        }
+      ]
+    },
+    {
       "id": "shengdongjixi",
       "title": "声东击西",
       "author": "ETW Studio",
+      "category": "国际社会",
       "description": "社会剧烈变动，我们如何理解自己所处的坐标？ 作为拥有记者背景的观察者和记录者，我们以审慎的视角捕捉当下的社会切片，不仅对话提供启发的专业人士，也记录那些身处风暴中心的个体叙事。 声东击西试图推开那些被日常限制的窗户，通过创新的声音实验与深度访谈，帮你厘清社会变迁的脉络，并探寻这些宏大变化如何真实地投影在你我的生活之中。 🎙 本节目由声动活泼制作播出",
       "cover": "https://media24.fireside.fm/file/fireside-images-2024/podcasts/images/8/8dd8a56f-9636-415a-8c00-f9ca6778e511/cover.jpg?v=4",
       "source": "Podcast RSS",
@@ -158,6 +237,7 @@
       "id": "huzuohuyou",
       "title": "忽左忽右",
       "author": "JustPod",
+      "category": "国际社会",
       "description": "「忽左忽右」是一档文化沙龙类播客节目，试图为中文播客听众提供基于经验视角的话题和内容。本节目由JustPod出品。",
       "cover": "https://image.xyzcdn.net/FrYMqb37Wg_LA8aenDJJ8SFGsjea",
       "source": "Podcast RSS",
@@ -231,9 +311,87 @@
       ]
     },
     {
+      "id": "buheshiyi",
+      "title": "不合时宜",
+      "author": "不合时宜TheWeirdo",
+      "category": "国际社会",
+      "description": "《不合时宜》是一档由几位穿梭在不同时区的媒体人共同创立的谈话类播客。它以跨文化的视野和女性的视角，探讨当下中国年轻人最关注的公共议题、文化现象与生活方式。",
+      "cover": "https://image.xyzcdn.net/Fq-ccfNzhgTqQNzlG-1qA_jOow7l.png",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/ww7cqnybekty",
+      "feedUrl": "https://feed.xyzfm.space/ww7cqnybekty",
+      "episodes": [
+        {
+          "id": "buheshiyi-43487dc184dbfb",
+          "title": "漫长的告别：失智症、照护者与终将老去的我们",
+          "description": "【主播的话】 我们常以为，失智是一种“消失”——一个人渐渐忘记名字、忘记至亲、忘记自己是谁。但社会学者唐咏通过研究告诉我们，事情没那么简单：有人忘记了今天发生的一切，却能完整唱出几十年前的老歌；有人认不出朝夕相处的儿女，却依然保有情感和尊严感。失智老人丧失的和保留的部分，从来都不是我们以为的那样。 唐咏是深圳大学政府管理学院社会学系教授。她的研究兴趣始于一次意外——母亲的一场车祸，让她的学术兴趣转向了老年照护。此后两年，她走进深圳34个失智老人家庭，也走访了养老机构、医院老年科和政府部门。我们从这些田野故事出发，聊了聊：我们对“失智”的想象究竟从何而来？",
+          "publishedAt": "2026-08-31T00:00:00+00:00",
+          "duration": 3840,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a93e755a0210c197dca6ffc/media.xyzcdn.net/5e280fb8418a84a0461fd076/lscoToGLQYozNYTQATlEfDwV3jeZ.m4a"
+        },
+        {
+          "id": "buheshiyi-41f40276a6b31e",
+          "title": "从基因编辑女童之死说起：自闭症不是需要被修复的错误",
+          "description": "【主播的话】 一年多前的春天，一个穿着粉色外套、行李箱里装满毛绒玩具的6岁女孩小美，被父母带进了上海一间医院。他们筹集了数百万人民币，只为修复女儿DNA里一个碱基的“错误”——这个“错误”让她语言发育迟缓，让她的成长轨迹偏离了所谓“正常”的标准。但悲剧发生了，七天后，小美因为治疗过程中出现的排异反应，不幸离世。 一年多之后，这起事件被《科学》杂志的调查曝光，随即引发了全球科学界和公众的强烈震动。小美患上了一种罕见病——“斯奈德斯—布洛克—坎波综合征”（Snijders Blok-Campeau syndrome）是自闭症谱系的一种，通常不直接危及生命。在",
+          "publishedAt": "2026-08-28T06:50:15+00:00",
+          "duration": 2969,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a912d76f03e74ee6b0123d1/media.xyzcdn.net/5e280fb8418a84a0461fd076/lg7DOFyeQv-7noQ9W74oH6hsYk4b.m4a"
+        },
+        {
+          "id": "buheshiyi-5d47715980a359",
+          "title": "华人家庭这个巨兽，爱与剥削为何总是同时存在",
+          "description": "【主播的话】 2025 年，一位以公共报道著称的华人记者，突然把笔调转向了自己的家。 记者谭蕙芸，曾在新闻业里追问外部世界的真相，教学生如何采访弱势社群。可她自己的家中，一直藏着一个不能言说的秘密。她的哥哥，那位被寄予最高期望的长子长孙，青少年时期被情绪问题困扰。全家从香港移民到加拿大后，在\"家丑不可外扬\"的家风影响下，未能持续就医，就这样被隐去了三十年，失去机会建立成年人的独立生活和自理能力。 她把这些经历，写成《家锁：华人家庭这个巨兽》一书。以女儿和记者的双重身份，她对这个被封存了三十年的家庭黑箱，做了一次诚实的勘探。书名里的\"家锁\"是个双关：家庭既",
+          "publishedAt": "2026-08-12T04:55:46+00:00",
+          "duration": 3546,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a7bf7ef17676351c5709fa1/media.xyzcdn.net/5e280fb8418a84a0461fd076/lr7b-am2hU2nVoE1epDO35kXDtyv.m4a"
+        },
+        {
+          "id": "buheshiyi-f5bc14857bc34a",
+          "title": "亲密革命：当婚姻退场、AI降临，我们该如何相爱？",
+          "description": "【主播的话】 十几年前，还在读研究生的於嘉向一本知名社会科学期刊投了一篇自己刚写完的论文——关于中国人结婚影响因素的研究。但很快，她收到了拒信。期刊的专家当时认为，选题意义不大，因为中国并不存在所谓的“结婚率下降”的问题。 十几年过去，这个曾被认为“并不存在”的问题变成了全民的焦虑，牵动了全国甚至是全球的神经。於嘉也从学校里毕业，成为了北京大学光华管理学院的一名老师，专事与婚姻、家庭、人口结构有关的研究。 婚姻制度已经延续了千年。而於嘉认为，我们当下这一代，或许是人类历史上第一代可以选择“不结婚”的人。人们为什么不结婚了？哪些条件的出现让人们可以选择不婚",
+          "publishedAt": "2026-07-24T04:05:10+00:00",
+          "duration": 4054,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a62df56a3fec224d5a28b05/media.xyzcdn.net/5e280fb8418a84a0461fd076/lgm0r1XPR5uX0O__GnzIPZ--_Rdg.m4a"
+        },
+        {
+          "id": "buheshiyi-e9c108715bb30d",
+          "title": "漫谈世界杯：梅罗之争、拉美神话与运动科学",
+          "description": "【主播的话】 2026年6-7月，美墨加三国首次联合举办世界杯。这场足球盛事的意义也早已溢出球场之外。本期节目，我们连线正在墨西哥前线报道的资深足球记者王勤伯，与身处美国西岸的政治学者林垚，从拉美足球的“酒神精神”聊起，谈到梅罗之争如何成为年轻一代进步派与保守派的价值符号之争，谈到运动科学如何为球星续命、也谈到巴西足球史上关于人种与临门一脚的“杂种狗”心结。 视野拉回国内，我们讨论董路的青训实验能否为中国足球找到出路；放眼欧洲，意大利足球的没落又如何映照出民粹主义与中产心态的病灶。最后，嘉宾与主播也忍不住预测（“毒奶”）了一把本届世界杯的决赛队伍。这是一",
+          "publishedAt": "2026-07-03T04:07:44+00:00",
+          "duration": 4970,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a4732032e335a35a80d5b83/media.xyzcdn.net/5e280fb8418a84a0461fd076/lkXzIyv8n7yYpjMddxe0HO7LO_ij.m4a"
+        },
+        {
+          "id": "buheshiyi-a33b84bcd0075a",
+          "title": "跨世代的女性友谊，在创造中一起度过漫长",
+          "description": "【主播的话】 本期节目是不合时宜的系列节目——跨世代女性对话。这是不合时宜策划的一档栏目，我们收集了来自不同世代女性所面对的困惑和思考，通过与嘉宾深入对谈的方式展开回应这些困惑。 本期节目中时隔两年，我们又和闾丘露薇在播客中重聚了。这次她还带来了大学同学以及播客伙伴 Helen。我们这期节目里聊了聊对于工作、友谊和创作的理解与困惑，不同阶段的女性与自己身体的关系。想起一个好玩的插曲，在准备这期节目时，我们在群里问闾丘和Helen，有没有什么是她们在三十岁觉得很重要，但随着生命历程变化，价值排序变化的东西？Helen立刻回答: “爱情。” 这是一场轻松开放",
+          "publishedAt": "2026-06-25T04:18:48+00:00",
+          "duration": 5790,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a3ca7889d2f5743683d8c96/media.xyzcdn.net/5e280fb8418a84a0461fd076/ljr3vP_BYtgNVoWjgvVAGH1BTs7y.m4a"
+        },
+        {
+          "id": "buheshiyi-5308c1224ba2a5",
+          "title": "如何在不确定的时代中安排人生？一个资产配置的视角",
+          "description": "【主播的话】 今年五月，我去了一趟奥马哈，参加了一年一度的巴菲特股东大会。 作为一个平日里并不算关注投资的人，去参会纯粹是记者的好奇心作祟：我想看看，这个每年让几万人专程飞来朝圣的地方，究竟供着什么“神”？现场的第一印象，像是一个巨大的县城大卖场，人声鼎沸，摩肩接踵，中国投资者组团涌入，对着一个九十多岁的老人的照片虔诚地举起手机。那种氛围也让人深思：他们在这里寻找的，究竟是财富密码，还是某种更难言说的确定感？ 也是在那里，我第一次真正开始思考，投资这件事和我们的生活到底是什么关系。 带着这个问题，我回到了纽约，找到了大卫翁。他是知名财经博客《起朱楼宴宾客",
+          "publishedAt": "2026-06-10T04:31:25+00:00",
+          "duration": 5256,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a28e6c3dbccffcfa9c68f77/media.xyzcdn.net/5e280fb8418a84a0461fd076/lsqI52TKCw64Rlw3WGtREeCMShGu.m4a"
+        },
+        {
+          "id": "buheshiyi-41c954f653a89b",
+          "title": "一名精神科医生的30年： 人如何与痛苦共存？",
+          "description": "【主播的话】 1993年，刚刚从医学院毕业的姜涛决定成为一名精神科医生。他加入了安定医院——这是中国在精神卫生领域最权威的机构之一。 那时候，中国刚刚经历了市场转型最初的阶段，整个社会正在加速变化。而他走进的，是一个几乎与社会完全隔绝的地方。 安定医院一度是“疯人院”的代名词。那时候的精神病院，是一个“飞地”般的存在。病人被进去，外面的人不太知道里面发生了什么，里面的人也几乎看不见外面的世界。\"神经衰弱\"是那个年代最常见的诊断，像一个大筐，装下了所有说不清楚的痛苦。 三十余年之中，姜涛见过许许多多的“病人“——被时代加速甩出轨道的人，被亲密关系里的爱与控",
+          "publishedAt": "2026-06-03T22:41:35+00:00",
+          "duration": 2462,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a20a1af7444b5722232f90c/media.xyzcdn.net/5e280fb8418a84a0461fd076/lnpUKm53KqFRVah0takI0xyzZSCO.m4a"
+        }
+      ]
+    },
+    {
       "id": "ritanwuyu",
       "title": "日谈物语",
       "author": "日谈公园",
+      "category": "文化阅读",
       "description": "春寒料峭日渐暖，竹马仗剑叶中游 日谈物语2026春季篇与各位见面了！ 依旧是十个全新罪案故事，由作家、日本罪案研究专家李淼主讲，小伙子主持。除此以外，亦会有不定期更新的番外篇免费节目。 聚焦真实罪案，洞察人性边界，就在日谈物语。",
       "cover": "https://image.xyzcdn.net/FgKrO6z3werDYCWBPUaTKfuLcQIy.jpg",
       "source": "Podcast RSS",
@@ -310,6 +468,7 @@
       "id": "wenhuayouxian",
       "title": "文化有限",
       "author": "文化有限",
+      "category": "文化阅读",
       "description": "「文化有限」是一档泛文化播客，每周二更新，和你分享最打动我们的作品。 主播大壹、星光和超哥，是三位来自互联网和文化行业的从业者。 在这个可以把“知识”做成产品售卖的时代，很多人说通过几个视频、几条音频、几篇文章，就能让人认知升级、人格跃迁。 和他们相比，「文化有限」除了能给你解解闷儿以外，百无一用。我们也知道，自己对这个世界乃至我们自己，知之甚少。 好在，我们希望通过这档播客提醒自己，永远对这个世界保持好奇，保持谦卑。 在各大音频平台都能搜到我们，欢迎点击订阅。",
       "cover": "https://fdfs.xmcdn.com/group86/M09/93/15/wKg5Jl7oVC7jwzOyAAKPBjf4fAA078.jpg",
       "source": "Podcast RSS",
@@ -383,78 +542,79 @@
       ]
     },
     {
-      "id": "buheshiyi",
-      "title": "不合时宜",
-      "author": "不合时宜TheWeirdo",
-      "description": "《不合时宜》是一档由几位穿梭在不同时区的媒体人共同创立的谈话类播客。它以跨文化的视野和女性的视角，探讨当下中国年轻人最关注的公共议题、文化现象与生活方式。",
-      "cover": "https://image.xyzcdn.net/Fq-ccfNzhgTqQNzlG-1qA_jOow7l.png",
+      "id": "name-the-question",
+      "title": "那么问题来了",
+      "author": "张超（「文化有限」超哥）、孟阳、林一六",
+      "category": "文化阅读",
+      "description": "“那么问题来了”是一档借由文娱作品进行生活观察、自我成长反思的女性闲聊播客，由孟阳、六六和超哥共同主持。从普通人的视角，真诚地和大家交流我们日常生活中的好奇、不解、犹豫和困惑。 答案很少，问题很多，希望我们的节目能给你带来一些快乐和安慰。 那么，问题来了！",
+      "cover": "https://image.xyzcdn.net/FhK7V84Rb43ikJoAYZ39Ur6nzSDx.png",
       "source": "Podcast RSS",
-      "sourceUrl": "https://feed.xyzfm.space/ww7cqnybekty",
-      "feedUrl": "https://feed.xyzfm.space/ww7cqnybekty",
+      "sourceUrl": "https://feed.xyzfm.space/veblnumvyghb",
+      "feedUrl": "https://feed.xyzfm.space/veblnumvyghb",
       "episodes": [
         {
-          "id": "buheshiyi-43487dc184dbfb",
-          "title": "漫长的告别：失智症、照护者与终将老去的我们",
-          "description": "【主播的话】 我们常以为，失智是一种“消失”——一个人渐渐忘记名字、忘记至亲、忘记自己是谁。但社会学者唐咏通过研究告诉我们，事情没那么简单：有人忘记了今天发生的一切，却能完整唱出几十年前的老歌；有人认不出朝夕相处的儿女，却依然保有情感和尊严感。失智老人丧失的和保留的部分，从来都不是我们以为的那样。 唐咏是深圳大学政府管理学院社会学系教授。她的研究兴趣始于一次意外——母亲的一场车祸，让她的学术兴趣转向了老年照护。此后两年，她走进深圳34个失智老人家庭，也走访了养老机构、医院老年科和政府部门。我们从这些田野故事出发，聊了聊：我们对“失智”的想象究竟从何而来？",
-          "publishedAt": "2026-08-31T00:00:00+00:00",
-          "duration": 3840,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a93e755a0210c197dca6ffc/media.xyzcdn.net/5e280fb8418a84a0461fd076/lscoToGLQYozNYTQATlEfDwV3jeZ.m4a"
+          "id": "name-the-question-31332e3c133b4e",
+          "title": "掰开「许愿柳」，真爱速到手！然而...",
+          "description": "看完《痴迷》，我们仨有人害怕，有人后怕。 如果你获得了一生只能折一次的「许愿柳」，你会折吗？你会许什么愿？ 如果你的朋友愿望没许好，你愿意折断自己的「许愿柳」帮TA弥补遗憾/修复bug吗？ 你觉得靠「许愿」获得的爱情，算爱情吗？ 而什么算爱，什么又算喜欢呢？ 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-09-02T23:00:00+00:00",
+          "duration": 3676,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a983a59f03e74ee6b041289/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ljhZjnomGDwEG54BVjJlCk6GZ6mR.m4a"
         },
         {
-          "id": "buheshiyi-41f40276a6b31e",
-          "title": "从基因编辑女童之死说起：自闭症不是需要被修复的错误",
-          "description": "【主播的话】 一年多前的春天，一个穿着粉色外套、行李箱里装满毛绒玩具的6岁女孩小美，被父母带进了上海一间医院。他们筹集了数百万人民币，只为修复女儿DNA里一个碱基的“错误”——这个“错误”让她语言发育迟缓，让她的成长轨迹偏离了所谓“正常”的标准。但悲剧发生了，七天后，小美因为治疗过程中出现的排异反应，不幸离世。 一年多之后，这起事件被《科学》杂志的调查曝光，随即引发了全球科学界和公众的强烈震动。小美患上了一种罕见病——“斯奈德斯—布洛克—坎波综合征”（Snijders Blok-Campeau syndrome）是自闭症谱系的一种，通常不直接危及生命。在",
-          "publishedAt": "2026-08-28T06:50:15+00:00",
-          "duration": 2969,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a912d76f03e74ee6b0123d1/media.xyzcdn.net/5e280fb8418a84a0461fd076/lg7DOFyeQv-7noQ9W74oH6hsYk4b.m4a"
+          "id": "name-the-question-8eb102c3fd0634",
+          "title": "「龙餐馆」观后感：真想天天都能「包饺子」！",
+          "description": "看完《欢迎来龙餐馆》，「好好吃饭」四个字的意义与难得，在我们仨心里具象化了。 整个观影过程，就是我们仨「刻板印象」不断被打破的过程。 整个录制过程，就是我们仨因为之前的「刻板印象」不断道歉的过程。 欢迎大家走进电影院，观看「欢迎来龙餐馆」 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-08-19T23:00:00+00:00",
+          "duration": 3055,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a85bac7fb87252df2ec86eb/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lq26Eby43nqReTRc6bpeEhb3h1KU.m4a"
         },
         {
-          "id": "buheshiyi-5d47715980a359",
-          "title": "华人家庭这个巨兽，爱与剥削为何总是同时存在",
-          "description": "【主播的话】 2025 年，一位以公共报道著称的华人记者，突然把笔调转向了自己的家。 记者谭蕙芸，曾在新闻业里追问外部世界的真相，教学生如何采访弱势社群。可她自己的家中，一直藏着一个不能言说的秘密。她的哥哥，那位被寄予最高期望的长子长孙，青少年时期被情绪问题困扰。全家从香港移民到加拿大后，在\"家丑不可外扬\"的家风影响下，未能持续就医，就这样被隐去了三十年，失去机会建立成年人的独立生活和自理能力。 她把这些经历，写成《家锁：华人家庭这个巨兽》一书。以女儿和记者的双重身份，她对这个被封存了三十年的家庭黑箱，做了一次诚实的勘探。书名里的\"家锁\"是个双关：家庭既",
-          "publishedAt": "2026-08-12T04:55:46+00:00",
-          "duration": 3546,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a7bf7ef17676351c5709fa1/media.xyzcdn.net/5e280fb8418a84a0461fd076/lr7b-am2hU2nVoE1epDO35kXDtyv.m4a"
+          "id": "name-the-question-cc3c1ce8b21863",
+          "title": "重生之我在《奥德赛》里选择常驻荒岛",
+          "description": "看完《奥德赛》，我们仨一致觉得：奥德赛经历的困难和诱惑，自己可能一个都熬不过。 还没看的朋友可以跟着我们预习预习：战争是怎么开始的，怎么结束的，奥德修斯又是怎么回家的。 看过的朋友可以跟着我们讨论讨论：塞壬唱啥能够吸引你？你会选择留在荒岛猛猛啃食忘忧莲，还是选择回家直面困难？ 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-08-12T23:00:00+00:00",
+          "duration": 4145,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a7c8c1517676351c570f69a/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/loHctIg1A7n49Q3W92u7twIupu-D.m4a"
         },
         {
-          "id": "buheshiyi-f5bc14857bc34a",
-          "title": "亲密革命：当婚姻退场、AI降临，我们该如何相爱？",
-          "description": "【主播的话】 十几年前，还在读研究生的於嘉向一本知名社会科学期刊投了一篇自己刚写完的论文——关于中国人结婚影响因素的研究。但很快，她收到了拒信。期刊的专家当时认为，选题意义不大，因为中国并不存在所谓的“结婚率下降”的问题。 十几年过去，这个曾被认为“并不存在”的问题变成了全民的焦虑，牵动了全国甚至是全球的神经。於嘉也从学校里毕业，成为了北京大学光华管理学院的一名老师，专事与婚姻、家庭、人口结构有关的研究。 婚姻制度已经延续了千年。而於嘉认为，我们当下这一代，或许是人类历史上第一代可以选择“不结婚”的人。人们为什么不结婚了？哪些条件的出现让人们可以选择不婚",
-          "publishedAt": "2026-07-24T04:05:10+00:00",
-          "duration": 4054,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a62df56a3fec224d5a28b05/media.xyzcdn.net/5e280fb8418a84a0461fd076/lgm0r1XPR5uX0O__GnzIPZ--_Rdg.m4a"
+          "id": "name-the-question-131abbced2902b",
+          "title": "这就是爱，说也说不清楚",
+          "description": "《过把瘾》这部94年的电视剧，拢共8集内容，至少9级反转！ 我们发现以前的国产长剧，看着比短剧还过瘾： 台词是不需要字幕的，演技是全员在线的，审美是引领当今潮流的，剧情是经得起时间考验的。 播客最开始，我们各自代入了不同的角色；播客的最后，我们分别理解了对方的立场。 也许这就是爱吧，说也说不清楚。 唯一能说清的，就只有3个字：我爱你。 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-08-05T23:00:00+00:00",
+          "duration": 3912,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a734da3ab3a91c24a1068fb/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lvS92Fark1BRdkfVYtid9gwHG2Uf.m4a"
         },
         {
-          "id": "buheshiyi-e9c108715bb30d",
-          "title": "漫谈世界杯：梅罗之争、拉美神话与运动科学",
-          "description": "【主播的话】 2026年6-7月，美墨加三国首次联合举办世界杯。这场足球盛事的意义也早已溢出球场之外。本期节目，我们连线正在墨西哥前线报道的资深足球记者王勤伯，与身处美国西岸的政治学者林垚，从拉美足球的“酒神精神”聊起，谈到梅罗之争如何成为年轻一代进步派与保守派的价值符号之争，谈到运动科学如何为球星续命、也谈到巴西足球史上关于人种与临门一脚的“杂种狗”心结。 视野拉回国内，我们讨论董路的青训实验能否为中国足球找到出路；放眼欧洲，意大利足球的没落又如何映照出民粹主义与中产心态的病灶。最后，嘉宾与主播也忍不住预测（“毒奶”）了一把本届世界杯的决赛队伍。这是一",
-          "publishedAt": "2026-07-03T04:07:44+00:00",
-          "duration": 4970,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a4732032e335a35a80d5b83/media.xyzcdn.net/5e280fb8418a84a0461fd076/lkXzIyv8n7yYpjMddxe0HO7LO_ij.m4a"
+          "id": "name-the-question-be4f919ff17d0e",
+          "title": "《八仙!》观后感：天让你成仙，扒手都能变八仙！",
+          "description": "你的朋友犯了什么错，你才会和他绝交？ 看完《八仙！》，我们从天意人愿，聊到友情终极大考验。 如果你有友谊决裂/决裂又和好等各种友情故事想要投稿，请发送邮件至👇🏻 nmwtlltg@qq.com 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-07-22T23:00:00+00:00",
+          "duration": 3893,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a60d996a3fec224d5a1c312/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lnlBzOfvn5AZs-Vbh6akQkHzy8c_.m4a"
         },
         {
-          "id": "buheshiyi-a33b84bcd0075a",
-          "title": "跨世代的女性友谊，在创造中一起度过漫长",
-          "description": "【主播的话】 本期节目是不合时宜的系列节目——跨世代女性对话。这是不合时宜策划的一档栏目，我们收集了来自不同世代女性所面对的困惑和思考，通过与嘉宾深入对谈的方式展开回应这些困惑。 本期节目中时隔两年，我们又和闾丘露薇在播客中重聚了。这次她还带来了大学同学以及播客伙伴 Helen。我们这期节目里聊了聊对于工作、友谊和创作的理解与困惑，不同阶段的女性与自己身体的关系。想起一个好玩的插曲，在准备这期节目时，我们在群里问闾丘和Helen，有没有什么是她们在三十岁觉得很重要，但随着生命历程变化，价值排序变化的东西？Helen立刻回答: “爱情。” 这是一场轻松开放",
-          "publishedAt": "2026-06-25T04:18:48+00:00",
-          "duration": 5790,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a3ca7889d2f5743683d8c96/media.xyzcdn.net/5e280fb8418a84a0461fd076/ljr3vP_BYtgNVoWjgvVAGH1BTs7y.m4a"
+          "id": "name-the-question-89861fb65e5f49",
+          "title": "怎么「教育」没想好，但「铁拳」打哪很明了",
+          "description": "《铁拳教育》好爽！好看！好「科幻」！ 看某一集的时候会觉得：对对对，就是TA的问题！ 聊整一季的时候又觉得：等一下，好像都有问题。 对于“教育这事儿要咋弄”，我们聊了半天也没有得出任何结论； 但对于“铁拳你想挥向谁”，我们聊了半天也没有说完目标对象。 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-07-08T23:00:00+00:00",
+          "duration": 4404,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a4e7dba2e335a35a810476d/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lvJ4R0KYeMrCwoKVeAF6MiuI-lLZ.m4a"
         },
         {
-          "id": "buheshiyi-5308c1224ba2a5",
-          "title": "如何在不确定的时代中安排人生？一个资产配置的视角",
-          "description": "【主播的话】 今年五月，我去了一趟奥马哈，参加了一年一度的巴菲特股东大会。 作为一个平日里并不算关注投资的人，去参会纯粹是记者的好奇心作祟：我想看看，这个每年让几万人专程飞来朝圣的地方，究竟供着什么“神”？现场的第一印象，像是一个巨大的县城大卖场，人声鼎沸，摩肩接踵，中国投资者组团涌入，对着一个九十多岁的老人的照片虔诚地举起手机。那种氛围也让人深思：他们在这里寻找的，究竟是财富密码，还是某种更难言说的确定感？ 也是在那里，我第一次真正开始思考，投资这件事和我们的生活到底是什么关系。 带着这个问题，我回到了纽约，找到了大卫翁。他是知名财经博客《起朱楼宴宾客",
-          "publishedAt": "2026-06-10T04:31:25+00:00",
-          "duration": 5256,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a28e6c3dbccffcfa9c68f77/media.xyzcdn.net/5e280fb8418a84a0461fd076/lsqI52TKCw64Rlw3WGtREeCMShGu.m4a"
+          "id": "name-the-question-665659297d066c",
+          "title": "「校园之外」这部爱情科幻，让我们馋的可不只是身子！",
+          "description": "体育特长生与艺术特长生的北美「晋江式」爱情，怎么就全网爆火了？！ 除了颜值、身材、荷尔蒙，这部剧吸引我们的还有它那正到爆炸的三观！！！ 女导演的含金量还在上升！ 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-06-24T23:00:00+00:00",
+          "duration": 4291,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a3bfbd52e335a35a808e03c/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ls725-labZ4Yn32aXH7aZNTy732d.m4a"
         },
         {
-          "id": "buheshiyi-41c954f653a89b",
-          "title": "一名精神科医生的30年： 人如何与痛苦共存？",
-          "description": "【主播的话】 1993年，刚刚从医学院毕业的姜涛决定成为一名精神科医生。他加入了安定医院——这是中国在精神卫生领域最权威的机构之一。 那时候，中国刚刚经历了市场转型最初的阶段，整个社会正在加速变化。而他走进的，是一个几乎与社会完全隔绝的地方。 安定医院一度是“疯人院”的代名词。那时候的精神病院，是一个“飞地”般的存在。病人被进去，外面的人不太知道里面发生了什么，里面的人也几乎看不见外面的世界。\"神经衰弱\"是那个年代最常见的诊断，像一个大筐，装下了所有说不清楚的痛苦。 三十余年之中，姜涛见过许许多多的“病人“——被时代加速甩出轨道的人，被亲密关系里的爱与控",
-          "publishedAt": "2026-06-03T22:41:35+00:00",
-          "duration": 2462,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e280fb8418a84a0461fd076/6a20a1af7444b5722232f90c/media.xyzcdn.net/5e280fb8418a84a0461fd076/lnpUKm53KqFRVah0takI0xyzZSCO.m4a"
+          "id": "name-the-question-2cf4512da58b1b",
+          "title": "活到40岁，才发现高考作文也太难写了吧",
+          "description": "今天我们聊聊校园之内的事儿：高考作文！（校园之外，我们下期见！） 以前觉得800个字老长了，怎么凑都凑不够。 现在发现，能用800个字把事儿说明白，也太难了！ 多年之后回看高考作文，我们才发现它牛在哪。 孟阳的全新脱口秀专场《孟阳话很多》将于6月27、28日，在深圳、广州三脚猪喜剧进行全宇宙首演！ 大家在各大购票平台搜索「孟阳」就能看到啦！ 在小宇宙查看该单集文稿",
+          "publishedAt": "2026-06-17T23:00:00+00:00",
+          "duration": 4173,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a32c13e4233e62bc54b986a/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ljXDTxHfEsVP2929ggHcLnPFdHUL.m4a"
         }
       ]
     },
@@ -462,6 +622,7 @@
       "id": "zonghengsihai",
       "title": "纵横四海",
       "author": "携隐Melody",
+      "category": "心理成长",
       "description": "人类使用说明书。 微博：携隐Melody 公众号：携隐Melody 小红书：纵横四海 加入听友群：公众号「携隐Melody」回复「进群」 BGM歌单：公众号「携隐Melody」回复「歌单」 商务合作：+vx「xymario」回复「合作」",
       "cover": "https://fdfs.xmcdn.com/storages/6577-audiofreehighqps/51/A1/GAqhcW4Nvm6IAAVJ9wSObs6r.jpeg",
       "source": "Podcast RSS",
@@ -538,6 +699,7 @@
       "id": "business-is-like-this",
       "title": "商业就是这样",
       "author": "商业就是这样",
+      "category": "商业财经",
       "description": "用简单易懂的语言解读商业现象。联系我们：thatisbiz@yicai.com",
       "cover": "https://fdfs.xmcdn.com/storages/2b5c-audiofreehighqps/22/03/GKwRIaIJ7ZTwAAPiRgLE4sXp.jpeg",
       "source": "Podcast RSS",
@@ -611,161 +773,10 @@
       ]
     },
     {
-      "id": "dive-in",
-      "title": "垂直入戏",
-      "author": "故事FM",
-      "description": "垂直入戏，深度沉迷。故事FM 推出的新栏目《垂直入戏》，每个月不定时更新，带给你关于文娱创作者最上头的音频故事。如果你还希望哪些创作者来到我们的节目，欢迎留言告诉我们。欢迎你的收听。",
-      "cover": "https://media-one.wavpub.com/covers/1a747605-5636-4bf4-8853-164b97e5d2b0/5318d3d97a719f67.jpg",
-      "source": "Podcast RSS",
-      "sourceUrl": "https://feeds.storyfm.cn/dive-in.xml",
-      "feedUrl": "https://feeds.storyfm.cn/dive-in.xml",
-      "episodes": [
-        {
-          "id": "dive-in-768865a82b0359",
-          "title": "人大教授梁鸿耗时三年，记录下这些青少年的残酷人生 | 垂直入戏14",
-          "description": "故事FM ❜ 垂直入戏 今天的节目开始之前说个通知哈，10 月 25 日故事FM 会在北京举行一场讨论母女关系的故事开放麦，如果你有满肚子的关于你和妈妈的故事，或者你和女儿的故事，欢迎给我们投稿，来现场分享你们的故事。如果你是男生，也欢迎来现场，在即兴环节分享。 你可以关注故事FM 的微信公众号，在昨天我们刚发的征集推送里，有投稿二维码。期待在现场见到你！ 爱哲按： 《 中国在梁庄》这本书大家可能都不陌生，它的作者，文学教授梁鸿，用十几年的时间，一次又一次地回到她位于河南的家乡梁庄。通过记录这个小村庄里的人情世故、变迁与流动，她为我们呈现了一个血肉丰满的",
-          "publishedAt": "2025-09-29T12:28:19+00:00",
-          "duration": 2339,
-          "url": "https://tk.wavpub.com/WPDL_HzCXqTzkknsaUKCUuphJpUhwGzcvmJfBDTUNfNsPvSRZAKfeHBLqjuveaw-82.m4a"
-        },
-        {
-          "id": "dive-in-473d1c9711c610",
-          "title": "我们应该如何与野生动物共存|垂直入戏13",
-          "description": "故事FM ❜ 垂直入戏 今天节目开始之前通知一下哈，明天我们将会在北京举办主题为「村漂「飘了」：当年轻人漂到乡村」的故事开放麦，已经抢到票的朋友记得准时到场，没有抢到票的朋友也不用着急，你可以在 故事FM 的微信公众号里关注后续的开放麦视频，现场音频不久后也会在各大音频平台播出。 今天是 4 月 8 日，国际珍稀动物保护日，请听我们为今天制作的特别节目。 — 中国是全球生物多样性最丰富的国家之一。从青藏高原的雪豹到云南雨林的亚洲象，从东北森林的东北虎到长江湿地的江豚，这片土地孕育了无数独特的生命。但与此同时， 14 亿人口的高速发展社会，也让野生动物与人",
-          "publishedAt": "2025-04-08T14:13:03+00:00",
-          "duration": 2031,
-          "url": "https://tk.wavpub.com/WPDL_LjsyzxTqpbYFCyJjaJHUvHJrCqUktcDNYReUBCumtVNuGJWexFbsFwHSQZ-d6.m4a"
-        },
-        {
-          "id": "dive-in-b7ae3c502b3136",
-          "title": "纪录片是给下一代太平盛世的备忘录｜垂直入戏11",
-          "description": "故事FM ❜ 垂直入戏 作为纪录片爱好者，CNEX 是我一定要介绍给你的一个机构。 CNEX 是一家非营利性质的民间文创组织，以支持所有华语独立纪录片创作者为宗旨，为华人世界的青年搭建纪录片创作的桥梁。「CNEX」是英文「Chinese Next」的缩写，意思是华人新世代，它于 2006 年创办，到现在的 18 年间帮助了数百位华人青年导演实现纪录片梦想。 这里是由 故事FM 出品的内容种草栏目「垂直入戏」。在每期节目中，我们会向你安利我们喜爱的作品，或是创作者。 今天我要介绍的，就是 CNEX 的创始人之一，也是目前的 CEO ，陈玲珍。 /Staff",
-          "publishedAt": "2024-10-16T08:25:58+00:00",
-          "duration": 2140,
-          "url": "https://tk.wavpub.com/WPDL_TsydctrsGVrLQhksskpQsbyZvCHbbpznmVQENRRbMxDZXASuREJShKvLLC-8f.m4a"
-        },
-        {
-          "id": "dive-in-2e1ec6fe518c75",
-          "title": "深港之间，谁能陪你过春天 | 垂直入戏 10",
-          "description": "故事FM ❜ 垂直入戏 从上个月 6 号开始，内地和香港之间终于全面、全开放地「通关」了。两地的往来也会慢慢恢复过去的热络。 关口是边境管理的基础单位，但它常常不只是物理上的一道边界。曾经听到一位身在香港的朋友感叹：有时候几秒钟走过一个关口，就注定了今后人生几十年的流变。 从 1997 年香港回归到今天，「跨越边界」背后，还有很多人生起伏和离散的故事…… 如果你去过香港，相信你一定在深港口岸见到过一群孩子背着书包、穿着校服过海关。他们被称为「跨境学童」，也就是生活在深圳，却在香港读书，拥有香港居民身份的孩子。这是一国两制制度和特殊时代背景下，一种独特的社",
-          "publishedAt": "2023-03-17T09:25:25+00:00",
-          "duration": 2252,
-          "url": "https://tk.wavpub.com/WPDL_zQqvWnZJPaBMfcDyUuhmCjNvjzNGGJuhwUFUfCuUtMxbRxWWPkbtjtRVCP-6f.m4a"
-        },
-        {
-          "id": "dive-in-1b9731b8af3ef9",
-          "title": "我拍了一百多家早餐店，发现烟火气是由八卦构成的 | 垂直入戏 09",
-          "description": "故事FM ❜ 垂直入戏 大家好，我是 故事FM 的制作人陈诗，今天想给大家安利的作品是已经更新了 100 多集的纪录片《早餐中国》。 对于我这样一个几乎不吃早餐的人来说，《早餐中国》就像打开了一个新世界的大门，让我知道在那些被我睡过去的清晨时光，还有多少充满烟火气的事情正在发生；受疫情影响鲜少出行的这几年，它又变成了一种「旅游节目」，带我和中国各个角落里最平凡却又认真生活着的普通人们相遇。 本期节目的讲述者就是《早餐中国》的导演王圣志，无论你之前有没有看过这部作品，都没关系，因为我们要聊的是每个人都不陌生的话题——早餐，以及拍了一百多家早餐店之后，王导对",
-          "publishedAt": "2022-12-07T10:09:16+00:00",
-          "duration": 2015,
-          "url": "https://tk.wavpub.com/WPDL_cauKYYJqgVUhUmNFPmgJyxJvwXCqEpFEyeKNbAmHzJYwbdLLftErnvPFqK-9d.m4a"
-        },
-        {
-          "id": "dive-in-a7975b3cb23a7f",
-          "title": "小鹿，从律师「乱撞」成扛造的脱口秀演员 | 垂直入戏 08",
-          "description": "故事FM ❜ 垂直入戏 脱口秀演员小鹿在 2018 年上 故事FM 的时候，还是个全职律师，兼职说说脱口秀。 四年多过去了，小鹿的职业生涯也发生了巨大的改变，去年她的律师证暂停了，她成为了全职的脱口秀演员。 今天这期特别节目，故事FM 就和老朋友小鹿聊聊她怎么告别了律师工作、她当下的压力和她的脱口秀创作。 /Staff/ 讲述人 | 小鹿 制作人| @寇爱哲 声音设计 | 孙泽雨 实习生 | 杨林 运营 | Yoyo 清韵 /BGM List/ 01.Starlight – 彭寒 02.Buff – 彭寒 03.Memory – 彭寒 用你的声音，讲述你",
-          "publishedAt": "2022-11-21T11:11:14+00:00",
-          "duration": 1737,
-          "url": "https://tk.wavpub.com/WPDL_TWSHkLNFyCfbjnhjqTxTAXgqELnybePWXxJKNhxBsRrpUemwaxXrtCfGyM-6f.m4a"
-        },
-        {
-          "id": "dive-in-a76d105a6eedcb",
-          "title": "魏丹：记录是我们这个时代的「方舟」｜ 垂直入戏07",
-          "description": "故事FM ❜ 垂直入戏 今天我们采访的创作者魏丹，是一名独立纪录片导演。 今年夏天，魏丹选择把自己的第一部纪录片作品《方舟》做了「网盘上映」。他说，自己真的，走到了临界点。 这个描绘了姥姥张秀华人生最后的时光，她的儿孙们是如何尽力挽救她生命的故事，让观众跟随魏丹的镜头近距离地观察到了，当疾病占领上风的时候，人的身体是如何节节溃败的，一个家庭又是如何凝集在一起抵抗死亡的侵袭。 这是一个关于「拯救」的故事，拯救生命、独立创作还有更多。 /Staff/ 讲述者 | 魏丹 主播 | @寇爱哲 制作人 | 也卜 声音设计 | 孙泽雨 文案 | 突突 也卜 运营 |",
-          "publishedAt": "2022-11-14T10:03:57+00:00",
-          "duration": 2052,
-          "url": "https://tk.wavpub.com/WPDL_PdrQSJWvenFGsUwjgnenuNFTdnTQMGgAZymyTmHfXJzCSMJgdnakrTHrmU-55.m4a"
-        },
-        {
-          "id": "dive-in-7559865f976bba",
-          "title": "顾桃：往大兴安岭深处走去 I 垂直入戏06",
-          "description": "故事FM ❜ 垂直入戏 提示：本期节目中关于鄂温克族的音频素材，均来自顾桃的纪录片，有剪辑、删减。你可以去原片中感受完整内容。 现在社会进步了 狩猎文化消失了 工业文明带来了一个悲惨的世界 如果有更文明世界的警察 向我开枪 那就 开枪吧 ——鄂温克族曾经的猎人 维加 300 年前，一支部族赶着驯鹿，从西伯利亚迁徙到了大兴安岭的西北麓。 今年 8 月，鄂温克族酋长玛利亚·索去世，终年 101 岁。中国也失去了最后一位女酋长。 滥用的酒精、失落的认同、被驯化的文明……鄂温克族曾经的猎人们说，一个民族失去了自己的文化，就等于失去了一切。 今天的讲述者，独立纪录",
-          "publishedAt": "2022-10-10T11:21:24+00:00",
-          "duration": 2786,
-          "url": "https://tk.wavpub.com/WPDL_rgeejJGLNGVvHVsUNeGREDLExHpxqLjNPfKdtQVwPXcauxpWaCgUerXxLZ-1e.m4a"
-        }
-      ]
-    },
-    {
-      "id": "name-the-question",
-      "title": "那么问题来了",
-      "author": "张超（「文化有限」超哥）、孟阳、林一六",
-      "description": "“那么问题来了”是一档借由文娱作品进行生活观察、自我成长反思的女性闲聊播客，由孟阳、六六和超哥共同主持。从普通人的视角，真诚地和大家交流我们日常生活中的好奇、不解、犹豫和困惑。 答案很少，问题很多，希望我们的节目能给你带来一些快乐和安慰。 那么，问题来了！",
-      "cover": "https://image.xyzcdn.net/FhK7V84Rb43ikJoAYZ39Ur6nzSDx.png",
-      "source": "Podcast RSS",
-      "sourceUrl": "https://feed.xyzfm.space/veblnumvyghb",
-      "feedUrl": "https://feed.xyzfm.space/veblnumvyghb",
-      "episodes": [
-        {
-          "id": "name-the-question-31332e3c133b4e",
-          "title": "掰开「许愿柳」，真爱速到手！然而...",
-          "description": "看完《痴迷》，我们仨有人害怕，有人后怕。 如果你获得了一生只能折一次的「许愿柳」，你会折吗？你会许什么愿？ 如果你的朋友愿望没许好，你愿意折断自己的「许愿柳」帮TA弥补遗憾/修复bug吗？ 你觉得靠「许愿」获得的爱情，算爱情吗？ 而什么算爱，什么又算喜欢呢？ 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-09-02T23:00:00+00:00",
-          "duration": 3676,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a983a59f03e74ee6b041289/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ljhZjnomGDwEG54BVjJlCk6GZ6mR.m4a"
-        },
-        {
-          "id": "name-the-question-8eb102c3fd0634",
-          "title": "「龙餐馆」观后感：真想天天都能「包饺子」！",
-          "description": "看完《欢迎来龙餐馆》，「好好吃饭」四个字的意义与难得，在我们仨心里具象化了。 整个观影过程，就是我们仨「刻板印象」不断被打破的过程。 整个录制过程，就是我们仨因为之前的「刻板印象」不断道歉的过程。 欢迎大家走进电影院，观看「欢迎来龙餐馆」 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-08-19T23:00:00+00:00",
-          "duration": 3055,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a85bac7fb87252df2ec86eb/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lq26Eby43nqReTRc6bpeEhb3h1KU.m4a"
-        },
-        {
-          "id": "name-the-question-cc3c1ce8b21863",
-          "title": "重生之我在《奥德赛》里选择常驻荒岛",
-          "description": "看完《奥德赛》，我们仨一致觉得：奥德赛经历的困难和诱惑，自己可能一个都熬不过。 还没看的朋友可以跟着我们预习预习：战争是怎么开始的，怎么结束的，奥德修斯又是怎么回家的。 看过的朋友可以跟着我们讨论讨论：塞壬唱啥能够吸引你？你会选择留在荒岛猛猛啃食忘忧莲，还是选择回家直面困难？ 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-08-12T23:00:00+00:00",
-          "duration": 4145,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a7c8c1517676351c570f69a/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/loHctIg1A7n49Q3W92u7twIupu-D.m4a"
-        },
-        {
-          "id": "name-the-question-131abbced2902b",
-          "title": "这就是爱，说也说不清楚",
-          "description": "《过把瘾》这部94年的电视剧，拢共8集内容，至少9级反转！ 我们发现以前的国产长剧，看着比短剧还过瘾： 台词是不需要字幕的，演技是全员在线的，审美是引领当今潮流的，剧情是经得起时间考验的。 播客最开始，我们各自代入了不同的角色；播客的最后，我们分别理解了对方的立场。 也许这就是爱吧，说也说不清楚。 唯一能说清的，就只有3个字：我爱你。 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-08-05T23:00:00+00:00",
-          "duration": 3912,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a734da3ab3a91c24a1068fb/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lvS92Fark1BRdkfVYtid9gwHG2Uf.m4a"
-        },
-        {
-          "id": "name-the-question-be4f919ff17d0e",
-          "title": "《八仙!》观后感：天让你成仙，扒手都能变八仙！",
-          "description": "你的朋友犯了什么错，你才会和他绝交？ 看完《八仙！》，我们从天意人愿，聊到友情终极大考验。 如果你有友谊决裂/决裂又和好等各种友情故事想要投稿，请发送邮件至👇🏻 nmwtlltg@qq.com 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-07-22T23:00:00+00:00",
-          "duration": 3893,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a60d996a3fec224d5a1c312/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lnlBzOfvn5AZs-Vbh6akQkHzy8c_.m4a"
-        },
-        {
-          "id": "name-the-question-89861fb65e5f49",
-          "title": "怎么「教育」没想好，但「铁拳」打哪很明了",
-          "description": "《铁拳教育》好爽！好看！好「科幻」！ 看某一集的时候会觉得：对对对，就是TA的问题！ 聊整一季的时候又觉得：等一下，好像都有问题。 对于“教育这事儿要咋弄”，我们聊了半天也没有得出任何结论； 但对于“铁拳你想挥向谁”，我们聊了半天也没有说完目标对象。 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-07-08T23:00:00+00:00",
-          "duration": 4404,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a4e7dba2e335a35a810476d/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/lvJ4R0KYeMrCwoKVeAF6MiuI-lLZ.m4a"
-        },
-        {
-          "id": "name-the-question-665659297d066c",
-          "title": "「校园之外」这部爱情科幻，让我们馋的可不只是身子！",
-          "description": "体育特长生与艺术特长生的北美「晋江式」爱情，怎么就全网爆火了？！ 除了颜值、身材、荷尔蒙，这部剧吸引我们的还有它那正到爆炸的三观！！！ 女导演的含金量还在上升！ 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-06-24T23:00:00+00:00",
-          "duration": 4291,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a3bfbd52e335a35a808e03c/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ls725-labZ4Yn32aXH7aZNTy732d.m4a"
-        },
-        {
-          "id": "name-the-question-2cf4512da58b1b",
-          "title": "活到40岁，才发现高考作文也太难写了吧",
-          "description": "今天我们聊聊校园之内的事儿：高考作文！（校园之外，我们下期见！） 以前觉得800个字老长了，怎么凑都凑不够。 现在发现，能用800个字把事儿说明白，也太难了！ 多年之后回看高考作文，我们才发现它牛在哪。 孟阳的全新脱口秀专场《孟阳话很多》将于6月27、28日，在深圳、广州三脚猪喜剧进行全宇宙首演！ 大家在各大购票平台搜索「孟阳」就能看到啦！ 在小宇宙查看该单集文稿",
-          "publishedAt": "2026-06-17T23:00:00+00:00",
-          "duration": 4173,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/661b51a136e8d0ca6230c0ab/6a32c13e4233e62bc54b986a/media.xyzcdn.net/661b51a136e8d0ca6230c0ab/ljXDTxHfEsVP2929ggHcLnPFdHUL.m4a"
-        }
-      ]
-    },
-    {
       "id": "mianji",
       "title": "面基",
       "author": "面基",
+      "category": "商业财经",
       "description": "替听友和自己多问几个为什么？",
       "cover": "https://image.xyzcdn.net/Ftol1VYmqtTUXqIxdMjkt0BcBuFX.png",
       "source": "Podcast RSS",
@@ -842,6 +853,7 @@
       "id": "beyond-football",
       "title": "从球说起 | 女球迷的人间观察",
       "author": "阿冷来",
+      "category": "运动健康",
       "description": "由 阿冷来和笛子 两位资深看热闹女球迷发起，探讨体育（以足球为主）中除了比赛本身之外所有话题的正经谈话节目，主要涉及人文、艺术、生活、情感等方面。 vx听友群：assholelai 微博@从球说起 @阿冷来_ @笛佬斯_Diiii",
       "cover": "https://fdfs.xmcdn.com/storages/8a83-audiofreehighqps/2E/EE/GMCoOSUGEIdZAAJK9gEuONa_.jpeg",
       "source": "Podcast RSS",
@@ -911,6 +923,1623 @@
           "publishedAt": "2024-01-21T16:05:46+00:00",
           "duration": 6003,
           "url": "https://tk.wavpub.com/WPDL_huBTJgrGwNALRxEQAJPmEaAyXcJPJrLXSnZtTjTWqLAxcxLKXtfUqGbQfY-b9.m4a"
+        }
+      ]
+    },
+    {
+      "id": "sv101",
+      "title": "硅谷101",
+      "author": "硅谷101",
+      "category": "科技与AI",
+      "description": "失败、背叛、不被理解，硅谷精神领袖一直都不是完美的存在；他们是科学家，创造者，行动派，他们有独立的价值观。《硅谷101》是由媒体人泓君发起的深度访谈节目，是一档分享当下最新鲜的技术、知识与思想的科技播客。 公众账号：硅谷101 联系邮箱：podcast@sv101.net",
+      "cover": "https://media24.fireside.fm/file/fireside-images-2024/podcasts/images/f/f0f20376-8faf-4940-b920-84af6c734e2d/cover.jpg?v=6",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://sv101.fireside.fm",
+      "feedUrl": "https://feeds.fireside.fm/sv101/rss",
+      "episodes": [
+        {
+          "id": "sv101-1ba24784005fbc",
+          "title": "E250｜mRNA的第二战场：对话英博，拆解Moderna人类首个肿瘤疫苗三期突破",
+          "description": "2026年8月，Moderna与默沙东联合开发的个体化mRNA肿瘤疫苗公布三期临床积极结果，Moderna股价一度暴涨177%。这不是一款预防癌症的疫苗，而是一种为患者量身定制的治疗性疫苗。“一人一药”，似乎正在离现实越来越近。 这期视频，我们邀请到艾博生物创始人、CEO英博博士，他曾在Moderna从事mRNA相关的核心研发。我们从这次三期临床结果出发，拆解个体化肿瘤疫苗究竟如何工作、为什么要与PD-1联合使用，以及它真正证明了什么、还有哪些问题没有被证明。我们也会聊到Moderna、BioNTech以及中国公司正在探索的不同技术路线，以及“一人一药”",
+          "publishedAt": "2026-08-28T00:45:00+00:00",
+          "duration": 4610,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/73a69583-98ee-43d6-a892-3e7c93012dd9.mp3"
+        },
+        {
+          "id": "sv101-31517175223b9f",
+          "title": "E249｜Token经济转点：OpenClaw、Hermes到本地自研的Agent进化之路",
+          "description": "去年年底，硅谷掀起了一股风潮——“Token Maxing”（最大化token使用量），科技公司创始人和工程师们争相晒出账单，比谁家Token消耗更吓人，以此彰显对AI的全力押注。但到了今年年中，成本失控和虚假生产力让这场烧钱竞赛到达了转折点。Uber在四个月里烧穿了全年的AI预算，Meta被迫给员工设定token使用上限，一些公司会提醒员工使用AI的时候注意成本。大家开始认真思考：如何更经济地使用Token？ 这期节目的嘉宾黄东旭，就是Token Maxing热潮的亲历者。他曾经每天烧掉三四百美元，只用最前沿的模型。让他逐渐转变的，是中国开源模型们的崛",
+          "publishedAt": "2026-08-20T00:00:00+00:00",
+          "duration": 5222,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/6242033d-a14a-44e3-a622-cbfc7d3c3817.mp3"
+        },
+        {
+          "id": "sv101-0e3e380ed554a6",
+          "title": "E248｜一个“催发货”AI要跑通260步，和阿里瓴羊朋新宇聊聊中国式FDE",
+          "description": "不久前，我们聊了硅谷最火的新职位FDE（前线部署工程师）。硅谷的逻辑是，AI要进企业，就要开行业最高的薪资，派一批最聪明的人驻扎进去。但这件事在中国，还是同一个剧本吗？ 我们邀请到阿里巴巴集团副总裁、瓴羊CEO朋新宇。他是阿里数据中台方法论的创立者，他的团队做这件事已经5年，比“FDE”这个词流行起来还要早。在AI浪潮到来之后，他们发布企业级Agent平台：AgentOne。 他们的做法很不“硅谷”，不接定制化的大单，不做1000人天的驻场开发。他们找的是企业里最耗人、最耗钱、最耗时的环节，把预设好的agent接入企业私有数据，去解决真实的业务难题。 举",
+          "publishedAt": "2026-08-11T01:45:00+00:00",
+          "duration": 3834,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/9e923c4c-1c87-499b-90a4-9a21cc83e4b1.mp3"
+        },
+        {
+          "id": "sv101-5bf9de702a3c0e",
+          "title": "E247｜对话盛颖：xAI，Infra的浪漫，SGLang，开源，平权与“甄嬛传”",
+          "description": "这期播客的嘉宾是盛颖，xAI前推理团队负责人、开源推理引擎SGLang发起人及RadixArk联合创始人/CEO。 在开源模型集中爆发之际，盛颖在AI Infra（基础设施）领域的研究和贡献非常核心。她将AI Infra描述为“浪漫的关系”，是产品本身，需要有“美感”。 由此，我们走进盛颖的世界。 她曾经想成为一个数学家，沉浸在一个确定、纯粹、仿佛“与世界无关”的世界里。 但从哥大到斯坦福，从形式化验证到 AI Infra，盛颖一路经历的并不是外界看到的连续发顶刊的高光，背后是不为人知的寻找方向、迷茫、停滞、低谷和重新出发。她逐渐意识到，自己无法勉强去做",
+          "publishedAt": "2026-08-05T04:30:00+00:00",
+          "duration": 6386,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/6c9d13b1-ac9a-4a7a-a35b-99bfb8374668.mp3"
+        },
+        {
+          "id": "sv101-d48392424e4bcf",
+          "title": "E246｜何谓蒸馏？聊聊硅谷如何看中国开放模型逼近前沿",
+          "description": "7月27日，月之暗面正式发布Kimi K3的完整模型权重。自7月16日API上线以来，K3就在在多项测试中展现出接近前沿模型的能力。因此，它成为了硅谷最近讨论开源时的重要案例之一。从2025年初的DeepSeek时刻，到当下的Kimi K3，中国开源模型正在从成本更低、能力稍弱的替代品，逐渐逼近甚至超过最强的闭源前沿模型。 随之而来的，是一场越来越激烈的蒸馏争论。什么是蒸馏？通过闭源模型的输出进行训练，和未经授权的大规模能力提取，有什么区别？即使中国实验室使用过美国模型生成的数据，它又究竟能解释多少最终能力？ 本期播客，我们邀请到两位嘉宾来分别从开源生态",
+          "publishedAt": "2026-08-01T00:00:00+00:00",
+          "duration": 4032,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/5fd236d7-9a72-4b15-9e84-e83ceadd1b41.mp3"
+        },
+        {
+          "id": "sv101-5ed3f2fc7ba9a4",
+          "title": "E245｜藏在大模型背后的新闻人：GPT们的回复是这样写出来的",
+          "description": "当你觉得AI“懂你”的那一刻——精准抓住一个你自己都没说清的情绪，问出一个让你陷入沉思的问题——你以为那来自数据中心的芯片、模型里的参数、程序员敲下的代码，但真相是，那些问进你心坎里的问题、让你会心一笑的遣词造句，背后站着一群人：他们曾是记者、编辑和纪录片导演，如今藏在大语言模型之后，有一个鲜为人知的名字——内容工程师（Content Engineer）。 当模型能力日益趋同，真正决定用户去留的，已不再是参数，而是它能否让人觉得“懂我”。那些“只可意会、不可言传”的语感与共情，正被一群文字工作者拆解成一套可以装进AI的规则。 本期《硅谷101》播客，我们",
+          "publishedAt": "2026-07-24T00:00:00+00:00",
+          "duration": 2760,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/5aeaeb64-9165-4271-9884-23329b511e11.mp3"
+        },
+        {
+          "id": "sv101-031ae272b17fda",
+          "title": "E244｜机器人走错路了？与苏度韩铮聊聊具身智能的3D数据、路径分野与硅谷竞赛",
+          "description": "机器人已经能在舞台上做到翻跟头、表演武术了，但要让它在开放环境里伸手帮你拧开一个瓶盖，难度陡然跃升2到3个量级——因为那一刻，它需要理解眼前的物理世界。 这正是苏度科技想啃下的硬骨头。苏度科技联合创始人、董事长苏昊是ImageNet的核心作者之一，师从李飞飞。这家公司走了一条与硅谷主流\"纯大脑黑盒大模型\"不太一样的路：软硬件协同设计，上下分层架构，上层负责任务规划与环境理解，下层负责具体物体操作；Sim-to-Real作为核心训练范式，让机器人在虚拟世界里经历几百万年的进化，再迁移到现实。 这条路已经跑出了一定成效：面对从未见过的新物体，他们的零样本通用",
+          "publishedAt": "2026-07-16T00:00:00+00:00",
+          "duration": 4639,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/fc9a3737-81a9-49cf-a7d6-530c77df836e.mp3"
+        },
+        {
+          "id": "sv101-80711207f07b56",
+          "title": "E243｜特朗普“缓刑”红牌之外，美国资本如何硬控全球足坛",
+          "description": "世界杯发生了闻所未闻的一幕，在特朗普介入后，美国球员巴洛贡吃到的红牌被暂缓1年执行，有人不禁要问了，国际足联为什么要那么听美国人的话。 部分原因可能来自于，美国资本已经渗透进了全球足坛的方方面面。比如英超的20家俱乐部中，有11家都被美国资本控股，美资甚至渗透进了欧洲五大联赛的俱乐部、商业权益开发、球员球队买卖资金周转等等方面。 没有英式足球积淀的美国人，为什么会那么喜欢投资英式足球？美国资本又在怎么改变世界足坛呢？ 【主播】 麻花，硅谷101特约研究员 【嘉宾】 张兵，懒熊体育 《摸鱼的熊彼得》 主理人 施骅伦， 《翻转体育》 主播 【你将听到】 没有",
+          "publishedAt": "2026-07-10T00:00:00+00:00",
+          "duration": 4588,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/d65f1b49-9e97-4892-bc64-55f5f0b39906.mp3"
+        }
+      ]
+    },
+    {
+      "id": "random-books",
+      "title": "乱翻书",
+      "author": "潘乱",
+      "category": "科技与AI",
+      "description": "乱翻书是一档关注商业、科技和历史的对话节目，关心How和Why，以及少有人注意到的What。内容主要方向是科技考古、行业观察和前沿思考，研究明星公司的创新、竞争和兴衰循环，希望能够为你提供信息增量。 「乱翻书」主理人是潘乱，科技评论作者，单列双列产品概念提出人，代表作《腾讯没有梦想》、《字节如何跳动》。",
+      "cover": "https://image.xyzcdn.net/FqqQkG2Api63iYHz38DWlnFdR-1y.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/yxuruh3f9mc4",
+      "feedUrl": "https://feed.xyzfm.space/yxuruh3f9mc4",
+      "episodes": [
+        {
+          "id": "random-books-a14cafc6295d31",
+          "title": "272. 从飞书基座到Agent优先，豆包工作All in one紧追WorkBuddy",
+          "description": "🎙【本期嘉宾】Eric、莫唯书、钟经纬、仲泰 Eric （前飞书产品） 莫唯书Mark （前TikTok产品，公众号：莫思Moss） 钟经纬 （前阶跃星辰产品，公众号：016数据） 仲泰 （AI创业者，特工宇宙&观猹创始人） 主播：潘乱（「乱翻书」主理人） 🎬 本期视频播客同步上线于@潘乱的视频号、哔哩哔哩、微博、小红书、Youtube等平台。 ⏰【时间线】 一、组织收拢与产品重构——大厂这一轮到底在合什么？ 01:13 豆包工作这次整合到底整合了什么？ 05:55 All in one是几个月前就能预判的 09:24 Coze、Trae、Aily之前跑",
+          "publishedAt": "2026-09-02T12:12:09+00:00",
+          "duration": 6690,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a981121a0210c197dcc5e6e/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lqMFcNfKKHOXt440QY26VwPNVsWp.m4a"
+        },
+        {
+          "id": "random-books-c003187fcbbcd3",
+          "title": "271.唐朝都要不存在了？为什么伪史论会在今年大爆发？",
+          "description": "🎙【本期嘉宾】河森堡、宋方金 、大猛（猛哥） 河森堡 （科普作家） 宋方金 （著名编剧） 主播：猛哥（「 天才捕手 」主理人） 主播：潘乱（「乱翻书」主理人） 本期播客由 雷鸟iO AI眼镜 支持 RayNeo iO 将强大的AI辅助，隐入一副极简的日常眼镜中。专为应对高信息密度、高认知负荷的效率人群打造。它为你提供“抬眼即看”的专属信息看板，让你在频繁的场景切换中，无需反复查阅手机即可精准捕捉关键信息。 特别设计的皇冠框型、萤火光引擎Nano、蓝湖光波导，使它无限接近传统眼镜。专属信息看板，将所有繁杂的信息清晰显示在眼前。全天智记，在你毫无察觉的情况下",
+          "publishedAt": "2026-08-21T09:37:27+00:00",
+          "duration": 4863,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a8813df1352af56ff39cc0e/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lg7_wdrDW1B9h7LwA4VWKvMyb4Un.m4a"
+        },
+        {
+          "id": "random-books-a1e98061dd5b05",
+          "title": "270.大厂押注AI办公，飞书和钉钉却先成了配角",
+          "description": "🎙【本期嘉宾】Eric、庄明浩、雅楠 Eric（飞书前产品） 庄明浩（AI观察者、「 屠龙之术 」主播） 雅楠（前媒体从业者） 主播：潘乱（「乱翻书」主理人） 🎬 本期视频播客同步上线于@潘乱的视频号、哔哩哔哩、微博、小红书、Youtube等平台。 ⏰【时间线】 一、飞书这次到底发生了什么？ 02:12 半年前的当红炸子鸡，今天全成了明日黄花 03:52 豆包更需要飞书，还是飞书更需要豆包？ 07:44 「AI本质上是卖挖金子的铲子，只有从事生产的人，才有提高生产力的需求」 08:25 「AI没有应用，只有模型」 08:35 对内部产品团队来说，飞书这次",
+          "publishedAt": "2026-08-01T07:44:43+00:00",
+          "duration": 5829,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a6da28d1b5e24969ce72d4c/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lmb4DgcgOv3mR4CN7ciKBgHpfrO4.m4a"
+        },
+        {
+          "id": "random-books-6a50057fea106d",
+          "title": "269. 卷规模 VS 卷创作：真人短剧的两种生存模式",
+          "description": "🎙【本期嘉宾】侯超、李佳佳 侯超（日新阅益文化董事长） 李佳佳（刚刚好影视董事长） 主播：潘乱（「乱翻书」主理人） 🎬 本期视频播客同步上线于@潘乱的视频号、哔哩哔哩、微博、小红书、Youtube等平台。 ⏰【时间线】 一、生产方式的分化 02:46 为什么西安、郑州成了短剧之都？ 05:03 一个月200多部，产能天花板在哪，怎么管理？ 07:00 钱、本子、导演、编剧、演员从哪来？ 08:07 「第一是本金安全，第二是利润规模」 08:33 短剧从付费转免费，创作团队，公司流程有哪些变化？ 11:32 反脸谱化，人物关系做扎实 13:57 从男频到女",
+          "publishedAt": "2026-07-09T10:32:06+00:00",
+          "duration": 4297,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a4f777d1e32575f5eb3cbc1/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lmwHgQD0rgE4mr0FWP5QPR2scWXt.m4a"
+        },
+        {
+          "id": "random-books-96ed3d52866f35",
+          "title": "268.AI时代，个人工作台会重新回到手机吗？",
+          "description": "🎙【本期嘉宾】庄明浩、罗璇 庄明浩 （「 屠龙之术 」主播） 罗璇（RWKV元始智能联合创始人） 主播：潘乱（「乱翻书」主理人） 💡本 期节目由vivo赞助播出， vivo X Fold6 即将于6月26日 19:00 发布 ⏰【时间线】 一、从App到Agent：手机为什么重新变重要了？ 01:50 哪些工作移动端可以取代PC，哪些无法取代？ 07:03 AI硬件为什么绕了一大圈，最后又回到了手机？ 11:31 为什么手机在今天，依然是AI时代最特殊的智能设备？ 14:26 工作流里AI最大的瓶颈到底是模型能力还是完整上下文？ 二、工作台回归，回来是同",
+          "publishedAt": "2026-06-24T13:49:54+00:00",
+          "duration": 3698,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a3bdd319d2f5743683d4841/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lgPRs5jUHHrJyKBzASAqvdLZx8fs.m4a"
+        },
+        {
+          "id": "random-books-1200aa6620205d",
+          "title": "发券、裂变、极速版，如何用红包设计增长？丨字节跳动 第8集",
+          "description": "📄 本期嘉宾 ：Tom（上古UG增长专家，现短剧从业者） 🎙主播：潘乱 🎬 视频播客将同步上线于 @潘乱的视频号、哔哩哔哩、微博、小红书、Youtube 等平台。 ⏰【时间线】 一、从早鸟系统，到字节的竞品雷达 01:14 一个红包，包罗万象 • - 你这么多年投放一共花过多少钱？ - 几百亿人民币的量级吧 • 上古增长黑客的打法过气了？ • 竞品雷达：QuestMobile（国内）、 Data.ai 、Semrush等 • 有哪些产品在被你们列入过核心对手？ • 监测到竞对上升的趋势之后，怎么办？ 17:43 红包到底有哪些种类玩法？ • 大家在聊到红",
+          "publishedAt": "2026-06-12T11:04:56+00:00",
+          "duration": 10788,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a2be12243a22a695582ab90/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lijPz1zGy9H2k4qd0C45ixweNU-0.m4a"
+        },
+        {
+          "id": "random-books-15367d8d1dbaae",
+          "title": "267.3000块成本，3.5亿次播放，AI短剧怎么在抖音挣钱？",
+          "description": "🎙【本期嘉宾】小果哥哥 小果哥哥 （AI短剧《 安徽小木匠 》作者， 潘乱亲弟弟 ） 主播：潘乱（「乱翻书」主理人） 🎬 本期 视频播客 已同步上线于 @潘乱的视频号、哔哩哔哩、微博、小红书、Youtube 等平台。 ⏰【时间线】 一、IP筛选策略 03:28 现在做短剧的和当年做公众号的，是同一群人 05:45 是什么让你下定决心做短剧？ 08:16 3000块钱不到的成本，3.5亿播放，50多万的收益 09:06 从番茄小说里听到的《安徽小木匠》原始小说 10:09 为什么选《安徽小木匠》这个作品改编做短剧？ 12:09 我一直有个愿景，就是自己做一",
+          "publishedAt": "2026-06-01T15:14:35+00:00",
+          "duration": 2217,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a1d9e487460cabdeb597a29/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lrvMi-rUXZ81afNqXDFK_dLdIxhX.m4a"
+        },
+        {
+          "id": "random-books-80196da9823f9c",
+          "title": "全面压制，不留空档：字节跳动如何做增长？｜字节跳动 第7集",
+          "description": "✍【乱翻书时刻】 跟Tom聊字节如何做增长，这是字节跳动考古系列第七期。Tom 2019 年加入字节，在增长中台负责国际化业务，七成精力投在 TikTok 增长上。那一年多时间里，TikTok 涨了四五亿 DAU。他从业十多年，亲历过中国互联网增长方法论从买量、裂变、ASO 一路演化到平台化、风控、创意工业化的全过程。 行业里大多数公司理解的增长还停留在投放、渠道、裂变，但字节这一代 UG 早已把增长做成了中台组织：算730天甚至全生命周期的 LTV，建预测归因模型，搭红包中台、千沧北斗，把投放优化师蒸馏成机器人。这一期我们想聊的不只是字节怎么涨 DAU",
+          "publishedAt": "2026-05-29T09:42:21+00:00",
+          "duration": 14316,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a1953f9ac7bdb080c32baa5/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lqSZvMuR6JV8b9XT8rJgmWFdQtEc.m4a"
+        }
+      ]
+    },
+    {
+      "id": "tech-stew",
+      "title": "科技乱炖",
+      "author": "DAO",
+      "category": "科技与AI",
+      "description": "朱峰、高春辉等多名知名 IT 业者主持的科技资讯点评播客。主播和嘉宾利用多年经验和业内视角，嬉笑怒骂之间，把近期科技热点变成犀利、独到、深刻的独家观点",
+      "cover": "https://media-one.wavpub.com/covers/7008bf9f-6510-4c43-b035-078e1bfabfff/fa390d6c7c1ac5c9.png",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feeds.daopub.com/ld.xml",
+      "feedUrl": "https://feeds.daopub.com/ld.xml",
+      "episodes": [
+        {
+          "id": "tech-stew-e323f3f6cd3440",
+          "title": "从抢 GPU 到喂 AI，互联网正在悄悄更换主人",
+          "description": "AI 淘金热最热闹的时候，卖铲子的英伟达几乎收走了全世界的钱。投资人的钱绕上一圈，最后变成机房里一排排 GPU。但当一把铲子贵到足以撑起惊人的利润，所有人都会产生同一个念头——能不能自己造一把？ 于是，英伟达的护城河开始迎来试探。云厂商自研芯片，大模型公司优化国产算力，客户想方设法降低成本。有人真正动手挖墙脚，有人只是需要向资本市场证明，自己没有向唯一的生态举手投降。 而在大洋另一端，GPU 已经不只是一件硬件，更像一种高风险的大宗商品。一台八卡服务器报价上千万元，现货的“保鲜期”可能只有几个小时；买卖双方隔着多层中介互相验资、验货，期货合同、信用证与仓",
+          "publishedAt": "2026-09-02T15:00:00+00:00",
+          "duration": 4189,
+          "url": "https://tk.wavpub.com/WPTK_GAccHPIGFKkPk8Hz-ba044533d184.mp3"
+        },
+        {
+          "id": "tech-stew-0ba519b48c9970",
+          "title": "当机器人学会认路，物理世界才真正接上了 AI",
+          "description": "机器人，可能是过去两年科技行业里最像“一夜之间冒出来”的东西。 世界机器人大会的展馆里，几百家公司同时在做人形机器人、机器狗、机械臂。它们会跑、会跳、会翻跟头，甚至已经开始尝试自己出门买咖啡。 但机器人当然不是突然出现的。 从上世纪五六十年代的工业机器人，到日本对人形机器人的早期探索，再到 ASIMO、波士顿动力，人类已经折腾了几十年。机械结构、电机、控制系统不断进步，但机器人始终有一个很难跨过去的门槛：它可以被控制得越来越好，却很难真正理解自己要干什么。 直到 AI 开始补上这块缺失已久的“大脑”。 强化学习让机器人学会保持平衡、走路和奔跑；大模型和视",
+          "publishedAt": "2026-08-23T15:00:00+00:00",
+          "duration": 4796,
+          "url": "https://tk.wavpub.com/WPTK_Hx8KT5WCDNDoJTOu-28600a8802e2.mp3"
+        },
+        {
+          "id": "tech-stew-4e3b72691ed86a",
+          "title": "没有方向盘的出行，走到哪一步了？ NVIDIA × 小马智行一次聊透智能驾驶",
+          "description": "第一次坐上一辆没有司机的车，大多数人很难不紧张：它真的会看红绿灯吗？会避让突然冲出来的人吗？前面堵住了，它会像老司机一样判断、变道，还是原地发呆？但也很有意思，很多人只需要五分钟，就会从“它行不行啊”变成“好像真的比我开得稳”。 这期节目，我们从 Robotaxi（无人驾驶出租车）这个具体场景出发，聊透智能驾驶正在发生的关键变化。它不是简单的没有司机这个角色，也不是把今天车上的辅助驾驶功能一路升级到“无人驾驶”。L2、L3、L4 这些听起来像台阶的等级，背后其实是完全不同的责任边界、技术路线、计算平台和商业模式。 这也是为什么，我们会把 NVIDIA 请",
+          "publishedAt": "2026-08-12T15:20:00+00:00",
+          "duration": 5165,
+          "url": "https://tk.wavpub.com/WPTK_kBMZF7cce2PscdMn-482034f8644e.mp3"
+        },
+        {
+          "id": "tech-stew-aca272614501db",
+          "title": "期权这张饼，为什么越来越难吃了？",
+          "description": "曾经，期权是互联网公司最迷人的叙事之一：公司还小，现金不多，但未来很大；你先一起扛几年，等到上市、并购、估值起飞，今天的“纸面权益”就可能变成明天的真金白银。它像一张通往未来的票，也像创业公司和员工之间的一次互相信任。 但问题是，很多人后来发现，自己拿到的不是票，而是一张解释权归公司所有的饼。 这一期，我们从最近引发争议的某互联网公司期权纠纷聊起：为什么员工明明被授予了期权，公司却能在上市前后以各种理由说“不算”？为什么一个看似个体的劳动争议，可能牵出 VIE 架构、上市主体、境内劳动合同和海外控股公司之间的复杂关系？为什么监管、法院、投资者和员工，最终",
+          "publishedAt": "2026-08-03T15:00:00+00:00",
+          "duration": 3441,
+          "url": "https://tk.wavpub.com/WPDL_FTEkyTDVpVDFhzSpvJQQZDxYmfxVvMxBbDqmcvMWaPhEMvpgbShXpwZvGP-52.mp3"
+        },
+        {
+          "id": "tech-stew-fbac4320d6864a",
+          "title": "AI 不只比智商，WAIC 和 Kimi K3 透露了什么新竞争",
+          "description": "本节目录制时，媒体尚未发出梁文峰的内部讲话，本期节目观点与其讲话内容有部分重叠，纯属巧合，不涉及任何抄袭和未注明的引用。 今年的 WAIC，看起来依然很热闹：大厂展台、算力集群、机器人表演、满场的 AI 应用和 Agent。但如果把那些“参数更大”“能力更强”“现场更酷”的热闹拨开，真正值得关注的问题反而变得更朴素了：AI 到底能不能干活？能不能稳定地干活？能不能便宜地干活？以及，谁愿意为它买单？ 这一期我们从一次“云看展”聊起。去过现场的朋友纷纷倒下，没去成现场的我们，反而借着报道、观察和自己的落地实践，重新看了一遍今年 WAIC 暴露出的行业变化：大",
+          "publishedAt": "2026-07-23T15:00:00+00:00",
+          "duration": 4616,
+          "url": "https://tk.wavpub.com/WPDL_MdPHtxZqwabJxPbTENQdwweRzRGrLTPukcKNdcNGujKeyzpxtJbmbyhLyJ-e3.mp3"
+        },
+        {
+          "id": "tech-stew-fe2e6c7cdfc2b9",
+          "title": "把身体数据存起来，可能是普通人最划算的 AI 投资",
+          "description": "这几年，AI 医疗被讲得太热，也太容易被讲偏。有人把它当成“赛博神医”，拍一张化验单就想让模型给诊断；也有人一听 AI 看病就立刻警惕，觉得这东西离真实医疗还差得很远。 但这一期我们想聊的，恰恰不是“AI 能不能替医生看病”。 真正值得讨论的问题是：如果 AI 不负责下诊断、不替医生开处方，而是帮你长期看住身体的变化，它会不会变成一种更现实、更有价值的健康管理工具？ 本期我们请到长期从事数据、AI 与医疗相关工作的姜旭，一起从互联网医疗早年的失败聊起，聊到今天 AI 为什么可能重新打开健康管理的想象空间。过去很多慢病管理产品没能跑通，不是因为需求不存在，",
+          "publishedAt": "2026-07-07T15:00:00+00:00",
+          "duration": 4711,
+          "url": "https://tk.wavpub.com/WPDL_KxxJhBQKKEbUADbuNNrygGXXjHBbbVAFsBqteXEMbWkrCqTCsJjdQgZscd-c7.mp3"
+        },
+        {
+          "id": "tech-stew-2e215505423d3a",
+          "title": "OPC 的真正难题，是 AI 还没学会替你把东西卖出去",
+          "description": "如果说今年最适合被包装成“新机会”的词，OPC 一定榜上有名。 一个人，一台电脑，再加上一堆 AI 工具，理论上就能拥有产品、运营、营销、客服、财务，甚至一个虚拟团队。听起来很迷人，尤其在就业压力、AI 热潮、各地园区补贴和“出海赚钱”叙事叠在一起的时候，OPC 几乎像是一个时代给普通人的创业快捷键。 但问题也在这里：快捷键是真的存在，还是只是把你更快地带到下一个坑里？ 这不是一期劝所有人别创业的节目。恰恰相反，它更像是在给热闹降温：如果你已经在一个领域里很强，AI 确实可能帮你变得更快、更轻、更高效；但如果你只是因为 AI 看起来什么都会，就想跨进一个",
+          "publishedAt": "2026-07-01T15:00:00+00:00",
+          "duration": 4098,
+          "url": "https://tk.wavpub.com/WPDL_BRNJKkpdhUBAZVrrSSCJFMYyryQMtFpEBUQBGknHTLGEPTYdMEUnVjRrpT-a3.mp3"
+        },
+        {
+          "id": "tech-stew-75366ee3d04994",
+          "title": "把 AI 吹成核武器的人，亲手拉下了新冷战铁幕",
+          "description": "这期节目从一个很现实的尴尬开始：WWDC 上苹果讲了很多 AI 新功能，但中国用户能用到的寥寥无几。技术发布会明明是全球直播，真正落到产品里，却越来越像一张分区地图。这个区能用，那个区不能用；这个模型开放，那个模型又被关掉。过去我们习惯了“软件一上线，全世界一起更新”的互联网想象，现在它正在被监管、出口管制、商业利益和地缘竞争重新切开。 更戏剧性的，是 Anthropic 高阶模型的风波。一个被反复强调“能力太强”“风险太高”的模型，在短暂开放后迅速触发出口管制。问题是，当一家 AI 公司不断把自己的模型比作核武器，政府真的把它当成核武器来管，好像也很难",
+          "publishedAt": "2026-06-22T16:30:30+00:00",
+          "duration": 4408,
+          "url": "https://tk.wavpub.com/WPDL_qMEYdkKDnVEDddKeUMDYPwWgcPnXvsjhhaxYRXugebFZdPvcWxpTuZtbNZ-76.mp3"
+        }
+      ]
+    },
+    {
+      "id": "whats-next-tech",
+      "title": "What's Next｜科技早知道",
+      "author": "声动活泼",
+      "category": "科技与AI",
+      "description": "原「硅谷早知道」，全新改版的「What's Next｜科技早知道」我们会继续放眼全球，不仅聚焦纯科技的话题，也会关注科技引领世界以及商业格局变化等新话题。 新一季我们的节目会由多个模块共同组成，除了延续我们以往不同科技领域新技术新动向的话题，我们也会加入出海、多视角解读科技行业大事件。 本节目由声动活泼制作播出。",
+      "cover": "https://media24.fireside.fm/file/fireside-images-2024/podcasts/images/4/4931937e-0184-4c61-a658-6b03c254754d/cover.jpg?v=10",
+      "source": "Podcast RSS",
+      "sourceUrl": "http://www.shengfm.cn/",
+      "feedUrl": "https://feeds.fireside.fm/guiguzaozhidao/rss",
+      "episodes": [
+        {
+          "id": "whats-next-tech-77c47a21ceec4f",
+          "title": "Hassabis 卸任、Jeff Dean 离开，Google DeepMind 为什么突然大洗牌？| S10E28",
+          "description": "8 月初，谷歌发生了一场人事地震：Google DeepMind 创始人 Demis Hassabis 卸任 CEO，转任 DeepMind 董事长和 Alphabet 首席科学家；在谷歌效力 27 年的传奇工程师 Jeff Dean 与另外三位核心成员一同离开，创办面向科学发现的 AI 公司 Discovery Loop。消息公布当天，Alphabet 股价下跌 4%。而在半年前，Gemini 3 才刚刚登顶各大榜单、压过 OpenAI 与 Anthropic；如今 Gemini 3.5 Pro 从 6 月拖到 7 月再拖到现在，连续错过三个发布期限，",
+          "publishedAt": "2026-09-02T08:45:00+00:00",
+          "duration": 2832,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/cec8bc7e-3408-4297-a4b8-3cb8d7632cb6.mp3"
+        },
+        {
+          "id": "whats-next-tech-0796c662098ce7",
+          "title": "硅谷「最性感」工作落地中国：一个 FDE 的「救火」日常 | S10E27",
+          "description": "2026 年，FDE（Forward Deployed Engineer，前线部署工程师）被称为「硅谷最性感的工作」：过去两年，全球 FDE 岗位数量增长了几十倍，薪水也水涨船高。OpenAI、Anthropic 等公司纷纷组建自己的 AI 部署团队，帮客户解决 AI 落地的「最后一公里」。但热度之下，几乎还没有人让我们真正看到过——一个真实的 FDE，他的工作现场到底长什么样，每天都在做什么？ 这期节目，我们请来了真正驻扎在一线的 AI 工程师申悦来讲述他的一线 FDE 经历。他曾做过 12 年互联网产品经理，最近两年转向 AI 落地。他跟我们讲述了他",
+          "publishedAt": "2026-08-26T08:45:00+00:00",
+          "duration": 1858,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/587619bb-62c2-485d-9f27-f0be0115a986.mp3"
+        },
+        {
+          "id": "whats-next-tech-4be0ea8e1a9fb7",
+          "title": "宇树上市震荡，机器人商业化还需要更大的想象力｜S10E26",
+          "description": "2026 年 8 月 19 日，机器人公司宇树科技正式登陆科创板。宇树的上市可以说是万众瞩目，所有人都期待它在二级市场的表现。宇树上市首日盘中最高触及 4400 多亿元市值，比发行价是上涨了六倍多，收盘仍有 3400 多亿元；与此同时，机器人板块指数却下跌近 8%。一家公司成为市场焦点，却没有顺势给整个板块带来上涨，这种市场表现的反差让大家非常疑惑。 这期节目请来二级市场投资人周玖洲 Aaron，从投资和商业逻辑的角度，重新拆解宇树上市以及人形机器人赛道的进展。我们一起聊了聊，宇树的千亿市值是不是成为了机器人赛道的「估值锚」，人形机器人是不是通往商业化的",
+          "publishedAt": "2026-08-21T08:30:00+00:00",
+          "duration": 2618,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/4a50d4a3-a6ff-4c89-b754-367b73ce924b.mp3"
+        },
+        {
+          "id": "whats-next-tech-906fca7d4a88ab",
+          "title": "【重听】朱雀三号副总师：火箭回收只有成与败，没有中间态| S9E41",
+          "description": "北京时间 2026 年 8 月 19 日，早上 7 点 35 分，蓝箭航天自主研制的朱雀三号遥二运载火箭，在东风商业航天创新试验区点火升空。起飞大约两分多钟之后，一二级分离，二子级继续往上飞，将载荷顺利送入预定轨道；一子级则调姿、再入、减速，最后着陆在甘肃省民勤县的朱雀三号着陆场坪上。 这次任务是我们国家第一次实现运载火箭一子级用着陆支腿的方式回收，那朱雀三号，也成为了中国第一枚成功回收的商业航天火箭。朱雀三号从立项到成功回收，仅仅用了三年的时间。 本期节目是我在 2025 年 12 月 3 日，朱雀三号第一次试飞之后，与 朱雀三号副总师董锴 的一期对谈",
+          "publishedAt": "2026-08-19T08:30:00+00:00",
+          "duration": 3798,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/d9e11e3b-7c7e-4beb-b19f-6f90fff38714.mp3"
+        },
+        {
+          "id": "whats-next-tech-61043207a37361",
+          "title": "用 AI 让我们变笨了吗？| S10E25",
+          "description": "不知道大家最近有没有这种感觉，有了 AI 工具以后，我们的学习效果并没有突飞猛进，好像反而变差了。明明把查资料、写初稿的活外包给了 AI，一天结束却好像什么都没有记住，脑子却比以前更累了。这种现象也得到了科学研究的佐证：MIT Media Lab 近期发表的一份研究显示，长期使用 AI 工具写作的年轻人在学习过程中脑电（EEG）活动偏低，大脑处于「偷懒的休眠」状态 -- 研究者把这种依赖 AI 后大脑激活减弱、记忆暴跌的现象命名为「认知债务」（cognitive debt） 这期节目，我们就从神经科学的角度一起来聊聊，AI 对我们的学习和记忆究竟造成了什",
+          "publishedAt": "2026-08-12T09:00:00+00:00",
+          "duration": 2767,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/a6b360da-07f7-4d9e-ab1b-64a7130e9254.mp3"
+        },
+        {
+          "id": "whats-next-tech-0fd76ea4b78acc",
+          "title": "贾扬清：我所经历的「人工智能已死」到「AI 颠覆世界」的数年巨变丨串台「声东击西」S10E24",
+          "description": "今天的节目，是与声动活泼旗下另外一档节目 《声东击西》 的串台，也是《声东击西》十周年的特别节目之一。 上个月，《声东击西》的主播徐涛在硅谷采访到了一位重量级的嘉宾贾扬清。贾扬清是全球最有影响力的AI科学家之一，三年前他刚刚离开阿里开始创业的时候曾经做客过我们的节目。他的第一家创业公司成立仅仅两年就出售给了英伟达。那他现在又开启了新的创业之旅，创立了第二家公司并在上周官宣。 在今天的节目中，他非常详细的讲述了十多年来，他从实验室到大厂，从硅谷的 Google，Meta 到国内的阿里的研究和工作经历，也分享了很多他在经历过一波又一波的科技浪潮后如何思考此刻",
+          "publishedAt": "2026-08-06T12:45:00+00:00",
+          "duration": 7808,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/a3884ade-4669-4d5c-ab2e-f98aa580f429.mp3"
+        },
+        {
+          "id": "whats-next-tech-5b746958112588",
+          "title": "国产 AI 算力能凭「超节点」弯道超车吗? | WAIC 深度观察 S10E23",
+          "description": "2026 年 7 月的世界人工智能大会 （WAIC） 现场，上海 40 度的高温里，跟天气一样热的，还有国产算力「超节点」。自从去年华为第一个推出 CloudMatrix 384 超节点后，今年就有超过 10 家厂商跟进——华为昇腾、阿里云磐久、百度智能云天池，国产 AI 芯片「四小龙」也都把超节点机柜摆上了展位最显眼的位置。券商把 2026 年叫作「国产超节点元年」。单颗芯片算力追不上英伟达，把几百甚至上千颗芯片堆在一起做成超节点，就能在系统层面弯道超车吗？ 这期节目我们请来前芯片行业从业者张海军和我们一起聊聊 WAIC 现场，并且深度的从硬件架构到商",
+          "publishedAt": "2026-07-27T08:45:00+00:00",
+          "duration": 2843,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/a6c6ab3e-72b2-470b-aefd-04b19679d37f.mp3"
+        },
+        {
+          "id": "whats-next-tech-eb6cd6ad4d627c",
+          "title": "可以给你的 Agent 发一点零花钱了 | S10E22",
+          "description": "今年年初，智能体支付（Agent Payment ）还是一个大家觉得「千万别交给 AI」的方向。半年过去，Visa、Mastercard、Stripe、Google、OpenAI 几乎同时开始布局，一个新的基础设施层正在 AI 时代悄悄形成。Visa 和 Mastercard 从卡组网络侧推出 Agent 支付凭证和认证协议，OpenAI 联合 Stripe、Google 则从 AI 平台侧发布各自的 Agent 商务协议（ACP、UCP），Amazon 也在测试「Buy for Me」AI 购物代理——支付网络、大模型公司、电商平台几乎同时从不同角度切",
+          "publishedAt": "2026-07-22T09:15:00+00:00",
+          "duration": 2507,
+          "url": "https://aphid.fireside.fm/d/1437767933/4931937e-0184-4c61-a658-6b03c254754d/9a652c19-ceb3-46c2-87b4-bca36e684311.mp3"
+        }
+      ]
+    },
+    {
+      "id": "beyond-code",
+      "title": "代码之外 Beyond Code",
+      "author": "Beyond Code",
+      "category": "科技与AI",
+      "description": "代码之外 Beyond Code 是一档由 GeekPlux 和 Randy 共同主持的程序员闲聊播客节目。 节目地址：https://bento.me/beyondcode 欢迎在 ⁠https://forms.office.com/r/RknWt97QPL⁠ 向我们来信，我们会在下一期节目分享你的来信或解答你的疑惑。",
+      "cover": "https://image.xyzcdn.net/Fp3fwEg6I0AeMEf9lNKfcnrdm7wY.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/nfm8cu8deycn",
+      "feedUrl": "https://feed.xyzfm.space/nfm8cu8deycn",
+      "episodes": [
+        {
+          "id": "beyond-code-2fd07da1696c7e",
+          "title": "在现场看世界杯，每分钟50美金的观赛体验！看世界杯的都不是真球迷！",
+          "description": "本期节目，我们从 GeekPlux 在亚特兰大现场观看世界杯小组赛聊起。 一张原价 600 美金的门票，到了比赛当天同位置涨到约 4000 美金；一场西班牙对沙特的比赛，也从「家门口凑个热闹」变成了一次非常难忘的现场体验。 我们聊了从买票、坐地铁、进场、安检、球场氛围，到 7 万人一起欢呼时的声浪；也聊了为什么电视上看起来「很慢」的足球，到了现场会变得如此快、如此有压迫感。 这期不只是一次看球流水账。我们也借世界杯聊到了足球为什么会成为世界第一运动：它的规则简单、门槛低、偶然性强，也承载了太多国家、身份、童年、家庭和普通人的英雄梦想。 此外，我们还聊到：",
+          "publishedAt": "2026-07-02T01:31:53+00:00",
+          "duration": 5071,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6a45bd8b2e335a35a80caeb2/media.xyzcdn.net/6194d973c14c9a0db82de1ea/lmQq89a-rMZYntJ55iraoZYNky0s.m4a"
+        },
+        {
+          "id": "beyond-code-9807138e051d1a",
+          "title": "前端已死？但不是你以为的死法｜“计算机之子” 寒冬 Winter 谈 AI、程序员淘汰、新时代编程",
+          "description": "这一期我们邀请到了中文 Web 前端社区早期非常有代表性的程序员 Winter 寒冬 。从“计算机之子”“温兆伦”这些互联网早期梗开始，我们聊到了程序员影响力是怎么形成的，也聊到了他从文曲星、手动扫内存、早期 Web 前端一路走到今天 AI 编程时代的经历。 这期的主线不是简单回答“AI 会不会替代程序员”，而是讨论：当 Vibe Coding 变成越来越常见的工作方式之后，程序员真正要解决的问题发生了什么变化。寒冬认为，写代码的形式正在变，但工程问题并没有消失。相反，代码质量、模块边界、调试、测试、架构约束、团队协作，都会在 AI 时代变成新的工程课题",
+          "publishedAt": "2026-06-24T00:29:10+00:00",
+          "duration": 5724,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6a3b03089d2f5743683cca56/media.xyzcdn.net/6194d973c14c9a0db82de1ea/ltgWS21VrPdoWDKKo3upG5-HMzON.m4a"
+        },
+        {
+          "id": "beyond-code-c12f247beffe70",
+          "title": "尤雨溪的生活必备：羽毛球拍、机械表、一整柜高达，从穿搭到收藏 - 10 Essentials",
+          "description": "《10 Essentials》系列再度返场，这次请来了节目史上第一位、也是返场次数最多的嘉宾—— 尤雨溪 。 这次，我们不聊框架设计，也不聊前端趋势。主要聊：一件白 T 买十几件、二十多顶鸭舌帽、用了十几年的瑞士军刀、从美国漂洋过海运过来的人体工学椅、30 岁买入的第一块机械表……再加上身后一整柜的高达、EVA 和战锤模型。 暖场还埋了一个「神预言」：三人起哄「买股票要买 VoidZero」，结果节目上线时，VoidZero 就官宣被 Cloudflare 收购了，含金量原地飙升。 本期看点 VoidZero / Void 部署平台到底怎么用，和 Ver",
+          "publishedAt": "2026-06-08T01:19:12+00:00",
+          "duration": 4125,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6a26175ab30e1571aea24e3d/media.xyzcdn.net/6194d973c14c9a0db82de1ea/lmsbsvtEtL2YQOBZQwbjjyiKQRbg.m4a"
+        },
+        {
+          "id": "beyond-code-a8efacb464cc4c",
+          "title": "王自如：如果我是程序员我会淘汰我自己",
+          "description": "十二年前我看王自如的 ZEALER 评测长大，十二年后我来试图让大家看到不一样的王自如。 本期简介 本期邀请到连续创业者王自如，聊他的成长经历、ZEALER 的创业起落、加入格力后的外界认知差异，以及最近重新投入 AI 和 vibe coding 之后，对产品、程序员与创业机会的判断。 从齐齐哈尔的工厂大院，到西安求学；从英语专业、数码内容创业，到 ZEALER、格力，再到今天重新用 AI 做产品。王自如也分享了他对 builder、程序员价值、AI 产品公司和新一代创业机会的理解。 时间轴 00:02:04 开始 00:02:51 出生背景，同年趣事 ",
+          "publishedAt": "2026-05-21T14:22:14+00:00",
+          "duration": 6429,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6a0f107ce1eb34a939d8edc0/media.xyzcdn.net/6194d973c14c9a0db82de1ea/lnAiSXd6BX76pgpce0Vvc9Bi99Qz.m4a"
+        },
+        {
+          "id": "beyond-code-aa818f1e106b66",
+          "title": "又土又爱听的歌｜泡妞靠抄歌词？｜我们都听什么歌？",
+          "description": "近期 GeekPlux 回国去了趟 KTV，久违地唱了个痛快，于是拉上 Randy 和勾股来了一期音乐专场。三个人从「你听老歌多还是新歌多」聊到各自的音乐启蒙，从雀巢广告 CD、复读机录歌、128MB 的 MP3 聊到 iPod Touch 的丝滑体验；从周杰伦的《东风破》、张震岳的《OK》聊到郑智化的社会批判与赵雷的民谣世界。音乐是时间胶囊，每一首歌的背后都是一段人生。 别忘了听到最后 2.5 分钟有彩蛋！ 时间轴 00:00 开场 04:40 快问快答：老歌vs新歌、专辑vs单曲、旋律vs歌词、觉得很土但偷偷在听的歌、KTV 必点但永远唱不上去的歌…",
+          "publishedAt": "2026-05-12T00:40:03+00:00",
+          "duration": 6808,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6a0271aa1b7bd50295f53165/media.xyzcdn.net/6194d973c14c9a0db82de1ea/loLiprohrL3YJqRD8V8FTV1oWtBU.m4a"
+        },
+        {
+          "id": "beyond-code-46b8e8357a75dc",
+          "title": "生活中哪些东西不可或缺 - 跑鞋、HHKB、口琴、相机、唇膏?...我们的 10 essentials",
+          "description": "这期节目，我们来聊聊自己的 “10 Essentials”。 灵感来自 GQ 频道的经典栏目：每个人拿出几样自己离不开的东西，表面上是在聊物品，实际上聊的是习惯、审美、记忆，以及一个人是怎么生活的。 这一期里，我们分享了各自生活中那些已经变成“身体一部分”的东西： 有的是因为实用，离开了真的不方便； 有的是因为习惯，回购了一次又一次； 有的是因为情感，它本身已经不只是一个物品。 从跑鞋、键盘、润唇膏、无乳糖牛奶，到卡包、家人的照片、白 T、手机、相机、背包、足球鞋、眼镜、咖啡杯、旅行转换插头、牙刷、Switch、笔记本……我们也借这些东西，聊到了各自的生",
+          "publishedAt": "2026-04-20T01:27:29+00:00",
+          "duration": 3747,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/69e57e7f1d989496e70427ad/media.xyzcdn.net/6194d973c14c9a0db82de1ea/liQcLSne6b8obK8OVSm4yTrdiSXz.m4a"
+        },
+        {
+          "id": "beyond-code-f0a1250087c166",
+          "title": "🦞 小龙虾 OpenClaw 与 AI Agent 的野蛮生长",
+          "description": "与传统的 ChatGPT 或 Gemini 不同，OpenClaw 代表了下一代 AI Agent 的形态——它不再是被动等待指令的聊天机器人，而是能够主动与你沟通、拥有系统权限并能自主执行任务的“数字员工” 。 通过分享各自的实测经历，我们聊到了如何让 AI 自动在 PolyMarket 进行量化交易 、如何通过 Telegram 远程控制家中的电脑编程 ，甚至聊到了让 AI 每天对自己进行“灵魂拷问”带来的精神冲击 。本期节目不仅有硬核的技术实践，更有关于 AI 时代隐私边界、编程元能力以及“为了好玩”而创作的哲学思考。 00:01:34 躲不过的O",
+          "publishedAt": "2026-03-22T12:54:37+00:00",
+          "duration": 4974,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/69bfe0323c625cc5ae9343da/media.xyzcdn.net/6194d973c14c9a0db82de1ea/luDtEPUxXjvuWwb1MYCDjn_w8rKy.m4a"
+        },
+        {
+          "id": "beyond-code-0b815602814751",
+          "title": "谷歌编程之夏，一次真正进入开源世界的机会 (Google Summer of Code, GSoC)",
+          "description": "很多人第一次知道 Google Summer of Code（GSoC，谷歌编程之夏），都是靠学长学姐、论坛帖子，或者某次偶然刷到的经验分享。它在中文互联网里一直不算高调，但对很多人来说，却是一次真正改变技术路径、职业方向，甚至价值观的经历。 这期节目，我们邀请了三位参加过 GSoC 的嘉宾，一起聊聊他们当年是怎么知道这个项目、怎么申请上、做了什么项目，以及这段经历后来如何影响了他们的学习、工作和对“开源”这件事的理解。 有人因此第一次真正理解大型开源项目是怎么协作起来的；有人在和海外 mentor 的交流中建立了技术自信；也有人直到很多年后回头看，才意",
+          "publishedAt": "2026-03-16T03:37:31+00:00",
+          "duration": 5371,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/69b77801f8b8079bfa8f66a2/media.xyzcdn.net/6194d973c14c9a0db82de1ea/ljBiFDJ8JpcfXieo2Iheceydj0-D.m4a"
+        }
+      ]
+    },
+    {
+      "id": "morning-coffee",
+      "title": "声动早咖啡",
+      "author": "声动活泼",
+      "category": "商业财经",
+      "description": "一个十五分钟的晨间仪式，轻松同步日常生活与商业世界。 这是一档由声动活泼出品的清晨播客节目，在工作日的早晨，为你带来与日常生活息息相关的商业科技轻解读，开启能量满满新一天。",
+      "cover": "https://fdfs.xmcdn.com/storages/c5f1-audiofreehighqps/FF/82/GKwRIMAFhOt4AAf8mAD_eN-6.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/51076156.xml",
+      "feedUrl": "https://www.ximalaya.com/album/51076156.xml",
+      "episodes": [
+        {
+          "id": "morning-coffee-0cc2dfe82a585f",
+          "title": "咖啡豆｜运动鞋系上绸缎丝带，鞋履品牌为什么集体迷上芭蕾风？",
+          "description": "感谢图拉斯对本期咖啡豆的支持！想给充电装备减减负？ 从低温快充、智能屏显到伸缩一体化，图拉斯持续用产品创新，让充电更轻松。大眼仔充电器（https://sourl.co/rprgZA）、大眼仔屏显款（https://sourl.co/wDkjbE）、小冰块X（https://sourl.co/fyBEde）、小贝壳充电器（https://sourl.co/pE7Nut）、三合一随心充（https://sourl.co/smXpDg） ，桌面到出行总有一款适合你。 恭喜本期的咖啡豆「不明真相的 Tony」获得由图拉斯送出的「 小贝壳充电器 」。希望在图拉斯",
+          "publishedAt": "2026-09-03T23:00:00+00:00",
+          "duration": 967,
+          "url": "https://jt.ximalaya.com//GKwRIaIObzcGAHd9MgTRhnil.m4a?channel=rss&album_id=51076156&track_id=1011206166&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/5965-audiofreehighqps/25/54/GKwRIaIObzcGAHd9MgTRhnil.m4a"
+        },
+        {
+          "id": "morning-coffee-888b206a7567cc",
+          "title": "戴森进入电动牙刷领域，传统金店加盟持续收缩",
+          "description": "戴森一直在尝试进入新的产品领域，和之前相继砍掉的洗衣机和造车计划相比，个人护理业务的发展更加顺利。 上半年，周大福等八家黄金珠宝公司关闭了数百家加盟店，一些低线城市的加盟商转向了成本更低的区域品牌。 此外，你会听到更多与日常生活息息相关的商业科技动态： 运动相机品牌 GoPro 被收购 李飞飞的初创公司发布全新世界模型 CD 收入拉动美国音乐收入增长 还有智谱、蔚来、寿司郎和宜家的最新变化，欢迎收听！ 《哈利波特》不止让读者痴迷，竟然还让学者们争相研究？https://sourl.co/XPGWmK 在青少年播客「Knock Knock 世界」，听到全球",
+          "publishedAt": "2026-09-02T23:00:00+00:00",
+          "duration": 592,
+          "url": "https://jt.ximalaya.com//GKwRIDoObfOVAEkltgTRGCKk.m4a?channel=rss&album_id=51076156&track_id=1010976825&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/f5fc-audiofreehighqps/2F/CC/GKwRIDoObfOVAEkltgTRGCKk.m4a"
+        },
+        {
+          "id": "morning-coffee-781213e65c4d05",
+          "title": "在非洲卖快餐，为什么肯德基比麦当劳更吃得开？",
+          "description": "肯德基在 22 个撒哈拉以南的非洲国家，一共有 1500 多家门店，其中 1200 家左右位于南非。但是麦当劳在撒哈拉以南的非洲大陆，只进入了南非市场。而且就算是南非，麦当劳的门店也只有肯德基的三分之一。为什么在非洲市场，尤其是撒哈拉以南的非洲，麦当劳的门店会比肯德基少这么多呢？本期轻解读就与之相关 [06:40]。肯德基和麦当劳，这两个品牌在你心里，最有代表性的产品是什么？在评论区和我们一起聊聊吧。 本期还有关于 Shein、华为、美团和苹果的新动态 [01:55]，欢迎收听！ 主播 Mengyi 幕后制作 监制：Zelin、Stella、榛子 声音设",
+          "publishedAt": "2026-09-01T23:00:00+00:00",
+          "duration": 850,
+          "url": "https://jt.ximalaya.com//GKwRIaIObKVjAGkHRgTQjohO.m4a?channel=rss&album_id=51076156&track_id=1010601062&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/4be1-audiofreehighqps/71/BB/GKwRIaIObKVjAGkHRgTQjohO.m4a"
+        },
+        {
+          "id": "morning-coffee-729c1db157196a",
+          "title": "凯乐石在欧洲开店，广告首次成为 B 站第一大业务",
+          "description": "凯乐石通过越野跑品牌 FUGA 进军海外市场，目前已经在法国度假胜地霞慕尼开设了中国以外的第一家直营店。 二季度，B 站的广告收入首次超过增值服务，成为最大收入来源，但游戏业务出现下滑。 此外，你会听到更多与日常生活息息相关的商业科技动态： 航油成本拖累三大航盈利 诺和诺德、礼来瞄准中国口服减肥药市场 名创优品强调开大型门店 还有比亚迪、美的、PayPal 和蒙牛的最新变化，欢迎收听！ 加入听友群！ 节目专属听友群开放中，这里会有节目动态、「周五限定」的社群活动和突然掉落的专属福利，扫码添加声小音企业微信�并发送「早咖啡」，拉你入群。 或者点击该链接获取",
+          "publishedAt": "2026-08-31T23:00:00+00:00",
+          "duration": 678,
+          "url": "https://jt.ximalaya.com//GKwRIMAOa1WvAFPYWgTP-aoA.m4a?channel=rss&album_id=51076156&track_id=1010144081&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/cb0d-audiofreehighqps/36/B0/GKwRIMAOa1WvAFPYWgTP-aoA.m4a"
+        },
+        {
+          "id": "morning-coffee-2ddeb007204424",
+          "title": "难以影响购票决策的飞机餐，为何成为航司升级重点？",
+          "description": "今年以来，国内多家航司密集更新菜单，三大航的航食相关支出也比两年前增加了六成多。类似的变化也出现在海外，比如美联航，从去年到现在，已经投入了 1.5 亿美元改进他们的机上餐饮。然而，麦肯锡指出，很少有人会因为一顿飞机餐，专门去选择某家航司。为什么航空公司还在纷纷加码飞机餐呢？本期轻解读就与之相关 [06:56]。让你印象最深的一顿飞机餐是怎样的呢？什么样的情况下你会愿意为一顿飞机餐付费呢？在评论区和我们一起聊聊吧。 本期还有关于美团、蜜雪冰城、长鑫存储和影石的新动态 [01:50]，欢迎收听！ 图：20 世纪 80 年代初中国民航头等舱服务 主播 Men",
+          "publishedAt": "2026-08-30T23:00:00+00:00",
+          "duration": 1019,
+          "url": "https://jt.ximalaya.com//GKwRIJEOac2sAH3p2ATPS-CL.m4a?channel=rss&album_id=51076156&track_id=1009809273&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/c7f3-audiofreehighqps/B5/53/GKwRIJEOac2sAH3p2ATPS-CL.m4a"
+        },
+        {
+          "id": "morning-coffee-b8eab8b68b1c53",
+          "title": "咖啡豆｜美式汉堡炸鸡扎堆来华，快餐品牌为什么又盯上中国市场？",
+          "description": "感谢图拉斯对本期咖啡豆的支持！ 多年来图拉斯持续挑战更快更低温的充电体验。 小冰块X（https://sourl.co/LkFtrb）以创新材料实现功率提升的同时保持 37℃ 低温快充，大眼仔充电器（https://sourl.co/GTJctj）、小云团无线充（https://sourl.co/swYyny）、小云宝Pro充电宝（https://sourl.co/GTQhaX）， 从桌面到出行满足多场景低温快充。 恭喜本期的咖啡豆「QQ」获得由图拉斯送出的「小冰块X」。希望在图拉斯的陪伴下，去发现记录有趣的商业现象。 全球门店数第三多的汉堡品牌 Wen",
+          "publishedAt": "2026-08-27T23:00:00+00:00",
+          "duration": 915,
+          "url": "https://jt.ximalaya.com//GKwRIMAOZgHmAHEMJgTNuSAF.m4a?channel=rss&album_id=51076156&track_id=1009244406&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/f39f-audiofreehighqps/DA/E4/GKwRIMAOZgHmAHEMJgTNuSAF.m4a"
+        },
+        {
+          "id": "morning-coffee-88b2f96bc8f19b",
+          "title": "外卖成为海底捞增长最快的业务，乐高表示不会用 AI 来设计产品",
+          "description": "今年上半年，外卖在海底捞总收入中的占比已经提升到了 9% 左右，但中金此前认为这一业务的利润率可能较低。 乐高在今年推出了可以发声、发光的「智能积木」，但集团 CEO 表示，但真正的产品创意仍然会交给设计师。 此外，你会听到更多与日常生活息息相关的商业科技动态： 巴西强降雨可能导致优质咖啡豆短缺 英伟达可能投资 Perplexity 电动两轮车品牌表现分化 还有农夫山泉、苹果、大众汽车和老铺黄金的最新变化，欢迎收听！ 往期传送门： 销量失速裁员不断，大众汽车正深陷怎样的困境？：https://www.ximalaya.com/youshengshu/51",
+          "publishedAt": "2026-08-26T23:00:00+00:00",
+          "duration": 695,
+          "url": "https://jt.ximalaya.com//GKwRIJIOZL8HAFX3rATND3vd.m4a?channel=rss&album_id=51076156&track_id=1008870590&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/dd7e-audiofreehighqps/C3/F1/GKwRIJIOZL8HAFX3rATND3vd.m4a"
+        },
+        {
+          "id": "morning-coffee-b49e525d0f4690",
+          "title": "腾讯、阿里、字节争夺打工人，互联网大厂为何集体加码 AI 办公？",
+          "description": "字节刚刚发布了独立的智能体产品豆包工作。7 月以来，阿里也将旗下的三款智能体产品，交给了钉钉的新任 CEO 负责整合。同时，腾讯同样收拢了资源和产品线，重点聚焦 WorkBuddy。多家媒体都指出，大厂们结束了今年上前半年多线并行、快速试错的内部赛马，预计接下来各家公司在 AI 办公领域的正面竞争也将会加剧。那么，大厂们为什么都决定在现在加码 AI 办公？本期轻解读就与之相关 [06:00]。你都会用 AI 来满足哪些学习或工作上的需求呢？你愿意为什么样的 AI 工具付费呢？在评论区和我们一起聊聊吧。 本期还有关于拼多多、小米、小鹏汽车和奈飞的新动态 [",
+          "publishedAt": "2026-08-25T23:00:00+00:00",
+          "duration": 799,
+          "url": "https://jt.ximalaya.com//GKwRIJIOY2hgAGK_WQTMeTZy.m4a?channel=rss&album_id=51076156&track_id=1008598460&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/a855-audiofreehighqps/A1/B7/GKwRIJIOY2hgAGK_WQTMeTZy.m4a"
+        }
+      ]
+    },
+    {
+      "id": "youzhiyouxing",
+      "title": "知行小酒馆",
+      "author": "有知有行",
+      "category": "商业财经",
+      "description": "《知行小酒馆》是有知有行出品的一档分享投资与生活的播客节目。我们关注投资理财，更关注怎样更好地生活。在我们看来，投资成功，是我们变成一个更好的人之后，自然的结果。 如果你对节目有任何建议，或者有推荐的嘉宾，或者只是想与我们分享你和小酒馆的故事，可以给我们发邮件，来信请寄：allinthebeer@gmail.com 如果你有长期投资的需求，非常欢迎下载 有知有行App，里面有你一定能读懂的好课程《投资第一课》，也有专业的投资观察《知行黑板报》，更有我们全员持有的好产品「长钱账户」「稳钱账户」「海外长钱」，人称「长稳海三胞胎」。",
+      "cover": "https://image.xyzcdn.net/Fso6ZPHSi62eZJOLhorcqpx8TEwv.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/j8yp8gxkmgqr",
+      "feedUrl": "https://feed.xyzfm.space/j8yp8gxkmgqr",
+      "episodes": [
+        {
+          "id": "youzhiyouxing-19a19126f82381",
+          "title": "E249 对话叶檀：我不再是人生的过道人",
+          "description": "🌊 不惧未来，享受当下。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 在我小的时候，就知道报纸上有一位名叫「叶檀」的财经评论员。那时我其实看不太懂文章内容，只觉得她的语言很犀利，是一位很厉害的女性财经作者，被称为「财经女侠」。 四年前，我从一位曾经和叶檀老师合作过的朋友那里，听到了叶檀老师生病的消息，也从她那里了解到了另一个叶檀。朋友说，她非常拼命，对工作、对团队有一种近乎老派的责任感。即使身体已经出了很严重的问题，她想到的依然是，公司还有那么多员工，自己要撑着这个团队继续往前走。 又过了几个",
+          "publishedAt": "2026-08-28T12:00:00+00:00",
+          "duration": 5766,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a9128d7a0210c197dc98747/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/li8lFK6AYG48zk63bPnH4QtKmn9X.m4a"
+        },
+        {
+          "id": "youzhiyouxing-c300eb9669af46",
+          "title": "E248 从 QQ 空间到苹果设计大奖：一个非典型设计师的成长之路",
+          "description": "🎨 用设计，记录我的世界。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 生活中，我们可能都会遇到这样一些时刻：一个 App 的功能也许并不特别，但它的界面却让你觉得赏心悦目；同样产品的颜色或包装，你总觉得这版比那版看着舒服。 通常我们会评价一句：「这个设计真好」。但如果要继续解释，好像又不太说得清楚它到底好在哪里。所以我一直很好奇， 为什么一个好的设计，能让没有受过专业训练的人也觉得好？一个设计师，又是怎样训练出这种观察和判断的？ 一 个设计到底好不好，什么时候算「足够好」，到底是由谁来决定？",
+          "publishedAt": "2026-08-21T12:00:00+00:00",
+          "duration": 4729,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a87c3f51352af56ff3999b8/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/ll7Uv6PJHRMqjf5ZXUg5g1x43aNc.m4a"
+        },
+        {
+          "id": "youzhiyouxing-10b714af7967ee",
+          "title": "E247 和爱的人谈钱，但不只是钱｜小酒馆故事会七夕特辑 💝",
+          "description": "💕 谈钱的背后，是两个人如何理解「我们」。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 再过几天就到七夕节了，这一期小酒馆故事会，我们想挑战一个可能有些艰难的话题： 亲密关系和金钱。 2026 年的我们似乎可以在网上查到一切攻略，如何坐飞机、每个景点的最佳机位，甚至世界各个角落的 Wi-Fi 密码。 可是似乎没有一份攻略告诉我们，该怎样和自己的另一半谈钱。 很多亲密关系的开始，可能只是对彼此有一些好感，想多见见面，聊聊天。在这个阶段，我们其实很难把握「谈钱」的进度。 有没有人能告诉我们，要熟悉",
+          "publishedAt": "2026-08-14T12:00:00+00:00",
+          "duration": 10468,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a7e91ff36641f136d8807ab/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/ljZuS4JLPwRWDixP5iOqUVD0iMWO.m4a"
+        },
+        {
+          "id": "youzhiyouxing-afad14b26389e3",
+          "title": "E246 对话「餐饮收尸人」狗哥：都说餐厅不好做，为什么还总有人开？",
+          "description": "🍜 餐厅关门以后的故事。 欢迎来到《知行小酒馆》，这是一档由有知有行出品的播客节目，我们关注投资，更关注怎样更好地生活。我是雨白。 一家餐厅关门以后，会发生什么？ 对食客来说，可能只是某天忽然发现，街边熟悉的招牌不见了，玻璃门上贴出了「旺铺招租」。再过一阵，又有一家新店热热闹闹地开进来，好像什么都没有发生过。 但对今天的嘉宾狗哥来说，一家餐厅关门，意味着他的工作才刚刚开始。 他会带人进场，给冰箱、灶台、操作台和桌椅估价，把它们一件件拆下来、运走，放进仓库，再卖给下一批准备开店的人。媒体给这个职业起了一个很有冲击力的名字，叫「餐饮收尸人」。 狗哥大名叫安大",
+          "publishedAt": "2026-08-07T12:00:00+00:00",
+          "duration": 4179,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a75724dc4079d62c57eb972/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/lgOZpD58t2GfkDv6LEX4QQG3QBaU.m4a"
+        },
+        {
+          "id": "youzhiyouxing-e82ef856429a62",
+          "title": "E245 对话经济学家朱宁：1929之后，我们学会避免下一场经济危机了吗？",
+          "description": "🫧 忘却的代价，永远大于记忆的代价。 欢迎来到《知行小酒馆》，这是一档由有知有行出品的播客节目，我们关注投资，更关注怎样更好地生活。我是雨白。 一个多月前，我和家里长辈闲聊，她突然特别严肃地问我： “你知道吗？那个谁谁谁说，今年年底会发生一场全球性的金融危机，规模堪比 2008 年” ，我非常惊讶，问她是从哪里听说的，结果聊了半天，她也没说清楚这个人到底是干嘛的，更不知道他怎么推导出金融危机这个结论。这件事让我印象很深。 我讲这个故事，不是为了奚落家里人。因为我们大部分人面对财经信息的时候，可能都是这个状态。 每天，我们的心情会被各种消息来回拉扯：一会儿",
+          "publishedAt": "2026-07-31T12:00:00+00:00",
+          "duration": 4409,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a6af251b581962ce2bdd80f/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/lt3kRTtigg6jqerNTXv2imskmzaU.m4a"
+        },
+        {
+          "id": "youzhiyouxing-85225f5008f766",
+          "title": "E244 对话李筱懿：站在人生中场，我为我自己鼓掌",
+          "description": "🏃 在 48 岁，重新认识自己。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 今天来到小酒馆的嘉宾，是作家李筱懿。 我和筱懿认识，是前老板脱不花帮忙牵的线。花姐告诉我，筱懿是小酒馆的老听众，几乎每一期节目都会听。 我当时很意外。我当然听说过《灵魂有香气的女子》，也知道它是一本畅销书，只是从来没有想过，有一天我会和这本书的作者坐下来聊天。第一次见面的时候，我有些忐忑。 我以为自己会面对一位已经很习惯讲述自己成功经验的人。但真正聊起来以后，我惊讶于她的极度坦诚。 2014 年，36 岁的筱懿离开了",
+          "publishedAt": "2026-07-24T12:00:00+00:00",
+          "duration": 4296,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a62ce226356eb2d9be786e0/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/ligzOvnFT4IMxsv144KgLut3kQfk.m4a"
+        },
+        {
+          "id": "youzhiyouxing-0449cbc6676f53",
+          "title": "E243 对话杨雨坤：大脑会记得，我们是怎样长大的",
+          "description": "🍼 理解养育，也是理解曾经的自己。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 今年你可能听过一个很火的词，「前额叶」，它经常出现在关于情绪、学习和专注力的讨论里。而这个词能在社交平台上被这么多人认识，很大程度上和我们今天的嘉宾有关。 今天做客小酒馆的是杨雨坤。他正在奥地利攻读神经科学相关方向的博士，也是一位爸爸。 很多人第一次认识他，可能是因为他在奥地利一边读博，一边带女儿生活；也可能是因为他用很通俗易懂的方式科普情绪、大脑，尤其是前额叶的运作机制。 刚拿到他这本新书 《为父则刚》 的时候，",
+          "publishedAt": "2026-07-17T12:00:00+00:00",
+          "duration": 4879,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a59d6f4a3fec224d59f07fe/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/lr-C-AWcFhEtOgn6f3ElEc20s6yb.m4a"
+        },
+        {
+          "id": "youzhiyouxing-564411da3ad7fb",
+          "title": "E242 我和我想要的家：5 个普通人的安家故事｜小酒馆故事会 🍻",
+          "description": "🏠 关于理想的家，我们各有答案。 欢迎来到知行小酒馆，这是一档由 有知有行 出品的播客节目。我们关注投资，更关注怎样更好地生活，我是雨白。 今天这期小酒馆故事会，是和「房产万事屋」系列做的一次联动。 这几年，房子变成了一个越来越不好聊的话题，不同城市、不同家庭面临的情况差异很大。有的人已经买了房，却要面对房价下跌、资产缩水；有的人一直在等，想买又不敢买，怕买错，也怕错过；有的人和父母、伴侣在买房卖房这件事上产生分歧，关系也受到影响；也有人开始重新思考： 我到底需要一个什么样的家？ 所以这一次，比起请几位嘉宾来分析市场变化，我们更想听听大家自己的故事： 最",
+          "publishedAt": "2026-07-10T12:00:00+00:00",
+          "duration": 8942,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6013f9f58e2f7ee375cf4216/6a504a954adef2b3656194fe/media.xyzcdn.net/6013f9f58e2f7ee375cf4216/ljzP7GszHFCbXaWTy-U8p7hpp9lE.m4a"
+        }
+      ]
+    },
+    {
+      "id": "half-latte",
+      "title": "半拿铁 | 商业沉浮录",
+      "author": "潇磊&刘飞",
+      "category": "商业财经",
+      "description": "商业不枯燥 财经媒体人和互联网老兵陪你闲聊商业见闻。 来杯半拿铁，边喝边唠。",
+      "cover": "https://fdfs.xmcdn.com/storages/ac27-audiofreehighqps/71/C8/GMCoOSIHcO5qAAE-OQHg-X-n.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://proxy.wavpub.com/caffebreve.xml",
+      "feedUrl": "https://proxy.wavpub.com/caffebreve.xml",
+      "episodes": [
+        {
+          "id": "half-latte-cd2ee2dc1ff942",
+          "title": "No.217 宁波往事：从方太到申洲，从油烟机到中国最大服装代工巨头",
+          "description": "主播 | 潇磊 刘飞 ———— 本期节目为“ 宁波，听阿拉的腔调——宁波声游记 ”系列节目之一 宁波有 119 家国家级制造业单项冠军企业，连续八年位居全国城市第一，但其中很多名字，普通消费者可能从没听过。这期节目，我们从两个声音出发——电子点火枪和八音盒。它们背后的企业，都曾把一个细分产品做到世界领先，然后又主动换赛道。为什么做到第一之后，还要重新开一局？这与行业有关，也与宁波有关。而且想要观察中国整体制造业发展，品类齐全、覆盖面广泛的宁波，也很适合作为一个观察样本。本期我们会聊到： • 方太与奥克斯：点火枪价格战逼着茅氏父子重新创业，方太从中国厨房的",
+          "publishedAt": "2026-09-02T12:00:00+00:00",
+          "duration": 5733,
+          "url": "https://tk.wavpub.com/WPTK_o9M01CpQlFgdZ7GD-3460105479ae.m4a"
+        },
+        {
+          "id": "half-latte-aa95a3f85cd851",
+          "title": "No.216 ⚔️ 「十步杀一人」：红衣大炮周鸿祎的三十年全面战争史 | 中国互联网故事 27",
+          "description": "本期由 � 雷鸟 iO � 赞助播出 RayNeo iO 将强大的 AI 辅助，隐入一副极简的日常眼镜中。专为应对高信息密度、高认知负荷的效率人群打造。它为你提供「抬眼即看」的专属信息看板。将所有繁杂的信息清晰显示在眼前。全天智记，在你毫无察觉的情况下为你整理好一整天的重要信息。它将科技退至幕后，完成了「佩戴一款高科技设备」到「佩戴一副日常眼镜」的转变。 点击查看 主播 | 刘飞 潇磊 如果把中国互联网过去三十年的恩怨画成一张关系图，周鸿祎大概会站在正中间。 他做过被骂成“流氓软件”的 3721，也亲手做出了清理流氓软件的 360；他用免费杀毒砸掉了一个",
+          "publishedAt": "2026-08-26T12:00:00+00:00",
+          "duration": 10523,
+          "url": "https://tk.wavpub.com/WPTK_j9EoKaukhJK33oR1-e6cdb3a833ba.m4a"
+        },
+        {
+          "id": "half-latte-07e919e38468b2",
+          "title": "No.215 华为不造车，鸿蒙智行到底是什么？",
+          "description": "主播 | 潇磊 刘飞 本期节目感谢鸿蒙智行提供信息支持 ———— 今天的节目，我们来讲鸿蒙智行。华为反复强调不造车，却深度参与产品定义、智能技术、品牌营销和零售渠道；合作车企则承担整车工程、供应链、生产制造与质量管理。这套跟其它品牌都不一样的分工，究竟是怎么跑起来的？ 本期节目，我们会从2012年前后华为对车联网的早期探索讲起，复盘车BU成立、手机业务受挫、余承东寻找合作伙伴，以及赛力斯SF5试水和问界诞生。我们也会拆开问界模式的三方分工，看看华为怎样把十年消费电子经验搬进汽车行业，又怎么靠新M7与M9完成一次“起死回生”。 问界跑通之后，智界、享界、尊",
+          "publishedAt": "2026-08-21T12:00:00+00:00",
+          "duration": 6473,
+          "url": "https://tk.wavpub.com/WPTK_x8OR3PJj7qr0TGLD-21e51fce87c9.m4a"
+        },
+        {
+          "id": "half-latte-dcfc01e89f06d0",
+          "title": "No.214 寻找同类：小红书、bilibili，以及五花八门的那些社区 | 中国互联网故事 26",
+          "description": "本期由 网易UU远程 赞助播出 网易UU远程「真4K、真免费、真好用」，无论是 AI coding 还是远程办公都出色，万千用户的口碑推荐：https://uuyc.163.com/?source_channel=brand_broadcast1 主播 | 刘飞 潇磊 移动互联网这些年，绝大多数曾经热闹的社区都慢慢消失了。论坛关了，垂直社区没人去了，连很多大厂砸钱做出来的产品，也没能留下多少痕迹。 但有两个例外。一个从海外购物攻略起家，最后成了很多年轻人的搜索引擎；一个原本只是 A 站宕机时的“备用网站”，后来却装下了中国年轻人的动漫、游戏、知识、生活和",
+          "publishedAt": "2026-08-12T12:00:00+00:00",
+          "duration": 11056,
+          "url": "https://tk.wavpub.com/WPDL_sxcztaVUpusxqhyjeVzgtfQpjHmuKACPaNQcqBzWetrGExdrWCkKLSjgae-ea.m4a"
+        },
+        {
+          "id": "half-latte-ef2219b3c629d7",
+          "title": "No.213 景德镇往事：千年“世界瓷都”的前世今生",
+          "description": "主播 | 潇磊 刘飞 ———— 2026年7月25日，“景德镇手工瓷业遗存”被列入《世界遗产名录》。 本期节目，我们沿着昌江与窑火，复盘景德镇的千年商业沉浮： · 从青白瓷、元青花到御窑厂：景德镇怎样靠原料、航运、海外订单和宫廷标准，从众多窑口中脱颖而出？ · “过手七十二，方克成器”：一座没有总厂的手工业城市，如何靠高度分工、行帮规则和柔性协作组织起庞大生产链？ · 从欧洲“瓷器病”、龙骑兵瓶到近代机器工业冲击：当欧洲学会烧瓷，景德镇为何陷入漫长转型？ · 从珠山八友、十大瓷厂到煤烧隧道窑：个人署名如何改变瓷器价值，新中国又怎样重新组织这座城市？ · ",
+          "publishedAt": "2026-08-05T12:00:00+00:00",
+          "duration": 10671,
+          "url": "https://tk.wavpub.com/WPDL_zyEnADsGgGwEuRnuezmwmgGgSVqnUnvJXnrgrccFdRkZASmPqHGqSwhVvA-28.m4a"
+        },
+        {
+          "id": "half-latte-8c6bb5a28dfb06",
+          "title": "No.212 曾经的精神角落：豆瓣、知乎、贴吧、虎扑 | 中国互联网故事25",
+          "description": "主播 | 刘飞 潇磊 有些互联网产品，我们每天都在用，却很少对它们产生感情；还有一些网站，可能已经很久没有打开，却始终像一间时时想念的旧房间。 豆瓣、知乎、贴吧、虎扑，曾经承载了文艺青年、知识分子、追星族、游戏玩家和无数小众爱好者的日常交流。它们拥有最忠诚的用户、最独特的文化，也创造过许多影响至今的内容和网络语言。可奇怪的是，这些最像「精神家园」的社区，往往也是互联网行业里最难赚钱的一批公司。 到底是时代辜负了它们，还是社区从诞生的那一天起，就埋下了自己的难题？ 这一期，我们回到中文互联网曾经最热闹、也最有人情味的几个角落。 来杯半拿铁，咱们边喝边唠。 ",
+          "publishedAt": "2026-07-29T12:00:00+00:00",
+          "duration": 11211,
+          "url": "https://tk.wavpub.com/WPDL_rcFZxnBrLPLprHnsPnLZRBALqKtNPztCLRWDssqcMeWtqSmtPXszyvZCYT-f7.m4a"
+        },
+        {
+          "id": "half-latte-a84e33dbe4d763",
+          "title": "No.211 徽商往事：从前世不修到最牛风投",
+          "description": "主播 | 潇磊 刘飞 ———— 徽商，不是所有安徽商人，一般是指明清徽州府一府六县走出的商人。山多田少的徽州人，靠宗族、同乡和水路进入江南市场，又在两淮盐业中积累起惊人的财富与影响力。本期节目，我们来聊聊一个古代商帮怎样兴起、登顶、衰落，也看看“新徽商”这个名字在今天被赋予了什么新含义。 · 盐引与徽商崛起： 从开中法、折色法到纲法，朝廷怎样把盐变成摇钱树？徽州商人又如何借助地理、资本和宗族网络，在两淮后来居上？ · 江春与扬州黄金时代： 从乾隆南巡、盐商报效到震动朝野的两淮盐引案，一个商人为何能“以布衣上交天子”？徽班、园林和斗富传说，又如何映照扬州的",
+          "publishedAt": "2026-07-22T12:00:00+00:00",
+          "duration": 7322,
+          "url": "https://tk.wavpub.com/WPDL_smpwydvWVaHTrMnPpBMvPLjjejewcHMcNKEVuFqARcKudJQHVGwAPfHhfm-1a.m4a"
+        },
+        {
+          "id": "half-latte-8bf6c474d3d4e9",
+          "title": "No.210 中国手机江湖·下：从魅族小米锤子，到 OV 华为的新十年 | 中国互联网故事24",
+          "description": "主播 | 刘飞 潇磊 �感谢红色火箭赞助播出� 十几年前，中国人买手机时，最常见的国产品牌还是「中华酷联」。短短几年之后，熟悉的名字几乎全部换了一遍：有人靠一台 1999 元的手机掀翻牌桌，有人把几十万家县城门店变成了最坚固的护城河；有人曾经一年卖出两千万台，却突然从市场上消失；还有一些公司，发布会场场刷屏，最后留下的却不是手机，而是一套操作系统、几个交互设计，甚至是互联网黑话的传说。 这是中国商业史上最拥挤、最惨烈的一场战争。700 多家厂商、上千个品牌同时入场，运营商、互联网大厂、家电公司、创业明星和供应链巨头全部卷了进来。为什么最后坐上牌桌的，偏偏",
+          "publishedAt": "2026-07-15T12:00:00+00:00",
+          "duration": 14179,
+          "url": "https://tk.wavpub.com/WPDL_nxdvCdaMGjUNBJDsjzCTMUAtAMjMRKLxEqhYQTschXzjDnmLTteXhCcSzf-54.m4a"
+        }
+      ]
+    },
+    {
+      "id": "steve-says",
+      "title": "史蒂夫说",
+      "author": "史蒂夫说",
+      "category": "心理成长",
+      "description": "拓展意识边界，活出真实自我。史蒂夫说是创办于2015年的知名泛心理学播客，曾被评为2019苹果最佳播客，2022年CPA中文播客奖年度成长类播客。这是一个通过深度交流理解人与世界复杂性，拓展意识边界，提炼个人成长之道的节目，节目形式包括对谈、听众来信和独白。主播Steve是一位资深心理咨询师和心理科普作家。微博/小红书/即刻：@史蒂夫说，B站/Youtube：@播客史蒂夫说，公众号：@sxxsteve，官网：steveshuo.com",
+      "cover": "https://image.xyzcdn.net/Fh9xFfHfI-ezOvKyGW87jwsMA0x2.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/lkyt7bnmxc9k",
+      "feedUrl": "https://feed.xyzfm.space/lkyt7bnmxc9k",
+      "episodes": [
+        {
+          "id": "steve-says-05ee3ec0436d4f",
+          "title": "史蒂夫说472期 - 赵今朝 - 化解焦虑最佳方法：拆解问题，温柔相待",
+          "description": "本期嘉宾赵今朝是美国丹佛大学咨询心理学博士，中美两国注册心理学家，同时在多家顶级心理学机构担任教学督导职位。她的公众号是@赵今朝心理 本期节目我们围绕“焦虑”这个看似单一的情绪困扰展开，带着大家深度拆解关于焦虑的众多维度。具体话题包括： 4:16 焦虑有哪些身心表现，以及焦虑为什么很容易“传染”？ 15:24 中国父母为什么不喜欢子女指出自己的焦虑？ 26:10 焦虑有哪些常见和小众的表现形式？ 31:54 老年焦虑和死亡焦虑的共情与拆解 38:15 焦虑的本质：对未知的预期性恐惧 43:32 焦虑的人需要被温柔地的对待，以及耐心拆解问题 55:19 如",
+          "publishedAt": "2026-08-29T15:49:51+00:00",
+          "duration": 6898,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a92f996f03e74ee6b01cfb9/media.xyzcdn.net/64379296ff8a107611a67208/lqW9H_JQfzrsRveagfsLnakHcGJH.m4a"
+        },
+        {
+          "id": "steve-says-3c34337b0b55f9",
+          "title": "史蒂夫说471期 - 咨询师回信：万事只讲逻辑的人，都成长于理性为名的压迫",
+          "description": "本期节目是心理咨询师回听众来信节目，话题包括： 0:23 敏感、自责、取悦，三件套凑齐了大概率是CPTSD 13:07 在亲密关系里对理性思维和语言交流依赖到极致是什么样的？ 26:07 爱情邪修：打不开对方心扉的时候，吵架也许有用 37:23 让来访感受不到被照顾关怀的咨询师肯定不是好咨询师 47:30 万事只讲逻辑的人，都成长于理性为名的压迫 听众来信请发送到： asksteve@126.com 来信字数请勿超800字，另外由于来信较多，回复无法保证时效性。 “史蒂夫说”是创办于2015年的知名泛心理学播客，曾被评为2019苹果最佳播客，2022年C",
+          "publishedAt": "2026-08-17T14:21:15+00:00",
+          "duration": 3714,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a83174c5aeb2a5712e83fd2/media.xyzcdn.net/64379296ff8a107611a67208/lrsK_0kNOOXxA_TwM1CI5DfhldXI.m4a"
+        },
+        {
+          "id": "steve-says-dc9e8b45b3bfe7",
+          "title": "史蒂夫说470期 - 咨询师回信：该不该与伴侣聊前任？怎么聊才会有好结果？",
+          "description": "本期节目是心理咨询师回听众来信节目，话题包括： 1:10 对他人虚伪的道德感感到排斥和愤世嫉俗怎么办？ 11:45 人格单一的父母培养不出人格丰富立体的子女 25:34 当你渴望被重视时，取悦迎合只会起反作用 38:12 合格的咨询师有哪些必备特质？如何避雷糟糕的咨询师？ 51:52 要不要与伴侣聊前任？这并不是最重要的问题 听众来信请发送到：asksteve@126.com 来信字数请勿超800字，另外由于来信较多，回复无法保证时效性。 “史蒂夫说”是创办于2015年的知名泛心理学播客，曾被评为2019苹果最佳播客，2022年CPA中文播客奖年度成长类",
+          "publishedAt": "2026-08-06T09:32:56+00:00",
+          "duration": 3732,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a7451e9ab3a91c24a10d410/media.xyzcdn.net/64379296ff8a107611a67208/ltqPE_vydMWJ62BjdGnRx73-HAAa.m4a"
+        },
+        {
+          "id": "steve-says-f59798d057bf8b",
+          "title": "史蒂夫说469期 - 童立 - 最好的关系是在爱人怀里尽情阳w早x",
+          "description": "本期嘉宾童立网名@性学研究僧，他是一名性科普教育工作者和性心理咨询师。本期话题包括： 1:00 性萧条、婚育友好型社会和越发保守的年轻人们 12:59 性心理咨询帮助个体抗住种种外部压力去认识自己 17:57 性萧条的原因有很多，缺失安全的探索环境是关键因素 27:27 性教育缺失时，人们就会模仿碎片化、刻板化的性脚本 39:25 性功能障碍和经常和性功能没有关系 49:34 肉体出轨的男人究竟是怎么想的？ 56:43 来访干了坏事，咨询师是支持还是告诫？ 66:15 过度清醒会导致生活失去浪漫和意义 73:18 一包纸巾里折射出的脆弱的力量 90:12",
+          "publishedAt": "2026-07-18T18:10:34+00:00",
+          "duration": 7407,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a5b8d286356eb2d9be4a89b/media.xyzcdn.net/64379296ff8a107611a67208/lmQ6ET15-mLUqYUUav7Z4jpx4hcb.m4a"
+        },
+        {
+          "id": "steve-says-35dcd5c5c67223",
+          "title": "史蒂夫说468期 - 咨询师回信：独自努力长大的人容易陷入全能自恋的陷阱",
+          "description": "本期节目是心理咨询师回听众来信节目，话题包括： 0:24 如何将孤独和迷茫转变成有价值的人生经历？ 11:34 独自努力长大自立的人很容易陷入全能自恋的陷阱 20:13 大脑总是不受控制地幻想是怎么回事？ 23:40 对他人言行总是敏感和不信任怎么办？ 32:48 应对情绪性闪回的有效办法：觉察、自我安抚和心智化他人 42:12 深度交流的体验越年轻越难遇到 听众来信请发送到：asksteve@126.com 来信字数请勿超800字，另外由于来信较多，回复无法保证时效性。 “史蒂夫说”是创办于2015年的知名泛心理学播客，曾被评为2019苹果最佳播客，2",
+          "publishedAt": "2026-07-08T15:12:30+00:00",
+          "duration": 3069,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a4e646e2e335a35a8103c1a/media.xyzcdn.net/64379296ff8a107611a67208/llwrA0A8mT-oCndm9EokzXaRYB-j.m4a"
+        },
+        {
+          "id": "steve-says-445392142d355a",
+          "title": "史蒂夫说467期 - Joan姐 - 看清自我后，就没人能阻挡你活出自我了",
+          "description": "本期节目是我接受知名商业和人文类访谈节目《Joan姐会客厅》的完整记录。访谈精剪版本可以到视频号或小红书@Joan姐会客厅 观看，片子做得很有质感、混剪了很多精彩的素材，强烈推荐！本期话题包括： 2:01 学心理学不是为了自救，而是需要第一次在人格上照照镜子 8:53 父子关系从敌对冷漠到朋友般互助 20:54 出身弱势的人可以如何更有人格力量？ 26:26 低能量、高回避、爱无能和缺乏生命力之间的关联 34:19 打拳的时候为什么最重要的不是第一拳，而是最后一拳？ 43:02 社群给大家带来的脆弱与强韧的辨证整合 57:07 给孩子写遗书是为了确认爱的",
+          "publishedAt": "2026-07-02T12:35:19+00:00",
+          "duration": 6273,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a4659182e335a35a80d1246/media.xyzcdn.net/64379296ff8a107611a67208/ltoECVLtSlYfJFLqAnu2lVO7yqqG.m4a"
+        },
+        {
+          "id": "steve-says-82f3279076f847",
+          "title": "史蒂夫说466期 - 姜涛 - 5万精神科医生对1亿精神疾病患者",
+          "description": "本期嘉宾姜涛是中国知名的精神卫生专科医院北京安定医院的主任医师。姜医生在这个领域已经有34年的从业经验，他见证了社会对于精神疾病态度的变迁，也目睹了时代变化给大众心理健康带来的一重重新的挑战。姜涛医生最近出版了新书《安定此心》，生动描绘了他的从业经历和过往案例，是一部极具人文关怀的作品。 本期话题包括： 3:12 精神科医生的一天是什么样的 6:05 紧张的医疗资源对精神科就诊体验的影响 14:15 精神分裂症的病因和多因素影响 23:22 社会对精神疾病的认知变迁和现状 33:56 精神健康行业的人才短缺现状和培养难题 44:22 精神科视角如何看待青",
+          "publishedAt": "2026-06-17T11:56:43+00:00",
+          "duration": 4378,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a3285c643a22a69558566b9/media.xyzcdn.net/64379296ff8a107611a67208/lpDsK96aKpwtCcxyeSjdGTW8SKBN.m4a"
+        },
+        {
+          "id": "steve-says-21cfdbad1be300",
+          "title": "史蒂夫说465期 - 凉意 - 让我们从容不迫地从子宫走向现实世界",
+          "description": "本期嘉宾凉意是一位亲密关系和非暴力沟通教育工作者，播客《 超智游戏 》主播。时隔一年，又到了我们的年度串台时间，本期话题包括： 5:52 情绪决定注意力分配，爱是给予所有时间 16:40 自我在拓展之前都要先丧失原有边界 26:09 别人问我做爸爸是否开心时，我不敢有别的答案 33:26 谈论生育的底层目的是拓展意识边界 51:23 成长就是以适宜的速度从子宫到童话到现实世界 65:51 为什么高知和开明的家长容易养育出高敏感小孩？ 77:02 具象化的玩具会扼杀我们的想象力和玩性 86:12 婴儿向我们证明，再小的成长都有可能让人欢欣鼓舞 94:40 ",
+          "publishedAt": "2026-06-06T15:15:31+00:00",
+          "duration": 6375,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/64379296ff8a107611a67208/6a2435ed7444b57222347bba/media.xyzcdn.net/64379296ff8a107611a67208/lhLhohpUHBpofcWXtzOuxDIvRber.m4a"
+        }
+      ]
+    },
+    {
+      "id": "self-evolution",
+      "title": "自我进化论",
+      "author": "颜晓静Athena",
+      "category": "心理成长",
+      "description": "《自我进化论》一档由颜晓静创作，持续分享「自我探索」和「自我养育」内容的播客。通过分享真实的人生经历和成长领悟，启发更多人自我觉醒和向内探索，拥抱真实自我，活出丰盛人生。 欢迎在小宇宙、苹果播客和喜马拉雅等平台订阅，全平台同步更新中 : ) 官方账号：自我进化论播客（抖音/小红书/视频号） 主播：颜晓静Athena（公众号/小红书/抖音）",
+      "cover": "https://image.xyzcdn.net/FukZeHyG-F0POtf8trVanJ1sSTEQ",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/artr8kfmlmxh",
+      "feedUrl": "https://feed.xyzfm.space/artr8kfmlmxh",
+      "episodes": [
+        {
+          "id": "self-evolution-63614b22fc0cf2",
+          "title": "自我进化论｜No.82：30岁的我，希望20岁的我知道的事",
+          "description": "大家好，这期节目是我的生日感言。 30岁这一年，我第一次清晰地感受到：我开始真正完全为自己而活。而30岁以前的那些痛苦、迷茫、纠葛和反复，都一点一点塑造了今天这个清晰而笃定的自己。 回看20岁到30岁，我独自生活的这十年。和大多数年轻女孩儿一样，一边工作、一边探索自己想要什么，我做过很多大胆的选择，也走过不少弯路，犯过一些至今想起来都会觉得愚蠢的错误。 这一期，我想把这些宝贵的人生经历做一次深度复盘：哪些事情，如果回到20岁，我依然会坚定地选择；哪些代价和教训，我希望自己能够更早知道。 ✨ 高光时刻 00:30 30岁这一年，我第一次感受到自己真正开始完",
+          "publishedAt": "2026-08-31T12:00:00+00:00",
+          "duration": 3162,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/6a950510f03e74ee6b02784b/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lrcx6lUrBze9Vog5IRjVBDbTVEQn.m4a"
+        },
+        {
+          "id": "self-evolution-a785c9f0300b20",
+          "title": "自我进化论｜No.81：审美的尽头，是成为自己",
+          "description": "这一期节目，我想和你聊聊「审美」。 过去两年，我越来越意识到，审美从来不只是关于穿衣风格、家居和品味，它更像是一种主体性的表达，是一个人精神世界的倒影，和内在秩序的延伸。 这一期节目将不局限于传统意义上的“穿搭”或“变美”，而是从更深层的角度，探讨： 为什么很多人始终找不到真正属于自己的审美坐标 为什么越追逐潮流，反而越容易失去自我 审美如何反应着一个人的生命状态、感知力与世界观 建立属于自己的审美体系后，消费观和生活方式会有哪些变化 本期节目由 【 唯品会】 和自我进化论共同呈现，上唯品会，穿得好，花得少。 ✨ 高光时刻 04:01 为什么很多人觉得自",
+          "publishedAt": "2026-06-12T12:00:00+00:00",
+          "duration": 2769,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/6a2ba6a44233e62bc54898f7/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lgc94d8_93AiGWZaoa4G3g5wm-Cs.m4a"
+        },
+        {
+          "id": "self-evolution-9bf42870c48cc2",
+          "title": "自我进化论｜No.80：人潮退去后，如何在孤独中长出新的自己？",
+          "description": "这一期节目，我想和你聊聊 「孤独」 。 过去这一年，当很多关系慢慢退潮，我开始重新学习一个人生活。 不是表面上的独处，而是真正意义上拥抱孤独——不再依赖关系、热闹、成就和外界反馈，去填补内心的空洞。 这一期节目，我会结合自己过去这一年的真实体验，聊聊： 我对孤独理解的三个阶段 为什么人会不断通过关系、忙碌和外界刺激逃避空虚感 如何停止向外抓取，重新建立和自己的连接 为什么孤独最终会通向一种自由与自在 如果你也正在经历关系退潮、重新学习独处、享受孤独，希望这期节目，能陪伴到你。 ✨ 高光时刻 01:17 为什么我过去三个月没更新？ 05:33 这期节目，只",
+          "publishedAt": "2026-05-18T10:34:08+00:00",
+          "duration": 3400,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/6a0ae93ce1eb34a939a093d8/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lsiwSRPyIv9Ilh3eNlp_oF3foR-Z.m4a"
+        },
+        {
+          "id": "self-evolution-c21a92681c1e03",
+          "title": "自我进化论｜No.79：从情绪羞耻到情绪自由：当我不再追求情绪稳定",
+          "description": "这期节目我想和大家聊聊「情绪自由」这个话题。 在过去很多年里，我一直努力成为一个「情绪稳定」的人，认为情绪稳定是成熟和可靠的象征。我急于钻进一个情绪稳定的好女孩的外壳里，认为这才是一个成熟的、完美的女孩儿应该有的样子。 可结果却是，我距离真实的自己越来越远。我逐渐意识到，那些曾经被我忽略的情绪并没有消失，反而停留在我的身体里，影响着我的健康。我终于活成了那个别人眼中喜欢、期待的样子，却唯独丢失了我自己。 而这几年当我找回自己，当我学习重新面对、拥抱和接纳自己的情绪。我不再是那个看上去情绪稳定、却不快乐的人了，而是一个有棱角、有攻击性、会愤怒、会伤心、会不",
+          "publishedAt": "2026-02-23T12:00:00+00:00",
+          "duration": 2929,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/699bc8afde29766da9345ad1/media.xyzcdn.net/5e5de5cb418a84a0467beb90/loG6UQoaFewj8uRjn17OzpAuSPCi.m4a"
+        },
+        {
+          "id": "self-evolution-4bf61aa7cf422d",
+          "title": "自我进化论｜春节特辑：滋养我一整年的精神食粮推荐",
+          "description": "新年好，祝大家新春快乐～ 这期节目是一期 「年度精神食粮推荐合集」 。我想把过去一年里真正滋养过我、陪我走过低谷、也让我反复回到自身的那些电影、电视剧、纪录片与书籍，分享给你。 如果你正好在春节假期，有一些属于自己的安静时间，希望这一期节目，能成为你的精神陪伴之一。 ps：你可以在小红书搜索官方账号🔍“自我进化论播客”，一键收藏本片推荐合集。 ✨ 高光时刻 【电影】 1:31 最令我惊喜的华人导演赵婷：以极高的灵性、东方力量与深沉情感拍电影 2:15 《哈姆奈特》：聚焦莎士比亚创作背后的隐秘哀痛，塑造了极具自然野性与情感张力的女性形象 7:30 《骑士》",
+          "publishedAt": "2026-02-15T11:46:19+00:00",
+          "duration": 2967,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/6991b02dde29766da9aad7e5/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lg-hqYdPXfIuC560mesurB7ZjY77.m4a"
+        },
+        {
+          "id": "self-evolution-388f90489f618b",
+          "title": "自我进化论｜No.78：情关过后，人生尽是自由",
+          "description": "本期节目和YSL「自由之水」共同呈现，不顺从即自由。 在30岁这一年，我认真想清楚了自己在接下来的人生里到底想追求什么，不是某个外在的身份、成就或体验，而是一种能够忠于自己内心的状态—— 「自由」 。 在探索自由的这个过程中，我发现除了物质和精神上的独立之外，还有一个因素深深影响并困扰着我内心的自由，那就是——「情感」。 过去很长一段时间，我以为困住我的，是某一段关系、某一个人。后来才慢慢意识到，真正牵着我走的，其实是一整套早已内化的情感模式——渴望被爱、害怕失去、不断付出、反复拉扯。 这一期，我会结合我这一年的真实经历，带你一起看见： 为什么情感会成为",
+          "publishedAt": "2026-01-21T12:00:00+00:00",
+          "duration": 3207,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/696f522e109824f9e18a114e/media.xyzcdn.net/5e5de5cb418a84a0467beb90/ljK1ScbvOijPfAJo9f_Jbf1yHfYV.m4a"
+        },
+        {
+          "id": "self-evolution-71e8320e426b89",
+          "title": "自我进化论｜No.77：复利人生：如何做对选择，过上长期主义的生活？",
+          "description": "今年是我做播客的第六年。过去短短三个月，《自我进化论》在小宇宙的订阅量从30万增长到100万，在其他平台的订阅量和播放量也都增长了好几倍。 这是我第一次如此直观地体验到 复利的威力 ——原来在时间的长河里，持续、耐心地投入，真的会在某一刻迎来指数级的增长。 而在我30岁这一年，当我回头看20到30岁这十年，会发现很多重要的选择，其实都是站在长期主义的角度做出的。当下看起来并不起眼，甚至不被理解，但在五年、十年的尺度里，却持续影响着我今天的生活状态。 这一期，我想和你聊聊「复利」与「长期主义」，如何真正落到人生选择中，以及如何在不焦虑、不追赶的前提下，过一",
+          "publishedAt": "2025-12-16T12:00:00+00:00",
+          "duration": 3207,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/694103045e8cb26fdf1650b7/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lmBevgNTS0YrifHykoJ8OoHM3v7H.m4a"
+        },
+        {
+          "id": "self-evolution-986aaa87b993e0",
+          "title": "自我进化论｜No.76：如何提升配得感，成为自由流动爱与丰盛的人",
+          "description": "这期节目，我第一次以「直播播客」的方式，和几百位朋友一起完成了节目的录制。 过去的我，总觉得要不停奔跑、证明、变得更好，才配得上爱、机会和丰盛。而这过去这几年间，我慢慢松开、柔软下来，发现真正困住我的，并不是外在条件，而是一个隐藏得很深、却极其强大的东西—— 不配得感 。 这一期节目，我将带你一起看见： 配得感从哪里来？ 为什么外在优秀 ≠ 内在配得？ 匮乏、内疚、羞耻如何悄悄影响我们？ 以及，如何一步步走向「自我满足」和「内在圆满」？ 如果你也常常觉得： 别人对你好会不安甚至想退缩 在关系和金钱面前总觉得“自己不配” 容易陷入自责、羞耻、压抑需求 那么",
+          "publishedAt": "2025-11-24T13:48:14+00:00",
+          "duration": 3712,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/5e5de5cb418a84a0467beb90/69245ed74c49bc580f659c6e/media.xyzcdn.net/5e5de5cb418a84a0467beb90/lsLGQOk-aSyODbg1TpahO_rDsps8.m4a"
+        }
+      ]
+    },
+    {
+      "id": "naive-not-naive",
+      "title": "天真不天真",
+      "author": "杨天真本真",
+      "category": "心理成长",
+      "description": "杨天真播客 欢迎来到我的播客。 在这里，我会和大家分享那些或“天真”或“不天真”的故事。有时邀请好友，有时探寻人生，与世界碰撞，聊着聊着，聊出真相。",
+      "cover": "https://image.xyzcdn.net/FtIoLXailG9gR94_iMvUCKgZ8Jlh.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/mcklbwxjdvfu",
+      "feedUrl": "https://feed.xyzfm.space/mcklbwxjdvfu",
+      "episodes": [
+        {
+          "id": "naive-not-naive-c590b1a919b083",
+          "title": "vol.54 对谈宋佳：我为什么是我？命运的目的地不是掌控一切 而是经历一切",
+          "description": "今天的嘉宾，是“最受欢迎”返场的小花，宋佳。 相隔两年再录播客，我们聊天的关键词，从“大女主”，悄然滑向了“命运”、“觉察”和“感受”。我们不再热衷于向外索求答案，而是向内探索那个“为什么是我？”以及“我为什么是现在的我？”的命题。我们都认同，诚实面对自己的起心动念，是抵达内心平静的第一步，因为“善语结善缘”，语言和本心始终有改变人的力量。从“我要我认为的”，到“一切都是最好的安排”，我们在人生的进程中有许多观点的转变，但最重要的是，我们不再执着于做命运的解题者，而是乐得成为一个体验者。 01:34 宋佳聊自我变化——“希望忙着去做一些不忙的事情” 03",
+          "publishedAt": "2026-08-19T00:00:00+00:00",
+          "duration": 3640,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a8448e38156bf33621a4c94/media.xyzcdn.net/65cef9e3cace72dff8d98de3/luES_M_6btM17a5qt6kB1khR5S6i.m4a"
+        },
+        {
+          "id": "naive-not-naive-27d60951d6a373",
+          "title": "vol.53 对谈易立竞：折腾vs独处 极致对照组的两种活法答案",
+          "description": "我和易立竞认识很多年，即是朋友也是合作伙伴。她是顶尖的深度人物访谈记者，也是我见过最享受独处的人，能在山里一待就是一个月。而我似乎永远在折腾，腿瘸着、被跳蚤咬了一堆包，还能蜷在轮椅上想创业项目。我俩几乎是人类社交光谱的两极。她追问我的脆弱，我也看见她的世界。在这极致反差里，我们找到了同一种东西：对真相的好奇，以及诚恳面对自己的勇气。两种活法，或许殊途同归。 00:40 活着是什么？什么叫“自由的活着”？ 02:18 易老师谈社交恐惧——“Small talk对我来说很恐怖” 03:42 易立竞：深度人物访谈呈现的不是真相，而是人的复杂性 09:23 拒绝",
+          "publishedAt": "2026-07-27T00:00:00+00:00",
+          "duration": 5033,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a66487e6356eb2d9be8ca46/media.xyzcdn.net/65cef9e3cace72dff8d98de3/liCr8UeImbR2NSDz9eVqc5EKBnkr.m4a"
+        },
+        {
+          "id": "naive-not-naive-37779f1298a115",
+          "title": "vol.52 对谈王安宇：十年可以让一个人发生多少变化",
+          "description": "本期嘉宾王安宇同学，可谓千呼万唤。我们从十年前签约时的回望聊起，穿过外界评价、行业转折、个人经历，一直走到今天这个急速变化的世界。他身上一直有一种少见的清醒：知足，自省，知道自己要什么。而我，作为一个习惯“断尾求生”的旁观者，也从他身上照见所感，我们把这些思考，关于真诚、选择、命运、以及如何面对嘈杂的声音，—一摊开来，彼此印证。 00:44 十年前的签约条件：被“保底工资”和“固定住所”吸引 02:47 “受欢迎”这件事在王安宇的生活中重要吗？ 07:43 祥林嫂治愈法与熵增：把负面情绪推到极致，再重塑 10:30 什么是“正好的时候”？不同人生阶段做同",
+          "publishedAt": "2026-07-06T00:00:00+00:00",
+          "duration": 3207,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a4a7af02e335a35a80e7c18/media.xyzcdn.net/65cef9e3cace72dff8d98de3/lqP2d0XhSkKpLXcBUmsu6HTdgQpi.m4a"
+        },
+        {
+          "id": "naive-not-naive-60f0f906e57cca",
+          "title": "vol.51 对谈姜思达：面对真相的能力，比风口的保质期更长",
+          "description": "本期节目与交通银行信用卡「最红星期五」共同呈现。 当我看见一件有趣的事发生了，然后它署名姜思达的时候，我本能就觉得合理。他聪明、个性、有创造力，而且不怕把话说透，我们之间的对话，从来不需要绕弯子。前几天的《人间辩论小会》我们站在观点的两边交锋，而这期播客，我们坐在同一侧聊天讨论，关于内容创作怎么跟商业共处，理想怎么落地，以及当我们选择直面事实的时候，到底获得了什么。 我们聊得坦然，因为这些问题本身并不羞耻。创作需要被看见，变现是让创作可持续的底气，而真相——哪怕它偶尔刺眼，也比任何精致的伪装更让人自由。 00:23 《人间辩论小会》的幕后小故事：神秘对手",
+          "publishedAt": "2026-06-16T00:00:00+00:00",
+          "duration": 3774,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a303f394233e62bc54a72fc/media.xyzcdn.net/65cef9e3cace72dff8d98de3/lgv3MmCH9GJGadmm9ggDmrlMMRJT.m4a"
+        },
+        {
+          "id": "naive-not-naive-dfe911ca7be1cd",
+          "title": "vol.50 对谈纪录片导演赵琦：跳脱框架限定 让“不允许”也可以被允许",
+          "description": "本期节目与天猫共同呈现。 赵琦说话总是伴随思考的流动，比如他会在一个话题中停下来，然后追溯地反问自己：“我刚才在担忧什么呢？”这种自我拆解的习惯，让他成了一个很难被归类的人。他拿过艾美奖，曾经是《奇遇人生》的总导演，在央视做过二十多年的专题节目。但他现在搬去了云南，想学开飞机，想去安第斯山学习如何当一个“巫师”。 这期节目，我们并没完全聚焦纪录片。我们更多聊的是：人到底有没有一个“真的自我”？为什么我们总在所谓“对立面”里打架？会不会有时我们的外在状态，其实是一种给自己看的表演？赵琦说自己“宕过机”——系统积累到一定程度，会自己垮掉。垮掉之后，不是打补丁",
+          "publishedAt": "2026-05-26T00:00:00+00:00",
+          "duration": 4029,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a147c398b5c94538eb363fd/media.xyzcdn.net/65cef9e3cace72dff8d98de3/liPjIEsiiER7GKqrMQNt4cOB7Uhl.m4a"
+        },
+        {
+          "id": "naive-not-naive-728a9e5cfca527",
+          "title": "vol.49 对谈西高地Papi妈妈：伤痛不必痊愈，但别让它替你选择",
+          "description": "本期播客邀来北京首例宠物中毒刑事公诉案新闻当事人——西高地Papi妈妈，她叫Penny。过去三年，她的生活因为为爱犬维权而被迫脱离原本的轨道，始终处在一个无法按下暂停键的状态里，被鼓励和被质疑持续并行。 当一个普通人成为公众人物，被赋予要承载许多人的期许之后，热搜之下那个真实的个体如何自处？面对高关注度这把双刃剑，如何重新找回生活？在Penny的故事里，我听到了一个有着自己稳定价值系统的人，在一遍遍练习走向伤痛但不沉湎于它，在试图找寻某种热度和生活之间的平衡点，努力往前，再走那么一步。 00:10 热搜上的人和背后真实的生活，是什么样子？ 01:25 因",
+          "publishedAt": "2026-05-13T00:00:00+00:00",
+          "duration": 3494,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/6a0316cf1b7bd50295014d50/media.xyzcdn.net/65cef9e3cace72dff8d98de3/lsYA1jsjz4Vgda_HheDGeer8tUlu.m4a"
+        },
+        {
+          "id": "naive-not-naive-2c844d1777fdff",
+          "title": "vol.48 对谈刘开心：活着很疼 但生命从不因脆弱而失色",
+          "description": "“不必歌颂苦难，苦难不是意义，我们的坚持才是意义。” 这句话出自本期嘉宾刘开心之笔。她是一位罕见病患者，也是一位写作者、画者，更是一个在疼痛与困惑中始终没有放弃发问的生命体。 在这期对谈中，我们从她身上那个叫 EDS 的“出厂设置”聊起，聊了时间的假象、安全的幻觉、童年未被接住的瞬间和成长中经历的伤害。她极度坦诚自己的思考，分享了写作时的艰难，以及她如何看待天赋、如何看待“不配得”，又如何在朋友的一句话中获得安全感。 这不是一期教你“走出困境”的节目。开心说，如果躲过去让你更舒服，那就躲。这个世界已经让你很不舒服了，不要再让自己痛苦。 这是一场两个在各自",
+          "publishedAt": "2026-04-21T00:00:00+00:00",
+          "duration": 3474,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/69e624681e94ae6921b909eb/media.xyzcdn.net/65cef9e3cace72dff8d98de3/lklwA9eI23C1ZUWPlqvRSwEtRlx6.m4a"
+        },
+        {
+          "id": "naive-not-naive-77264057c16fe0",
+          "title": "vol.47 有问必答｜真正的蓄能，是看清自己的起心动念",
+          "description": "本期节目与专业运动品牌迪桑特共同呈现。此刻蓄能，静待绽放。 我最近刚经历了一次滑雪受伤，右脚打着支架，第一次体验坐在轮椅上的视角。这次的经历让我重新审视自己的身体、能量，以及我们与外界碰撞的方式。人这一生，能量的来源有很多种。有的人靠向外求索，有的人靠向内深耕。但真正决定我们能走多远的，往往不是我们拥有多少能量，而是我们如何蓄能、如何转化，又如何在不同处境中觉察自己的起心动念。 从运动场的狼狈与“看见”到使用AI的启示，从与朋友相处的争吵到直播学英语的心路历程——这一期我想和你分享这些关于“能量”的体悟，也回应了一些听众相关的焦虑与困惑。希望我们都能找到",
+          "publishedAt": "2026-03-31T00:00:00+00:00",
+          "duration": 3517,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/65cef9e3cace72dff8d98de3/69ca92eee2c8be3155eed2b5/media.xyzcdn.net/65cef9e3cace72dff8d98de3/lulgt91O3kZmJrJh0T6UW9bYmpQ7.m4a"
+        }
+      ]
+    },
+    {
+      "id": "blackwater-park",
+      "title": "黑水公园",
+      "author": "赵艾文",
+      "category": "影视娱乐",
+      "description": "黑水公园是一档以电影、剧集、科幻、动漫为载体，畅谈人生的趣谈节目。 （金花微信：uwwwsc；金花微博：黑水公园_金花）",
+      "cover": "https://fdfs.xmcdn.com/storages/2e29-audiofreehighqps/36/40/GKwRIW4H_rnAAAPy2AIJ6MR9.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/3558668.xml",
+      "feedUrl": "https://www.ximalaya.com/album/3558668.xml",
+      "episodes": [
+        {
+          "id": "blackwater-park-5daf450e6cb896",
+          "title": "《瑞克和莫蒂》第九季：瑞克功夫和人类最好的朋友",
+          "description": "瑞克莫蒂第九季看完，笑点依旧危险，思考依然犀利。功夫那集真没道德准则？科学狂人倒着走路求真相，值不值得深挖？ 02:03 深入剖析瑞克莫蒂：揭示故事背后的意义与共通性 08:16 线上线下，情感交织：老爷和孙子的旅行奇遇 16:30 被害者有罪论？从自己身上找原因解决问题！ 24:49 道德批判与责任担当：老爷与姥爷之间的冲突与和解 33:06 爱的真谛：尊重与理解在家庭关系中的重要性 41:21 神奇拳术对决：刘欣的绝世反转拳挑战老爷的泡泡拳技能 49:39 和平的追寻：止戈为武的真正含义与现代战争的对比 57:56 微妙而奇怪的世界：性与机器人的禁忌",
+          "publishedAt": "2026-09-04T02:00:00+00:00",
+          "duration": 5974,
+          "url": "https://jt.ximalaya.com//GKwRIaIObuBuAuH1SgTRXllz.m4a?channel=rss&album_id=3558668&track_id=1011138345&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/52a5-audiofreehighqps/43/BE/GKwRIaIObuBuAuH1SgTRXllz.m4a"
+        },
+        {
+          "id": "blackwater-park-aae27b3f659ec4",
+          "title": "《思想很危险2》生活中看似正常的荒诞",
+          "description": "感谢妙界品牌对本期节目的大力支持。点击进入专属购买链接：https://mo.m.tmall.com/page/37795178?shop_id=227373533&item_id=811738630690 「妙界Y7P蒸汽雾化眼部按摩仪」 ——集蒸汽眼罩、眼部按摩器、雾化仪于一体，相当于花一份钱，把一台专业眼部护理设备搬回家，随时随地做专业眼保健操，我用了这段时间，明显觉得眼干的情况缓解了很多。 高效润眼 ●3秒就出雾，每秒18万+雾化因子，搭配上热敷，眼睛的干涩和疲劳很好的得到缓解 ●早上起床眼睛水肿的话，加冷水，就能冷敷，消肿很快。 精准按摩 放松",
+          "publishedAt": "2026-08-27T21:14:55+00:00",
+          "duration": 6468,
+          "url": "https://jt.ximalaya.com//GKwRIUEOZmx8Ax73kQTN4nPs.m4a?channel=rss&album_id=3558668&track_id=1009383113&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/3ce5-audiofreehighqps/F8/BD/GKwRIUEOZmx8Ax73kQTN4nPs.m4a"
+        },
+        {
+          "id": "blackwater-park-0619334ffa99e1",
+          "title": "暑期档大战《欢迎来龙餐馆》《年会不能停2》《逃出绝命街》《牛来》",
+          "description": "",
+          "publishedAt": "2026-08-21T02:00:00+00:00",
+          "duration": 8266,
+          "url": "https://jt.ximalaya.com//GKwRIMAOXIxIA_0CrATJmdnU.m4a?channel=rss&album_id=3558668&track_id=1007482574&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/f7e9-audiofreehighqps/64/7F/GKwRIMAOXIxIA_0CrATJmdnU.m4a"
+        },
+        {
+          "id": "blackwater-park-60e3315cfc4d0d",
+          "title": "《群星闪耀时》《争洛阳》回顾历史，展望未来",
+          "description": "本期节目我们会讨论《群星闪耀时》和《争洛阳》相关内容，节目录制时《群星闪耀时》还没有撤档，所以没有相关讨论。 【感谢七西小蝴蝶腰靠按摩仪支持本期节目，点击优惠直达：https://mo.m.tmall.com/page/37687459?shop_id=521104390】或去淘宝搜[七西旗舰店]跟客服报暗号“黑水公园”获取哦~ 又可以当腰靠又可以当按摩仪的按摩神器，小巧轻便出差旅行都适合，按的很舒服，店里一次的价格，你可以在家想按多久按多久，我试过了和办公椅也很配哦，定时15min自动断电，长辈在家用也放心，不用惦记手动关机，操作简单不复杂。七夕来了，",
+          "publishedAt": "2026-08-13T19:15:10+00:00",
+          "duration": 5625,
+          "url": "https://jt.ximalaya.com//GKwRIRwOU9tcArbc8gTGXmFV.m4a?channel=rss&album_id=3558668&track_id=1006300448&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/72a0-audiofreehighqps/AB/F4/GKwRIRwOU9tcArbc8gTGXmFV.m4a"
+        },
+        {
+          "id": "blackwater-park-1440f875d3e61f",
+          "title": "《奥德赛》回家，就是承认这一切发生过",
+          "description": "《奥德赛》8月14日上映。我们已经看过点映，相信我们这期节目能让大家更好的理解这部电影。这期我们聊到： * 为什么《奥德赛》的核心不是“冒险”，而是回家 * 为什么奥德修斯不像诸葛亮，更像一个“鸡贼王中王” * 木马到底是伟大的智慧，还是一次改变了规则的欺骗 * “我的名字叫没有人”，独眼巨人这段到底妙在哪 * 为什么诺兰把“宾客之礼”变成了电影的重要命题 * 喀耳刻把船员变成猪，为什么这次拍出了近乎恐怖片的感觉 * 海妖、冥府、阿克琉斯，以及英雄到底为什么需要名垂千古 * 《奥德赛》开篇为什么先讲“人”，而不是先报奥德修斯的名字 * 原著里雅典娜与奥德",
+          "publishedAt": "2026-08-07T02:00:00+00:00",
+          "duration": 9044,
+          "url": "https://jt.ximalaya.com//GKwRIRwOSlo1BF01ygTC_fCy.m4a?channel=rss&album_id=3558668&track_id=1004994974&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/5237-audiofreehighqps/B5/10/GKwRIRwOSlo1BF01ygTC_fCy.m4a"
+        },
+        {
+          "id": "blackwater-park-9d650d0facabe4",
+          "title": "《蜘蛛侠：崭新之日》漫威水准回归！",
+          "description": "《蜘蛛侠：崭新之日》漫威水准回归！ 本期节目感谢七西赞助播出！ 【感谢七西S16pro碟枕支持本期节目，点击优惠直达：https://mo.m.tmall.com/page/37571915?shop_id=521104390】 或去淘宝搜[七西旗舰店]跟客服报暗号“黑水公园”获取哦~ 碟枕体验图 我自己睡七西蝶枕Pro两年了，以前睡普通枕头，早上醒来脖子又僵又酸，翻来覆去总觉得肩颈悬空着。换了这款之后，第一次体会到什么叫“枕头在托着你的脖子睡觉”。 家里要是有经常落枕的、肩颈紧张的、一觉睡醒反而更累的，尤其上班族和熬夜党，这个枕头真值得试试。很多睡眠不",
+          "publishedAt": "2026-07-30T16:39:35+00:00",
+          "duration": 6271,
+          "url": "https://jt.ximalaya.com//GKwRIaIOQUIAAwabHwS_kMj4.m4a?channel=rss&album_id=3558668&track_id=1003766263&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/3305-audiofreehighqps/46/F6/GKwRIaIOQUIAAwabHwS_kMj4.m4a"
+        },
+        {
+          "id": "blackwater-park-8b08394b3ea579",
+          "title": "《八仙！》神仙不完美，凡人也能成仙",
+          "description": "本期节目主要以《八仙》动画的观后感为主。 结尾附一段，近期我们采访漫威影业凯文费奇的采访。 如果你喜欢八仙的传统故事，我们周二还会在付费节目里，讲述八仙的传统故事！欢迎收听。",
+          "publishedAt": "2026-07-24T02:00:00+00:00",
+          "duration": 5969,
+          "url": "https://jt.ximalaya.com//GKwRIJIONpGaAuFPXAS7X13z.m4a?channel=rss&album_id=3558668&track_id=1002340947&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/a751-audiofreehighqps/F0/A7/GKwRIJIONpGaAuFPXAS7X13z.m4a"
+        },
+        {
+          "id": "blackwater-park-c57f78b2354aa1",
+          "title": "聊聊暑期档《不成功穿越指南》《超级少女》《特立独行》《功夫女足》",
+          "description": "",
+          "publishedAt": "2026-07-17T02:00:00+00:00",
+          "duration": 6362,
+          "url": "https://jt.ximalaya.com//GKwRIDoOK9gHAxHn8AS2hqQZ.m4a?channel=rss&album_id=3558668&track_id=1000767312&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/8544-audiofreehighqps/79/F1/GKwRIDoOK9gHAxHn8AS2hqQZ.m4a"
+        }
+      ]
+    },
+    {
+      "id": "lets-talk",
+      "title": "展开讲讲",
+      "author": "展开讲讲编辑部",
+      "category": "影视娱乐",
+      "description": "「展开讲讲」是一档专题式讨论好内容的播客。 每期我们会试图以一个主题串联起多部作品，包括电影、电视剧、综艺和小说等多种形式，但都有共同的特点：有深度，有关联，能让我们有触动，有想法，值得我们努力“展开讲讲”。 东亚三国剧集、Netflix、韩国综艺、HBO、任天堂、迪士尼等等都是我们的关注对象，我们希望寻找这些内容之间令人兴奋的关联和 世界范围内最新的叙事潮流。",
+      "cover": "https://fdfs.xmcdn.com/storages/f7c2-audiofreehighqps/71/A1/GAqhtYsK-glNAAJQjwMoED_P.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/24672021.xml",
+      "feedUrl": "https://www.ximalaya.com/album/24672021.xml",
+      "episodes": [
+        {
+          "id": "lets-talk-75ad4e82bc6afb",
+          "title": "八月广播电视报：怎么所有人的青铜时代都在崩溃",
+          "description": "展开头条 01:18 韩剧导演安畔锡去世：“直视现实的眼睛”，文学性与社会意识 14:30 作家 东野圭吾去世 ：中国传播史及对90后一代的影响 22:44 电影制片人施南生纪念网站：在每个人心里留下一块拼图 展开内容 电影 25:23 《 奥德赛 》：推开世界的门 43:08 《 蜘蛛侠 ： 崭新之日 》：后青春期两大命题，社会化与哀悼 54:06 《 八仙 》：洞姐四问中国动画电影 01:03:57 《牛来》文化现象：《牛来》的面子就是里子，里子就是面子 01:10:50 《 欢迎来 龙餐馆》：旁观者的立场，去政治化的情感结构 01:22:47 《空",
+          "publishedAt": "2026-09-01T00:00:00+00:00",
+          "duration": 9057,
+          "url": "https://jt.ximalaya.com//GKwRIJIOazzEBF7PfATP6hhF.m4a?channel=rss&album_id=24672021&track_id=1010102790&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/12fc-audiofreehighqps/2A/0A/GKwRIJIOazzEBF7PfATP6hhF.m4a"
+        },
+        {
+          "id": "lets-talk-67edf2048a55d7",
+          "title": "102.对话曲家瑞：出门前我告诉自己，It's showtime",
+          "description": "在曲家瑞的人生里，她不断发现答案并不存在。 她二十几岁在纽约的小房间里画画时，就常常对着空气自问自答。假装有人问她问题，假装自己已经是个大艺术家，假装有一天能站上舞台，把心里的话全都说出来。 但耶鲁落榜这件事她瞒了十年，在讲台上讲不到三个字就哭了。“现在想想觉得好笨呢，我应该第二天就讲了。” 小时候她听妈妈说，她出生那年父亲事业走下坡，所以她是“带来厄运的小孩”。四十年后，妈妈讲的却是父亲那天签了大单、从此平步青云。她当场问母亲这两个版本怎么对不上，母亲回答“那个是错的，这个才是对的”。 她年轻时有过一个男友，会一颗颗认出夜空里的星星讲给她听，她以为这是",
+          "publishedAt": "2026-08-25T11:04:21+00:00",
+          "duration": 6252,
+          "url": "https://jt.ximalaya.com//GKwRIDoOYzqNAwRYkATMXW5_.m4a?channel=rss&album_id=24672021&track_id=1008566146&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/323d-audiofreehighqps/E6/C8/GKwRIDoOYzqNAwRYkATMXW5_.m4a"
+        },
+        {
+          "id": "lets-talk-f43cc991cf9be0",
+          "title": "100.心声特辑：只要你学得足够慢，你就可以不用学",
+          "description": "有个帖子说，你必须保持失业，才能跟得上AI所有的新动向。这句玩笑话指向一个真问题：当世界不断加速，我们怎样重新建立自己的时间感？它的另一面或许也可以是，只要你学得足够慢，你就可以不用学。 而当AI越聪明，人越需要重新回答那个古老的问题：什么才是人身上不可替代的东西？ 陶哲轩说，AI没有经历过“卡住”的感觉，一份好的数学阐释，会告诉读者，注意力应该按卡住的比例分配。金爱烂说，人类最珍贵的东西是“犹豫”，那种把想说的话咽回去、担心伤害对方、在关系里反复掂量的迟疑，是人会有的。 人可以不那么重要。电影《挽救计划》里，格雷斯主动选择了不回地球，《河狸变身计划》里",
+          "publishedAt": "2026-08-10T00:00:00+00:00",
+          "duration": 5980,
+          "url": "https://jt.ximalaya.com//GKwRIUEOTY_XAuKvyQTD_Msj.m4a?channel=rss&album_id=24672021&track_id=1005372087&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/86a7-audiofreehighqps/ED/45/GKwRIUEOTY_XAuKvyQTD_Msj.m4a"
+        },
+        {
+          "id": "lets-talk-d2442f6a2a8237",
+          "title": "99.对话行烟烟：“她不满足任何人的期待”",
+          "description": "2024年一月 ，我们和行烟烟聊过《零诺》， 大家反复说的一个词是“瞠目结舌”。那期之后，很多听众去读了这部小说，也陆续有听众在节目底下留言。 今年 七 月，《零诺》历经三年波折，终于出版，这段经历本身也成为了一次关于女性写作边界的社会实验。她的新作《非赢游戏》，在这个时候也恰好刚刚完结。 这部作品是一场全新的冒险。它最打动人，同时也最令人不安的地方在于，它没有给读者任何喘息的空间。小说里的人物几乎没有干净的道德立场，没有真正牢固的同盟，也没有一次爽快、彻底的胜利——“她不满足任何人的期待”。 我们再次邀请行烟烟来到节目，聊聊这部几乎完全脱离精英叙事的新",
+          "publishedAt": "2026-08-01T10:00:00+00:00",
+          "duration": 9010,
+          "url": "https://jt.ximalaya.com//GKwRIRwOQzNJBFjuVQTAONU7.m4a?channel=rss&album_id=24672021&track_id=1004010273&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/7ebe-audiofreehighqps/C4/5C/GKwRIRwOQzNJBFjuVQTAONU7.m4a"
+        },
+        {
+          "id": "lets-talk-e5420e550a24da",
+          "title": "夏日广播电视报：世界杯与恐怖片，你真的吓到我啦",
+          "description": "展开头条 01:05 世界杯文化碎片（过时版）：进球冷静期，文化输出，球迷仪式与创意营销 展开内容 电影 23:13 《抓特务》 ：对比电视剧版 《无悔追踪》 ，电影修改了什么？电视剧如何把时代的政治风浪落入市井平民生活的细节之中 49:58 《爱情抓马》 ：当一个人的创伤、立场，道德瑕疵暴露出来时，当代人 ：OMG你吓到我啦 56:49 《后室》：Z世代的恐怖，阈限空间为何令人恐惧又迷恋？恐怖片如何一步步抵达私密内心？ 01:19:54 《痴迷》 ：亲密关系的恐怖，爱与控制，“理所应当”的情感权力感 电视剧 01:27:26 《铁拳教育》 ：标准化的受",
+          "publishedAt": "2026-07-10T10:32:31+00:00",
+          "duration": 10783,
+          "url": "https://jt.ximalaya.com//GKwRIUEOJo8PBTPpTAS0b2wV.m4a?channel=rss&album_id=24672021&track_id=999745986&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/80b7-audiofreehighqps/DB/80/GKwRIUEOJo8PBTPpTAS0b2wV.m4a"
+        },
+        {
+          "id": "lets-talk-81ea71b6b28afc",
+          "title": "98.砝码还是枷锁？言情小说如何安置女性道德",
+          "description": "本期节目，我们继续邀请到了清华大学人文学院的薛静老师，延续上一次关于女性欲望的讨论 ，把目光转向一个更隐秘复杂的问题——女性道德是如何被安置的。 从90年代琼瑶剧“爱情高于一切”的个人解放叙事，到台湾偶像剧里“善良即正当性”的灰姑娘模板；从2010年前后《甄嬛传》《步步惊心》所呈现的“在规则内胜利”的宫斗逻辑，再到近年来《 穿进赛博游戏后干掉BOSS成功上位 》《早安 ！ 三国打工人》等作品中女性开始尝试建立自己的道德体系，我们尝试梳理过去三十年女频叙事中一个持续运行的机制：女性是如何被要求带着道德去赢的。 女性角色的胜利从来不是直接抵达的。她必须先证明",
+          "publishedAt": "2026-05-26T23:30:00+00:00",
+          "duration": 7733,
+          "url": "https://jt.ximalaya.com//GKwRIJEN62ucA7tJWASe-K5K.m4a?channel=rss&album_id=24672021&track_id=979291624&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/dcd8-audiofreehighqps/FC/C0/GKwRIJEN62ucA7tJWASe-K5K.m4a"
+        },
+        {
+          "id": "lets-talk-1471a30c74045e",
+          "title": "五月广播电视报：若问世间谁无伤",
+          "description": "展开头条 01:20《 给阿嬷的情书 》： 重新唤回一种快消失的中文情感结构“有情义” 28:47《世界 的 主人》：带回创伤叙事中总被忽略的“此刻”，被伤害的人行走奔跑，打扫玩闹，她活在一个流动的世界里 展开内容 电影 54:30《穿普拉达的女王2》：未被打破的名利场幻觉，只有奈杰尔代表行业尊严 电视剧 01:02:04《低智商犯罪》：世界无需过度想象，我微劳而获，我过程全错但结果全对，我自有大儒辩经 01:10:17《 绝望写手 5》： 真正深刻的创意伙伴关系如何写最终季 01:25:46《匹兹堡医护前线2》：只有 Robby的心理问题被搬到台面上认",
+          "publishedAt": "2026-05-21T09:14:02+00:00",
+          "duration": 8029,
+          "url": "https://jt.ximalaya.com//GKwRIRwN5JELA9_AMAScf3cT.m4a?channel=rss&album_id=24672021&track_id=978127292&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/3cd1-audiofreehighqps/4B/1C/GKwRIRwN5JELA9_AMAScf3cT.m4a"
+        },
+        {
+          "id": "lets-talk-330c2f72d6da86",
+          "title": "97.国产都市剧30年：我的家，谁做主？",
+          "description": "今天这期节目，我们想从近三十年的国产都市剧入手，观察剧中主角们“家”的变化。 从《贫嘴张大民的幸福生活》中，一家六口挤在20平米的胡同小院；到《蜗居》里，房子开始直接决定一个人的尊严、爱情与命运；再到《欢乐颂》，同一楼层的三套房，已经可以清晰标注出阶层差异；《三十而已》中，顾佳则试图通过空间不断向上证明自己——12层不够，还要21层。 而到了《好东西》，铁梅住进阁楼小屋，遇到了小叶，家成为了一个情感空间；《去有风的地方》里，许红豆甚至离开城市，在云南寻找一个“可以自由呼吸”的地方。三十多年过去，人和空间的关系，也彻底变了。 我们会一边聊这些剧里的“家”，",
+          "publishedAt": "2026-05-07T08:41:12+00:00",
+          "duration": 9887,
+          "url": "https://jt.ximalaya.com//GKwRIW4N0hSHBMVU0ASVgQM2.m4a?channel=rss&album_id=24672021&track_id=975004931&uid=90906970&jt=https://aod.cos.tx.xmcdn.com/storages/5c6c-audiofreehighqps/FD/34/GKwRIW4N0hSHBMVU0ASVgQM2.m4a"
+        }
+      ]
+    },
+    {
+      "id": "vibration",
+      "title": "Vibration 歪波音室",
+      "author": "Vibration 歪波音室",
+      "category": "音乐艺术",
+      "description": "音乐太多，耳朵太少",
+      "cover": "https://media-one.wavpub.com/covers/ac342332-acdc-45df-bb31-916a5ed01a91/d266d789c0620ff4.png",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://s2.proxy.wavpub.com/vibration.xml",
+      "feedUrl": "https://s2.proxy.wavpub.com/vibration.xml",
+      "episodes": [
+        {
+          "id": "vibration-21951be6d11b60",
+          "title": "8月新歌推荐丨邹序、陈洁仪、Prince、Sam Smith…都走心了😭",
+          "description": "当月新发音乐作品的精选分享，分为「华语」与「外语」两个部分，希望你能从中遇到喜欢的新鲜有趣的音乐。 也欢迎你在评论区分享本月听到最好的新歌，一起查漏补缺，多多益善，不再歌荒！ 希望你会喜欢 :) 👇配套歌单，点击超链接收藏 网易云音乐 、 Spotify ✨ 歪波 · 支持计划：后台语音+私人音乐直播 每月 10 元，支持《Vibration 歪波音室》继续做下去！ 为了表达感谢，我会留给你一些生活、幕后语音。尽量维持每月 2-4 条后台语音，分享最近的生活、工作和一些没放进正片的想法。 以及，每个月将会有 2-3 次私人的音乐直播【Vibration ",
+          "publishedAt": "2026-08-30T13:30:00+00:00",
+          "duration": 5332,
+          "url": "https://tk.wavpub.com/WPTK_lSNyCooRX8yuY4Xb-c6f570252043.mp3"
+        },
+        {
+          "id": "vibration-d003b710f97930",
+          "title": "神专系列丨Lauryn Hill：谁给了我们这场「错误教育」？",
+          "description": "1998 年 8 月 25 日，年仅 23 岁的 Lauryn Hill 发行了她人生唯一一张个人录音室专辑《The Miseducation of Lauryn Hill》。 在流行音乐史上，这张唱片被赋予了太多耀眼的光环：第一张拿下葛莱美「年度最佳专辑」的嘻哈唱片、单届 5 座大奖与 10 项提名纪录、全球近两千万张销量、美国国会图书馆国家录音名册永久典藏…… 但如果剥离掉所有奖座与历史头衔，这张唱片最打动人的地方，是它近乎残酷的「真诚」。 所谓的「错误教育（Miseducation）」，并不是指学校课本里的知识，而是我们在成长过程中所接收到的那些有",
+          "publishedAt": "2026-08-24T13:34:53+00:00",
+          "duration": 6159,
+          "url": "https://tk.wavpub.com/WPTK_AGpzv2Gb8LMWuXQW-dd9bb39415e5.mp3"
+        },
+        {
+          "id": "vibration-f7e771aaa4b30d",
+          "title": "艾薇儿：回忆里真正的酷女孩",
+          "description": "因为采访 Adam Lambert 的缘故，最近我脑海中总是不断浮现出那些曾经在无数个深夜或午后，给过我深深感动的声音。他们都是我欧美流行音乐的「启蒙导师」。于是我在想，也许能做几期节目，和大家一起重温这些曾经点亮我们青春的音乐人们。 第一位和大家一起来聊聊、一起来听的，就是在这份启蒙名单中，占据着极其特殊地位的女孩——艾薇儿（Avril Lavigne）。 2002 年的夏天。在那个被「泡泡糖流行乐」和精致商业包装统治的黄金时代，一个 17 岁的加拿大小镇女孩，脚踩帆布鞋、顶着烟熏妆、在白衬衫上挂着一条领带，像一道强光，穿透了千禧年流行工业的精致幻境。",
+          "publishedAt": "2026-08-16T21:45:00+00:00",
+          "duration": 6108,
+          "url": "https://tk.wavpub.com/WPTK_35BLS2mfYHMRxx4C-c36eca2d7660.mp3"
+        },
+        {
+          "id": "vibration-3ceaf7f5cb5591",
+          "title": "🛋惬意宅家 Mixtape：松散漫游",
+          "description": "👉歌单地址： 网易云 、 Spotify ✨ 歪波 · 支持计划：后台语音+私人音乐直播 每月 10 元，支持《Vibration 歪波音室》继续做下去！ 为了表达感谢，我会留给你一些生活、幕后语音。尽量维持每月 2-4 条后台语音，分享最近的生活、工作和一些没放进正片的想法。 以及，每个月将会有 2-3 次私人的音乐直播【Vibration Club】，我会在直播中分享由我人工挑选的各种歌单（有时也会邀请你一起分享），陪你度过纯粹的音乐时光（直播也会有视频回放可以看和听）。 8月15日起将会调整成每月 15 元。 感兴趣请👉 点击链接",
+          "publishedAt": "2026-08-09T09:28:46+00:00",
+          "duration": 4177,
+          "url": "https://tk.wavpub.com/WPDL_qsLrBSJkKNaSHTWdPNBVPrreAUsjuFkFahDACMgUwFWHAHGHMuYfpTHFNv-2b.mp3"
+        },
+        {
+          "id": "vibration-46c0d3e18344c8",
+          "title": "7月新歌推荐丨麦当娜、Steve Lacy、许钧、浅堤… 不要错过🎉",
+          "description": "当月新发音乐作品的精选分享，分为「华语」与「外语」两个部分，希望你能从中遇到喜欢的新鲜有趣的音乐。 也欢迎你在评论区分享本月听到最好的新歌，一起查漏补缺，多多益善，不再歌荒！ 希望你会喜欢 :) 👇配套歌单，点击超链接收藏 网易云音乐 、 Spotify ✨ 歪波 · 支持计划：后台语音+私人音乐直播 每月 10 元，支持《Vibration 歪波音室》继续做下去！ 为了表达感谢，我会留给你一些生活、幕后语音。尽量维持每月 2-4 条后台语音，分享最近的生活、工作和一些没放进正片的想法。 以及，每个月将会有 2-3 次私人的音乐直播【Vibration ",
+          "publishedAt": "2026-07-29T22:00:00+00:00",
+          "duration": 6428,
+          "url": "https://tk.wavpub.com/WPDL_NDwVAHJtdUaJmzdgDtWncxLBpAKNRykjCLQaVYGhfJQXLwuAWKsQqGCWGa-f1.mp3"
+        },
+        {
+          "id": "vibration-d67c0907ab7876",
+          "title": "消失的B面 The Vanishing B-Side",
+          "description": "在这个被演算法与短影音统治的时代，你有多久没有耐着性子，从头到尾好好听完一张专辑了？我们习惯了五秒内就必须抓耳的「A面」，什么都能一键跳过、倍速播放，却也渐渐失去了等待与倾听的耐心。 这集节目，我们要聊聊一个在当代音乐工业中逐渐消亡的文化符号——音乐的「B面」。 「B面」不只是唱片翻过来的那一面，它曾是音乐人摆脱商业压力、尽情实验，甚至允许瑕疵存在的后花园。当整个社会的演算法都在逼迫我们展示最成功、光鲜亮丽的「A面」时，我们是不是也越来越不敢拥抱自己那不够完美、有点别扭、却最真实的「B面」？ 别急着滑走，给自己一点喘息的时间。让我们一起慢下来，在被商业演",
+          "publishedAt": "2026-07-22T21:45:00+00:00",
+          "duration": 4491,
+          "url": "https://tk.wavpub.com/WPDL_WMatNzcUerXxQLKGwLQnmBsQLVSvtRpUPSrZkmLJQVDEsNgCuJrDDQPQur-92.mp3"
+        },
+        {
+          "id": "vibration-69cb7f0d918025",
+          "title": "再听 Adam Lambert：野性、骄傲和自我革命",
+          "description": "他来歪波做客了！ 我的欧美流行乐启蒙有很多，像是 Michael Jackson、Avril Lavigne、Backstreet Boys、James Blunt……但其中，Adam Lambert 却用他极具穿透力的嗓音，毫不讲理地划破了我对流行音乐的既定认知。 2024 年，他透过《歌手》重回我们的视野；两年后的今天，也就是 2026 年 7 月 10 日，他带着第六张全新录音室专辑《ADAM》正式回归，目前已经全网上线。 提前听完这部作品，我感受到一种特别且紧绷的张力。它在类比与电子、掌控与混乱间来回拉扯，散发着粗粝、华丽又锋芒毕露的危险气息，非",
+          "publishedAt": "2026-07-09T21:45:00+00:00",
+          "duration": 4521,
+          "url": "https://tk.wavpub.com/WPDL_pEHznfSRTYHsJjJXLUMAZJNBqVmqjdUycDQmWsWJmRgZzrZQcUGWxvkmBX-9a.mp3"
+        },
+        {
+          "id": "vibration-9373cb19b87228",
+          "title": "6月新歌推荐丨A-Lin、马念先、娅娅、MONO… 本月超量推荐🥹！",
+          "description": "当月新发音乐作品的精选分享，分为「华语」与「外语」两个部分，希望你能从中遇到喜欢的新鲜有趣的音乐。 也欢迎你在评论区分享本月听到最好的新歌，一起查漏补缺，多多益善，不再歌荒！ 希望你会喜欢 :) 👇配套歌单，点击超链接收藏 网易云音乐 、 Spotify ✨ 歪波 · 支持计划：后台语音+私人音乐直播 每月 10 元，支持《Vibration 歪波音室》继续做下去！ 为了表达感谢，我会留给你一些生活、幕后语音。尽量维持每月 2-4 条后台语音，分享最近的生活、工作和一些没放进正片的想法。 以及，每个月将会有 2-3 次私人的音乐直播【Vibration ",
+          "publishedAt": "2026-06-28T21:30:00+00:00",
+          "duration": 8640,
+          "url": "https://tk.wavpub.com/WPDL_tVfALyzgfmMNZSeazDhhSvAYBxfbVcxQTPyunmXPTUqTeJaABNkkxrgdaa-48.mp3"
+        }
+      ]
+    },
+    {
+      "id": "grand-tour",
+      "title": "壮游者|人文旅行声音游记",
+      "author": "壮游者领头YANG",
+      "category": "旅行见闻",
+      "description": "“壮游者”是一档人文旅行声音游记播客， 由前媒体人Yang主持，邀请不同身份和视角的旅行者，从人文、地理、历史…等不同角度进入全球目的地，并分享他们的参与式观察体验。 曾获苹果播客（Podcasts）“2022年编辑精选节目”；2023CPA年度城市旅行类播客奖；2024喜马拉雅年度品牌青睐播客； 2025 小宇宙年度趋势内容 。 欢迎参加“壮游者旅行团”，一起听得多一些、看得细一些、走得深一些。",
+      "cover": "https://fdfs.xmcdn.com/storages/afb0-audiofreehighqps/28/F1/CMCoOR8D1yAvAAHaXAB79Tcr.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/18088545.xml",
+      "feedUrl": "https://www.ximalaya.com/album/18088545.xml",
+      "episodes": [
+        {
+          "id": "grand-tour-9cf3d699d57e6a",
+          "title": "276 |宁波| 从山脉到文脉 - 笋、藏书楼、浙东学派和宁波的精神源头",
+          "description": "又来到江南了！目的地还是宁波！去年和分享人乐芸聊了宁波的水，“过七桥，跨三江”。本期，我们把目光转向那些不可被忽视的、连绵的山丘——四明山不仅是河姆渡文明的“供给侧”，也是浙东学派的摇篮。我们会从王阳明“格竹”失败聊到龙场悟道，聊“知行合一”为什么在今天依然值得实践；从浙东的富庶聊到“五桂楼”的藏书，也聊到宁波商帮如何从山里走向世界再回馈家乡。还将走进梁弄——被称为“浙东延安”的革命老区，了解红色基因如何在这里传承；登上仅80米高的招宝山，感受“浙东门户”四百年来的四抗战役，山不在高，有勇士则名。当然，山里也有四季不同的味道：春天的雷笋、夏天的鞭笋、秋天",
+          "publishedAt": "2026-09-03T00:00:00+00:00",
+          "duration": 4567,
+          "url": "https://jt.ximalaya.com//GKwRIaIObF2uAjQh2gTQYtL6.m4a?channel=rss&album_id=18088545&track_id=1010516643&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/61de-audiofreehighqps/CC/7B/GKwRIaIObF2uAjQh2gTQYtL6.m4a"
+        },
+        {
+          "id": "grand-tour-eaee0fec65a268",
+          "title": "到美国｜洛杉矶vs 拉塞维加斯：被贩卖的梦想和被释放的欲望",
+          "description": "到可到，非常道。这次，我们“到美国”，先从洛杉矶和拉斯维加斯聊起。 聊天人：贝贝&Yang，一对刚刚喜结良缘的青年男女。 壮游者是一档独立播客，很需要你的支持。 1、商务合作请邮件至zhuangyouzhe@126.com,或者添加微信“zhuangyouzhe2018” 2、请通过ZFB账号zhuangyouzhe@126.com对“壮游者”进行赞助；也可通过微信公众号“壮游者”文章(本期相关细节图片也在文章里呈现)下方的“喜欢作者”以及节目下方的“赞赏”对单期节目进行赞助。 3、请订阅、转发、评论和点赞节目，并在你使用的收听平台为“壮游者”专辑打五星",
+          "publishedAt": "2026-08-23T16:07:35+00:00",
+          "duration": 7403,
+          "url": "https://jt.ximalaya.com//GKwRIDoOYN8HA5JzjwTLWoiK.m4a?channel=rss&album_id=18088545&track_id=1008182586&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/21ca-audiofreehighqps/80/AA/GKwRIDoOYN8HA5JzjwTLWoiK.m4a"
+        },
+        {
+          "id": "grand-tour-8693b0a688f89c",
+          "title": "275 |英国| 游“戏”指南 - 莎翁、土地、波特小姐和城市即舞台",
+          "description": "“踏上一条被艺术触动的旅程，它会自动治愈你（雨尘）。”——本期的目的地是英国，从伦敦西区到莎士比亚小镇；从约克郡的的荒原到巴斯的社交场；从湖区的自然治愈，再到爱丁堡艺术节的狂欢。我们循着台词、音符和笔墨，走进另一种英国。我们听“卷福”念出那句等待整场的\"To be or not to be\"，看演员们把舞台当作健身房反复锤炼，感受英剧里的幽默和节制，也从悬崖剧场里看到一种召唤——跟着打动过你的那部剧、那首诗、那段旋律，出发！ 故事节点 05:16 伦敦不只有西区 17:40 剧场就是英国演员的健身房 23:11 文学性、幽默、节制和英剧的气质 34:40",
+          "publishedAt": "2026-08-16T22:30:00+00:00",
+          "duration": 5582,
+          "url": "https://jt.ximalaya.com//GKwRIMAOVxF1ArGXdATHaskh.m4a?channel=rss&album_id=18088545&track_id=1006692256&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/c078-audiofreehighqps/19/2E/GKwRIMAOVxF1ArGXdATHaskh.m4a"
+        },
+        {
+          "id": "grand-tour-d68fc6096021fe",
+          "title": "274 |意大利| 那不勒斯的慷慨 - 混乱之都、上帝之手、披萨和没有阶级感的日子",
+          "description": "本期的目的地是意大利南部城市那不勒斯。这座被维苏威火山俯瞰、被第勒尼安海环抱的古城，被希腊人、罗马人、西班牙人、法国人先后统治，却在意大利统一后从首都沦为“南方城市”，留下了至今难解的南北落差。在许多人眼中，那不勒斯是混乱、危险、无秩序的代名词；在另一些人心中，它是披萨之都、马拉多纳的城市，是街头巷尾热气腾腾的人间烟火。两种印象都真实存在——老朋友飞飞重回节目，带你走进那不勒斯——这座城市的慷慨，只留给愿意尊重它的人。 注：节目里出现的四首歌曲名字，请看“故事节点”。 提及景点 托雷多大街地铁站（星空地铁站）; 平民表决广场（市中心的大型广场，纪念186",
+          "publishedAt": "2026-08-06T22:30:00+00:00",
+          "duration": 4038,
+          "url": "https://jt.ximalaya.com//GKwRIaIOSfHWAfLiZgTCx8S5.m4a?channel=rss&album_id=18088545&track_id=1004925727&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/ace8-audiofreehighqps/3F/BC/GKwRIaIOSfHWAfLiZgTCx8S5.m4a"
+        },
+        {
+          "id": "grand-tour-dbb264e4faf80f",
+          "title": "273|新西兰|南岛的慢与野 - 霍比特人、小鸟、核桃和他们的八号铁丝精神",
+          "description": "本期的目的地是新西兰。新西兰到底有什么魅力可以吸引到众多游客和移民？为什么一个新西兰人可以花一个下午坐在湖边，也可以转身去挑战蹦极、喷射快艇这样的极限运动？这种看似矛盾的生活方式背后，也许就隐藏着答案。我们邀请到了长期生活在新西兰的丁丁，请她聊聊这块土地上的故事：从Kiwi这个称呼背后的身份认同，到移民社会形成的性格，从毛利文化的影响，到新西兰人骨子里的“八号铁丝精神”。最后，我们也会在南岛来一趟自驾旅行…… 2026 年 7 月 20 日至 8 月 3 日，新西兰航空官网限时促销，上海直飞新西兰，不含税 4210 元起，含皇后镇等四城同价优惠，详情请见",
+          "publishedAt": "2026-07-26T22:30:00+00:00",
+          "duration": 5936,
+          "url": "https://jt.ximalaya.com//GKwRIJIOO9dyAt1LdQS9cPM2.m4a?channel=rss&album_id=18088545&track_id=1003015384&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/eef4-audiofreehighqps/9F/D4/GKwRIJIOO9dyAt1LdQS9cPM2.m4a"
+        },
+        {
+          "id": "grand-tour-267056ca6a5bb6",
+          "title": "做客《苦中找乐》：痛苦和欲望，都会成为你的灯塔！",
+          "description": "去好朋友羊行的播客《苦中找乐》（欢迎搜索并订阅）做了个客。感谢羊行激发了我的表达欲： 无论身处何境，能养活自己、辐射他人，已是伟大；而快乐与困境皆如潮水，会来也会走——重要的是保持对世界的好奇，继续拨动生命的琴弦。",
+          "publishedAt": "2026-07-20T05:55:31+00:00",
+          "duration": 3126,
+          "url": "https://jt.ximalaya.com//GKwRIUEOM3u_AYIrqQS52xNV.m4a?channel=rss&album_id=18088545&track_id=1001893064&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/434a-audiofreehighqps/F4/B4/GKwRIUEOM3u_AYIrqQS52xNV.m4a"
+        },
+        {
+          "id": "grand-tour-b7497d9013ebfc",
+          "title": "到南方｜大湾区：送官究治、控烟难题和吃不完的顺德菜",
+          "description": "终于来到了传说中的“下海”之地深圳，然后，坐高铁到了香港，再坐船到澳门，再从珠海坐巴士回深圳；还去了《雄狮少年》里的原型村落、佛山寻黄飞鸿不遇、吃了最爱的顺德菜；最后，在松弛的广州，告别了23年前在此吃蛇的年轻的Yang。这一路，看到了很多有趣的细节，也带走了“后遗症”和“祛魅”，南方之旅就此结束。听听吧。 小区被遗弃的小猫（母），在我家暂养。已做健康检查，指标全优；两个半月，活泼、聪明，能听懂部分指令；亲人，需要时不时抱抱的那种；吃饭、喝水（尤其是爱喝水）和玩耍完全不用操心。寻觅北京或周边区域的听友领养。请联系我：zhuangyouzhe2018 △香",
+          "publishedAt": "2026-07-08T03:43:00+00:00",
+          "duration": 8433,
+          "url": "https://jt.ximalaya.com//GKwRIJIOI4ufBBG6qASzK5sD.m4a?channel=rss&album_id=18088545&track_id=999312106&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/fb5f-audiofreehighqps/D2/B3/GKwRIJIOI4ufBBG6qASzK5sD.m4a"
+        },
+        {
+          "id": "grand-tour-88a0fabb95ed12",
+          "title": "到南方｜潮汕的“阿嫲”真忙、城隍爷和一个大困惑",
+          "description": "潮州、汕头、揭阳（潮汕地区），我们吃了白粥，赏了英歌舞，拜了城隍爷， 看到“阿嫲”实在是太忙了， 访了两个老城和几个村子，留下来一个大困惑，还顺便聊了聊《给阿嫲的情书》这部电影。听听吧。 「壮游者」十一假期旅行团已成团，尚有少数几个位置。这一次，我们要一起从贝尔格莱德到萨拉热窝，完成一场记忆与与山野的巴尔干之旅。时间是 2026 年 9 月 28 日 -10 月 5 日，在线路上，我们选择了塞尔维亚和波黑两个最具代表的国家，脚步将从多瑙河到德里纳河、从城市到村庄，去触碰复杂的南斯拉夫记忆，也去欣赏奥斯曼帝国留下的遗迹与观察当地人民的生活。我们会去到博物馆",
+          "publishedAt": "2026-07-02T22:18:00+00:00",
+          "duration": 6900,
+          "url": "https://jt.ximalaya.com//GKwRIW4OHDxQA1RQAgSwnBps.m4a?channel=rss&album_id=18088545&track_id=998296816&uid=127882771&jt=https://aod.cos.tx.xmcdn.com/storages/61e4-audiofreehighqps/81/47/GKwRIW4OHDxQA1RQAgSwnBps.m4a"
+        }
+      ]
+    },
+    {
+      "id": "bowuzhi",
+      "title": "博物志",
+      "author": "小黄鱼播客",
+      "category": "旅行见闻",
+      "description": "到处跑了回来闲聊。小黄鱼出品。",
+      "cover": "https://i.typlog.com/bowuzhi/8265386531_995896.png?x-oss-process=style/sl",
+      "source": "Podcast RSS",
+      "sourceUrl": "http://bowuzhi.fm/episodes/",
+      "feedUrl": "https://bowuzhi.fm/feed/audio.xml",
+      "episodes": [
+        {
+          "id": "bowuzhi-4c58e62d7b5e2e",
+          "title": "与段志强谈崇明乡野博物志：《我住长江尾》",
+          "description": "段志强老师在崇明种了五年地，终于在瓜菜之外收获了一个新的果实——《我住长江尾》。本台大力推荐，本台甚至为了这本书更新了。 虽然你在哪里都可以买到，但是也可以直接从婉莹的小红书橱窗下单。",
+          "publishedAt": "2026-08-18T12:07:20+00:00",
+          "duration": 5829,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4OTI3MywidCI6MX0.VkAvEEGupWnJ3MGK-8PqTdbw4pg/bowuzhi/8212963740_775078.mp3"
+        },
+        {
+          "id": "bowuzhi-d1a8e9d23c62b3",
+          "title": "246. 杭州博物馆「一苇杭之」，好久没看过这么推荐的展览了",
+          "description": "很久很久很久没有一个展览让婉莹刚看了十分钟就决定回来要更新博物志了！ 杭州博物馆「一苇杭之——馆藏明清古籍展」延展到八月底，如果你最近经过杭州，请不要错过。 另外请品尝物美价廉的百家鸡味馆和群芳面馆。 婉莹和段志强老师和 Jiarui 录制的《古籍新说》新节目。 00:00 展览概况介绍 05:22 何谓「一苇杭之」 06:27 展览章节 07:26 与古为徒：初识古籍二三事，优秀的展陈设计 14:13 格物致知：古籍的形制艺术 23:43 刻字相关的空间 39:48 斯文在兹：明清杭州古籍的刊刻与叙事 55:36 t文澜阁 1:03:42 六和塔 1:",
+          "publishedAt": "2026-06-21T12:53:14+00:00",
+          "duration": 5080,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4Nzg5MywidCI6MX0.VHEEUJAlXPiTSv9Z_2Pe2o64SxE/bowuzhi/8217911423_973793.mp3"
+        },
+        {
+          "id": "bowuzhi-4ded4de10285d7",
+          "title": "245. 怒江春日，秘境初探",
+          "description": "从昆明到保山，再一路沿怒江北上进入丙中洛，旅途中我强烈地意识到：云南并不是中国西南的「边缘」，而是一整套精密运作的地理世界。横断山脉持续抬升，三条大江并行切割出深峡谷，也让道路、语言、民族与信仰都呈现出截然不同的形状。 本期我和末末会从怒江峡谷的路、江、山讲起，聊到沿途的风土和神话，分享参观展览、体验怒族织布、学习榨漆树籽油、沿着茶马古道徒步到雾里村、在亚坪的原始森林徒步等等的感受。当然也有本次参与松赞旅行线路的全方位反馈，多亏了松赞的管家、司机朋友们，这一趟行路多艰也全程都很安心踏实。 如果你有前往昆明的旅行计划，别错过松赞的昆明林卡新店，除了节目里提",
+          "publishedAt": "2026-05-07T13:38:47+00:00",
+          "duration": 7580,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4NzQwMSwidCI6MX0.nuLW1339_aXaSsJ-Hpxdo1S-kTA/bowuzhi/8221838951_646453.mp3"
+        },
+        {
+          "id": "bowuzhi-7ec910cd965719",
+          "title": "244. 书写给过去、未来的人与神明——中国文明中的书写传统与长期主义",
+          "description": "本期节目由中欧基金赞助播出，感谢「站在时间的纵深处」播客企划的特别邀请，今天我们将会聊聊中国文明中的书写传统与中欧基金一直践行的长期主义，如果你对类似的话题感兴趣，也欢迎大家关注中欧基金的同名播客收听更多内容，一同收获认知的成长，在投资世界里寻找到稳定的长期内核。 我们从参观国家典籍博物馆和第一历史档案馆出发，将目光投向中国的书写传统，并讨论其中的长时间性：甲骨文向时间投石问路，金文则直接向未来发言；经学在生、往、异、灭中不断诠释经典，纵深串联起了中国古代最核心的知识生产过程；永乐大典、明清实录宝训这样的类书、档案一开始只是服务于帝王与制度，却最终为文明",
+          "publishedAt": "2026-03-25T23:00:00+00:00",
+          "duration": 6736,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4NjY3MywidCI6MX0._hGxCogTTX7DAHAHjFj-V_gLnoY/bowuzhi/8225426843_437457.mp3"
+        },
+        {
+          "id": "bowuzhi-96d0cabd6f0c26",
+          "title": "243. 湖州快闪",
+          "description": "朋友们新年好！ 02:14 城隍庙（庙中庙） 06:48 展开说一嘴城隍庙 23:47 飞英塔（塔中塔） 41:58 打岔，推荐小说 Trust by Hernan Diaz 47:48 湖州干挑面！！ 52:38 李绅的相国池 56:55 铁佛寺中铁观音 01:02:10 赵孟頫，说起来他是个赘婿来着 01:13:50 快速逛了一下钱业会馆 01:14:54 潮音桥（桥下桥）",
+          "publishedAt": "2026-02-21T11:04:08+00:00",
+          "duration": 4794,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4NjAyMywidCI6MX0.NStrt8yIGilE2LbNN5UJVzgWN7Q/bowuzhi/8228155304_667147.mp3"
+        },
+        {
+          "id": "bowuzhi-d92ddbf0a3ff7b",
+          "title": "242. 寿县：2026 文旅待爆款",
+          "description": "各位新年好！寿县很好，但去之前要控制好预期哦。 国家博物馆最近有个特展「遇见考烈王——安徽淮南武王墩一号墓考古成果展」，结合寿县一起看，不要错过溜～ 所有照片在这儿。 00:00 寿县超绝看点一字排开 03:12 进城之前先遇到春申君 08:27 从南门 aka 通淝门进城 12:11 孔庙 21:14 福音堂、州署谯楼 24:53进食：滕州菜煎饼、黄花菜面、小馄饨、豆花 28:09 传说中淮南王刘安在寿县发明了豆腐 31:36 成语之都大挑战 33:50 东门 aka 宾阳门和淝水之战（感谢「太医来了」的初太医） 55:26 报恩寺：宋塔遗迹、荀彧墓、",
+          "publishedAt": "2026-01-12T02:38:59+00:00",
+          "duration": 6571,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4NTM5MCwidCI6MX0.iPcLjaFRdhyRJ998VLOZig-9uIg/bowuzhi/8231895353_602049.mp3"
+        },
+        {
+          "id": "bowuzhi-082ac9ec06a513",
+          "title": "241. 年度高光时刻：参观 Freitag 工厂",
+          "description": "2024 年的高光时刻是在苏黎世的 Freitag 工厂度过的。废旧的卡车篷布在这里被庖丁解牛，用收集来的雨水清洗干净，再被设计师一块块用心分割……每一个环节固然都很有意思，但更触动我的是「人类在安宁的环境中专注地工作」的氛围，以及有责任感的企业如何在工作的各个环节中尽力践行自己的使命。很高兴和 Freitag 品牌播客「What the F:)UTURE」和「螺丝在拧紧」的主播吴琦一起回忆这段旅程，祝福他饱暖，祝福他免于冰雹。 你可以在这里预约参观 Freitag 工厂。 同行的晃抠你是这样回忆起此次旅程：Vol.36 为什么我爱 FREITAG Fr",
+          "publishedAt": "2025-11-21T05:58:07+00:00",
+          "duration": 5681,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4NDY0OCwidCI6MX0.R1Mi7TSmZhSxakzXa2XoRwi7GsY/bowuzhi/8236298384_951902.mp3"
+        },
+        {
+          "id": "bowuzhi-49dd30aa0498eb",
+          "title": "240. 登临出世界：以无尽的方式走向塔",
+          "description": "中文里的「塔」是一个包容度很高的概念，空心或实心的石塔、木塔，金字塔，灯塔，暸望塔，电视塔，信号塔，钢筋水泥的高层建筑，甚至松塔、象牙塔直到塔防游戏，都被一个「塔」字概括，仔细拆解下去趣味无穷。 目前，上海杨浦区敦煌当代美术馆正在举办特展「登临出世界」，从空间、仪式与文学三个视角切入，尤其结合丝路文化与佛教语境中的塔意象，展开一场从传统到当代的艺术对话。我们邀请到策展人徐缓之与建筑考古学者王可达，带领你在展厅里边走边聊。希望能陪你一起细细看展，正如诗人韩东在《有关大雁塔》中所写：「我们爬上去，看看四周的风景，然后再下来。」 📍地点： 上海市杨浦区长阳路1",
+          "publishedAt": "2025-09-05T02:54:41+00:00",
+          "duration": 6751,
+          "url": "https://r.typlog.com/eyJzIjoxNTI4LCJlIjo4MzgyMywidCI6MX0.B2h_fo0motgN1_pMY4ZX7HJS0KQ/bowuzhi/8242959625_09313.mp3"
+        }
+      ]
+    },
+    {
+      "id": "dscience",
+      "title": "原来是这样 Dscience",
+      "author": "原来是这样 Dscience",
+      "category": "科学科普",
+      "description": "人人都是主播",
+      "cover": "https://cdn.lizhi.fm/podcast_cover/2019/12/17/2777324026164844615.jpg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://rss.lizhi.fm/rss/318375.xml",
+      "feedUrl": "https://rss.lizhi.fm/rss/318375.xml",
+      "episodes": [
+        {
+          "id": "dscience-1ed83a14229eaa",
+          "title": "572：逐日西班牙｜圣堂追光",
+          "description": "圣家堂依然没有完工，却也正因为一直在“生长”，让每一次重逢都可能看到不一样的模样。遗憾的是，这一次没有等到阳光穿过彩色玻璃最绚烂的时刻；但时隔多年再走进其中，那些新建成的塔楼、不断变化的空间，依然让人重新思考：一座建了一百多年的建筑，究竟什么时候才算真正完成？ 而当十二天的行程走到尾声，我们也把话筒交给同行的“叨友”。有人最喜欢人类进化博物馆，有人忘不了莱昂大教堂的彩绘玻璃，也有人记住的，反而是沿途寻找日全食邮票、报纸和纪念品的那些小插曲。旅行结束以后，每个人带回来的，其实都是一个不太一样的西班牙。 最后，我们又把话题带回这趟旅程最初的理由——日全食。 ",
+          "publishedAt": "2026-08-29T01:00:01+00:00",
+          "duration": 3189,
+          "url": "https://cdn.lizhi.fm/audio/2026/08/29/3231333396537732102_hd.mp3"
+        },
+        {
+          "id": "dscience-15ed83489330e2",
+          "title": "571：逐日西班牙｜北境奇遇",
+          "description": "越往西班牙北部走，这趟旅行也越不像一条常规的西班牙线路。 我们先走上海风浓重的巴斯克海岸，爬上《权力的游戏》《龙之家族》里的“龙石岛”；再进入毕尔巴鄂，看一座古根海姆博物馆如何成为城市更新的地标。建筑本身和馆内藏品，到底哪个更值得看？ 接下来是意外收获颇高的潘普洛纳：亲自走一遍奔牛路线，才发现电视里看不出来的坡度、窄巷和“死亡拐角”；进入斗牛场，又发现它竟然成了全程评价最高的景点之一。 再往东，萨拉戈萨的阿尔哈费里亚宫带来了完全不同的摩尔文化冲击，而巴塞罗那终于登场：弗拉明戈、城市漫步，以及一堂看起来简单、真正动手才发现并不容易的瓷砖拼贴课。 这一期，是",
+          "publishedAt": "2026-08-28T16:04:08+00:00",
+          "duration": 3499,
+          "url": "https://cdn.lizhi.fm/audio/2026/08/28/3231327910022842886_hd.mp3"
+        },
+        {
+          "id": "dscience-576fc31effa431",
+          "title": "570：逐日西班牙｜一路向北",
+          "description": "如果把日全食先放到一边，这趟西班牙之旅本身，究竟值不值得？从马德里出发，我们一路向北，也继续用熟悉的“从夯到拉”给沿途景点评分：马德里皇宫和普拉多博物馆，谁更值得专程去？托莱多古城为什么像一座巨大的历史迷宫？塞戈维亚、莱昂，一座又一座大教堂看到最后会不会“审美疲劳”？ 而到了布尔戈斯，画风突然从王室、宗教和建筑，切换到了“人从哪里来”：阿塔普埃尔卡留下的一百多万年人类活动证据，被搬进了人类进化博物馆。古人类、化石、切割痕迹，还有一组让人印象深刻的人类复原像——这也成了旭岽此行第一个毫不犹豫想给出“夯”的景点。 这一期，从马德里一路走到布尔戈斯，在西班牙北",
+          "publishedAt": "2026-08-28T10:13:16+00:00",
+          "duration": 3599,
+          "url": "https://cdn.lizhi.fm/audio/2026/08/28/3231283059520588294_hd.mp3"
+        },
+        {
+          "id": "dscience-37117dfdf0263e",
+          "title": "569：如果美洲作物全部消失了？（上）",
+          "description": "如果从明天开始，所有原产于美洲的作物消失，我们的餐桌还剩下什么？玉米为什么离开人类就很难独立繁殖？美洲原住民怎样用石灰水，破解它隐藏的营养陷阱？土豆如何从“恶魔果实”变成欧洲人的救命粮，又为何卷入爱尔兰大饥荒？红薯怎样越过海洋进入中国，木薯含有剧毒，为什么还能养活数亿人？从作物驯化到全球传播，一颗种子带走的远不只是食物，也包括一整套容易被忽略的生存知识。",
+          "publishedAt": "2026-08-07T09:56:15+00:00",
+          "duration": 2009,
+          "url": "https://cdn.lizhi.fm/audio/2026/08/07/3227385011626727430_hd.mp3"
+        },
+        {
+          "id": "dscience-b9c59d5366d446",
+          "title": "568：菲尔兹奖，到底在奖什么？",
+          "description": "四位年轻数学家，研究气体分子的碰撞、空间中的细管、高维世界里的曲线，以及那些看似杂乱无章的几何结构。这些普通人听不懂、暂时也看不到用途的成果，为什么能获得数学界的最高荣誉？菲尔兹奖为什么四年才颁一次，还要设置四十岁的年龄线？纯数学究竟怎样改变现实？当AI开始参与真正的数学研究，下一届菲尔兹奖又该颁给谁？ 文案/主播/后期：旭岽",
+          "publishedAt": "2026-07-24T15:25:39+00:00",
+          "duration": 2243,
+          "url": "https://cdn.lizhi.fm/audio/2026/07/24/3224829560079857158_hd.mp3"
+        },
+        {
+          "id": "dscience-70c6ec2847b310",
+          "title": "567：核钟是什么？",
+          "description": "钟，到底是什么？从直径一万多千米的“地球钟摆”，到手表里的石英晶体，再到“几百亿年才差一秒”的光学原子钟……人类造钟的历史，说白了就是一部不断“嫌弃”上一任钟摆的历史！既然现在的原子钟已经精准得精密到离谱，科学家为什么还是不知足，甚至开始“折腾”起比原子更小十万倍的原子核？最新造出的“核钟”究竟新在哪里？ 为什么说计时准确的尽头，是我们在试探这个世界最底层的规则到底有多稳定？ 文案/主播/后期：旭岽",
+          "publishedAt": "2026-06-26T10:00:00+00:00",
+          "duration": 2637,
+          "url": "https://cdn.lizhi.fm/audio/2026/06/26/3219526305954289670_hd.mp3"
+        },
+        {
+          "id": "dscience-daec1680225801",
+          "title": "566：海水的价值有多少？",
+          "description": "如果全球海水平均分给每个人，你能分到多少？一辆洒水车？一个游泳池？答案远比想象夸张：大约11个杭州西湖。那这些海水除了咸，到底值不值钱？560万吨盐能不能堆出一座“盐版胡夫金字塔”？20万吨镁、6万吨钾、1万吨溴，又分别值多少钱？海水里真的有锂、铀和黄金吗？为什么账面价值逼近70亿元，却没人靠“煮海水”财富自由？本期节目，带你重新认识海水的真正价值。 文案/主播/后期：旭岽",
+          "publishedAt": "2026-06-12T10:00:00+00:00",
+          "duration": 1802,
+          "url": "https://cdn.lizhi.fm/audio/2026/06/12/3216975583166062086_hd.mp3"
+        },
+        {
+          "id": "dscience-5c0a1b6e97ddaf",
+          "title": "565：厄尔尼诺究竟是怎么回事？",
+          "description": "​厄尔尼诺为什么叫“小男孩”？推动厄尔尼诺的第一张多米诺骨牌到底是什么？比约克尼斯反馈、温跃层、赤道凯尔文波，又怎样把一次海温异常放大成全球气候事件？拉尼娜为什么常常接在厄尔尼诺之后？为什么这几年我们总觉得厄尔尼诺和拉尼娜特别频繁？强厄尔尼诺真的就等于中国夏天一定酷热异常吗？这一期，我们从太平洋深处讲起，重新理解厄尔尼诺、拉尼娜与全球变暖之间复杂而微妙的关系。 文案/主播/后期：旭岽​",
+          "publishedAt": "2026-06-05T09:27:10+00:00",
+          "duration": 1897,
+          "url": "https://cdn.lizhi.fm/audio/2026/06/05/3215691920212926470_hd.mp3"
+        }
+      ]
+    },
+    {
+      "id": "fit4life",
+      "title": "fit4life | fitgirl weekly chat",
+      "author": "fit4life",
+      "category": "运动健康",
+      "description": "两位全平台百万粉丝女性运动和健康生活方式博主；每周关于女生健康，运动，饮食及健康生活方式的私聊；治愈，轻松，私密，无论你正在减肥，刚开始运动，初入职场；还是对自己的身材，相貌，生活方式不满意想要改变；这每周一小时的闺蜜私聊，都是你的治愈暖汤。 加入听友群 方法1️⃣：加“fit4life999”等小助理加你（如果添加次数太多可能会出现无法添加的情况，齐给大家稍安勿躁过一天在申请，或者直接通过方法二添加企业WX） 方法2️⃣：公众号回复“我要进群”即可 Apple Podcast/喜马拉雅/小宇宙/网易云/Spotify/荔枝/蜻蜓：fit4life 微博",
+      "cover": "https://fdfs.xmcdn.com/group65/M06/8F/06/wKgMal1VKuCjGk3YAAt8sw9DK54615.png",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/26640504.xml",
+      "feedUrl": "https://www.ximalaya.com/album/26640504.xml",
+      "episodes": [
+        {
+          "id": "fit4life-f6577fcb7f1590",
+          "title": "528 - 斥巨资让宋威龙为我惊慌失措，有这样的经历你敢讲吗？",
+          "description": "如果介绍姥爷的drama体质，你可能觉得是老生常谈。但是，全体注意，这次不一样！这次是顶级的drama和尴尬！姥爷在出发新疆之前又一次把行程塞满，企图成为时间管理的神，但是神总会犯错。当神以为一切完美的时候，就是暴风雨前的平静。出发之前，神亲手把此次出差最重要的东西从行李箱里掏出来，然后踏上征途。 活动过程中，姥爷又企图打败一众美神成为全场焦点，但是神总会犯错。具体发生了什么让宋威龙也为她惊慌失措就请所有人赶紧听节目吧！ PS：姥爷提到的vlog还在制作中，大家记得过两天来看！（不看真的会错过很多，下滑先看前瞻） 07:04 暴风雨来临前，一切完美无瑕。",
+          "publishedAt": "2026-09-02T13:00:00+00:00",
+          "duration": 3260,
+          "url": "https://jt.ximalaya.com//GKwRIRwObcG4AZK7ngTQ9o7J.m4a?channel=rss&album_id=26640504&track_id=1010939227&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/d562-audiofreehighqps/B9/79/GKwRIRwObcG4AZK7ngTQ9o7J.m4a"
+        },
+        {
+          "id": "fit4life-ce2bf014550563",
+          "title": "527 - 从“厌世”到充满激情，只需要做一点小改变",
+          "description": "姥爷的狗狗miumiu已经重病一段时间，在放弃折腾给它临终关怀和继续诊断治疗之间，姥爷纠结了很久，但最终在大家的鼓励和出谋划策之下，还是迎来了一点点好消息。与此同时，姥爷也在做迎接新生命的尝试，把全部的激情投入到阳台的植物身上。在过度溺爱、拔苗助长的趋势中及时刹车，逐渐学习成为植物的“新手爸妈”。但除了惊喜也有点失意，打网球的狂热慢慢褪下又遇到了严厉教练的“摧残”，新一轮的挣扎又开始考验她…… 03:24 先跟大家汇报一个好消息！ 21:01 迎接新生命！我也到了能感受到生命蓬勃的年纪。 42:36 知道了知道了，我该怎么做自己还不知道吗？ �感谢更适合",
+          "publishedAt": "2026-08-26T13:00:00+00:00",
+          "duration": 3749,
+          "url": "https://jt.ximalaya.com//GKwRIUEOZHSKAc8r7wTM3lE9.m4a?channel=rss&album_id=26640504&track_id=1008735617&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/0bdb-audiofreehighqps/76/5C/GKwRIUEOZHSKAc8r7wTM3lE9.m4a"
+        },
+        {
+          "id": "fit4life-baf495d1bbbf86",
+          "title": "526 - 在失序中空虚，在关系里委屈，然后呢？",
+          "description": "今天又是喜闻乐见的听众留言环节。一则关于人生选择，在重大抉择面前踌躇犹豫，在失去目标的空闲中空虚无助，当人被抛向真正自由的境地，怎么没有迎来真正的幸福？另一则是关于亲密关系，我想要幸福平凡活在当下，而ta要努力上进追赶目标。当和伴侣短暂不同频的时候，该互相迁就委曲求全吗？这些是不是你也曾经经历过？也欢迎大家留下你的故事。 00:45 人生岔路口，有没有一种不会错的选择？ 24:02 如何度过无所事事的一天？没事儿找事儿、百折不挠！ 31:13 在下坡路上还有全力以赴的必要吗？ 43:24 想和另一半度过美好时光我错了吗？ 44:44 每个人身上都有点东亚",
+          "publishedAt": "2026-08-15T12:42:30+00:00",
+          "duration": 3983,
+          "url": "https://jt.ximalaya.com//GKwRIJEOViI7AewEsgTHKKJs.m4a?channel=rss&album_id=26640504&track_id=1006594885&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/375a-audiofreehighqps/77/B9/GKwRIJEOViI7AewEsgTHKKJs.m4a"
+        },
+        {
+          "id": "fit4life-a594c80603a4fd",
+          "title": "525 - 世纪和解、直面死亡、拿起责任，在不同身份中重塑关系",
+          "description": "没错！姥爷终于和父母和解了。至于谁道歉，谁让步，谁反思，一时说不清。因为和解的一幕突然来袭，打得人措手不及，关系里的争吵和解似乎总是难以预料。与此同时，姥姥坚决果断地把一岁半的赳赳送进幼儿园，但由此引发她对做父母、过人生的思考比高考更让人震荡。 最终，两人在不同关系里，转换不同身份，看待同一个事件，发现对错始终不是最重要的。重要的一直都是被关系绑定后彼此之间无休止的纠缠本身。 03:38 和解前夜，又是一番反复纠缠。 14:49 突然出现在我面前，是他们最大的让步。 28:42 作为宠物主人，陪伴它最后的一段路也是它给我上的最后一课。 32:46 为孩子",
+          "publishedAt": "2026-08-05T13:13:48+00:00",
+          "duration": 4045,
+          "url": "https://jt.ximalaya.com//GKwRIMAOSPqgAfOwjATCeHkF.m4a?channel=rss&album_id=26640504&track_id=1004800082&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/4f2b-audiofreehighqps/59/9A/GKwRIMAOSPqgAfOwjATCeHkF.m4a"
+        },
+        {
+          "id": "fit4life-50a51e542a3d2b",
+          "title": "524 - 迷失东京，在最颓废的年纪蹦最累的迪",
+          "description": "姥姥姥爷携家属参加fuji rock富士山音乐节，四十岁的两对儿couple带着七十岁的齐老师，去和二十多岁的摇滚乐爱好者一起在山水间蹦迪。听起啦就已经够魔幻了，但还有更令人迷失的经历。先是姥爷一脚踏进东京药妆店的消费主义陷阱。再是从不带厚衣服的姥姥带了一箱厚衣服却还是淋雨后没有衣服穿，在最颓废的年纪来了一场最累的旅行。 04:23 迷失东京第一步——掉进消费主义陷阱。 22:45 七十岁还是可以对世界充满好奇，四十岁的我路还长呢！ 38:52 最不扫兴的人，把情绪藏的最深。 46:17 印象最深的还是我们一起淋过的大雨。 ———————————— �给",
+          "publishedAt": "2026-07-30T13:00:00+00:00",
+          "duration": 3779,
+          "url": "https://jt.ximalaya.com//GKwRIW4OQOVOAdLgiQS_amej.m4a?channel=rss&album_id=26640504&track_id=1003703889&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/6987-audiofreehighqps/15/CF/GKwRIW4OQOVOAdLgiQS_amej.m4a"
+        },
+        {
+          "id": "fit4life-e55536d5e39ab1",
+          "title": "523 - 和陌生人吵架｜道理我都懂，可是如何高情商化解冲突？",
+          "description": "外卖员、网约车司机、快递员，几乎是我们每天都会接触的人群，我们一边感谢ta们作为城市的毛细血管提供无尽的便利，一边又无法避免地在频繁接触中发生摩擦。打开小红书，也能看到无数吐槽贴，相信大家都一样，对这些熟悉的陌生人偶尔狠狠吐槽，又忍不住共情。生气的时候情绪上头恨不得上去打一架，总想争个对错占个上风。冷静下来又清楚地知道各自立场不同利益互斥，也是到了两边都能理解的年纪。你有过这样的经历吗？怎么处理这类冲突呢？ 02:04 最近两次和陌生人吵架，我能说我都输了嘛！ 12:19 道理我都懂，我们立场不同可是我憋屈啊！ 18:06 在危险的盘山路开100迈飙车，",
+          "publishedAt": "2026-07-22T13:00:00+00:00",
+          "duration": 3592,
+          "url": "https://jt.ximalaya.com//GKwRIUEONkuxAbvPGQS7PHRz.m4a?channel=rss&album_id=26640504&track_id=1002290908&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/8d20-audiofreehighqps/D2/82/GKwRIUEONkuxAbvPGQS7PHRz.m4a"
+        },
+        {
+          "id": "fit4life-c502c1176fb4cf",
+          "title": "522 - 最近的生活点滴｜抓耳挠腮，竟然总结不出一个主题",
+          "description": "你们有没有过那种时候？好不容易空闲下来，觉得时间不能浪费，然后掏出手机想要攻略一下去哪里尽情放松。结果翻了一小时也没找到答案，又为此感到不服，于是夺门而出——不知道去哪，总之不能坐以待毙。果然，出门以后百无聊赖，在自己最熟悉的附近遛弯儿看人、抓耳挠腮，最后老老实实回家躺在床上，思忖着究竟是什么时候，线下的精致生活离你远去了？欲望和行动力都被谁偷走了？ 这就是成年人的无奈吧，想要重返二十岁的激情，又不懂城市最in的文化。然后强行支棱着硬玩儿一通，发现格格不入灰头土脸。好不容易等到一个婚礼场合，兴奋准备，又发现自己好像太过隆重。请大家给我们留言，讲讲你的闲暇",
+          "publishedAt": "2026-07-08T12:41:38+00:00",
+          "duration": 3087,
+          "url": "https://jt.ximalaya.com//GKwRIJEOJAjxAX1SIASzb9PH.m4a?channel=rss&album_id=26640504&track_id=999397203&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/0c44-audiofreehighqps/23/7E/GKwRIJEOJAjxAX1SIASzb9PH.m4a"
+        },
+        {
+          "id": "fit4life-90055c134befe4",
+          "title": "521 - 高海拔徒步，就图一个花很多钱去遭大罪的感觉！",
+          "description": "我们总想找罪受，这是为什么呢？ 姥爷断网6天，从西藏的高原回来。一路上环境是艰苦的，身体是疼痛的，景色确实是美的但转头已经忘记了，所以幸福感也是说不上的。可是在山里说着再也不去徒步的人，回到家里已经开始琢磨下个路线了。相信你听了这期节目会更加不解，姥爷这种drama体质，在进山之前就已经状况不断。那么既然哪哪都难受，到底为什么还要一次一次的出发呢？ 01:36 我去过几天暑假，很虐的那种 06:11 还没进山就遇到村霸堵路，只能说幸好当天没走成！ 18:25 该怎么形容我们的住宿条件呢？我只能说你肯定没见过 31:29 6天的路线被迫压缩到5天，你想想这",
+          "publishedAt": "2026-07-01T12:53:38+00:00",
+          "duration": 3948,
+          "url": "https://jt.ximalaya.com//GKwRIUEOGtFeAefH3ASwCN1-.m4a?channel=rss&album_id=26640504&track_id=998087815&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/319a-audiofreehighqps/06/59/GKwRIUEOGtFeAefH3ASwCN1-.m4a"
+        }
+      ]
+    },
+    {
+      "id": "keep-talking",
+      "title": "保持通话",
+      "author": "关哥说险",
+      "category": "职场教育",
+      "description": "『保持通话』是一档深耕于保险，却不局限于保险，而是从保险的视角去观察世界，思考人生，寻找生活密码的中文播客节目。 保险源自于生活中的不确定性，本质是对人生风险的管理。 我们希望通过传递更多的专业知识和行业信息，做好保险科普，让更多的人了解保险，让有需要的人用好保险。 通过对「理财」「职业」「健康」「认知」「成长」…不同话题的延伸，去寻找解决问题的底层逻辑，探索个人和家庭的能力边界。 用保险的方式【理性应对人生】，平滑生命周期中可能遇到的人生风险。以保险的视角【感性链接生活】，在不确定的世界中获得对生活的掌控感。",
+      "cover": "https://image.xyzcdn.net/FnDDgpwLf2BzYazQtmfzB4lTplF9",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/uydkftwpn7cu",
+      "feedUrl": "https://feed.xyzfm.space/uydkftwpn7cu",
+      "episodes": [
+        {
+          "id": "keep-talking-39dc19f476388c",
+          "title": "EP92 记录，是认真生活的注脚",
+          "description": "本期播客，也是一种记录 ⌛时间轴 01:06持续记录的好处，都是真的吗？ 05:15真实的脑科学研究到底怎么说？ 07:21情绪书写的疗愈力 16:34流水账的隐藏价值 22:13为什么一定要写下来？ 25:05记录一定要成体系吗？ 25:56「来时路/长期主义」的最佳旁证 29:14「过去的他拯救了现在的他」！？ 31:41母亲才懂「孩子成长印迹」的珍贵 32:19怎么用健康数据的记录来调整生活？ 39:49记给自己看，记录本身就已经是意义 🎙节目介绍 『保持通话』是一档深耕于保险，却不局限于保险，而是“从保险的视角去观察世界，思考人生，寻找生活密码”",
+          "publishedAt": "2026-04-06T23:00:00+00:00",
+          "duration": 2741,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/69d313b0e2c8be31557462ee/media.xyzcdn.net/60336ff53fb239af6489ccf1/lpD4D4WLzSjtIGXnXgHDstnhqN6v.m4a"
+        },
+        {
+          "id": "keep-talking-39249cc95a7062",
+          "title": "EP91 看懂香港保险，让我们从本质、框架、逻辑谈起",
+          "description": "这几年，问港险的朋友真的越来越多：“关哥，能不能聊聊香港保险？”“香港储蓄险的年化利率是真实可靠的吗？”“我到底适不适合配置港险？” 这些问题似乎总带着一点“特别”的气质——美元计价、更高的预期收益、更灵活的设计，也夹杂着不少模糊的信息与被放大的想象。有人把它当成资产出海的入口，也有人只是被一张好看的计划书打动，但很少有人认真想过：它到底在你的整体资产配置里，扮演什么角色。 所以这一期，我们不急着谈产品，也不急着给结论，而是先把框架搭起来。香港保险究竟是什么？它为什么会存在？它的收益从哪里来，风险又落在谁身上？以及，更重要的——什么样的人适合，什么样的人",
+          "publishedAt": "2026-03-23T23:00:00+00:00",
+          "duration": 4242,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/69c10eff9b00c5ed7f115586/media.xyzcdn.net/60336ff53fb239af6489ccf1/lpHz-TEUiyLt9uf3yVvQ9XLAC7fu.m4a"
+        },
+        {
+          "id": "keep-talking-8dade38eba399b",
+          "title": "EP90 保障体系讲了五年，是时候翻出来看看有哪些变化了",
+          "description": "不知道你有没有察觉到，这几年我们身边的保障环境，真的发生了不小的变化。 医保政策不断调整，各类保险产品也在迭代更新，就连大家平日里看病、报销、打理资金的逻辑，都和从前大不相同。 所以今天，我想踏踏实实跟大家聊一件很实在的事——复盘这几年 保障体系 的各类变化。 之所以要聊保障体系，而非单拎某一款保险来说，是因为生活里的风险本就具有分层性，还容易相互牵连，且大多难以提前预判，单靠某一款保障产品，根本没法补齐所有漏洞。 一套完善好用的保障体系，更像一个趁手的工具箱，各个模块相互配合、彼此补缺，才能真正为我们抵御风险、扛住难事。 这期咱们就挨个捋明白各大保障板",
+          "publishedAt": "2026-03-16T22:30:00+00:00",
+          "duration": 3408,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/69b77136caaea1fb3b7a8956/media.xyzcdn.net/60336ff53fb239af6489ccf1/lnCygqmDkc0EvCF0O6Y9HjRKKMCt.m4a"
+        },
+        {
+          "id": "keep-talking-e9115b7909f1bb",
+          "title": "EP89 I人E人、J人P人，不过是世界欣赏我们的不同颜色罢了",
+          "description": "同频搭子寻觅”“情侣适配度测评”，早已成为当下的社交符号。但实际上，MBTI的价值远不止于社交暗号，其深层的认知意义，仍有待我们探寻。 本期节目，我请到了郡主聊聊MBTI。于我而言，近年接触MBTI，既深化了自我认知，也常因相关梗图会心一笑。闲谈中我意外得知，郡主早在2005年便已结缘MBTI。我们聊天的时候发现，大众对MBTI的认知多有片面，因此特意邀请她做客播客，深入聊聊其真实价值。 我们真正想传递的，是挣脱标签的束缚，让MBTI回归其本真价值——成为读懂自我的实用钥匙。读懂自己为何偏爱未雨绸缪，亦或享受随机而行的自在，接纳自身的每一份特质，更学会与",
+          "publishedAt": "2026-01-26T23:00:00+00:00",
+          "duration": 4402,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/69733e3def1cf272a70ce19e/media.xyzcdn.net/60336ff53fb239af6489ccf1/lunZI8_Pau3B-XFaL2XgFIT_0APq.m4a"
+        },
+        {
+          "id": "keep-talking-5472b8bf50abb6",
+          "title": "EP88 2025年财务复盘：超支未必痛苦，省钱未必快乐",
+          "description": "2026年的第一期播客，和大家见面啦！ 又到岁末年初，正是静下心来，为个人或家庭财务做一次完整复盘与规划的好时机。希望这一期内容，能陪你一起，把记账和预算这件事稳稳落地、融入日常。 这一期，我们不会重复那些基础的复盘方法，而是想带着你，沿着之前节目里分享过的记账心法与核心原则，好好回顾过去一整年的收支轨迹。此外，大家反复询问的那些问题，我们也会认真地聊一聊——说不定正在坚持记账的你，也正被它们悄悄困扰呢。 我和朦朦，一位是财务路上的探索者，一位是已有二十年记账经验的“老手”，会陪大家一起拆解2025年的财务数据。我们不仅会剖析超支背后的原因、分享省钱路上",
+          "publishedAt": "2026-01-12T23:00:00+00:00",
+          "duration": 3650,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/6964a3b4f8b05f9f7522c683/media.xyzcdn.net/60336ff53fb239af6489ccf1/llDN9fkXqGeYftmAOrxlAGWlkSMQ.m4a"
+        },
+        {
+          "id": "keep-talking-28e21c5854163c",
+          "title": "EP87 2025最值得消费盘点：为健康和体验买单，每一分都值得",
+          "description": "又是一年将尽，翻开记账软件，数字记录着付出，却衡量不了满足。今年，我们决定换一种算法——不再只看支出，而要检视“收获”。 于是，我们问自己：2025年，哪一笔消费，真正让身体更轻盈了一些？哪一次体验，让记忆的底色更明亮了几分？哪一项投资，让日常的运转更从容了一点？ 答案渐渐清晰：最值得的消费，从不是最昂贵的，而是那些精准满足了我们最深切渴望的——对健康的敬畏，对体验的渴求，对美好生活具体而微的兑现。 这份清单里，没有冲动消费的后悔，只有精心选择后的笃定。从一口干净的食物，到一夜安睡的远方；从一场家门口的度假，到一件提升效率的利器——我们为这些“值得”投票",
+          "publishedAt": "2025-12-29T23:00:00+00:00",
+          "duration": 5493,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/6951d93e14db1df9ef342ba5/media.xyzcdn.net/60336ff53fb239af6489ccf1/lvdPvGuMESfc-R5yMDxMvCN7Xr1i.m4a"
+        },
+        {
+          "id": "keep-talking-b468a847bae7f9",
+          "title": "EP86 加点胜算！百万医疗险理赔诉讼的三大趋势",
+          "description": "这期节目是我们 「保险理赔诉讼专题」 的第3篇，延续前两期节目对保险理赔诉讼基本概念与操作流程的介绍（ EP79 ），以及对各色案例的分享和解读（ EP81 ），本期节目以四大人身保险中理赔争议更多的百万医疗险为例，与@小双 律师一起，从我们亲历过的诉讼案例的经验总结中，简单预判一下未来 保险理赔诉讼判裁的趋势和走向 。希望可以为大家摸索到一些可落地的投保技巧，从细节上增加赢得理赔权益的“胜算”。 ⌛时间轴 03:37 四大人身险中，为什么百万医疗险的争议更多？ 05:14趋势一：法院支持拒赔的比例有所降低 10:47 -如实告知要亲自做好，否则后期自证",
+          "publishedAt": "2025-02-17T23:00:00+00:00",
+          "duration": 3568,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/67b2b2cc606e5c5940ed7781/media.xyzcdn.net/60336ff53fb239af6489ccf1/lp09-wkWdeBZp_qmT0O2aGhmc9Kp.m4a"
+        },
+        {
+          "id": "keep-talking-a6fe98b393f954",
+          "title": "EP85 红包里的年味：从广东的“利是”到东北的“大红包”",
+          "description": "听友们，过年好！保持通话团队先给大家拜个晚年，祝大家：新程启幕，福如其来，人寿年丰，万事可期♥ 节后返工第一天，是不是已经开始“节日戒断”，想念过年在家的日子了？刚好这期节目给大家解个闷，我和朦朦拿着手里还热乎的红包，来了一个南北大“对账”，聊聊我们过年「收/发红包」的不同习俗和有趣经历，一起回味一下身边的年味~ ⌛时间轴 03:50 广东利是：快乐，但难靠它发财。 05:33 东北红包：大方，主打一个敞亮！ 09:27 谁不爱仪式感和彩头十足的开工红包？ 13:19 人情往来，有时更讲究「来日方长」！ 16:03 小时候的年味儿，可远不止红包… 17:",
+          "publishedAt": "2025-02-04T23:00:00+00:00",
+          "duration": 2103,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60336ff53fb239af6489ccf1/67a1aaa1d74435e4a3009125/media.xyzcdn.net/60336ff53fb239af6489ccf1/lslWGR5ACY2-bEy10LtM_8s9PGeG.m4a"
+        }
+      ]
+    },
+    {
+      "id": "new-energy-car",
+      "title": "新能车",
+      "author": "Harrie",
+      "category": "汽车出行",
+      "description": "汇集新能源汽车行业资讯、车主心得分享、买车卖车推荐以及相关新能车产业链的一切",
+      "cover": "https://image.xyzcdn.net/FqTk6m7bt4fjaWn0cj6KduMplC_n.png",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://feed.xyzfm.space/ygfuemblqtrt",
+      "feedUrl": "https://feed.xyzfm.space/ygfuemblqtrt",
+      "episodes": [
+        {
+          "id": "new-energy-car-6ef484e82641af",
+          "title": "一周车市总结 10万级新车卷智驾，20万预算还要追高配吗？",
+          "description": "这周买车，贵的不一定更适合你。MG 07、风云T7、丰田bZ5怎么选？智己L6和海豹08，20万预算花在哪？本期拆解续航、辅助驾驶与置换价的取舍，再看极狐T7预售和成都车展新车。别被起售价带跑，也别因税费消息急着下单。 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-08-31T12:42:12+00:00",
+          "duration": 1179,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a95756ea0210c197dcb234f/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/lhoZvIl1aRwxSdD9GWaGP1SJbIYT.m4a"
+        },
+        {
+          "id": "new-energy-car-c25edd7558542c",
+          "title": "十款新车一起上，预算7万、13万、25万分别买什么？零跑A05、秦MAX、魏牌V8X谁更值得买？",
+          "description": "前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-08-15T04:54:52+00:00",
+          "duration": 1020,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a7ff00836641f136d88841b/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/lpzvkGVCcWr3yx-8gtlGEDxTbyfX.m4a"
+        },
+        {
+          "id": "new-energy-car-d6343388bccdb3",
+          "title": "播客｜8月车市速报：享界/尊界/腾势/深蓝等多款新车动态汇总，智驾门槛进一步下探",
+          "description": "8月初车市重磅动态： 享界G9 开启预售（43.98万起），获L3级智驾牌照； 尊界V800 入局百万级MPV； 深蓝S05 改款，将激光雷达下探至14万级； 全新smart精灵1号 限时14.99万起； 腾势Z9S 预售31.98万起。此外， 比亚迪大汉 将在成都车展首秀， Robotaxi 开启主驾无人测试，全国充电桩已突破2300万个 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-08-08T02:49:01+00:00",
+          "duration": 1531,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a76988cc4079d62c57f1eb2/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/litjD2BV0cXCH5X3wKnstbhDB5Wg.m4a"
+        },
+        {
+          "id": "new-energy-car-d6fff5e15904ec",
+          "title": "播客｜卖爆了，只赚 3.4%？新能源车企正在打一场残酷生存战",
+          "description": "销量战报一片欢腾，行业利润率却只有 3.4%。 本期从 7 月销量与上半年目标完成率切入，拆解新能源汽车市场的存量绞杀：零跑如何靠全域自研压低成本，小米、蔚来为什么开始涨价，170 多款新车为何扎堆中大型市场，以及车企如何用出海、VLA 和人形机器人寻找第二条增长曲线。 当汽车变成低利润甚至亏本提供的硬件，我们买的究竟是一辆车，还是一个移动的 AI 终端？ 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-08-02T15:37:49+00:00",
+          "duration": 903,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a6f62d8ab3a91c24a0ea522/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/lshvnQsHvfN4TT_zZkQrA-VIbycA.m4a"
+        },
+        {
+          "id": "new-energy-car-29be0b4c3dac8d",
+          "title": "播客｜中国电车正在撕碎选车图纸：少一排座位反而更贵，闯进日本却更像日本车",
+          "description": "过去选车，看级别、尺寸、座位和价格；现在，这张图纸正在失效。 小米用昆仑架构把大型 SUV 变成可重组的“移动客厅”，极氪 9X 五座版砍掉一排座位却卖得更贵，比亚迪则为日本 K-Car 的规则重新造车。 本期从三辆看似无关的新车出发，拆解中国车企如何从参数竞争，转向架构、圈层与本地化的“升维战”。当汽车开始按生活模式定制，我们到 2030 年还会用轿车、SUV 和 MPV 来选车吗？ 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-07-31T09:28:14+00:00",
+          "duration": 1124,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a6c694db581962ce2be8707/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/llaWyZVSZfAzxw4wbN3qEmQfwmVl.m4a"
+        },
+        {
+          "id": "new-energy-car-fe6b31830de6c8",
+          "title": "播客｜智驾出事，车企真全赔？一场事故，正在重写汽车责任链",
+          "description": "“车企全赔”到底是事实、承诺，还是传播话术？本期从智驾事故切入，拆解设计、准入、运行、驾驶员接管与数据回放五个环节，同时观察新能源车的技术下沉、低温快充、车桩网和监管趋势。智驾下半场，拼的不只是算法，而是谁能把技术、能源与责任真正闭环。具体责任以事故事实和证据为准。 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-07-25T04:47:01+00:00",
+          "duration": 1367,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a643f22a3fec224d5a306b0/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/lmJPjh472hYA4yK16cyTI2Zxm7Rv.m4a"
+        },
+        {
+          "id": "new-energy-car-9a6520a86d90c5",
+          "title": "播客｜奔驰GLC也学会了中国新能源的那一套 燃油车单月暴跌39%，新能源渗透率冲上62.8%：物理AI要接管汽车了？",
+          "description": "燃油车的下滑，真的只是消费者换了个选择吗？本期从销量暴跌、新能源渗透率飙升和超快充加速普及切入，拆解汽车产业正在发生的结构性崩塌。更大的变化还在后面：当 AI 开始理解道路、车辆和真实世界，新能源汽车或许不只是替代燃油车，更可能重新定义汽车本身。 前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-07-11T16:14:35+00:00",
+          "duration": 1250,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a5268351e32575f5eb4e271/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/ljzqe9zsgsF8gVVhd4agrDmgt4d0.m4a"
+        },
+        {
+          "id": "new-energy-car-6ed34f1608dbbf",
+          "title": "播客｜从价格战泥沼到千万辆出海 增程大电池的利弊分析",
+          "description": "前往小宇宙评论区与主播互动",
+          "publishedAt": "2026-07-04T14:56:20+00:00",
+          "duration": 1059,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/60ffc320e3bf95db9e3023d7/6a491ead2e335a35a80e0d11/media.xyzcdn.net/60ffc320e3bf95db9e3023d7/lpwgxsCNWD8VyQd2H3qPHcDdVhB9.m4a"
+        }
+      ]
+    },
+    {
+      "id": "legal-dolphin",
+      "title": "醒目海豚法律播客专辑",
+      "author": "醒目海豚",
+      "category": "法律常识",
+      "description": "欢迎来到我们的「醒目海豚」播客频道，该频道由陆俊辉律师创建，这里是法律、职场与社会热点事件的交流平台！在这个频道中，我们将探讨法律问题、职场心得，并关注当前的社会热点话题。从法律解读到职业发展，再到一些引发广泛讨论的社会事件，我们将为你带来全面的视角和深入的分析。如果你对法律充满好奇，想了解如何应对职场挑战，或者希望跟上社会热点的脉动，这里将是你不容错过的知识宝库。每期节目，我们都将通过轻松对话与深度剖析，让你在获得信息的同时，轻松享受聆听的乐趣。加入我们，探索更多精彩内容！",
+      "cover": "https://fdfs.xmcdn.com/storages/b3ca-audiofreehighqps/6A/CC/GKwRIJEMRZ1fAAa4-gPe9qOl.jpeg",
+      "source": "Podcast RSS",
+      "sourceUrl": "https://www.ximalaya.com/album/96705789.xml",
+      "feedUrl": "https://www.ximalaya.com/album/96705789.xml",
+      "episodes": [
+        {
+          "id": "legal-dolphin-28df139a4bee46",
+          "title": "青年律师认知力与整合资源能力",
+          "description": "欢迎来到我们的「醒目海豚」播客频道，该频道由陆俊辉律师创建，这里是法律、职场与社会热点事件的交流平台！在这个频道中，我们将探讨法律问题、职场心得，并关注当前的社会热点话题。从法律解读到职业发展，再到一些引发广泛讨论的社会事件，我们将为你带来全面的视角和深入的分析。如果你对法律充满好奇，想了解如何应对职场挑战，或者希望跟上社会热点的脉动，这里将是你不容错过的知识宝库。每期节目，我们都将通过轻松对话与深度剖析，让你在获得信息的同时，轻松享受聆听的乐趣。加入我们，探索更多精彩内容！",
+          "publishedAt": "2025-07-10T15:07:27+00:00",
+          "duration": 329,
+          "url": "https://jt.ximalaya.com//GKwRIasMRZo_ACi98wPe9HPN.m4a?channel=rss&album_id=96705789&track_id=885439954&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/98e3-audiofreehighqps/D4/77/GKwRIasMRZo_ACi98wPe9HPN.m4a"
+        },
+        {
+          "id": "legal-dolphin-fd3c48be1747b3",
+          "title": "稳定币和加密货币监管和发展",
+          "description": "中文简介 本播客聚焦稳定币与加密货币这一金融科技领域的热门话题，深入解析二者的概念、分类及核心区别，回顾其发展历程中的关键节点。同时，带你了解全球主要国家和地区的监管政策，包括美国《GENIUS 法案》、欧盟《加密资产市场监管法规》、香港《稳定币条例》等重要法规，探讨它们的特点、优势、投资机会与潜在风险，为你呈现稳定币和加密货币的全貌。 English Introduction This podcast focuses on the hot topic of stablecoins and cryptocurrencies in the fintech ",
+          "publishedAt": "2025-07-18T09:09:53+00:00",
+          "duration": 702,
+          "url": "https://jt.ximalaya.com//GKwRIW4MT9KDAFbIMAPk5DO6.m4a?channel=rss&album_id=96705789&track_id=889160554&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/4cf9-audiofreehighqps/6C/E7/GKwRIW4MT9KDAFbIMAPk5DO6.m4a"
+        },
+        {
+          "id": "legal-dolphin-22f6df466bb135",
+          "title": "周渝民夫妇被闺蜜诈骗841万案宣判 仅获赔503万，拒绝谅解将闺蜜送进监狱！",
+          "description": "中文简介 欢迎收听醒目海豚播客本期内容。我们将聚焦周渝民夫妇被保险经纪人诈骗的案件，深入解析这起涉及近千万人民币的诈骗案始末。从案件的发生、审理到宣判，探讨其中的诈骗手法、行业漏洞以及背后引发的社会思考，包括公众人物的交友与财富管理风险等话题。 English Introduction Welcome to this episode of the Smart Dolphin Podcast. We'll focus on the case where Zhou Yumin and his wife were defrauded by an insuran",
+          "publishedAt": "2025-07-19T04:29:13+00:00",
+          "duration": 355,
+          "url": "https://jt.ximalaya.com//GKwRIaIMUOInACvkHwPla2vJ.m4a?channel=rss&album_id=96705789&track_id=889450076&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/29fb-audiofreehighqps/52/53/GKwRIaIMUOInACvkHwPla2vJ.m4a"
+        },
+        {
+          "id": "legal-dolphin-33bc5f4e6d5fe3",
+          "title": "检例第43号骆某猥亵儿童案解读视频播客",
+          "description": "中文简介 本期播客聚焦检例第 43 号骆某猥亵儿童案，深入剖析这起典型的网络猥亵案件。案件中，被告人骆某通过 QQ 软件以威胁、施压等手段，强迫 13 岁女童拍摄并传输裸照供其观看，还企图进一步实施猥亵行为。我们将详细解读案件的基本案情、控辩焦点以及一、二审判决的差异，探讨网络环境下猥亵儿童罪的认定标准，包括 “非身体接触” 行为的定性、犯罪既遂的判断等关键法律问题。同时，结合指导意义部分，阐述此类案件对保护未成年人权益、明确网络猥亵行为法律边界的重要价值，为听众呈现法律在应对新型网络犯罪时的适用与考量。 English Introduction Thi",
+          "publishedAt": "2025-07-21T10:16:16+00:00",
+          "duration": 458,
+          "url": "https://jt.ximalaya.com//GKwRIRwMU9aKADimJQPm9sYe.m4a?channel=rss&album_id=96705789&track_id=890322094&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/2c10-audiofreehighqps/5A/19/GKwRIRwMU9aKADimJQPm9sYe.m4a"
+        },
+        {
+          "id": "legal-dolphin-a3aa11314b89ee",
+          "title": "犯罪心理学-犯罪行为为何会发生？",
+          "description": "中文简介 本播客围绕理查德・沃特利所著《犯罪心理学：犯罪为何会发生》展开，深入探讨心理学取向的犯罪学理论。从人类本性、遗传、大脑、人格、发展、学习、认知到情境等多个维度，剖析个体特征及经历如何导致犯罪行为，整合不同理论因素，为听众呈现犯罪成因的完整画面，兼具学术深度与实践参考价值，适合犯罪学、心理学领域学习者及爱好者收听。 English Introduction This podcast is based on \"Criminal Psychology: Why Crime Happens\" by Richard Wortley, delving in",
+          "publishedAt": "2025-07-23T08:42:58+00:00",
+          "duration": 826,
+          "url": "https://jt.ximalaya.com//GKwRIJEMVmO6AGYY6APoSb54.m4a?channel=rss&album_id=96705789&track_id=891042970&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/b713-audiofreehighqps/90/5A/GKwRIJEMVmO6AGYY6APoSb54.m4a"
+        },
+        {
+          "id": "legal-dolphin-c0c8bebe25f773",
+          "title": "稳定币：金融创新浪潮中的多面博弈与未来展望",
+          "description": "中文简介 本播客聚焦稳定币这一金融创新产物，深入探讨其从 2014 年诞生至今的发展历程，解析法币抵押型、加密资产抵押型和算法稳定币等不同类型的技术特点与运作机制。同时，围绕稳定币在跨境支付、DeFi 领域的应用价值，以及面临的信任、监管、技术和市场风险展开讨论，还将剖析全球主要国家和地区在稳定币监管上的战略布局与博弈，展望其未来合规化、多元化等发展趋势，为听众呈现稳定币在金融浪潮中的多面图景。 English Introduction This podcast focuses on stablecoins, a product of financial",
+          "publishedAt": "2025-07-24T13:49:02+00:00",
+          "duration": 1165,
+          "url": "https://jt.ximalaya.com//GKwRIJIMV_0OAI_84QPpPbq7.m4a?channel=rss&album_id=96705789&track_id=891533590&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/adec-audiofreehighqps/59/4C/GKwRIJIMV_0OAI_84QPpPbq7.m4a"
+        },
+        {
+          "id": "legal-dolphin-00aaf7e00ef1ca",
+          "title": "毕业照被 P 成‘彩礼选人’引流？6 女生拒当流量祭品，硬刚侵权者让法院判了！",
+          "description": "中文简介 这是一期聚焦网络侵权与维权的播客，讲述了广东 6 名女生的毕业合照被恶意盗用，配上 “彩礼 10 万你选谁” 等低俗文案引流带货，甚至被卷入虚假相亲讨论的真实经历。从谣言扩散带来的生活困扰，到她们拒绝沉默、通过法律途径追责侵权者，再到法院最终判决维护权益，播客深度还原了这场网络谣言风波中的维权之路，更借由法律专家解读，科普了面对肖像权、名誉权侵权时的正确应对方式，传递 “网络不是法外之地” 的鲜明态度。 English Introduction This podcast focuses on online infringement and ri",
+          "publishedAt": "2025-08-06T04:49:49+00:00",
+          "duration": 319,
+          "url": "https://jt.ximalaya.com//GKwRIJEMaKH-ACd4NwPyJd7x.m4a?channel=rss&album_id=96705789&track_id=896258058&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/77bf-audiofreehighqps/AE/9E/GKwRIJEMaKH-ACd4NwPyJd7x.m4a"
+        },
+        {
+          "id": "legal-dolphin-0c6a29fe54d8ea",
+          "title": "家门口放鞋架 = 违法？楼道停电动车最高罚 1000 元！这些致命习惯正在逼死邻居！",
+          "description": "中文简介 本播客聚焦最新消防安全法规，深入解读业主在公共空间堆放杂物、楼道停放电动车等行为的法律边界与潜在风险。通过真实火灾案例警示楼道堵塞的致命危害，结合行政执法实例说明违规行为的处罚标准 —— 最高可处 1000 元罚款，情节严重者或将面临行政拘留。同时剖析 “家门口空间私用” 等常见误区，强调高层民用建筑消防安全责任主体的义务，助力听众明晰权利与责任，共同守护社区生命通道的畅通与安全。 English Introduction This podcast focuses on the latest fire safety regulations, p",
+          "publishedAt": "2025-08-06T08:35:57+00:00",
+          "duration": 249,
+          "url": "https://jt.ximalaya.com//GKwRIW4MaNb-AB7dTwPyTKy2.m4a?channel=rss&album_id=96705789&track_id=896338401&uid=76613067&jt=https://aod.cos.tx.xmcdn.com/storages/ff34-audiofreehighqps/3C/36/GKwRIW4MaNb-AB7dTwPyTKy2.m4a"
         }
       ]
     }

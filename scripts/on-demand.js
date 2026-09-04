@@ -30,9 +30,13 @@
     category: "全部",
   };
 
-  const CATEGORY_ORDER = [
+  const AUDIOBOOK_CATEGORY_ORDER = [
     "全部", "中国古典", "现当代文学", "外国名著", "儿童童话", "儿童启蒙",
     "历史人文", "哲学经典", "诗词戏曲", "悬疑推理", "科幻幻想", "科普知识", "外文原声",
+  ];
+  const PODCAST_CATEGORY_ORDER = [
+    "全部", "故事纪实", "国际社会", "文化阅读", "科技与AI", "科学科普", "商业财经",
+    "心理成长", "影视娱乐", "音乐艺术", "旅行见闻", "运动健康", "职场教育", "法律常识", "汽车出行",
   ];
 
   function escapeHtml(value) {
@@ -108,15 +112,17 @@
   }
 
   function renderCategoryFilters() {
-    if (state.mode !== "audiobooks") {
+    if (state.mode === "live") {
       categoryFilters.hidden = true;
       categoryFilters.innerHTML = "";
       return;
     }
-    const available = new Set(state.audiobooks.map(item => item.category || "其他"));
-    const categories = CATEGORY_ORDER.filter(category => category === "全部" || available.has(category));
+    const available = new Set(currentItems().map(item => item.category || "其他"));
+    const order = state.mode === "audiobooks" ? AUDIOBOOK_CATEGORY_ORDER : PODCAST_CATEGORY_ORDER;
+    const categories = order.filter(category => category === "全部" || available.has(category));
     [...available].filter(category => !categories.includes(category)).sort().forEach(category => categories.push(category));
     categoryFilters.hidden = false;
+    categoryFilters.setAttribute("aria-label", state.mode === "audiobooks" ? "有声书分类" : "播客分类");
     categoryFilters.innerHTML = categories.map(category => {
       const active = category === state.category;
       return `<button type="button" class="catalog-category${active ? " active" : ""}" data-book-category="${escapeHtml(category)}" aria-pressed="${active}">${escapeHtml(category)}</button>`;
@@ -128,17 +134,17 @@
     const query = search.value.trim().toLowerCase();
     const allItems = currentItems();
     const items = allItems.filter(item => {
-      const categoryMatch = state.mode !== "audiobooks" || state.category === "全部" || item.category === state.category;
+      const categoryMatch = state.category === "全部" || item.category === state.category;
       const queryMatch = `${item.title} ${item.author || ""} ${item.category || ""} ${item.description || ""}`.toLowerCase().includes(query);
       return categoryMatch && queryMatch;
     });
     const trackCount = currentItems().reduce((sum, item) => sum + tracksFor(item).length, 0);
-    document.getElementById("catalogCount").textContent = state.mode === "audiobooks" && items.length !== allItems.length
-      ? `${items.length}/${allItems.length} 本`
+    document.getElementById("catalogCount").textContent = items.length !== allItems.length
+      ? `${items.length}/${allItems.length} ${state.mode === "audiobooks" ? "本" : "档"}`
       : `${items.length} 个${state.mode === "audiobooks" ? "书目" : "节目"}`;
     document.getElementById("catalogStatus").textContent = state.mode === "audiobooks"
       ? `中文精选与外文原声 ${state.audiobooks.length} 本 · ${trackCount} 个章节 · ${new Set(state.audiobooks.map(item => item.category)).size} 类`
-      : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集`;
+      : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集 · ${new Set(state.podcasts.map(item => item.category)).size} 类`;
     if (!items.length) {
       grid.innerHTML = '<div class="empty-state">没有找到匹配内容</div>';
       return;
@@ -147,7 +153,7 @@
       const tracks = tracksFor(item);
       const secondary = state.mode === "audiobooks"
         ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${tracks.length} 章`
-        : `${tracks.length} 个最新单集`;
+        : `${item.category || "其他"} · ${tracks.length} 个最新单集`;
       return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
         <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
         <span><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(secondary)}</span></span>
@@ -167,7 +173,7 @@
     document.getElementById("detailTitle").textContent = item.title;
     document.getElementById("detailMeta").textContent = state.mode === "audiobooks"
       ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${item.language || ""} · ${formatTime(item.duration)}`
-      : `${item.author || "独立播客"} · ${tracks.length} 个最新单集`;
+      : `${item.category || "其他"} · ${item.author || "独立播客"} · ${tracks.length} 个最新单集`;
     document.getElementById("detailDescription").textContent = item.description || "暂无简介";
     const source = document.getElementById("detailSource");
     source.href = item.sourceUrl || item.feedUrl;
