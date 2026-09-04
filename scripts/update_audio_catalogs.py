@@ -174,6 +174,10 @@ def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
         })
     if not chapters:
         raise ValueError("No HTTPS audiobook chapters found")
+    if feed_config.get("reverse"):
+        chapters.reverse()
+        for number, chapter in enumerate(chapters, 1):
+            chapter["number"] = number
     return {
         "id": f"rssbook-{feed_config['id']}",
         "title": feed_config.get("title") or child_text(channel, "title"),
