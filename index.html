@@ -1703,7 +1703,7 @@
       driveModeBtn.setAttribute("aria-pressed", String(enabled));
       localStorage.setItem(DRIVE_MODE_KEY, enabled ? "1" : "0");
       if (enabled) {
-        activeCat = favorites.length ? "favorites" : recents.length ? "recent" : "traffic";
+        activeCat = favorites.length ? "favorites" : recents.length >= 3 ? "recent" : "traffic";
         if (currentIndex < 0) {
           const preferredIndex = favorites[0] ?? recents[0] ?? stations.findIndex(station => station.cat === "traffic");
           prepareStation(preferredIndex);
