@@ -18,7 +18,31 @@ from pathlib import Path
 
 
 USER_AGENT = "DreamFM-CatalogBuilder/1.0"
-LIBRIVOX_BOOK_IDS = [20249, 200, 253, 47, 56, 64, 65, 81, 83, 86, 90, 59]
+LIBRIVOX_BOOKS = [
+    {"id": 20249, "category": "诗词戏曲"},
+    {"id": 15726, "category": "悬疑推理"},
+    {"id": 1952, "category": "中国古典"},
+    {"id": 871, "category": "哲学经典"},
+    {"id": 6123, "category": "现当代文学"},
+    {"id": 6026, "category": "现当代文学"},
+    {"id": 6224, "category": "现当代文学"},
+    {"id": 9414, "category": "现当代文学"},
+    {"id": 14135, "category": "现当代文学"},
+    {"id": 2291, "category": "儿童启蒙"},
+    {"id": 6940, "category": "哲学经典"},
+    {"id": 1800, "category": "中国古典"},
+    {"id": 200, "category": "外文原声"},
+    {"id": 253, "category": "外文原声"},
+    {"id": 47, "category": "外文原声"},
+    {"id": 56, "category": "外文原声"},
+    {"id": 64, "category": "外文原声"},
+    {"id": 65, "category": "外文原声"},
+    {"id": 81, "category": "外文原声"},
+    {"id": 83, "category": "外文原声"},
+    {"id": 86, "category": "外文原声"},
+    {"id": 90, "category": "外文原声"},
+    {"id": 59, "category": "外文原声"},
+]
 
 
 class TextExtractor(HTMLParser):
@@ -83,7 +107,8 @@ def iso_date(value: str) -> str:
         return ""
 
 
-def build_audiobook(book_id: int) -> dict[str, object] | None:
+def build_audiobook(book_config: dict[str, object]) -> dict[str, object] | None:
+    book_id = int(book_config["id"])
     url = f"https://librivox.org/api/feed/audiobooks/?id={book_id}&format=json&extended=1&coverart=1"
     payload = json.loads(fetch(url))
     source = payload["books"][0]
@@ -110,6 +135,7 @@ def build_audiobook(book_id: int) -> dict[str, object] | None:
         "title": source.get("title", "Untitled"),
         "author": author or "LibriVox Volunteers",
         "language": source.get("language", ""),
+        "category": book_config.get("category", "其他"),
         "description": clean_text(source.get("description")),
         "cover": source.get("coverart_jpg") or source.get("coverart_thumbnail") or "",
         "duration": int(source.get("totaltimesecs") or 0),
@@ -119,12 +145,71 @@ def build_audiobook(book_id: int) -> dict[str, object] | None:
     }
 
 
-def build_audiobooks() -> list[dict[str, object]]:
+def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
+    root = ET.fromstring(fetch(feed_config["feed"]))
+    channel = first_descendant(root, "channel")
+    if channel is None:
+        raise ValueError("RSS channel not found")
+    image = first_descendant(channel, "image")
+    cover = ""
+    if image is not None:
+        cover = image.attrib.get("href", "") or child_text(image, "url")
+    chapters = []
+    for index, item in enumerate(
+        [element for element in channel if element.tag.rsplit("}", 1)[-1] == "item"], 1
+    ):
+        enclosure = first_descendant(item, "enclosure")
+        audio_url = enclosure.attrib.get("url", "").strip() if enclosure is not None else ""
+        title = clean_text(child_text(item, "title"), 180)
+        if not title or not audio_url.startswith("https://"):
+            continue
+        guid = child_text(item, "guid") or audio_url
+        chapters.append({
+            "id": f"rssbook-{feed_config['id']}-{hashlib.sha1(guid.encode()).hexdigest()[:14]}",
+            "number": len(chapters) + 1,
+            "title": title,
+            "url": audio_url,
+            "duration": parse_duration(child_text(item, "duration")),
+        })
+    if not chapters:
+        raise ValueError("No HTTPS audiobook chapters found")
+    return {
+        "id": f"rssbook-{feed_config['id']}",
+        "title": feed_config.get("title") or child_text(channel, "title"),
+        "author": feed_config.get("author") or child_text(channel, "author") or "公开有声专辑",
+        "language": "中文",
+        "category": feed_config.get("category", "其他"),
+        "description": clean_text(child_text(channel, "description")),
+        "cover": cover if cover.startswith("https://") else "",
+        "duration": sum(int(chapter["duration"]) for chapter in chapters),
+        "source": "公开 RSS",
+        "sourceUrl": feed_config.get("sourceUrl") or child_text(channel, "link") or feed_config["feed"],
+        "chapters": chapters,
+    }
+
+
+def build_audiobooks(config_path: Path) -> tuple[list[dict[str, object]], list[str]]:
+    feed_configs = json.loads(config_path.read_text(encoding="utf-8"))
+    books = []
+    warnings = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
-        books = [book for book in pool.map(build_audiobook, LIBRIVOX_BOOK_IDS) if book]
-    if len(books) < 8:
+        librivox_futures = [pool.submit(build_audiobook, book) for book in LIBRIVOX_BOOKS]
+        for config, future in zip(LIBRIVOX_BOOKS, librivox_futures):
+            try:
+                book = future.result()
+                if book:
+                    books.append(book)
+            except Exception as exc:
+                warnings.append(f"audiobook librivox-{config['id']}: {type(exc).__name__}: {exc}")
+        feed_futures = [pool.submit(parse_audiobook_feed, feed) for feed in feed_configs]
+        for feed, future in zip(feed_configs, feed_futures):
+            try:
+                books.append(future.result())
+            except Exception as exc:
+                warnings.append(f"audiobook {feed['id']}: {type(exc).__name__}: {exc}")
+    if len(books) < 20:
         raise RuntimeError(f"Only {len(books)} valid audiobooks were generated")
-    return books
+    return books, warnings
 
 
 def parse_podcast(feed_config: dict[str, str], episode_limit: int) -> dict[str, object]:
@@ -196,16 +281,17 @@ def write_json(path: Path, payload: dict[str, object]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--feeds", type=Path, default=Path("data/podcast_feeds.json"))
+    parser.add_argument("--audiobook-feeds", type=Path, default=Path("data/audiobook_feeds.json"))
     parser.add_argument("--output-dir", type=Path, default=Path("data"))
     parser.add_argument("--episode-limit", type=int, default=8)
     args = parser.parse_args()
 
     generated_at = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
-    audiobooks = build_audiobooks()
-    podcasts, warnings = build_podcasts(args.feeds, max(1, args.episode_limit))
+    audiobooks, audiobook_warnings = build_audiobooks(args.audiobook_feeds)
+    podcasts, podcast_warnings = build_podcasts(args.feeds, max(1, args.episode_limit))
     write_json(args.output_dir / "audiobooks.json", {
         "generatedAt": generated_at,
-        "source": "LibriVox API",
+        "source": "LibriVox API and public audiobook RSS feeds",
         "books": audiobooks,
     })
     write_json(args.output_dir / "podcasts.json", {
@@ -214,7 +300,7 @@ def main() -> int:
         "shows": podcasts,
     })
     print(f"Generated {len(audiobooks)} audiobooks and {len(podcasts)} podcast shows")
-    for warning in warnings:
+    for warning in audiobook_warnings + podcast_warnings:
         print(f"WARNING {warning}")
     return 0
 

@@ -10,6 +10,7 @@
   const detail = document.getElementById("catalogDetail");
   const episodeList = document.getElementById("episodeList");
   const search = document.getElementById("catalogSearch");
+  const categoryFilters = document.getElementById("catalogCategories");
   const tools = document.getElementById("onDemandTools");
   const progress = document.getElementById("episodeProgress");
   const elapsedTime = document.getElementById("elapsedTime");
@@ -26,7 +27,13 @@
     playingMode: "",
     trackIndex: -1,
     lastResumeSave: 0,
+    category: "全部",
   };
+
+  const CATEGORY_ORDER = [
+    "全部", "中国古典", "现当代文学", "外国名著", "儿童童话", "儿童启蒙",
+    "历史人文", "哲学经典", "诗词戏曲", "悬疑推理", "科幻幻想", "科普知识", "外文原声",
+  ];
 
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>"']/g, char => ({
@@ -90,22 +97,47 @@
       document.getElementById("catalogOverline").textContent = mode === "audiobooks" ? "AUDIOBOOK LIBRARY" : "PODCAST JOURNEYS";
       search.placeholder = mode === "audiobooks" ? "搜索书名或作者" : "搜索播客节目";
       search.value = "";
+      state.category = "全部";
       state.selected = null;
       detail.hidden = true;
+      renderCategoryFilters();
       renderCatalog();
       panel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     if (persist) localStorage.setItem(CONTENT_MODE_KEY, mode);
   }
 
+  function renderCategoryFilters() {
+    if (state.mode !== "audiobooks") {
+      categoryFilters.hidden = true;
+      categoryFilters.innerHTML = "";
+      return;
+    }
+    const available = new Set(state.audiobooks.map(item => item.category || "其他"));
+    const categories = CATEGORY_ORDER.filter(category => category === "全部" || available.has(category));
+    [...available].filter(category => !categories.includes(category)).sort().forEach(category => categories.push(category));
+    categoryFilters.hidden = false;
+    categoryFilters.innerHTML = categories.map(category => {
+      const active = category === state.category;
+      return `<button type="button" class="catalog-category${active ? " active" : ""}" data-book-category="${escapeHtml(category)}" aria-pressed="${active}">${escapeHtml(category)}</button>`;
+    }).join("");
+  }
+
   function renderCatalog() {
     if (state.mode === "live") return;
     const query = search.value.trim().toLowerCase();
-    const items = currentItems().filter(item => `${item.title} ${item.author || ""} ${item.description || ""}`.toLowerCase().includes(query));
+    const allItems = currentItems();
+    const items = allItems.filter(item => {
+      const categoryMatch = state.mode !== "audiobooks" || state.category === "全部" || item.category === state.category;
+      const queryMatch = `${item.title} ${item.author || ""} ${item.category || ""} ${item.description || ""}`.toLowerCase().includes(query);
+      return categoryMatch && queryMatch;
+    });
     const trackCount = currentItems().reduce((sum, item) => sum + tracksFor(item).length, 0);
-    document.getElementById("catalogCount").textContent = `${items.length} 个${state.mode === "audiobooks" ? "书目" : "节目"}`;
+    document.getElementById("catalogCount").textContent = state.mode === "audiobooks" && items.length !== allItems.length
+      ? `${items.length}/${allItems.length} 本`
+      : `${items.length} 个${state.mode === "audiobooks" ? "书目" : "节目"}`;
     document.getElementById("catalogStatus").textContent = state.mode === "audiobooks"
-      ? `LibriVox 精选 ${state.audiobooks.length} 本 · ${trackCount} 个章节`
+      ? `中文精选与外文原声 ${state.audiobooks.length} 本 · ${trackCount} 个章节 · ${new Set(state.audiobooks.map(item => item.category)).size} 类`
       : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集`;
     if (!items.length) {
       grid.innerHTML = '<div class="empty-state">没有找到匹配内容</div>';
@@ -114,7 +146,7 @@
     grid.innerHTML = items.map(item => {
       const tracks = tracksFor(item);
       const secondary = state.mode === "audiobooks"
-        ? `${item.author || "未知作者"} · ${tracks.length} 章`
+        ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${tracks.length} 章`
         : `${tracks.length} 个最新单集`;
       return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
         <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
@@ -134,7 +166,7 @@
     document.getElementById("detailCover").src = item.cover || fallbackCover;
     document.getElementById("detailTitle").textContent = item.title;
     document.getElementById("detailMeta").textContent = state.mode === "audiobooks"
-      ? `${item.author || "未知作者"} · ${item.language || ""} · ${formatTime(item.duration)}`
+      ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${item.language || ""} · ${formatTime(item.duration)}`
       : `${item.author || "独立播客"} · ${tracks.length} 个最新单集`;
     document.getElementById("detailDescription").textContent = item.description || "暂无简介";
     const source = document.getElementById("detailSource");
@@ -253,6 +285,15 @@
   document.querySelectorAll("[data-nav-cat]").forEach(button => button.addEventListener("click", () => setMode("live")));
   document.querySelector(".hero-secondary").addEventListener("click", () => setMode("live"));
   search.addEventListener("input", renderCatalog);
+  categoryFilters.addEventListener("click", event => {
+    const button = event.target.closest("[data-book-category]");
+    if (!button) return;
+    state.category = button.dataset.bookCategory;
+    state.selected = null;
+    detail.hidden = true;
+    renderCategoryFilters();
+    renderCatalog();
+  });
   grid.addEventListener("click", event => {
     const card = event.target.closest("[data-catalog-id]");
     if (card) selectItem(card.dataset.catalogId);
