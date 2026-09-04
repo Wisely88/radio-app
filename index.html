@@ -887,6 +887,33 @@
       .drive-mode .ch-desc { -webkit-line-clamp: 1; }
     }
 
+    @media (max-width: 600px) and (orientation: portrait) {
+      body.drive-mode { min-height: 100dvh; overflow-x: hidden; overflow-y: auto; }
+      .drive-mode .site-header { height: 64px; }
+      .drive-mode .nav-shell { width: calc(100% - 24px); }
+      .drive-mode #driveModeBtn { min-width: 96px; min-height: 44px; font-size: 13px; }
+      .drive-mode .experience {
+        width: calc(100% - 24px);
+        height: auto;
+        min-height: 100dvh;
+        display: block;
+        padding: 76px 0 20px;
+      }
+      .drive-mode .now-card { min-height: 0; margin-bottom: 16px; padding: 18px; }
+      .drive-mode .now-playing { min-height: 112px; }
+      .drive-mode .station-name { min-height: 0; font-size: 24px; }
+      .drive-mode .station-desc { line-height: 1.55; }
+      .drive-mode .main-control { grid-template-columns: 56px minmax(130px, 1fr) 56px; gap: 10px; margin-top: 16px; }
+      .drive-mode .main-control .btn { min-height: 56px; font-size: 17px; }
+      .drive-mode .channels-panel { padding-bottom: 16px; }
+      .drive-mode .tabs { padding-bottom: 12px; }
+      .drive-mode .tab { min-height: 44px; padding: 0 13px; font-size: 13px; }
+      .drive-mode .channel-list { max-height: none; grid-template-columns: 1fr; gap: 10px; overflow: visible; }
+      .drive-mode .channel-row,
+      .drive-mode .channel { min-height: 104px; }
+      .drive-mode .channel-info strong { overflow-wrap: normal; word-break: keep-all; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -942,7 +969,7 @@
       <div class="section-heading">
         <div>
           <p>PRIVATE RADIO · REAL SIGNALS</p>
-          <h2 id="experienceTitle">此刻，听一点真实的声音</h2>
+          <h2 id="experienceTitle">今晚，月夜乐飞扬</h2>
         </div>
         <span>深夜 · 声音 · 未完成</span>
       </div>
@@ -1660,6 +1687,16 @@
       searchInput.focus();
     }
 
+    function prepareStation(index, label = "准备播放") {
+      const station = stations[index];
+      if (!station) return;
+      currentIndex = index;
+      updatePlayer(station);
+      setStatus(label);
+      setPlaybackControls("paused");
+      renderStations();
+    }
+
     function setDriveMode(enabled) {
       document.body.classList.toggle("drive-mode", enabled);
       driveModeBtn.textContent = enabled ? "退出车载" : "车载";
@@ -1667,6 +1704,10 @@
       localStorage.setItem(DRIVE_MODE_KEY, enabled ? "1" : "0");
       if (enabled) {
         activeCat = favorites.length ? "favorites" : recents.length ? "recent" : "traffic";
+        if (currentIndex < 0) {
+          const preferredIndex = favorites[0] ?? recents[0] ?? stations.findIndex(station => station.cat === "traffic");
+          prepareStation(preferredIndex);
+        }
         searchInput.value = "";
         updateSearchState();
         document.getElementById("radioApp").scrollIntoView();
@@ -1678,10 +1719,7 @@
     function restoreLastStation() {
       const index = stationIndexFromId(localStorage.getItem(LAST_STATION_KEY));
       if (index < 0) return;
-      currentIndex = index;
-      updatePlayer(stations[index]);
-      setStatus("上次收听");
-      setPlaybackControls("paused");
+      prepareStation(index, "上次收听");
     }
 
     searchInput.addEventListener("input", updateSearchState);
