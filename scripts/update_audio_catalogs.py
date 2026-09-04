@@ -136,6 +136,7 @@ def build_audiobook(book_config: dict[str, object]) -> dict[str, object] | None:
         "author": author or "LibriVox Volunteers",
         "language": source.get("language", ""),
         "category": book_config.get("category", "其他"),
+        "access": "overseas",
         "description": clean_text(source.get("description")),
         "cover": source.get("coverart_jpg") or source.get("coverart_thumbnail") or "",
         "duration": int(source.get("totaltimesecs") or 0),
@@ -179,6 +180,7 @@ def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
         "author": feed_config.get("author") or child_text(channel, "author") or "公开有声专辑",
         "language": "中文",
         "category": feed_config.get("category", "其他"),
+        "access": "direct",
         "description": clean_text(child_text(channel, "description")),
         "cover": cover if cover.startswith("https://") else "",
         "duration": sum(int(chapter["duration"]) for chapter in chapters),
@@ -209,6 +211,7 @@ def build_audiobooks(config_path: Path) -> tuple[list[dict[str, object]], list[s
                 warnings.append(f"audiobook {feed['id']}: {type(exc).__name__}: {exc}")
     if len(books) < 20:
         raise RuntimeError(f"Only {len(books)} valid audiobooks were generated")
+    books.sort(key=lambda book: 0 if book.get("access") == "direct" else 1)
     return books, warnings
 
 

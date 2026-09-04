@@ -10,6 +10,7 @@
   const detail = document.getElementById("catalogDetail");
   const episodeList = document.getElementById("episodeList");
   const search = document.getElementById("catalogSearch");
+  const accessFilters = document.getElementById("catalogAccess");
   const categoryFilters = document.getElementById("catalogCategories");
   const tools = document.getElementById("onDemandTools");
   const progress = document.getElementById("episodeProgress");
@@ -28,6 +29,7 @@
     trackIndex: -1,
     lastResumeSave: 0,
     category: "全部",
+    access: "all",
   };
 
   const AUDIOBOOK_CATEGORY_ORDER = [
@@ -102,13 +104,37 @@
       search.placeholder = mode === "audiobooks" ? "搜索书名或作者" : "搜索播客节目";
       search.value = "";
       state.category = "全部";
+      state.access = mode === "audiobooks" ? "direct" : "all";
       state.selected = null;
       detail.hidden = true;
+      renderAccessFilters();
       renderCategoryFilters();
       renderCatalog();
       panel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     if (persist) localStorage.setItem(CONTENT_MODE_KEY, mode);
+  }
+
+  function renderAccessFilters() {
+    if (state.mode !== "audiobooks") {
+      accessFilters.hidden = true;
+      accessFilters.innerHTML = "";
+      return;
+    }
+    const counts = state.audiobooks.reduce((result, item) => {
+      result[item.access || "overseas"] = (result[item.access || "overseas"] || 0) + 1;
+      return result;
+    }, {});
+    const options = [
+      ["direct", `国内直连 ${counts.direct || 0}`],
+      ["all", `全部 ${state.audiobooks.length}`],
+      ["overseas", `境外资源 ${counts.overseas || 0}`],
+    ];
+    accessFilters.hidden = false;
+    accessFilters.innerHTML = options.map(([value, label]) => {
+      const active = value === state.access;
+      return `<button type="button" class="catalog-access-button${active ? " active" : ""}" data-book-access="${value}" aria-pressed="${active}">${label}</button>`;
+    }).join("");
   }
 
   function renderCategoryFilters() {
@@ -117,7 +143,8 @@
       categoryFilters.innerHTML = "";
       return;
     }
-    const available = new Set(currentItems().map(item => item.category || "其他"));
+    const accessibleItems = currentItems().filter(item => state.mode !== "audiobooks" || state.access === "all" || item.access === state.access);
+    const available = new Set(accessibleItems.map(item => item.category || "其他"));
     const order = state.mode === "audiobooks" ? AUDIOBOOK_CATEGORY_ORDER : PODCAST_CATEGORY_ORDER;
     const categories = order.filter(category => category === "全部" || available.has(category));
     [...available].filter(category => !categories.includes(category)).sort().forEach(category => categories.push(category));
@@ -135,15 +162,16 @@
     const allItems = currentItems();
     const items = allItems.filter(item => {
       const categoryMatch = state.category === "全部" || item.category === state.category;
+      const accessMatch = state.mode !== "audiobooks" || state.access === "all" || item.access === state.access;
       const queryMatch = `${item.title} ${item.author || ""} ${item.category || ""} ${item.description || ""}`.toLowerCase().includes(query);
-      return categoryMatch && queryMatch;
+      return categoryMatch && accessMatch && queryMatch;
     });
     const trackCount = currentItems().reduce((sum, item) => sum + tracksFor(item).length, 0);
     document.getElementById("catalogCount").textContent = items.length !== allItems.length
       ? `${items.length}/${allItems.length} ${state.mode === "audiobooks" ? "本" : "档"}`
       : `${items.length} 个${state.mode === "audiobooks" ? "书目" : "节目"}`;
     document.getElementById("catalogStatus").textContent = state.mode === "audiobooks"
-      ? `中文精选与外文原声 ${state.audiobooks.length} 本 · ${trackCount} 个章节 · ${new Set(state.audiobooks.map(item => item.category)).size} 类`
+      ? `国内直连 ${state.audiobooks.filter(item => item.access === "direct").length} 本 · 境外资源 ${state.audiobooks.filter(item => item.access === "overseas").length} 本 · 共 ${trackCount} 章`
       : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集 · ${new Set(state.podcasts.map(item => item.category)).size} 类`;
     if (!items.length) {
       grid.innerHTML = '<div class="empty-state">没有找到匹配内容</div>';
@@ -152,7 +180,7 @@
     grid.innerHTML = items.map(item => {
       const tracks = tracksFor(item);
       const secondary = state.mode === "audiobooks"
-        ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${tracks.length} 章`
+        ? `${item.access === "direct" ? "国内直连" : "境外源"} · ${item.category || "其他"} · ${tracks.length} 章`
         : `${item.category || "其他"} · ${tracks.length} 个最新单集`;
       return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
         <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
@@ -172,7 +200,7 @@
     document.getElementById("detailCover").src = item.cover || fallbackCover;
     document.getElementById("detailTitle").textContent = item.title;
     document.getElementById("detailMeta").textContent = state.mode === "audiobooks"
-      ? `${item.category || "其他"} · ${item.author || "未知作者"} · ${item.language || ""} · ${formatTime(item.duration)}`
+      ? `${item.access === "direct" ? "国内直连" : "境外源，可能需要畅通网络"} · ${item.category || "其他"} · ${item.author || "未知作者"} · ${formatTime(item.duration)}`
       : `${item.category || "其他"} · ${item.author || "独立播客"} · ${tracks.length} 个最新单集`;
     document.getElementById("detailDescription").textContent = item.description || "暂无简介";
     const source = document.getElementById("detailSource");
@@ -291,6 +319,17 @@
   document.querySelectorAll("[data-nav-cat]").forEach(button => button.addEventListener("click", () => setMode("live")));
   document.querySelector(".hero-secondary").addEventListener("click", () => setMode("live"));
   search.addEventListener("input", renderCatalog);
+  accessFilters.addEventListener("click", event => {
+    const button = event.target.closest("[data-book-access]");
+    if (!button) return;
+    state.access = button.dataset.bookAccess;
+    state.category = "全部";
+    state.selected = null;
+    detail.hidden = true;
+    renderAccessFilters();
+    renderCategoryFilters();
+    renderCatalog();
+  });
   categoryFilters.addEventListener("click", event => {
     const button = event.target.closest("[data-book-category]");
     if (!button) return;
