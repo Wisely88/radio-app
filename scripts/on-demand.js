@@ -17,6 +17,9 @@
   const elapsedTime = document.getElementById("elapsedTime");
   const durationTime = document.getElementById("durationTime");
   const speed = document.getElementById("playbackSpeed");
+  const resumeCard = document.getElementById("resumeCard");
+  const resumeTitle = document.getElementById("resumeTitle");
+  const resumeMeta = document.getElementById("resumeMeta");
   const fallbackCover = "assets/three-quarter-mark.svg";
 
   const state = {
@@ -28,6 +31,7 @@
     playingMode: "",
     trackIndex: -1,
     lastResumeSave: 0,
+    skipNextPauseSave: false,
     category: "全部",
     access: "all",
   };
@@ -85,12 +89,79 @@
     }
   }
 
+  function writeResumeData(data) {
+    const entries = Object.entries(data)
+      .filter(([key, value]) => key !== "_last" && value && Number.isFinite(value.updatedAt))
+      .sort((left, right) => right[1].updatedAt - left[1].updatedAt);
+    entries.slice(200).forEach(([key]) => delete data[key]);
+    localStorage.setItem(RESUME_KEY, JSON.stringify(data));
+  }
+
+  function resolvedResume(mode = state.mode) {
+    if (!['audiobooks', 'podcasts'].includes(mode)) return null;
+    const data = resumeData();
+    const items = mode === "audiobooks" ? state.audiobooks : state.podcasts;
+    let last = data._last?.[mode];
+    let item = last && items.find(candidate => candidate.id === last.itemId);
+    let trackIndex = item ? tracksFor(item).findIndex(track => track.id === last.trackId) : -1;
+
+    // Migrate existing per-track progress into the new per-library continuation entry.
+    if (!item || trackIndex < 0) {
+      const candidates = [];
+      items.forEach(candidate => tracksFor(candidate).forEach((track, index) => {
+        const saved = data[track.id];
+        if (saved?.position > 5) candidates.push({ saved, item: candidate, trackIndex: index, track });
+      }));
+      candidates.sort((left, right) => (right.saved.updatedAt || 0) - (left.saved.updatedAt || 0));
+      const migrated = candidates[0];
+      if (!migrated) return null;
+      ({ item, trackIndex } = migrated);
+      last = { itemId: item.id, trackId: migrated.track.id, position: migrated.saved.position, updatedAt: migrated.saved.updatedAt };
+    }
+
+    const track = tracksFor(item)[trackIndex];
+    const saved = data[track.id];
+    const position = Number(saved?.position ?? last.position) || 0;
+    if (position <= 5 || (track.duration && position >= track.duration - 10)) return null;
+    return { item, track, trackIndex, position };
+  }
+
+  function renderResumeCard() {
+    const resumed = resolvedResume();
+    resumeCard.hidden = !resumed;
+    if (!resumed) return;
+    resumeTitle.textContent = `${resumed.item.title} · ${resumed.track.title}`;
+    resumeMeta.textContent = `${state.mode === "audiobooks" ? `第 ${resumed.track.number || resumed.trackIndex + 1} 章` : `第 ${resumed.trackIndex + 1} 集`} · 上次听到 ${formatTime(resumed.position)}`;
+  }
+
   function saveResume() {
     const track = tracksFor(state.playingItem)[state.trackIndex];
-    if (!track || !Number.isFinite(audio.currentTime)) return;
+    const position = Math.floor(audio.currentTime);
+    if (!track || !Number.isFinite(position) || position < 3 || !["audiobooks", "podcasts"].includes(state.playingMode)) return;
     const data = resumeData();
-    data[track.id] = { position: Math.floor(audio.currentTime), updatedAt: Date.now() };
-    localStorage.setItem(RESUME_KEY, JSON.stringify(data));
+    const finished = Number.isFinite(audio.duration) && position >= audio.duration - 10;
+    if (finished) {
+      delete data[track.id];
+      if (data._last?.[state.playingMode]?.trackId === track.id) delete data._last[state.playingMode];
+    } else {
+      const updatedAt = Date.now();
+      data[track.id] = { position, updatedAt };
+      data._last = data._last && typeof data._last === "object" ? data._last : {};
+      data._last[state.playingMode] = {
+        itemId: state.playingItem.id,
+        trackId: track.id,
+        position,
+        updatedAt,
+      };
+    }
+    writeResumeData(data);
+  }
+
+  function clearResume(track, mode) {
+    const data = resumeData();
+    delete data[track.id];
+    if (data._last?.[mode]?.trackId === track.id) delete data._last[mode];
+    writeResumeData(data);
   }
 
   function setMode(mode, persist = true) {
@@ -115,6 +186,7 @@
       renderAccessFilters();
       renderCategoryFilters();
       renderCatalog();
+      renderResumeCard();
       panel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     if (persist) localStorage.setItem(CONTENT_MODE_KEY, mode);
@@ -166,6 +238,7 @@
     if (state.mode === "live") return;
     const query = search.value.trim().toLowerCase();
     const allItems = currentItems();
+    const resumed = resolvedResume();
     const items = allItems.filter(item => {
       const categoryMatch = state.category === "全部" || item.category === state.category;
       const accessMatch = state.mode !== "audiobooks" || state.access === "all" || accessFor(item) === state.access;
@@ -188,9 +261,10 @@
       const secondary = state.mode === "audiobooks"
         ? `${accessFor(item) === "direct" ? "国内直连" : "境外源"} · ${item.category || "其他"} · ${tracks.length} 章`
         : `${item.category || "其他"} · ${tracks.length} 个最新单集`;
+      const resumeHint = resumed?.item.id === item.id ? ` · 续听 ${formatTime(resumed.position)}` : "";
       return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
         <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
-        <span><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(secondary)}</span></span>
+        <span><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(secondary + resumeHint)}</span></span>
       </button>`;
     }).join("");
     grid.querySelectorAll("img").forEach(image => image.addEventListener("error", () => { image.src = fallbackCover; }, { once: true }));
@@ -212,11 +286,15 @@
     const source = document.getElementById("detailSource");
     source.href = item.sourceUrl || item.feedUrl;
     source.textContent = `来源：${item.source}`;
+    const savedProgress = resumeData();
     episodeList.innerHTML = tracks.map((track, index) => {
-      const subtitle = state.mode === "audiobooks"
+      const saved = savedProgress[track.id];
+      const resumable = saved?.position > 5 && (!track.duration || saved.position < track.duration - 10);
+      let subtitle = state.mode === "audiobooks"
         ? `第 ${track.number || index + 1} 章`
         : formatDate(track.publishedAt);
-      return `<li><button class="episode-button" type="button" data-track-index="${index}">
+      if (resumable) subtitle += ` · 续听至 ${formatTime(saved.position)}`;
+      return `<li><button class="episode-button${resumable ? " has-resume" : ""}" type="button" data-track-index="${index}">
         <span class="episode-number">${state.mode === "audiobooks" ? String(track.number || index + 1).padStart(2, "0") : "▶"}</span>
         <span class="episode-copy"><strong>${escapeHtml(track.title)}</strong><span>${escapeHtml(subtitle)}</span></span>
         <span class="episode-duration">${formatTime(track.duration)}</span>
@@ -249,13 +327,14 @@
     const track = tracks[index];
     if (!item || !track) return;
     saveResume();
+    if (!audio.paused) state.skipNextPauseSave = true;
+    audio.pause();
     state.playingItem = item;
     state.playingMode = mode;
     document.body.classList.add("on-demand-playing");
     playbackKind = mode === "audiobooks" ? "audiobook" : "podcast";
     state.trackIndex = index;
     destroyHls();
-    audio.pause();
     audio.removeAttribute("src");
     audio.load();
     pendingPlayRecord = false;
@@ -310,7 +389,11 @@
     if (!state.playingItem) return;
     const tracks = tracksFor(state.playingItem);
     if (!tracks.length) return;
-    const nextIndex = state.trackIndex < 0 ? 0 : (state.trackIndex + direction + tracks.length) % tracks.length;
+    const nextIndex = state.trackIndex < 0 ? 0 : state.trackIndex + direction;
+    if (nextIndex < 0 || nextIndex >= tracks.length) {
+      showToast(nextIndex < 0 ? "已经是第一章或单集" : "已经播放到最后");
+      return;
+    }
     loadTrack(nextIndex, state.playingItem, state.playingMode);
   }
 
@@ -349,6 +432,14 @@
     const card = event.target.closest("[data-catalog-id]");
     if (card) selectItem(card.dataset.catalogId);
   });
+  resumeCard.addEventListener("click", () => {
+    const resumed = resolvedResume();
+    if (!resumed) return;
+    state.selected = resumed.item;
+    renderCatalog();
+    selectItem(resumed.item.id);
+    loadTrack(resumed.trackIndex, resumed.item, state.mode);
+  });
   episodeList.addEventListener("click", event => {
     const button = event.target.closest("[data-track-index]");
     if (button) loadTrack(Number(button.dataset.trackIndex));
@@ -370,7 +461,10 @@
     durationTime.textContent = formatTime(audio.duration);
     const track = tracksFor(state.playingItem)[state.trackIndex];
     const saved = track ? resumeData()[track.id] : null;
-    if (saved && saved.position > 5 && saved.position < audio.duration - 10) audio.currentTime = saved.position;
+    if (saved && saved.position > 5 && saved.position < audio.duration - 10) {
+      audio.currentTime = saved.position;
+      showToast(`已从 ${formatTime(saved.position)} 继续播放`);
+    }
   });
   audio.addEventListener("timeupdate", () => {
     if (playbackKind === "live") return;
@@ -382,8 +476,33 @@
     }
   });
   audio.addEventListener("ended", () => {
-    if (playbackKind !== "live") step(1);
+    if (playbackKind === "live") return;
+    const item = state.playingItem;
+    const mode = state.playingMode;
+    const tracks = tracksFor(item);
+    const finishedTrack = tracks[state.trackIndex];
+    if (finishedTrack) clearResume(finishedTrack, mode);
+    if (state.trackIndex + 1 < tracks.length) {
+      loadTrack(state.trackIndex + 1, item, mode);
+    } else {
+      setStatus("已播放完", "ok");
+      renderResumeCard();
+      renderCatalog();
+    }
   });
+  audio.addEventListener("pause", () => {
+    if (playbackKind === "live") return;
+    if (state.skipNextPauseSave) {
+      state.skipNextPauseSave = false;
+      return;
+    }
+    saveResume();
+    renderResumeCard();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") saveResume();
+  });
+  window.addEventListener("pagehide", saveResume);
   window.addEventListener("beforeunload", saveResume);
 
   Promise.all([

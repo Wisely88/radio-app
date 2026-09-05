@@ -641,6 +641,16 @@
     .on-demand-panel { min-width: 0; margin-top: 76px; }
     .on-demand-panel[hidden], .catalog-detail[hidden] { display: none; }
     .catalog-status { margin: 0 0 18px; color: var(--weak); font-size: 11px; }
+    .resume-card { width: 100%; display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 14px; align-items: center; margin: 0 0 16px; padding: 13px 15px; border: 1px solid rgba(245, 166, 35, .3); border-radius: 8px; color: var(--text); background: rgba(245, 166, 35, .065); text-align: left; cursor: pointer; transition: border-color .22s ease, background .22s ease; }
+    .resume-card[hidden] { display: none; }
+    .resume-card:hover { border-color: rgba(245, 166, 35, .55); background: rgba(245, 166, 35, .1); }
+    .resume-symbol { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid rgba(245, 166, 35, .38); border-radius: 50%; color: var(--accent); background: rgba(26, 26, 46, .72); font-size: 15px; }
+    .resume-copy { min-width: 0; }
+    .resume-copy small, .resume-copy strong, .resume-copy span { display: block; }
+    .resume-copy small { margin-bottom: 4px; color: var(--accent); font-size: 9px; font-weight: 800; letter-spacing: 0; }
+    .resume-copy strong { overflow: hidden; font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+    .resume-copy span { margin-top: 4px; overflow: hidden; color: var(--muted); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+    .resume-action { color: var(--accent); font-size: 11px; font-weight: 750; white-space: nowrap; }
     .catalog-access { width: min(100%, 390px); display: flex; gap: 3px; margin: 0 0 12px; padding: 3px; border: 1px solid var(--line); border-radius: 8px; background: rgba(26, 26, 46, .62); }
     .catalog-access[hidden] { display: none; }
     .catalog-access-button { min-width: 0; min-height: 34px; flex: 1 1 0; padding: 6px 8px; border: 0; border-radius: 6px; color: var(--muted); background: transparent; cursor: pointer; font-size: 11px; white-space: nowrap; }
@@ -673,6 +683,7 @@
     .episode-copy { min-width: 0; }
     .episode-copy strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 12px; }
     .episode-copy span { display: block; margin-top: 5px; overflow: hidden; color: var(--weak); font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+    .episode-button.has-resume .episode-copy span { color: var(--accent); }
     .episode-duration { color: var(--muted); font-size: 10px; white-space: nowrap; }
 
     .site-footer {
@@ -856,6 +867,8 @@
       .brand-copy strong { max-width: 104px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .site-nav a, .site-nav button { padding: 0 5px; }
       #navSearchBtn { display: none; }
+      .resume-card { grid-template-columns: 44px minmax(0, 1fr); gap: 11px; padding: 12px; }
+      .resume-action { display: none; }
       .hero { min-height: 410px; background-position: 68% center; }
       .hero-content { width: 100%; }
       .hero h1 { font-size: 38px; }
@@ -1183,6 +1196,11 @@
         <nav class="catalog-access" id="catalogAccess" aria-label="有声书网络来源" hidden></nav>
         <nav class="catalog-categories" id="catalogCategories" aria-label="内容分类" hidden></nav>
         <p class="catalog-status" id="catalogStatus" role="status">正在读取点播目录</p>
+        <button class="resume-card" id="resumeCard" type="button" hidden>
+          <span class="resume-symbol" aria-hidden="true">▶</span>
+          <span class="resume-copy"><small>继续收听</small><strong id="resumeTitle"></strong><span id="resumeMeta"></span></span>
+          <span class="resume-action">继续播放</span>
+        </button>
         <div class="catalog-grid" id="catalogGrid"></div>
         <section class="catalog-detail" id="catalogDetail" aria-labelledby="detailTitle" hidden>
           <div class="detail-head">
