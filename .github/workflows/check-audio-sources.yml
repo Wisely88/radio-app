@@ -46,12 +46,12 @@ jobs:
 
       - name: Commit health report
         run: |
-          if git diff --quiet -- audio-source-health.json; then
-            echo "Audio source health report unchanged"
-            exit 0
-          fi
           git config user.name "audio-health[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add audio-source-health.json
+          if git diff --cached --quiet; then
+            echo "Audio source health report unchanged"
+            exit 0
+          fi
           git commit -m "chore: refresh audiobook and podcast health [skip ci]"
           git push
