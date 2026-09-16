@@ -1,4 +1,4 @@
-/* Mobile refinement v3: app-like density without leaking into Drive mode. */
+/* Mobile refinement v4: stable phone, desktop-preview, and portrait-drive surfaces. */
 @media (max-width: 520px) {
   body[data-ui="mobile"]:not(.drive-mode) {
     --mm-mobile-nav: 60px;
@@ -6,53 +6,25 @@
     padding-bottom: calc(var(--player-height) + var(--mm-mobile-nav) + 10px) !important;
   }
 
-  /* Never let live and on-demand libraries render together. */
   body[data-ui="mobile"]:not(.drive-mode) #stations[hidden],
   body[data-ui="mobile"]:not(.drive-mode) #onDemandPanel[hidden],
-  body[data-ui="mobile"]:not(.drive-mode) [hidden] {
-    display: none !important;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) [hidden] { display: none !important; }
 
-  body[data-ui="mobile"]:not(.drive-mode) .site-header {
-    height: 56px !important;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) .site-header { height: 56px !important; }
+  body[data-ui="mobile"]:not(.drive-mode) .nav-shell { min-height: 56px; width: calc(100% - 24px) !important; }
+  body[data-ui="mobile"]:not(.drive-mode) .brand-mark { width: 34px; height: 34px; }
+  body[data-ui="mobile"]:not(.drive-mode) .brand-copy strong { max-width: none; font-size: 14px; }
+  body[data-ui="mobile"]:not(.drive-mode) .mm-scene-trigger { display: none !important; }
 
-  body[data-ui="mobile"]:not(.drive-mode) .nav-shell {
-    min-height: 56px;
-    width: calc(100% - 24px) !important;
-  }
-
-  body[data-ui="mobile"]:not(.drive-mode) .brand-mark {
-    width: 34px;
-    height: 34px;
-  }
-
-  body[data-ui="mobile"]:not(.drive-mode) .brand-copy strong {
-    max-width: none;
-    font-size: 14px;
-  }
-
-  /* Scene switching on phone belongs to the bottom tab, not the header. */
-  body[data-ui="mobile"]:not(.drive-mode) .mm-scene-trigger {
-    display: none !important;
-  }
-
-  /* Compact brand hero. */
   body[data-ui="mobile"]:not(.drive-mode) .hero {
     height: 218px !important;
     min-height: 218px !important;
     background-position: 68% center;
   }
-
   body[data-ui="mobile"]:not(.drive-mode) .hero::before {
     background: linear-gradient(90deg, rgba(10,10,26,.7) 0%, rgba(10,10,26,.45) 54%, rgba(10,10,26,.18) 100%);
   }
-
-  body[data-ui="mobile"]:not(.drive-mode) .hero-inner {
-    align-items: center;
-    padding-top: 56px !important;
-  }
-
+  body[data-ui="mobile"]:not(.drive-mode) .hero-inner { align-items: center; padding-top: 56px !important; }
   body[data-ui="mobile"]:not(.drive-mode) .hero-content { width: 90%; }
   body[data-ui="mobile"]:not(.drive-mode) .hero-overline { margin-bottom: 6px; font-size: 10px; }
   body[data-ui="mobile"]:not(.drive-mode) .hero h1 { font-size: 29px !important; line-height: 1.05; }
@@ -66,18 +38,15 @@
   body[data-ui="mobile"]:not(.drive-mode) .hero-actions { width: auto; margin-top: 13px !important; }
   body[data-ui="mobile"]:not(.drive-mode) .hero-primary { min-height: 40px !important; padding: 0 14px; font-size: 12px; }
 
-  /* Main content starts quickly and keeps a clear vertical rhythm. */
   body[data-ui="mobile"]:not(.drive-mode) .experience {
     width: calc(100% - 24px) !important;
     padding-top: 16px !important;
   }
-
   body[data-ui="mobile"]:not(.drive-mode) .section-heading { margin-bottom: 11px; }
   body[data-ui="mobile"]:not(.drive-mode) .section-heading > div > p { margin-bottom: 6px; font-size: 9px; }
   body[data-ui="mobile"]:not(.drive-mode) .section-heading h2 { font-size: 21px !important; line-height: 1.2; }
   body[data-ui="mobile"]:not(.drive-mode) .content-modes { display: none !important; }
 
-  /* Now Playing: artwork + metadata, then one compact control row. */
   body[data-ui="mobile"]:not(.drive-mode) .now-card {
     display: grid !important;
     grid-template-columns: 72px minmax(0, 1fr) !important;
@@ -89,36 +58,22 @@
     border-radius: 12px;
     box-shadow: none !important;
   }
-
-  body[data-ui="mobile"]:not(.drive-mode) .vinyl-stage {
-    display: grid !important;
-    float: none !important;
-    margin: 0 !important;
-  }
-
+  body[data-ui="mobile"]:not(.drive-mode) .vinyl-stage { display: grid !important; float: none !important; margin: 0 !important; }
   body[data-ui="mobile"]:not(.drive-mode) .vinyl-stage > span { display: none !important; }
   body[data-ui="mobile"]:not(.drive-mode) .vinyl {
-    width: 68px !important;
-    height: 68px !important;
-    min-width: 68px !important;
-    min-height: 68px !important;
+    width: 68px !important; height: 68px !important;
+    min-width: 68px !important; min-height: 68px !important;
     box-shadow: 0 10px 20px rgba(5,5,16,.3);
   }
   body[data-ui="mobile"]:not(.drive-mode) .vinyl::before { inset: -5px; }
   body[data-ui="mobile"]:not(.drive-mode) .vinyl::after { width: 8px; height: 8px; box-shadow: 0 0 0 5px var(--accent); }
   body[data-ui="mobile"]:not(.drive-mode) .vinyl img { width: 28px !important; height: 28px !important; }
-
   body[data-ui="mobile"]:not(.drive-mode) .now-column { min-width: 0; }
   body[data-ui="mobile"]:not(.drive-mode) .eyebrow { margin-bottom: 6px; padding-top: 0 !important; font-size: 9px; }
   body[data-ui="mobile"]:not(.drive-mode) .live-badge { padding: 3px 7px; font-size: 9px; }
   body[data-ui="mobile"]:not(.drive-mode) .now-playing { min-height: 0 !important; }
   body[data-ui="mobile"]:not(.drive-mode) .now-category { margin-bottom: 4px; font-size: 10px; }
-  body[data-ui="mobile"]:not(.drive-mode) .station-name {
-    min-height: 0 !important;
-    margin: 0 0 4px !important;
-    font-size: 18px !important;
-    line-height: 1.2;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) .station-name { min-height: 0 !important; margin: 0 0 4px !important; font-size: 18px !important; line-height: 1.2; }
   body[data-ui="mobile"]:not(.drive-mode) .station-desc {
     clear: none !important;
     display: -webkit-box;
@@ -130,22 +85,17 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
   }
-
   body[data-ui="mobile"]:not(.drive-mode) .main-control {
     grid-column: 1 / -1;
     grid-template-columns: 40px minmax(120px, 1fr) 40px !important;
     gap: 8px !important;
     margin-top: 10px !important;
   }
-  body[data-ui="mobile"]:not(.drive-mode) .main-control .btn {
-    min-height: 40px !important;
-    font-size: 13px;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) .main-control .btn { min-height: 40px !important; font-size: 13px; }
   body[data-ui="mobile"]:not(.drive-mode) .player-options,
   body[data-ui="mobile"]:not(.drive-mode) .shortcut-hint { display: none !important; }
   body[data-ui="mobile"]:not(.drive-mode) .on-demand-tools { grid-column: 1 / -1; margin-top: 9px; }
 
-  /* Library/channel blocks should visually follow the player, not float far below it. */
   body[data-ui="mobile"]:not(.drive-mode) .channels-panel,
   body[data-ui="mobile"]:not(.drive-mode) .on-demand-panel { margin-top: 22px !important; }
   body[data-ui="mobile"]:not(.drive-mode) .list-title-row { margin-bottom: 10px; }
@@ -158,11 +108,7 @@
   body[data-ui="mobile"]:not(.drive-mode) .channel { min-height: 96px !important; }
   body[data-ui="mobile"]:not(.drive-mode) .channel { padding-top: 12px; padding-bottom: 11px; }
 
-  /* Persistent playback bar + bottom nav: clear separation, no giant duplicate player. */
-  body[data-ui="mobile"]:not(.drive-mode) .sticky-player {
-    height: var(--player-height) !important;
-    bottom: var(--mm-mobile-nav) !important;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) .sticky-player { height: var(--player-height) !important; bottom: var(--mm-mobile-nav) !important; }
   body[data-ui="mobile"]:not(.drive-mode) .sticky-inner { width: calc(100% - 16px) !important; gap: 8px; }
   body[data-ui="mobile"]:not(.drive-mode) .mini-disc { width: 36px; height: 36px; }
   body[data-ui="mobile"]:not(.drive-mode) .mini-disc img { width: 25px; height: 25px; }
@@ -170,17 +116,118 @@
   body[data-ui="mobile"]:not(.drive-mode) .dock-station strong { font-size: 11px; }
   body[data-ui="mobile"]:not(.drive-mode) .dock-station span { margin-top: 2px; max-width: 46vw; font-size: 9px; }
   body[data-ui="mobile"]:not(.drive-mode) .dock-controls .dock-play { width: 40px; height: 40px; }
-
-  body[data-ui="mobile"]:not(.drive-mode) .mm-mobile-nav {
-    display: block !important;
-    height: var(--mm-mobile-nav) !important;
-    padding-top: 3px;
-  }
+  body[data-ui="mobile"]:not(.drive-mode) .mm-mobile-nav { display: block !important; height: var(--mm-mobile-nav) !important; padding-top: 3px; }
   body[data-ui="mobile"]:not(.drive-mode) .mm-mobile-btn { gap: 2px; font-size: 8px; }
   body[data-ui="mobile"]:not(.drive-mode) .mm-mobile-btn span:first-child { font-size: 16px; }
-
-  /* Drive remains a different product surface; no mobile chrome should leak into it. */
   body.drive-mode .mm-mobile-nav { display: none !important; }
+}
+
+/* Forced desktop on a phone is a preview surface, not the full wide workbench. */
+@media (max-width: 899px) {
+  body[data-ui="desktop"]:not(.drive-mode) {
+    --player-height: 66px;
+    padding-bottom: calc(var(--player-height) + 12px) !important;
+    overflow-x: hidden;
+  }
+  body[data-ui="desktop"]:not(.drive-mode) .site-header { height: 58px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .nav-shell { width: calc(100% - 24px) !important; min-height: 58px; }
+  body[data-ui="desktop"]:not(.drive-mode) .site-nav,
+  body[data-ui="desktop"]:not(.drive-mode) .top-status { display: none !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .brand-copy small { display: none !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .mm-scene-trigger { top: 10px; right: 10px; min-height: 38px; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero {
+    height: 360px !important;
+    min-height: 360px !important;
+    background-position: 68% center;
+  }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-inner { width: calc(100% - 28px) !important; padding-top: 64px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-content { width: 100% !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero h1 { font-size: 38px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-slogan { font-size: 17px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-note { max-width: 92%; font-size: 12px; line-height: 1.55; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-primary,
+  body[data-ui="desktop"]:not(.drive-mode) .hero-secondary { min-height: 44px; padding: 0 12px; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-quick { margin-top: 10px; }
+  body[data-ui="desktop"]:not(.drive-mode) .hero-scroll,
+  body[data-ui="desktop"]:not(.drive-mode) .hero-fraction { display: none !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .experience { width: calc(100% - 24px) !important; margin: 0 auto !important; padding: 26px 0 30px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .section-heading { margin-bottom: 16px; }
+  body[data-ui="desktop"]:not(.drive-mode) .section-heading h2 { font-size: 24px; }
+  body[data-ui="desktop"]:not(.drive-mode) .content-modes { display: flex !important; max-width: 100%; overflow-x: auto; }
+  body[data-ui="desktop"]:not(.drive-mode) .now-card { grid-template-columns: 96px minmax(0,1fr) !important; gap: 16px !important; padding: 16px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .vinyl { width: 88px !important; height: 88px !important; min-width: 88px !important; min-height: 88px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .player-options { display: none !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .main-control { grid-template-columns: 42px minmax(120px,1fr) 42px !important; margin-top: 12px; }
+  body[data-ui="desktop"]:not(.drive-mode) .channels-panel,
+  body[data-ui="desktop"]:not(.drive-mode) .on-demand-panel { margin-top: 28px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .sticky-player { height: var(--player-height) !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .sticky-inner { width: calc(100% - 20px) !important; grid-template-columns: minmax(0,1fr) auto !important; gap: 10px !important; }
+  body[data-ui="desktop"]:not(.drive-mode) .dock-volume { display: none !important; }
+}
+
+/* Portrait Drive: a glanceable car surface rather than an enlarged normal page. */
+@media (max-width: 600px) and (orientation: portrait) {
+  body.drive-mode {
+    min-height: 100dvh;
+    padding-bottom: max(92px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  body.drive-mode .site-header { height: 58px !important; }
+  body.drive-mode .nav-shell { width: calc(100% - 20px) !important; min-height: 58px; }
+  body.drive-mode .brand-mark { width: 32px; height: 32px; }
+  body.drive-mode .brand-copy strong { font-size: 13px; }
+  body.drive-mode #driveModeBtn {
+    min-width: 90px !important;
+    min-height: 40px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+  }
+  body.drive-mode .experience {
+    width: calc(100% - 20px) !important;
+    min-height: 0 !important;
+    padding: 68px 0 22px !important;
+  }
+  body.drive-mode .now-card {
+    margin: 0 0 14px !important;
+    padding: 14px !important;
+    border-radius: 12px;
+  }
+  body.drive-mode .now-playing { min-height: 0 !important; }
+  body.drive-mode .eyebrow { margin-bottom: 7px; font-size: 9px; }
+  body.drive-mode .station-name { margin: 0 0 5px; font-size: 22px !important; line-height: 1.2; }
+  body.drive-mode .station-desc {
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+  body.drive-mode .main-control {
+    grid-template-columns: 52px minmax(140px,1fr) 52px !important;
+    gap: 9px !important;
+    margin-top: 14px !important;
+  }
+  body.drive-mode .main-control .btn { min-height: 52px !important; font-size: 16px !important; }
+  body.drive-mode .channels-panel,
+  body.drive-mode .on-demand-panel { margin-top: 0 !important; padding-bottom: 12px; }
+  body.drive-mode .tabs { gap: 6px; padding-bottom: 10px !important; overflow-x: auto; scrollbar-width: none; }
+  body.drive-mode .tabs::-webkit-scrollbar { display: none; }
+  body.drive-mode .tab { min-height: 40px !important; padding: 0 12px !important; font-size: 12px !important; white-space: nowrap; }
+  body.drive-mode .tab-count { font-size: 10px; }
+  body.drive-mode .channel-list { gap: 8px !important; }
+  body.drive-mode .channel-row,
+  body.drive-mode .channel { min-height: 82px !important; }
+  body.drive-mode .channel { padding: 11px 46px 10px 11px !important; }
+  body.drive-mode .channel-icon { width: 44px; height: 44px; font-size: 18px; }
+  body.drive-mode .channel-info strong { font-size: 14px !important; }
+  body.drive-mode .ch-desc { display: none !important; }
+  body.drive-mode .ch-meta { margin-top: 7px; gap: 5px; }
+  body.drive-mode .ch-meta .badge { font-size: 9px; }
+  body.drive-mode .favorite-btn { width: 42px !important; height: 42px !important; }
 }
 
 @media (max-width: 380px) {
