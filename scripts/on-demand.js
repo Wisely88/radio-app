@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260916-mobile-tune-2";
+  const version = "20260916-mobile-tune-3";
 
   function loadStyle(href) {
     const style = document.createElement("link");
