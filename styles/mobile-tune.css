@@ -1,0 +1,311 @@
+/* Mobile refinement: denser first screen, clearer listening hierarchy. */
+@media (max-width: 520px) {
+  body[data-ui="mobile"] {
+    --mm-mobile-nav: 62px;
+  }
+
+  /* The bottom Scene tab is the canonical mobile scene entry. */
+  body[data-ui="mobile"] .mm-scene-trigger {
+    display: none;
+  }
+
+  body[data-ui="mobile"] .site-header {
+    height: 56px;
+  }
+
+  body[data-ui="mobile"] .nav-shell {
+    min-height: 56px;
+  }
+
+  body[data-ui="mobile"] .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  body[data-ui="mobile"] .brand-copy strong {
+    max-width: none;
+    font-size: 14px;
+  }
+
+  /* Brand remains visible, but no longer consumes most of the first screen. */
+  body[data-ui="mobile"] .hero {
+    height: 224px;
+    min-height: 224px;
+    background-position: 68% center;
+  }
+
+  body[data-ui="mobile"] .hero::before {
+    background: linear-gradient(90deg, rgba(10,10,26,.68) 0%, rgba(10,10,26,.45) 52%, rgba(10,10,26,.2) 100%);
+  }
+
+  body[data-ui="mobile"] .hero-inner {
+    align-items: center;
+    padding-top: 56px;
+  }
+
+  body[data-ui="mobile"] .hero-content {
+    width: 88%;
+  }
+
+  body[data-ui="mobile"] .hero-overline {
+    margin-bottom: 7px;
+    font-size: 10px;
+  }
+
+  body[data-ui="mobile"] .hero h1 {
+    font-size: 30px;
+    line-height: 1.05;
+  }
+
+  body[data-ui="mobile"] .hero h1 span {
+    margin-right: 6px;
+  }
+
+  body[data-ui="mobile"] .hero-slogan {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  body[data-ui="mobile"] .hero-actions {
+    width: auto;
+    margin-top: 14px;
+  }
+
+  body[data-ui="mobile"] .hero-primary {
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  body[data-ui="mobile"] .hero-quick,
+  body[data-ui="mobile"] .hero-fraction,
+  body[data-ui="mobile"] .hero-scroll {
+    display: none;
+  }
+
+  /* Bring the actual listening experience above the fold. */
+  body[data-ui="mobile"] .experience {
+    padding-top: 18px;
+  }
+
+  body[data-ui="mobile"] .section-heading {
+    margin-bottom: 12px;
+  }
+
+  body[data-ui="mobile"] .section-heading > div > p {
+    margin-bottom: 7px;
+    font-size: 9px;
+  }
+
+  body[data-ui="mobile"] .section-heading h2 {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  /* Compact Now Playing: artwork + metadata in one row, controls immediately below. */
+  body[data-ui="mobile"] .now-card {
+    display: grid;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 14px;
+    align-items: center;
+    margin-inline: 0;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  body[data-ui="mobile"] .vinyl-stage {
+    float: none;
+    margin: 0;
+  }
+
+  body[data-ui="mobile"] .vinyl {
+    width: 78px;
+    height: 78px;
+    min-width: 78px;
+    min-height: 78px;
+    box-shadow: 0 12px 24px rgba(5,5,16,.34);
+  }
+
+  body[data-ui="mobile"] .vinyl::before {
+    inset: -5px;
+  }
+
+  body[data-ui="mobile"] .vinyl::after {
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 0 5px var(--accent);
+  }
+
+  body[data-ui="mobile"] .vinyl img {
+    width: 30px;
+    height: 30px;
+  }
+
+  body[data-ui="mobile"] .now-column {
+    min-width: 0;
+  }
+
+  body[data-ui="mobile"] .eyebrow {
+    margin-bottom: 7px;
+    padding-top: 0;
+    font-size: 9px;
+  }
+
+  body[data-ui="mobile"] .live-badge {
+    padding: 3px 7px;
+    font-size: 9px;
+  }
+
+  body[data-ui="mobile"] .now-playing {
+    min-height: 0;
+  }
+
+  body[data-ui="mobile"] .now-category {
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
+
+  body[data-ui="mobile"] .station-name {
+    min-height: 0;
+    margin-bottom: 5px;
+    font-size: 19px;
+    line-height: 1.25;
+  }
+
+  body[data-ui="mobile"] .station-desc {
+    clear: none;
+    display: -webkit-box;
+    margin: 0;
+    overflow: hidden;
+    color: var(--weak);
+    font-size: 10px;
+    line-height: 1.45;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  body[data-ui="mobile"] .main-control {
+    grid-column: 1 / -1;
+    grid-template-columns: 42px minmax(120px, 1fr) 42px;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  body[data-ui="mobile"] .main-control .btn {
+    min-height: 42px;
+  }
+
+  body[data-ui="mobile"] .on-demand-tools {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  body[data-ui="mobile"] .player-options,
+  body[data-ui="mobile"] .shortcut-hint {
+    display: none !important;
+  }
+
+  body[data-ui="mobile"] .channels-panel,
+  body[data-ui="mobile"] .on-demand-panel {
+    margin-top: 26px;
+  }
+
+  body[data-ui="mobile"] .list-title-row {
+    margin-bottom: 12px;
+  }
+
+  body[data-ui="mobile"] .list-title-row p {
+    margin-bottom: 6px;
+    font-size: 9px;
+  }
+
+  body[data-ui="mobile"] .list-title-row h2 {
+    font-size: 21px;
+  }
+
+  /* Keep persistent playback useful without turning it into another full card. */
+  body[data-ui="mobile"] .sticky-player {
+    height: 68px;
+  }
+
+  body[data-ui="mobile"] .sticky-inner {
+    width: calc(100% - 16px);
+    gap: 8px;
+  }
+
+  body[data-ui="mobile"] .mini-disc {
+    width: 38px;
+    height: 38px;
+  }
+
+  body[data-ui="mobile"] .mini-disc img {
+    width: 27px;
+    height: 27px;
+  }
+
+  body[data-ui="mobile"] .dock-station {
+    gap: 9px;
+  }
+
+  body[data-ui="mobile"] .dock-station strong {
+    font-size: 11px;
+  }
+
+  body[data-ui="mobile"] .dock-station span {
+    margin-top: 2px;
+    max-width: 46vw;
+    font-size: 9px;
+  }
+
+  body[data-ui="mobile"] .dock-controls .dock-play {
+    width: 42px;
+    height: 42px;
+  }
+
+  body[data-ui="mobile"] .mm-mobile-nav {
+    height: var(--mm-mobile-nav);
+    padding-top: 3px;
+  }
+
+  body[data-ui="mobile"] .mm-mobile-btn {
+    gap: 2px;
+    font-size: 8px;
+  }
+
+  body[data-ui="mobile"] .mm-mobile-btn span:first-child {
+    font-size: 16px;
+  }
+}
+
+/* Very small phones: preserve content priority instead of shrinking text too far. */
+@media (max-width: 380px) {
+  body[data-ui="mobile"] .hero {
+    height: 210px;
+    min-height: 210px;
+  }
+
+  body[data-ui="mobile"] .hero h1 {
+    font-size: 27px;
+  }
+
+  body[data-ui="mobile"] .hero-slogan {
+    font-size: 13px;
+  }
+
+  body[data-ui="mobile"] .now-card {
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  body[data-ui="mobile"] .vinyl {
+    width: 66px;
+    height: 66px;
+    min-width: 66px;
+    min-height: 66px;
+  }
+
+  body[data-ui="mobile"] .station-name {
+    font-size: 18px;
+  }
+}
