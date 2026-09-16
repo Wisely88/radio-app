@@ -36,10 +36,8 @@ jobs:
           p = Path('index.html')
           text = p.read_text(encoding='utf-8')
           replacements = {
-              '{ cat: "traffic", region: "湖北", name: "湖北楚天交通广播 FM92.7", desc: "湖北实时路况与交通资讯", url: "https://lhttp.qtfm.cn/live/1291/64k.mp3" }':
-              '{ cat: "traffic", region: "湖北", name: "湖北楚天交通广播 FM92.7", desc: "湖北实时路况与交通资讯", url: "https://ls.qingting.fm/live/1291.m3u8" }',
-              '{ cat: "traffic", region: "广东", name: "茂名交通广播", desc: "茂名路况、交通与本地服务", url: "https://lhttp.qingting.fm/live/20211574/64k.mp3" }':
-              '{ cat: "general", region: "广东", name: "茂名综合广播 FM101.1", desc: "茂名新闻、民生与本地综合服务", url: "https://lhttp.qtfm.cn/live/1806/64k.mp3" }',
+              '{ cat: "general", region: "广东", name: "茂名综合广播 FM101.1", desc: "茂名新闻、民生与本地综合服务", url: "https://lhttp.qtfm.cn/live/1806/64k.mp3" }':
+              '{ cat: "general", region: "广东", name: "茂名综合广播 FM101.1", desc: "茂名新闻、民生与本地综合服务", url: "https://lhttp.qtfm.cn/live/20500088/64k.mp3" }',
           }
           changed = False
           for old, new in replacements.items():
@@ -48,7 +46,7 @@ jobs:
                   changed = True
           if changed:
               p.write_text(text, encoding='utf-8')
-              print('Replaced inactive station sources')
+              print('Testing current Maoming station stream id')
           else:
               print('No known inactive station sources found')
           PY
