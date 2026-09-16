@@ -1,0 +1,56 @@
+name: Check radio stations
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "index.html"
+      - "scripts/check_stations.py"
+      - ".github/workflows/check-stations.yml"
+  schedule:
+    - cron: "17 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: radio-station-health
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check station streams
+        run: python scripts/check_stations.py index.html station-health.json --timeout 12 --workers 10
+
+      - name: Show unavailable stations
+        run: |
+          python - <<'PY'
+          import json
+          data = json.load(open('station-health.json', encoding='utf-8'))
+          bad = [(name, item) for name, item in data['stations'].items() if not item['ok']]
+          print(f"Available: {data['availableCount']}/{data['stationCount']}")
+          for name, item in bad:
+              print(f"DOWN\t{name}\tstatus={item['status']}\terror={item['error']}\tlatency={item['latencyMs']}ms")
+          PY
+
+      - name: Commit health report
+        run: |
+          if git diff --quiet -- station-health.json; then
+            echo "Health report unchanged"
+            exit 0
+          fi
+          git config user.name "radio-health[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add station-health.json
+          git commit -m "chore: refresh station health [skip ci]"
+          git push
