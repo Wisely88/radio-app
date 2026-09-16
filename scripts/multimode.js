@@ -2,6 +2,8 @@
   "use strict";
 
   const UI_MODE_KEY = "dreamfm-ui-mode-v1";
+  const DRIVE_MODE_KEY = "xiaowei-radio-drive-mode-v1";
+  const CONTENT_MODE_KEY = "xiaowei-radio-content-mode-v1";
   const params = new URLSearchParams(location.search);
   const explicitMode = params.get("mode");
   const autoMode = window.matchMedia("(max-width: 899px)").matches ? "mobile" : "desktop";
@@ -22,13 +24,22 @@
   function setUrlMode(nextMode) {
     const url = new URL(location.href);
     url.searchParams.delete("drive");
-    if (nextMode === "auto") {
-      url.searchParams.delete("mode");
-      localStorage.removeItem(UI_MODE_KEY);
+
+    if (nextMode === "drive") {
+      url.searchParams.set("mode", "drive");
+      localStorage.setItem(DRIVE_MODE_KEY, "1");
+      localStorage.setItem(UI_MODE_KEY, "drive");
     } else {
-      url.searchParams.set("mode", nextMode);
-      localStorage.setItem(UI_MODE_KEY, nextMode);
+      localStorage.setItem(DRIVE_MODE_KEY, "0");
+      if (nextMode === "auto") {
+        url.searchParams.delete("mode");
+        localStorage.removeItem(UI_MODE_KEY);
+      } else {
+        url.searchParams.set("mode", nextMode);
+        localStorage.setItem(UI_MODE_KEY, nextMode);
+      }
     }
+
     location.href = url.toString();
   }
 
@@ -47,7 +58,7 @@
 
   function activateContent(modeName) {
     click(`[data-content-mode="${modeName}"]`);
-    syncChrome();
+    window.setTimeout(syncChrome, 0);
   }
 
   function activateLiveCategory(category) {
@@ -64,28 +75,49 @@
   function toggleFavoriteCurrent() {
     const active = $(".channel.active");
     const button = active?.closest(".channel-row")?.querySelector(".favorite-btn");
-    if (button) button.click();
+    button?.click();
   }
 
   function makeButton(icon, label, action, extra = "") {
     return `<button type="button" class="mm-rail-btn ${extra}" data-mm-action="${action}"><span class="mm-icon">${icon}</span><span>${label}</span></button>`;
   }
 
+  function guardInitialCatalogScroll() {
+    const panel = byId("onDemandPanel");
+    const storedMode = localStorage.getItem(CONTENT_MODE_KEY);
+    if (!panel || !["audiobooks", "podcasts"].includes(storedMode)) return;
+
+    const original = panel.scrollIntoView.bind(panel);
+    let suppress = true;
+    panel.scrollIntoView = (...args) => {
+      if (suppress) {
+        suppress = false;
+        panel.scrollIntoView = original;
+        return;
+      }
+      original(...args);
+    };
+    window.setTimeout(() => {
+      if (suppress) panel.scrollIntoView = original;
+    }, 5000);
+  }
+
   function installSceneSwitcher() {
     const css = document.createElement("link");
     css.rel = "stylesheet";
-    css.href = "styles/mode-switch.css";
+    css.href = "styles/mode-switch.css?v=20260916-scene-3";
     document.head.appendChild(css);
 
     const scene = currentSceneMode();
     const switcher = document.createElement("div");
-    switcher.className = "mm-scene-switcher";
+    const mobileOnly = autoMode === "mobile" && mode !== "tv";
+    switcher.className = `mm-scene-switcher${mobileOnly ? " mm-mobile-scenes-only" : ""}`;
     switcher.innerHTML = `
-      <button type="button" class="mm-scene-trigger" data-mm-action="toggle-scenes" aria-expanded="false" aria-haspopup="true">
+      ${mobileOnly ? "" : `<button type="button" class="mm-scene-trigger" data-mm-action="toggle-scenes" aria-expanded="false" aria-haspopup="true">
         <span class="mm-scene-dot"></span>
         <span>场景 · ${sceneLabel(scene)}</span>
         <span class="mm-scene-caret">⌄</span>
-      </button>
+      </button>`}
       <div class="mm-scene-menu" hidden role="menu" aria-label="切换使用场景">
         <button type="button" role="menuitem" data-mm-scene="auto"><span>◌</span><strong>自动</strong><small>跟随当前屏幕</small></button>
         <button type="button" role="menuitem" data-mm-scene="desktop"><span>▣</span><strong>电脑</strong><small>工作台布局</small></button>
@@ -102,11 +134,11 @@
 
   function toggleSceneMenu(force) {
     const menu = $(".mm-scene-menu");
+    if (!menu) return;
     const trigger = $(".mm-scene-trigger");
-    if (!menu || !trigger) return;
     const open = typeof force === "boolean" ? force : menu.hidden;
     menu.hidden = !open;
-    trigger.setAttribute("aria-expanded", String(open));
+    trigger?.setAttribute("aria-expanded", String(open));
   }
 
   function installChrome() {
@@ -115,28 +147,24 @@
     rail.setAttribute("aria-label", "桌面导航");
     rail.innerHTML = `
       <div class="mm-rail-title">DREAM FM · WORKBENCH</div>
-      <div class="mm-rail-group">
-        <div class="mm-rail-label">收听</div>
+      <div class="mm-rail-group"><div class="mm-rail-label">收听</div>
         ${makeButton("◉", "直播电台", "live")}
         ${makeButton("▣", "有声书", "audiobooks")}
         ${makeButton("◫", "播客", "podcasts")}
       </div>
-      <div class="mm-rail-group">
-        <div class="mm-rail-label">我的</div>
+      <div class="mm-rail-group"><div class="mm-rail-label">我的</div>
         ${makeButton("★", "收藏", "favorites")}
         ${makeButton("↻", "最近", "recent")}
         ${makeButton("⌕", "搜索", "search")}
       </div>
-      <div class="mm-rail-group">
-        <div class="mm-rail-label">直播分类</div>
+      <div class="mm-rail-group"><div class="mm-rail-label">直播分类</div>
         ${makeButton("📰", "资讯", "cat-news")}
         ${makeButton("🚗", "交通", "cat-traffic")}
         ${makeButton("🎵", "音乐", "cat-music")}
         ${makeButton("🌐", "综合", "cat-general")}
         ${makeButton("📖", "有声", "cat-audio")}
       </div>
-      <div class="mm-rail-group">
-        <div class="mm-rail-label">场景</div>
+      <div class="mm-rail-group"><div class="mm-rail-label">场景</div>
         ${makeButton("▤", "电视模式", "tv")}
         ${makeButton("▰", "行车模式", "drive")}
       </div>`;
@@ -196,6 +224,7 @@
         if (!event.target.closest(".mm-scene-switcher")) toggleSceneMenu(false);
         return;
       }
+
       const action = button.dataset.mmAction;
       if (action === "live") activateContent("live");
       else if (action === "audiobooks") activateContent("audiobooks");
@@ -221,6 +250,7 @@
     const desc = byId("stationDesc")?.textContent?.trim() || "从频道、有声书或播客中选择内容开始收听。";
     const status = byId("liveBadge")?.textContent?.trim() || "待机";
     const playing = status.includes("直播") || status.includes("播放") || status.includes("缓冲") || status.includes("连接");
+
     if (byId("mmNowTitle")) byId("mmNowTitle").textContent = title;
     if (byId("mmNowCategory")) byId("mmNowCategory").textContent = category;
     if (byId("mmNowDesc")) byId("mmNowDesc").textContent = desc;
@@ -229,6 +259,7 @@
       byId("mmNowState").classList.toggle("playing", playing);
     }
     byId("mmNowDisc")?.classList.toggle("playing", status.includes("直播") || status === "播放中");
+
     const mainPlay = byId("playToggleBtn")?.textContent?.trim();
     const mmPlay = $(".mm-now-controls [data-mm-action='play']");
     if (mmPlay && mainPlay) mmPlay.textContent = mainPlay;
@@ -236,7 +267,8 @@
     const contentMode = currentContentMode();
     $$(".mm-rail-btn, .mm-mobile-btn").forEach(button => {
       const action = button.dataset.mmAction;
-      button.classList.toggle("active", action === contentMode);
+      const contentAction = ["live", "audiobooks", "podcasts"].includes(action);
+      button.classList.toggle("active", contentAction && action === contentMode);
     });
   }
 
@@ -245,15 +277,46 @@
       const node = byId(id);
       if (node) new MutationObserver(syncChrome).observe(node, { subtree: true, childList: true, characterData: true, attributes: true });
     });
+
+    $$('[data-content-mode]').forEach(button => {
+      new MutationObserver(syncChrome).observe(button, { attributes: true, attributeFilter: ["class", "aria-pressed"] });
+    });
+    [byId("stations"), byId("onDemandPanel")].filter(Boolean).forEach(panel => {
+      new MutationObserver(syncChrome).observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+    });
+
     document.addEventListener("click", event => {
       if (event.target.closest("[data-content-mode], .tab, .channel, .catalog-card, .episode-button")) {
         window.setTimeout(syncChrome, 50);
       }
     });
+
     const audio = byId("audio");
     audio?.addEventListener("playing", () => document.body.classList.add("has-played"));
     audio?.addEventListener("playing", syncChrome);
     audio?.addEventListener("pause", syncChrome);
+  }
+
+  function normalizeDriveMode() {
+    const driveButton = byId("driveModeBtn");
+
+    if (explicitMode !== "drive") {
+      localStorage.setItem(DRIVE_MODE_KEY, "0");
+      if (document.body.classList.contains("drive-mode")) driveButton?.click();
+      return;
+    }
+
+    document.body.dataset.ui = autoMode;
+    localStorage.setItem(DRIVE_MODE_KEY, "1");
+    window.setTimeout(() => {
+      if (!document.body.classList.contains("drive-mode")) driveButton?.click();
+    }, 80);
+
+    driveButton?.addEventListener("click", () => {
+      window.setTimeout(() => {
+        if (!document.body.classList.contains("drive-mode")) setUrlMode("auto");
+      }, 0);
+    });
   }
 
   function isVisible(element) {
@@ -275,11 +338,13 @@
       items[0].focus();
       return;
     }
+
     const from = current.getBoundingClientRect();
     const fx = from.left + from.width / 2;
     const fy = from.top + from.height / 2;
     let winner = null;
     let best = Infinity;
+
     items.forEach(item => {
       if (item === current) return;
       const rect = item.getBoundingClientRect();
@@ -299,6 +364,7 @@
         winner = item;
       }
     });
+
     winner?.focus({ preventScroll: false });
     winner?.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
   }
@@ -320,18 +386,10 @@
     window.setTimeout(() => focusables()[0]?.focus(), 250);
   }
 
-  function normalizeDriveMode() {
-    const driveRequested = explicitMode === "drive";
-    if (!driveRequested) return;
-    document.body.dataset.ui = autoMode;
-    window.setTimeout(() => {
-      if (!document.body.classList.contains("drive-mode")) byId("driveModeBtn")?.click();
-    }, 80);
-  }
-
+  guardInitialCatalogScroll();
   installChrome();
   installObservers();
-  installTvControls();
   normalizeDriveMode();
-  syncChrome();
+  installTvControls();
+  window.setTimeout(syncChrome, 0);
 })();
