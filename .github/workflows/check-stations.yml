@@ -29,28 +29,6 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Repair known inactive station sources
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('index.html')
-          text = p.read_text(encoding='utf-8')
-          replacements = {
-              '{ cat: "general", region: "广东", name: "茂名综合广播 FM101.1", desc: "茂名新闻、民生与本地综合服务", url: "https://lhttp.qtfm.cn/live/1806/64k.mp3" }':
-              '{ cat: "general", region: "广东", name: "茂名综合广播 FM101.1", desc: "茂名新闻、民生与本地综合服务", url: "https://lhttp.qtfm.cn/live/20500088/64k.mp3" }',
-          }
-          changed = False
-          for old, new in replacements.items():
-              if old in text:
-                  text = text.replace(old, new, 1)
-                  changed = True
-          if changed:
-              p.write_text(text, encoding='utf-8')
-              print('Testing current Maoming station stream id')
-          else:
-              print('No known inactive station sources found')
-          PY
-
       - name: Check station streams
         run: python scripts/check_stations.py index.html station-health.json --timeout 12 --workers 10
 
@@ -65,14 +43,14 @@ jobs:
               print(f"DOWN\t{name}\tstatus={item['status']}\terror={item['error']}\tlatency={item['latencyMs']}ms")
           PY
 
-      - name: Commit station updates and health report
+      - name: Commit health report
         run: |
-          if git diff --quiet -- index.html station-health.json; then
-            echo "Station data unchanged"
+          if git diff --quiet -- station-health.json; then
+            echo "Health report unchanged"
             exit 0
           fi
           git config user.name "radio-health[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html station-health.json
-          git commit -m "fix: refresh inactive radio sources [skip ci]"
+          git add station-health.json
+          git commit -m "chore: refresh station health [skip ci]"
           git push
