@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260916-mobile-tune-5";
+  const version = "20260916-mobile-tune-6";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the
@@ -59,6 +59,7 @@
 
   loadScript("scripts/on-demand-core.js")
     .then(() => loadScript("scripts/multimode.js"))
+    .then(() => loadScript("scripts/scene-entry-fix.js"))
     .then(() => settleSceneScroll(switchedTo))
     .catch(error => console.error("Dream FM UI bootstrap failed", error));
 })();
