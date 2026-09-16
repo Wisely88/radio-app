@@ -1,0 +1,527 @@
+{
+  "generatedAt": "2026-09-16T14:25:45+00:00",
+  "sourceCount": 52,
+  "availableCount": 52,
+  "sources": {
+    "audiobook|alice-wonderland-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3961,
+      "error": ""
+    },
+    "audiobook|andersen-fairy-tales-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3914,
+      "error": ""
+    },
+    "audiobook|brief-history-time-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4116,
+      "error": ""
+    },
+    "audiobook|cat-country-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3695,
+      "error": ""
+    },
+    "audiobook|dream-red-chamber": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4311,
+      "error": ""
+    },
+    "audiobook|europe-history-stories": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3064,
+      "error": ""
+    },
+    "audiobook|fifteen-strings-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4480,
+      "error": ""
+    },
+    "audiobook|gadfly-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4295,
+      "error": ""
+    },
+    "audiobook|general-history-china": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 6620,
+      "error": ""
+    },
+    "audiobook|grimms-fairy-tales-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4357,
+      "error": ""
+    },
+    "audiobook|jane-eyre-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 5733,
+      "error": ""
+    },
+    "audiobook|journey-west": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4613,
+      "error": ""
+    },
+    "audiobook|librivox-api": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 0,
+      "audioPassed": 0,
+      "latencyMs": 218,
+      "error": ""
+    },
+    "audiobook|little-prince-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4341,
+      "error": ""
+    },
+    "audiobook|romance-three-kingdoms": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4937,
+      "error": ""
+    },
+    "audiobook|thirty-nine-steps-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4706,
+      "error": ""
+    },
+    "audiobook|three-hundred-tang-poems-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3654,
+      "error": ""
+    },
+    "audiobook|twenty-thousand-leagues-cn": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4952,
+      "error": ""
+    },
+    "audiobook|water-margin": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4132,
+      "error": ""
+    },
+    "podcast|beyond-code": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1429,
+      "error": ""
+    },
+    "podcast|beyond-football": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 8740,
+      "error": ""
+    },
+    "podcast|blackwater-park": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4480,
+      "error": ""
+    },
+    "podcast|bowuzhi": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 338,
+      "error": ""
+    },
+    "podcast|buheshiyi": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1822,
+      "error": ""
+    },
+    "podcast|business-is-like-this": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4928,
+      "error": ""
+    },
+    "podcast|dive-in": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3783,
+      "error": ""
+    },
+    "podcast|dscience": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 58455,
+      "error": ""
+    },
+    "podcast|fit4life": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4772,
+      "error": ""
+    },
+    "podcast|grand-tour": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4660,
+      "error": ""
+    },
+    "podcast|half-latte": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 7938,
+      "error": ""
+    },
+    "podcast|huzuohuyou": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 2525,
+      "error": ""
+    },
+    "podcast|keep-talking": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1438,
+      "error": ""
+    },
+    "podcast|legal-dolphin": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4107,
+      "error": ""
+    },
+    "podcast|lets-talk": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 5031,
+      "error": ""
+    },
+    "podcast|mianji": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1597,
+      "error": ""
+    },
+    "podcast|morning-coffee": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 5573,
+      "error": ""
+    },
+    "podcast|naive-not-naive": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1283,
+      "error": ""
+    },
+    "podcast|name-the-question": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1184,
+      "error": ""
+    },
+    "podcast|new-energy-car": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 2172,
+      "error": ""
+    },
+    "podcast|random-books": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1769,
+      "error": ""
+    },
+    "podcast|ritanwuyu": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1562,
+      "error": ""
+    },
+    "podcast|self-evolution": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1353,
+      "error": ""
+    },
+    "podcast|shengdongjixi": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 512,
+      "error": ""
+    },
+    "podcast|steve-says": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 1730,
+      "error": ""
+    },
+    "podcast|story-fm": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 9162,
+      "error": ""
+    },
+    "podcast|sv101": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 219,
+      "error": ""
+    },
+    "podcast|tech-stew": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 3838,
+      "error": ""
+    },
+    "podcast|vibration": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 4336,
+      "error": ""
+    },
+    "podcast|wenhuayouxian": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 7143,
+      "error": ""
+    },
+    "podcast|whats-next-tech": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 272,
+      "error": ""
+    },
+    "podcast|youzhiyouxing": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 2355,
+      "error": ""
+    },
+    "podcast|zonghengsihai": {
+      "ok": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 8244,
+      "error": ""
+    }
+  }
+}
