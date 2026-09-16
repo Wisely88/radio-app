@@ -171,7 +171,7 @@
       <button class="mm-mobile-btn" type="button" data-mm-action="audiobooks"><span>▣</span><span>有声书</span></button>
       <button class="mm-mobile-btn" type="button" data-mm-action="podcasts"><span>◫</span><span>播客</span></button>
       <button class="mm-mobile-btn" type="button" data-mm-action="favorites"><span>★</span><span>收藏</span></button>
-      <button class="mm-mobile-btn" type="button" data-mm-action="search"><span>⌕</span><span>搜索</span></button>
+      <button class="mm-mobile-btn" type="button" data-mm-action="toggle-scenes"><span>▦</span><span>场景</span></button>
     </div>`;
     document.body.appendChild(mobile);
 
@@ -321,7 +321,7 @@
   }
 
   function normalizeDriveMode() {
-    const driveRequested = params.get("drive") === "1" || explicitMode === "drive" || localStorage.getItem(UI_MODE_KEY) === "drive";
+    const driveRequested = explicitMode === "drive";
     if (!driveRequested) return;
     document.body.dataset.ui = autoMode;
     window.setTimeout(() => {
