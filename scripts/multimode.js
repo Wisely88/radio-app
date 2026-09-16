@@ -21,11 +21,24 @@
 
   function setUrlMode(nextMode) {
     const url = new URL(location.href);
-    if (nextMode === "desktop" || nextMode === "mobile") url.searchParams.delete("mode");
-    else url.searchParams.set("mode", nextMode);
-    if (nextMode !== "drive") url.searchParams.delete("drive");
-    localStorage.setItem(UI_MODE_KEY, nextMode);
+    url.searchParams.delete("drive");
+    if (nextMode === "auto") {
+      url.searchParams.delete("mode");
+      localStorage.removeItem(UI_MODE_KEY);
+    } else {
+      url.searchParams.set("mode", nextMode);
+      localStorage.setItem(UI_MODE_KEY, nextMode);
+    }
     location.href = url.toString();
+  }
+
+  function currentSceneMode() {
+    if (explicitMode && ["desktop", "mobile", "tv", "drive"].includes(explicitMode)) return explicitMode;
+    return "auto";
+  }
+
+  function sceneLabel(value) {
+    return ({ auto: "自动", desktop: "电脑", mobile: "手机", tv: "电视", drive: "行车" })[value] || "自动";
   }
 
   function currentContentMode() {
@@ -56,6 +69,44 @@
 
   function makeButton(icon, label, action, extra = "") {
     return `<button type="button" class="mm-rail-btn ${extra}" data-mm-action="${action}"><span class="mm-icon">${icon}</span><span>${label}</span></button>`;
+  }
+
+  function installSceneSwitcher() {
+    const css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "styles/mode-switch.css";
+    document.head.appendChild(css);
+
+    const scene = currentSceneMode();
+    const switcher = document.createElement("div");
+    switcher.className = "mm-scene-switcher";
+    switcher.innerHTML = `
+      <button type="button" class="mm-scene-trigger" data-mm-action="toggle-scenes" aria-expanded="false" aria-haspopup="true">
+        <span class="mm-scene-dot"></span>
+        <span>场景 · ${sceneLabel(scene)}</span>
+        <span class="mm-scene-caret">⌄</span>
+      </button>
+      <div class="mm-scene-menu" hidden role="menu" aria-label="切换使用场景">
+        <button type="button" role="menuitem" data-mm-scene="auto"><span>◌</span><strong>自动</strong><small>跟随当前屏幕</small></button>
+        <button type="button" role="menuitem" data-mm-scene="desktop"><span>▣</span><strong>电脑</strong><small>工作台布局</small></button>
+        <button type="button" role="menuitem" data-mm-scene="mobile"><span>▯</span><strong>手机</strong><small>移动端布局</small></button>
+        <button type="button" role="menuitem" data-mm-scene="tv"><span>▤</span><strong>电视</strong><small>遥控器大屏</small></button>
+        <button type="button" role="menuitem" data-mm-scene="drive"><span>▰</span><strong>行车</strong><small>低干扰大按钮</small></button>
+      </div>`;
+    document.body.appendChild(switcher);
+
+    switcher.querySelectorAll("[data-mm-scene]").forEach(button => {
+      button.classList.toggle("active", button.dataset.mmScene === scene);
+    });
+  }
+
+  function toggleSceneMenu(force) {
+    const menu = $(".mm-scene-menu");
+    const trigger = $(".mm-scene-trigger");
+    if (!menu || !trigger) return;
+    const open = typeof force === "boolean" ? force : menu.hidden;
+    menu.hidden = !open;
+    trigger.setAttribute("aria-expanded", String(open));
   }
 
   function installChrome() {
@@ -131,9 +182,20 @@
     tvExit.textContent = "退出电视模式";
     document.body.appendChild(tvExit);
 
+    installSceneSwitcher();
+
     document.body.addEventListener("click", event => {
+      const sceneButton = event.target.closest("[data-mm-scene]");
+      if (sceneButton) {
+        setUrlMode(sceneButton.dataset.mmScene);
+        return;
+      }
+
       const button = event.target.closest("[data-mm-action]");
-      if (!button) return;
+      if (!button) {
+        if (!event.target.closest(".mm-scene-switcher")) toggleSceneMenu(false);
+        return;
+      }
       const action = button.dataset.mmAction;
       if (action === "live") activateContent("live");
       else if (action === "audiobooks") activateContent("audiobooks");
@@ -147,17 +209,10 @@
       else if (action === "next") click("#nextBtn");
       else if (action === "favorite") toggleFavoriteCurrent();
       else if (action === "tv") setUrlMode("tv");
-      else if (action === "drive") enterDriveMode();
-      else if (action === "exit-tv") setUrlMode(autoMode);
+      else if (action === "drive") setUrlMode("drive");
+      else if (action === "exit-tv") setUrlMode("auto");
+      else if (action === "toggle-scenes") toggleSceneMenu();
     });
-  }
-
-  function enterDriveMode() {
-    const url = new URL(location.href);
-    url.searchParams.delete("mode");
-    url.searchParams.set("drive", "1");
-    localStorage.setItem(UI_MODE_KEY, "drive");
-    location.href = url.toString();
   }
 
   function syncChrome() {
@@ -257,7 +312,7 @@
         spatialFocus(map[event.key]);
       } else if (event.key === "Escape" || event.key === "Backspace") {
         event.preventDefault();
-        setUrlMode(autoMode);
+        setUrlMode("auto");
       } else if (event.key === "MediaPlayPause") {
         click("#playToggleBtn");
       }
@@ -268,7 +323,6 @@
   function normalizeDriveMode() {
     const driveRequested = params.get("drive") === "1" || explicitMode === "drive" || localStorage.getItem(UI_MODE_KEY) === "drive";
     if (!driveRequested) return;
-    localStorage.removeItem(UI_MODE_KEY);
     document.body.dataset.ui = autoMode;
     window.setTimeout(() => {
       if (!document.body.classList.contains("drive-mode")) byId("driveModeBtn")?.click();
