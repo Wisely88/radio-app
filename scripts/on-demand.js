@@ -1,7 +1,21 @@
 (() => {
   "use strict";
 
-  const version = "20260916-mobile-tune-3";
+  const version = "20260916-mobile-tune-4";
+  const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
+
+  // Capture scene selections before multimode.js handles the click. This lets the
+  // next document distinguish a deliberate scene switch from a normal refresh.
+  document.addEventListener("click", event => {
+    const button = event.target.closest?.("[data-mm-scene]");
+    if (!button) return;
+    const target = button.dataset.mmScene || "auto";
+    sessionStorage.setItem(MODE_SWITCH_KEY, target);
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  }, true);
+
+  const switchedTo = sessionStorage.getItem(MODE_SWITCH_KEY);
+  if (switchedTo && "scrollRestoration" in history) history.scrollRestoration = "manual";
 
   function loadStyle(href) {
     const style = document.createElement("link");
@@ -23,7 +37,30 @@
     });
   }
 
+  function settleSceneScroll(target) {
+    if (!target) return;
+    const settle = () => {
+      if (target === "drive") {
+        document.getElementById("radioApp")?.scrollIntoView({ block: "start" });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    // Mobile Safari may restore the previous scroll offset after DOM/layout work.
+    // Re-assert the intentional scene position over the short restore window.
+    settle();
+    requestAnimationFrame(settle);
+    window.setTimeout(settle, 120);
+    window.setTimeout(() => {
+      settle();
+      sessionStorage.removeItem(MODE_SWITCH_KEY);
+      if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+    }, 420);
+  }
+
   loadScript("scripts/on-demand-core.js")
     .then(() => loadScript("scripts/multimode.js"))
+    .then(() => settleSceneScroll(switchedTo))
     .catch(error => console.error("Dream FM UI bootstrap failed", error));
 })();
