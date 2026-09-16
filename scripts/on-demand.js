@@ -1,12 +1,17 @@
 (() => {
   "use strict";
 
-  const version = "20260916-multimode-1";
+  const version = "20260916-mobile-tune-2";
 
-  const style = document.createElement("link");
-  style.rel = "stylesheet";
-  style.href = `styles/multimode.css?v=${version}`;
-  document.head.appendChild(style);
+  function loadStyle(href) {
+    const style = document.createElement("link");
+    style.rel = "stylesheet";
+    style.href = `${href}?v=${version}`;
+    document.head.appendChild(style);
+  }
+
+  loadStyle("styles/multimode.css");
+  loadStyle("styles/mobile-tune.css");
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
