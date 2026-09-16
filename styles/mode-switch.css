@@ -1,0 +1,152 @@
+/* Unified scene switcher for desktop / mobile / TV / drive */
+.mm-scene-switcher {
+  position: fixed;
+  z-index: 70;
+  top: 84px;
+  right: 14px;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.mm-scene-trigger {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(240,240,240,.14);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(24,24,43,.92);
+  box-shadow: 0 10px 28px rgba(5,5,18,.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 760;
+}
+
+.mm-scene-trigger:hover,
+.mm-scene-trigger[aria-expanded="true"] {
+  border-color: rgba(245,166,35,.45);
+  color: var(--accent);
+}
+
+.mm-scene-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(245,166,35,.42);
+}
+
+.mm-scene-caret { color: var(--weak); font-size: 12px; }
+
+.mm-scene-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  padding: 7px;
+  border: 1px solid rgba(240,240,240,.13);
+  border-radius: 14px;
+  background: rgba(24,24,43,.97);
+  box-shadow: 0 22px 54px rgba(5,5,18,.42);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+}
+
+.mm-scene-menu[hidden] { display: none; }
+
+.mm-scene-menu button {
+  width: 100%;
+  min-height: 48px;
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  align-items: center;
+  padding: 7px 9px;
+  border: 0;
+  border-radius: 10px;
+  color: var(--muted);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mm-scene-menu button > span {
+  grid-row: 1 / span 2;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(240,240,240,.055);
+  font-size: 15px;
+}
+
+.mm-scene-menu button strong { font-size: 12px; font-weight: 800; color: var(--text); }
+.mm-scene-menu button small { margin-top: 1px; color: var(--weak); font-size: 9px; }
+.mm-scene-menu button:hover { background: rgba(245,166,35,.07); }
+.mm-scene-menu button.active { background: rgba(245,166,35,.11); }
+.mm-scene-menu button.active > span,
+.mm-scene-menu button.active strong { color: var(--accent); }
+
+body[data-ui="tv"] .mm-scene-switcher {
+  top: 104px;
+  right: 4vw;
+}
+body[data-ui="tv"] .mm-scene-trigger {
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 14px;
+  font-size: 16px;
+}
+body[data-ui="tv"] .mm-scene-menu {
+  width: 300px;
+  padding: 10px;
+  border-radius: 18px;
+}
+body[data-ui="tv"] .mm-scene-menu button {
+  min-height: 68px;
+  grid-template-columns: 42px 1fr;
+  padding: 9px 12px;
+  border-radius: 13px;
+}
+body[data-ui="tv"] .mm-scene-menu button > span { width: 38px; height: 38px; font-size: 20px; }
+body[data-ui="tv"] .mm-scene-menu button strong { font-size: 17px; }
+body[data-ui="tv"] .mm-scene-menu button small { font-size: 12px; }
+
+body.drive-mode .mm-scene-switcher {
+  top: 14px;
+  right: 14px;
+}
+body.drive-mode .mm-scene-trigger {
+  min-height: 50px;
+  padding: 0 16px;
+  border-radius: 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 899px) {
+  .mm-scene-switcher {
+    top: 66px;
+    right: 10px;
+  }
+  .mm-scene-trigger {
+    min-height: 36px;
+    padding: 0 10px;
+    font-size: 10px;
+  }
+  .mm-scene-menu {
+    position: fixed;
+    top: auto;
+    right: 10px;
+    bottom: calc(var(--mm-mobile-nav, 66px) + var(--player-height, 84px) + 14px);
+    left: 10px;
+    width: auto;
+    padding: 9px;
+    border-radius: 16px;
+  }
+  .mm-scene-menu button { min-height: 54px; }
+}
