@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260916-mobile-tune-4";
+  const version = "20260916-mobile-tune-5";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the
@@ -47,8 +47,6 @@
       }
     };
 
-    // Mobile Safari may restore the previous scroll offset after DOM/layout work.
-    // Re-assert the intentional scene position over the short restore window.
     settle();
     requestAnimationFrame(settle);
     window.setTimeout(settle, 120);
