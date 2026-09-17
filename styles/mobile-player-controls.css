@@ -1,0 +1,82 @@
+/* Mobile player controls restore: keep volume + sleep timer visible without restoring desktop-only stats. */
+@media (max-width: 520px) {
+  body[data-ui="mobile"]:not(.drive-mode) .player-options {
+    display: grid !important;
+    grid-column: 1 / -1 !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-top: 10px !important;
+    padding: 10px 0 0 !important;
+    border-top: 1px solid var(--line) !important;
+    border-left: 0 !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .player-options > :not(.volume-row):not(.timer-row) {
+    display: none !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .volume-row {
+    display: grid !important;
+    grid-template-columns: 38px minmax(0, 1fr) 42px !important;
+    align-items: center !important;
+    gap: 9px !important;
+    margin: 0 !important;
+    color: var(--muted);
+    font-size: 10px;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .volume-row strong {
+    color: var(--text);
+    font-size: 10px;
+    text-align: right;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .volume-row input[type="range"] {
+    min-width: 0;
+    height: 24px;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-row {
+    display: grid !important;
+    grid-template-columns: 56px minmax(86px, 1fr) 64px !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    color: var(--muted);
+    font-size: 10px;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-row label {
+    white-space: nowrap;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-select,
+  body[data-ui="mobile"]:not(.drive-mode) .timer-btn {
+    min-height: 34px !important;
+    border-radius: 8px !important;
+    font-size: 10px !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-select {
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-btn {
+    min-width: 64px !important;
+    padding: 0 8px !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-status {
+    grid-column: 1 / -1 !important;
+    margin-top: -2px !important;
+    color: var(--weak);
+    font-size: 9px !important;
+    line-height: 1.35;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .timer-status.active {
+    color: var(--accent);
+  }
+}
