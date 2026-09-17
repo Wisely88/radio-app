@@ -1,0 +1,38 @@
+name: Bust mobile loader cache
+
+on:
+  push:
+    paths:
+      - '.github/workflows/bust-mobile-loader-cache.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add cache version to bootstrap loader
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          old = '<script src="scripts/on-demand.js"></script>'
+          new = '<script src="scripts/on-demand.js?v=20260917-mobile-controls-1"></script>'
+          if old in s:
+              p.write_text(s.replace(old, new, 1), encoding='utf-8')
+          PY
+      - name: Commit patch if needed
+        run: |
+          if git diff --quiet; then
+            echo 'No change needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git commit -m 'fix: bust mobile bootstrap cache'
+          git push
