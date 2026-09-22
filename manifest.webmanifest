@@ -9,7 +9,7 @@
   "lang": "zh-CN",
   "icons": [
     {
-      "src": "assets/three-quarter-mark.svg",
+      "src": "assets/three-quarter-mark.svg?v=20260922-brand-2",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
