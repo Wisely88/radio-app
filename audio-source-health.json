@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-09-22T08:34:51+00:00",
-  "sourceCount": 54,
+  "sourceCount": 53,
   "availableCount": 53,
   "sources": {
     "audiobook|alice-wonderland-cn": {
@@ -222,16 +222,6 @@
       "audioPassed": 2,
       "latencyMs": 3834,
       "error": ""
-    },
-    "podcast|bowuzhi": {
-      "ok": false,
-      "feedOk": false,
-      "feedStatus": 0,
-      "audioOk": false,
-      "audioChecked": 0,
-      "audioPassed": 0,
-      "latencyMs": 39,
-      "error": "URLError: <urlopen error [Errno -5] No address associated with hostname>"
     },
     "podcast|buheshiyi": {
       "ok": true,
