@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1A1A2E">
   <meta name="description" content="3/4梦想电台 · Wisely’s Dream FM。听见，那未尽的四分之一。">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/three-quarter-mark.svg">
   <link rel="icon" href="assets/three-quarter-mark.svg" type="image/svg+xml">
   <title>3/4梦想电台 · Wisely’s Dream FM</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
@@ -1107,7 +1112,7 @@
         <div class="now-column">
           <div class="eyebrow">
             <span id="playerHeading">正在播放</span>
-            <span class="live-badge" id="liveBadge">待机</span>
+            <span class="live-badge" id="liveBadge" aria-live="polite" aria-atomic="true">待机</span>
           </div>
           <div class="now-playing">
             <div class="now-category" id="stationCategory">请选择频道</div>
@@ -1506,8 +1511,13 @@
       };
       const [mainLabel, dockLabel, accessibleLabel] = states[mode] || ["▶ 播放", "▶", "播放"];
       playToggleBtn.textContent = mainLabel;
+      playToggleBtn.setAttribute("aria-label", accessibleLabel);
+      playToggleBtn.setAttribute("aria-pressed", mode === "playing" ? "true" : "false");
+      playToggleBtn.dataset.playbackState = mode;
       dockPlayBtn.textContent = dockLabel;
       dockPlayBtn.setAttribute("aria-label", accessibleLabel);
+      dockPlayBtn.setAttribute("aria-pressed", mode === "playing" ? "true" : "false");
+      dockPlayBtn.dataset.playbackState = mode;
     }
 
     function showToast(message) {

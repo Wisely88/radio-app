@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260922-play-queue-1";
+  const version = "20260922-pages-finish-1";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the
@@ -29,6 +29,11 @@
   loadStyle("styles/mobile-player-controls.css");
   loadStyle("styles/product-polish.css");
   loadStyle("styles/play-queue.css");
+
+  if ("serviceWorker" in navigator && location.protocol !== "file:") {
+    navigator.serviceWorker.register("./sw.js", { scope: "./" })
+      .catch(error => console.warn("Dream FM offline shell unavailable", error));
+  }
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
