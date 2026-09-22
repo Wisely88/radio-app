@@ -311,6 +311,15 @@
 
     .hero-scroll:hover { color: var(--accent); }
 
+    /* Keep the editorial hero copy below the fixed navigation on wide screens. */
+    @media (min-width: 761px) {
+      .hero-inner {
+        align-items: flex-start;
+        padding-top: calc(var(--header-height) + 78px);
+        padding-bottom: 72px;
+      }
+    }
+
     .experience {
       width: min(1280px, calc(100% - 40px));
       margin: 0 auto;
