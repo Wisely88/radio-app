@@ -640,12 +640,32 @@
       width: 44px;
       height: 44px;
       display: grid;
+      position: relative;
       place-items: center;
-      border-radius: 50%;
-      color: var(--accent);
-      background: rgba(245, 166, 35, .08);
-      font-size: 17px;
+      overflow: hidden;
+      border: 1px solid rgba(245, 166, 35, .34);
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--icon-a), var(--icon-b));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.07), 0 7px 14px rgba(5,5,16,.18);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: -.04em;
     }
+    .channel-icon::before { content: ""; position: absolute; inset: -15px auto auto -12px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.18); }
+    .channel-icon::after { content: ""; position: absolute; right: -8px; bottom: -10px; width: 26px; height: 26px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; }
+    .channel-icon > span { position: relative; z-index: 1; text-shadow: 0 1px 4px rgba(0,0,0,.32); }
+    .channel-icon > i { position: absolute; right: 4px; bottom: 3px; z-index: 1; color: rgba(255,255,255,.78); font-size: 9px; font-style: normal; }
+    .channel-icon-news { --icon-a: #b44a47; --icon-b: #5b1f39; }
+    .channel-icon-traffic { --icon-a: #087e8b; --icon-b: #124a70; }
+    .channel-icon-music { --icon-a: #7750b8; --icon-b: #2b2466; }
+    .channel-icon-general { --icon-a: #3d6e9e; --icon-b: #27304e; }
+    .channel-icon-audio { --icon-a: #b26b3f; --icon-b: #663042; }
+    .channel-icon.tone-2 { filter: hue-rotate(18deg); }
+    .channel-icon.tone-3 { filter: hue-rotate(42deg); }
+    .channel-icon.tone-4 { filter: hue-rotate(68deg); }
+    .channel-icon.tone-5 { filter: hue-rotate(94deg); }
+    .channel-icon.tone-6 { filter: hue-rotate(128deg); }
 
     .channel-info { min-width: 0; }
     .channel-info strong { display: block; margin-top: 2px; color: var(--text); font-size: 13px; white-space: normal; line-height: 1.35; }
@@ -1296,6 +1316,16 @@
       audio:   { label: "有声", icon: "📖" },
     };
 
+    function stationIcon(station, index) {
+      const category = categories[station.cat];
+      const seed = [...station.name].reduce((sum, char) => sum + char.charCodeAt(0), index || 0);
+      const tone = (seed % 6) + 1;
+      const latin = station.name.match(/[A-Za-z]{2,}/)?.[0]?.slice(0, 2).toUpperCase();
+      const han = station.name.replace(/[^\u4e00-\u9fff]/g, "").slice(0, 2);
+      const mark = latin || han || category.label.slice(0, 1);
+      return `<span class="channel-icon channel-icon-${station.cat} tone-${tone}" aria-hidden="true"><span>${mark}</span><i>${category.icon}</i></span>`;
+    }
+
     const stations = [
       // 资讯
       { cat: "news", region: "全国", name: "CNR-1 中国之声", desc: "中央广播电视总台 · 新闻综合", url: "https://lhttp.qtfm.cn/live/15318317/64k.mp3" },
@@ -1701,7 +1731,7 @@
         return `
           <li class="channel-row">
             <button class="channel${currentIndex === index ? " active" : ""}" type="button" data-index="${index}" aria-label="播放 ${station.name}">
-              <span class="channel-icon" aria-hidden="true">${category.icon}</span>
+              ${stationIcon(station, index)}
               <span class="channel-info">
                 <strong>${station.name}</strong>
                 <span class="ch-desc">${station.desc}</span>
