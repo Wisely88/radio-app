@@ -655,6 +655,7 @@
     .channel-icon::before { content: ""; position: absolute; inset: -15px auto auto -12px; width: 34px; height: 34px; border-radius: 50%; background: rgba(255,255,255,.18); }
     .channel-icon::after { content: ""; position: absolute; right: -8px; bottom: -10px; width: 26px; height: 26px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%; }
     .channel-icon > span { position: relative; z-index: 1; text-shadow: 0 1px 4px rgba(0,0,0,.32); }
+    .channel-icon.mark-long > span { font-size: 11px; letter-spacing: -.08em; }
     .channel-icon > i { position: absolute; right: 4px; bottom: 3px; z-index: 1; color: rgba(255,255,255,.78); font-size: 9px; font-style: normal; }
     .channel-icon-news { --icon-a: #b44a47; --icon-b: #5b1f39; }
     .channel-icon-traffic { --icon-a: #087e8b; --icon-b: #124a70; }
@@ -1316,14 +1317,42 @@
       audio:   { label: "有声", icon: "📖" },
     };
 
+    const stationMarks = {
+      "CNR-1 中国之声": "CNR1",
+      "CNR-2 经济之声": "CNR2",
+      "CNR-3 音乐之声": "CNR3",
+      "CNR-5 中华之声": "CNR5",
+      "CNR-7 华夏之声": "CNR7",
+      "BBC World Service": "BBC",
+      "轻松调频 CRI EZFM": "CRI",
+      "CRI HIT FM 88.7": "CRI",
+      "Radio Paradise": "RP",
+      "REPLAY NEWS 中文": "RPN",
+      "CGTN Radio": "CGTN",
+      "CityFM 城市音乐台": "CITY",
+    };
+
+    function stationMark(station, category) {
+      if (stationMarks[station.name]) return stationMarks[station.name];
+      const latin = station.name.match(/[A-Za-z]{2,}(?:-\d+)?/)?.[0]?.replace("-", "").toUpperCase();
+      if (latin) return latin.slice(0, 4);
+      const han = station.name.replace(/[^\u4e00-\u9fff]/g, "");
+      const city = han.slice(0, 2) || category.label.slice(0, 1);
+      if (/交通/.test(station.name)) return `${city.slice(0, 1)}交`;
+      if (/音乐|金曲|经典/.test(station.name)) return `${city.slice(0, 1)}音`;
+      if (/新闻|资讯/.test(station.name)) return `${city.slice(0, 1)}新`;
+      if (/故事|相声|评书/.test(station.name)) return `${city.slice(0, 1)}故`;
+      if (/综合/.test(station.name)) return `${city.slice(0, 1)}综`;
+      return city;
+    }
+
     function stationIcon(station, index) {
       const category = categories[station.cat];
       const seed = [...station.name].reduce((sum, char) => sum + char.charCodeAt(0), index || 0);
       const tone = (seed % 6) + 1;
-      const latin = station.name.match(/[A-Za-z]{2,}/)?.[0]?.slice(0, 2).toUpperCase();
-      const han = station.name.replace(/[^\u4e00-\u9fff]/g, "").slice(0, 2);
-      const mark = latin || han || category.label.slice(0, 1);
-      return `<span class="channel-icon channel-icon-${station.cat} tone-${tone}" aria-hidden="true"><span>${mark}</span><i>${category.icon}</i></span>`;
+      const mark = stationMark(station, category);
+      const markClass = mark.length > 3 ? " mark-long" : "";
+      return `<span class="channel-icon channel-icon-${station.cat} tone-${tone}${markClass}" aria-hidden="true"><span>${mark}</span><i>${category.icon}</i></span>`;
     }
 
     const stations = [
