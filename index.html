@@ -649,8 +649,6 @@
 
     .favorite-btn { position: absolute; z-index: 2; top: 14px; right: 10px; width: 34px; height: 34px; border: 0; border-radius: 8px; color: var(--weak); background: transparent; cursor: pointer; font-size: 18px; }
     .favorite-btn:hover, .favorite-btn.active { color: var(--accent); background: rgba(245, 166, 35, .08); }
-    .queue-add-btn { position: absolute; z-index: 2; top: 14px; right: 44px; width: 34px; height: 34px; border: 0; border-radius: 8px; color: var(--weak); background: transparent; cursor: pointer; font-size: 20px; line-height: 1; }
-    .queue-add-btn:hover, .queue-add-btn:focus-visible { color: var(--accent); background: rgba(245, 166, 35, .08); }
     .badge { padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; border-color: var(--line); color: var(--weak); background: rgba(26, 26, 46, .55); font-size: 9px; font-weight: 800; }
     .health-badge.ok { color: var(--success); }
     .health-badge.down { color: var(--danger); }
@@ -1700,7 +1698,6 @@
               </span>
               <span class="ch-meta"><span class="region">${station.region}</span><span class="badge">${stationFormat(station)}</span>${healthLabel}${recentLabel ? `<span class="badge">${recentLabel}</span>` : ""}</span>
             </button>
-            <button class="queue-add-btn" type="button" data-queue-live-index="${index}" aria-label="将 ${station.name} 加入接下来播放" title="加入接下来播放">＋</button>
             <button class="favorite-btn${isFavorite ? " active" : ""}" type="button" data-favorite-index="${index}" aria-label="${isFavorite ? "取消收藏" : "收藏"} ${station.name}" title="${isFavorite ? "取消收藏" : "收藏"}">${isFavorite ? "★" : "☆"}</button>
           </li>
         `;
@@ -1850,7 +1847,7 @@
     }
 
     function stepStation(direction) {
-      if (direction > 0 && window.radioQueue?.playNext?.()) return;
+      if (playbackKind !== "live" && direction > 0 && window.radioQueue?.playNext?.()) return;
       if (playbackKind !== "live" && onDemandControls) {
         onDemandControls.step(direction);
         return;
@@ -1881,11 +1878,6 @@
     });
 
     channelList.addEventListener("click", event => {
-      const queueButton = event.target.closest("[data-queue-live-index]");
-      if (queueButton) {
-        window.radioQueue?.addLive?.(Number(queueButton.dataset.queueLiveIndex));
-        return;
-      }
       const favoriteButton = event.target.closest("[data-favorite-index]");
       if (favoriteButton) {
         toggleFavorite(Number(favoriteButton.dataset.favoriteIndex));
@@ -2029,7 +2021,7 @@
       setPlaybackControls("retry");
     });
     audio.addEventListener("ended", () => {
-      if (playbackKind === "live" && !window.radioQueue?.playNext?.()) {
+      if (playbackKind === "live") {
         setStatus("直播已结束", "ok");
         setPlaybackControls("paused");
       }
@@ -2115,24 +2107,6 @@
     loadStationHealth();
 
     window.radioPlayback = {
-      addLiveSource(index) {
-        const station = stations[index];
-        if (!station) return null;
-        return {
-          id: `live:${stationId(station)}`,
-          kind: "live",
-          stationId: stationId(station),
-          title: station.name,
-          subtitle: `${categories[station.cat].label} · ${station.region}`,
-          cover: "assets/three-quarter-mark.svg",
-        };
-      },
-      playLive(stationKey) {
-        const index = stationIndexFromId(stationKey);
-        if (index < 0) return false;
-        loadStation(index);
-        return true;
-      },
       notify: showToast,
     };
   </script>

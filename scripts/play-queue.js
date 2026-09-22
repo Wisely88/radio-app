@@ -25,7 +25,7 @@
     <div class="queue-sheet-panel">
       <header class="queue-sheet-header">
         <div>
-          <p>LISTENING QUEUE</p>
+          <p>ON-DEMAND QUEUE</p>
           <h2 id="queueSheetTitle">接下来播放</h2>
         </div>
         <div class="queue-sheet-actions">
@@ -46,22 +46,18 @@
     try {
       const saved = JSON.parse(localStorage.getItem(QUEUE_KEY));
       if (!Array.isArray(saved)) return [];
-      return saved.map(normalizeEntry).filter(Boolean).slice(0, MAX_QUEUE_ITEMS);
+      return saved.map(normalizeEntry).filter(entry => entry?.kind === "on-demand").slice(0, MAX_QUEUE_ITEMS);
     } catch {
       return [];
     }
   }
 
   function normalizeEntry(value) {
-    if (!value || typeof value !== "object" || !["live", "on-demand"].includes(value.kind)) return null;
+    if (!value || typeof value !== "object" || value.kind !== "on-demand") return null;
     const id = String(value.id || "").slice(0, 500);
     const title = String(value.title || "未命名内容").slice(0, 300);
     const subtitle = String(value.subtitle || "").slice(0, 300);
     if (!id) return null;
-    if (value.kind === "live") {
-      const stationId = String(value.stationId || "").slice(0, 500);
-      return stationId ? { id, kind: "live", stationId, title, subtitle, cover: "assets/three-quarter-mark.svg" } : null;
-    }
     const mode = value.mode === "audiobooks" ? "audiobooks" : value.mode === "podcasts" ? "podcasts" : "";
     const itemId = String(value.itemId || "").slice(0, 500);
     const trackId = String(value.trackId || "").slice(0, 500);
@@ -181,7 +177,6 @@
   }
 
   async function playEntry(entry) {
-    if (entry.kind === "live") return window.radioPlayback?.playLive?.(entry.stationId) === true;
     const result = window.radioPlayback?.playOnDemand?.(entry);
     return result === true || await result;
   }
@@ -241,9 +236,6 @@
   });
 
   window.radioQueue = {
-    addLive(index) {
-      return add(window.radioPlayback?.addLiveSource?.(index));
-    },
     addOnDemand(mode, itemId, trackIndex) {
       return add(window.radioPlayback?.addOnDemandSource?.(mode, itemId, trackIndex));
     },
