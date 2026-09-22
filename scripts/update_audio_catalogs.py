@@ -21,6 +21,8 @@ USER_AGENT = "DreamFM-CatalogBuilder/1.0"
 LIBRIVOX_BOOKS = [
     {"id": 20249, "category": "诗词戏曲"},
     {"id": 15726, "category": "悬疑推理"},
+    {"id": 271, "category": "恐怖惊悚", "contentRating": "16+", "contentWarning": "哥特恐怖题材，含吸血鬼与惊悚情节。"},
+    {"id": 977, "category": "恐怖惊悚", "contentRating": "16+", "contentWarning": "哥特恐怖题材，含吸血鬼与惊悚情节。"},
     {"id": 1952, "category": "中国古典"},
     {"id": 871, "category": "哲学经典"},
     {"id": 6123, "category": "现当代文学"},
@@ -79,6 +81,28 @@ def first_descendant(element: ET.Element, name: str) -> ET.Element | None:
         if child.tag.rsplit("}", 1)[-1] == name:
             return child
     return None
+
+
+def https_url(value: str | None) -> str:
+    value = (value or "").strip()
+    if value.startswith("https://"):
+        return value
+    if value.startswith("http://"):
+        return "https://" + value[len("http://"):]
+    return ""
+
+
+def enclosure_url(element: ET.Element) -> str:
+    secure = ""
+    fallback = ""
+    for child in element.iter():
+        name = child.tag.rsplit("}", 1)[-1]
+        candidate = (child.attrib.get("url") or "").strip()
+        if name == "enclosureSecure" and candidate:
+            secure = candidate
+        elif name == "enclosure" and candidate:
+            fallback = candidate
+    return https_url(secure or fallback)
 
 
 def parse_duration(value: str | None) -> int:
@@ -142,6 +166,8 @@ def build_audiobook(book_config: dict[str, object]) -> dict[str, object] | None:
         "duration": int(source.get("totaltimesecs") or 0),
         "source": "LibriVox",
         "sourceUrl": source.get("url_librivox", ""),
+        **({"contentRating": book_config["contentRating"]} if book_config.get("contentRating") else {}),
+        **({"contentWarning": book_config["contentWarning"]} if book_config.get("contentWarning") else {}),
         "chapters": chapters,
     }
 
@@ -159,8 +185,7 @@ def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
     for index, item in enumerate(
         [element for element in channel if element.tag.rsplit("}", 1)[-1] == "item"], 1
     ):
-        enclosure = first_descendant(item, "enclosure")
-        audio_url = enclosure.attrib.get("url", "").strip() if enclosure is not None else ""
+        audio_url = enclosure_url(item)
         title = clean_text(child_text(item, "title"), 180)
         if not title or not audio_url.startswith("https://"):
             continue
@@ -186,10 +211,12 @@ def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
         "category": feed_config.get("category", "其他"),
         "access": "direct",
         "description": clean_text(child_text(channel, "description")),
-        "cover": cover if cover.startswith("https://") else "",
+        "cover": https_url(cover),
         "duration": sum(int(chapter["duration"]) for chapter in chapters),
         "source": "公开 RSS",
         "sourceUrl": feed_config.get("sourceUrl") or child_text(channel, "link") or feed_config["feed"],
+        **({"contentRating": feed_config["contentRating"]} if feed_config.get("contentRating") else {}),
+        **({"contentWarning": feed_config["contentWarning"]} if feed_config.get("contentWarning") else {}),
         "chapters": chapters,
     }
 
@@ -231,8 +258,7 @@ def parse_podcast(feed_config: dict[str, str], episode_limit: int) -> dict[str, 
     show_title = child_text(channel, "title") or feed_config["id"]
     episodes = []
     for item in [element for element in channel if element.tag.rsplit("}", 1)[-1] == "item"]:
-        enclosure = first_descendant(item, "enclosure")
-        audio_url = enclosure.attrib.get("url", "").strip() if enclosure is not None else ""
+        audio_url = enclosure_url(item)
         if not audio_url.startswith("https://"):
             continue
         guid = child_text(item, "guid") or audio_url
@@ -257,10 +283,12 @@ def parse_podcast(feed_config: dict[str, str], episode_limit: int) -> dict[str, 
         "author": child_text(channel, "author") or child_text(channel, "managingEditor"),
         "category": feed_config.get("category", "其他"),
         "description": clean_text(child_text(channel, "description")),
-        "cover": cover if cover.startswith("https://") else "",
+        "cover": https_url(cover),
         "source": "Podcast RSS",
         "sourceUrl": child_text(channel, "link") or feed_config["feed"],
         "feedUrl": feed_config["feed"],
+        **({"contentRating": feed_config["contentRating"]} if feed_config.get("contentRating") else {}),
+        **({"contentWarning": feed_config["contentWarning"]} if feed_config.get("contentWarning") else {}),
         "episodes": episodes,
     }
 

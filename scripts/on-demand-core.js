@@ -34,14 +34,18 @@
     skipNextPauseSave: false,
     category: "全部",
     access: "all",
+    catalogMeta: { audiobooks: null, podcasts: null },
+    audioHealth: null,
+    catalogLoadPromise: null,
+    catalogsReady: false,
   };
 
   const AUDIOBOOK_CATEGORY_ORDER = [
     "全部", "中国古典", "现当代文学", "外国名著", "儿童童话", "儿童启蒙",
-    "历史人文", "哲学经典", "诗词戏曲", "悬疑推理", "科幻幻想", "科普知识", "外文原声",
+    "历史人文", "哲学经典", "诗词戏曲", "悬疑推理", "恐怖惊悚", "科幻幻想", "科普知识", "外文原声",
   ];
   const PODCAST_CATEGORY_ORDER = [
-    "全部", "故事纪实", "国际社会", "文化阅读", "科技与AI", "科学科普", "商业财经",
+    "全部", "故事纪实", "悬疑推理", "恐怖惊悚", "国际社会", "文化阅读", "科技与AI", "科学科普", "商业财经",
     "心理成长", "影视娱乐", "音乐艺术", "旅行见闻", "运动健康", "职场教育", "法律常识", "汽车出行",
   ];
 
@@ -164,8 +168,36 @@
     writeResumeData(data);
   }
 
-  function setMode(mode, persist = true) {
+  function loadCatalogs() {
+    if (state.catalogLoadPromise) return state.catalogLoadPromise;
+    state.catalogLoadPromise = Promise.all([
+      fetch("data/audiobooks.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("有声书目录读取失败"); return response.json(); }),
+      fetch("data/podcasts.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("播客目录读取失败"); return response.json(); }),
+      fetch("audio-source-health.json", { cache: "no-store" }).then(response => response.ok ? response.json() : null).catch(() => null),
+    ]).then(([audiobooks, podcasts, audioHealth]) => {
+      state.audiobooks = Array.isArray(audiobooks.books) ? audiobooks.books : [];
+      state.podcasts = Array.isArray(podcasts.shows) ? podcasts.shows : [];
+      state.catalogMeta = { audiobooks, podcasts };
+      state.audioHealth = audioHealth;
+      state.catalogsReady = true;
+      return state;
+    });
+    return state.catalogLoadPromise;
+  }
+
+  function catalogStatusSuffix() {
+    const catalog = state.catalogMeta[state.mode];
+    const parts = [];
+    if (catalog?.generatedAt) parts.push(`目录更新 ${formatDate(catalog.generatedAt)}`);
+    if (state.audioHealth?.generatedAt && Number.isFinite(state.audioHealth.availableCount) && Number.isFinite(state.audioHealth.sourceCount)) {
+      parts.push(`音源检查 ${state.audioHealth.availableCount}/${state.audioHealth.sourceCount} · ${formatDate(state.audioHealth.generatedAt)}`);
+    }
+    return parts.length ? ` · ${parts.join(" · ")}` : "";
+  }
+
+  function setMode(mode, persist = true, options = {}) {
     if (!["live", "audiobooks", "podcasts"].includes(mode)) return;
+    const shouldFocus = options.focus !== false;
     state.mode = mode;
     modeButtons.forEach(button => {
       const active = button.dataset.contentMode === mode;
@@ -185,9 +217,26 @@
       detail.hidden = true;
       renderAccessFilters();
       renderCategoryFilters();
-      renderCatalog();
-      renderResumeCard();
-      panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (state.catalogsReady) {
+        renderCatalog();
+        renderResumeCard();
+      } else {
+        grid.innerHTML = '<div class="empty-state">正在准备点播目录…</div>';
+        document.getElementById("catalogStatus").textContent = "正在连接目录与音源检查";
+        loadCatalogs().then(() => {
+          if (state.mode !== mode) return;
+          renderAccessFilters();
+          renderCategoryFilters();
+          renderCatalog();
+          renderResumeCard();
+        }).catch(error => {
+          if (state.mode !== mode) return;
+          document.getElementById("catalogStatus").textContent = error.message;
+          grid.innerHTML = '<div class="empty-state">点播目录暂时不可用，请稍后重试</div>';
+          showToast("点播目录暂时不可用");
+        });
+      }
+      if (shouldFocus) panel.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     if (persist) localStorage.setItem(CONTENT_MODE_KEY, mode);
   }
@@ -250,8 +299,8 @@
       ? `${items.length}/${allItems.length} ${state.mode === "audiobooks" ? "本" : "档"}`
       : `${items.length} 个${state.mode === "audiobooks" ? "书目" : "节目"}`;
     document.getElementById("catalogStatus").textContent = state.mode === "audiobooks"
-      ? `国内直连 ${state.audiobooks.filter(item => accessFor(item) === "direct").length} 本 · 境外资源 ${state.audiobooks.filter(item => accessFor(item) === "overseas").length} 本 · 共 ${trackCount} 章`
-      : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集 · ${new Set(state.podcasts.map(item => item.category)).size} 类`;
+      ? `国内直连 ${state.audiobooks.filter(item => accessFor(item) === "direct").length} 本 · 境外资源 ${state.audiobooks.filter(item => accessFor(item) === "overseas").length} 本 · 共 ${trackCount} 章${catalogStatusSuffix()}`
+      : `精选公开 RSS ${state.podcasts.length} 档 · ${trackCount} 个最新单集 · ${new Set(state.podcasts.map(item => item.category)).size} 类${catalogStatusSuffix()}`;
     if (!items.length) {
       grid.innerHTML = '<div class="empty-state">没有找到匹配内容</div>';
       return;
@@ -264,7 +313,7 @@
       const resumeHint = resumed?.item.id === item.id ? ` · 续听 ${formatTime(resumed.position)}` : "";
       return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
         <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
-        <span><strong>${escapeHtml(item.title)}</strong><span>${escapeHtml(secondary + resumeHint)}</span></span>
+        <span><strong>${escapeHtml(item.title)}${item.contentRating ? ` <em class="catalog-rating">${escapeHtml(item.contentRating)}</em>` : ""}</strong><span>${escapeHtml(secondary + resumeHint)}</span></span>
       </button>`;
     }).join("");
     grid.querySelectorAll("img").forEach(image => image.addEventListener("error", () => { image.src = fallbackCover; }, { once: true }));
@@ -280,9 +329,14 @@
     document.getElementById("detailCover").src = item.cover || fallbackCover;
     document.getElementById("detailTitle").textContent = item.title;
     document.getElementById("detailMeta").textContent = state.mode === "audiobooks"
-      ? `${accessFor(item) === "direct" ? "国内直连" : "境外源，可能需要畅通网络"} · ${item.category || "其他"} · ${item.author || "未知作者"} · ${formatTime(item.duration)}`
-      : `${item.category || "其他"} · ${item.author || "独立播客"} · ${tracks.length} 个最新单集`;
+      ? `${accessFor(item) === "direct" ? "国内直连" : "境外源，可能需要畅通网络"} · ${item.category || "其他"} · ${item.author || "未知作者"} · ${formatTime(item.duration)}${item.contentRating ? ` · ${item.contentRating}` : ""}`
+      : `${item.category || "其他"} · ${item.author || "独立播客"} · ${tracks.length} 个最新单集${item.contentRating ? ` · ${item.contentRating}` : ""}`;
     document.getElementById("detailDescription").textContent = item.description || "暂无简介";
+    const notice = document.getElementById("detailNotice");
+    if (notice) {
+      notice.hidden = !item.contentWarning;
+      notice.textContent = item.contentWarning ? `内容提示 · ${item.contentWarning}` : "";
+    }
     const source = document.getElementById("detailSource");
     source.href = item.sourceUrl || item.feedUrl;
     source.textContent = `来源：${item.source}`;
@@ -505,16 +559,6 @@
   window.addEventListener("pagehide", saveResume);
   window.addEventListener("beforeunload", saveResume);
 
-  Promise.all([
-    fetch("data/audiobooks.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("有声书目录读取失败"); return response.json(); }),
-    fetch("data/podcasts.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("播客目录读取失败"); return response.json(); }),
-  ]).then(([audiobooks, podcasts]) => {
-    state.audiobooks = audiobooks.books || [];
-    state.podcasts = podcasts.shows || [];
-    const storedMode = localStorage.getItem(CONTENT_MODE_KEY);
-    setMode(["audiobooks", "podcasts"].includes(storedMode) ? storedMode : "live", false);
-  }).catch(error => {
-    document.getElementById("catalogStatus").textContent = error.message;
-    showToast("点播目录暂时不可用");
-  });
+  const storedMode = localStorage.getItem(CONTENT_MODE_KEY);
+  setMode(["audiobooks", "podcasts"].includes(storedMode) ? storedMode : "live", false, { focus: false });
 })();

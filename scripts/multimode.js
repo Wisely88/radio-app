@@ -58,7 +58,11 @@
 
   function activateContent(modeName) {
     click(`[data-content-mode="${modeName}"]`);
-    window.setTimeout(syncChrome, 0);
+    window.setTimeout(() => {
+      const target = modeName === "live" ? byId("radioApp") : byId("onDemandPanel");
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      syncChrome();
+    }, 60);
   }
 
   function activateLiveCategory(category) {

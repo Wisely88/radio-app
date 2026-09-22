@@ -31,5 +31,7 @@
   {"id":"fit4life","category":"运动健康","feed":"https://www.ximalaya.com/album/26640504.xml"},
   {"id":"keep-talking","category":"职场教育","feed":"https://feed.xyzfm.space/uydkftwpn7cu"},
   {"id":"new-energy-car","category":"汽车出行","feed":"https://feed.xyzfm.space/ygfuemblqtrt"},
-  {"id":"legal-dolphin","category":"法律常识","feed":"https://www.ximalaya.com/album/96705789.xml"}
+  {"id":"legal-dolphin","category":"法律常识","feed":"https://www.ximalaya.com/album/96705789.xml"},
+  {"id":"uncanny","category":"悬疑推理","feed":"https://podcasts.files.bbci.co.uk/m0010x7c.rss","title":"Uncanny","author":"BBC Radio 4","contentRating":"13+","contentWarning":"超自然调查与悬疑叙事，部分单集涉及诡异事件。"},
+  {"id":"the-magnus-archives","category":"恐怖惊悚","feed":"https://feeds.acast.com/public/shows/themagnusarchives","title":"The Magnus Archives","author":"Rusty Quill","contentRating":"16+","contentWarning":"恐怖小说与惊悚音效，建议 16 岁以上收听。"}
 ]
