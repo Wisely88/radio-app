@@ -62,10 +62,10 @@ def enclosure_urls(xml_bytes: bytes, sample_count: int) -> list[str]:
     root = ET.fromstring(xml_bytes)
     urls: list[str] = []
     for elem in root.iter():
-        if localname(elem.tag) != "enclosure":
+        if localname(elem.tag) not in {"enclosure", "enclosureSecure"}:
             continue
         url = (elem.attrib.get("url") or "").strip()
-        if url.startswith("https://"):
+        if url.startswith("https://") and url not in urls:
             urls.append(url)
             if len(urls) >= sample_count:
                 break
