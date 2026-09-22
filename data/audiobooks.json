@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T08:26:19+00:00",
+  "generatedAt": "2026-09-22T13:34:49+00:00",
   "source": "LibriVox API and public audiobook RSS feeds",
   "books": [
     {
@@ -13298,13 +13298,15 @@
       "title": "聊斋志异 (Liaozhai Zhiyi)",
       "author": "Songling Pu",
       "language": "Chinese",
-      "category": "中国古典",
+      "category": "恐怖惊悚",
       "access": "overseas",
       "description": "《聊斋志异》，清代短篇小说集，是蒲松龄的代表作，在他40岁左右时基本完成，此后不断有所增补和修改。“聊斋”是他的书屋名称，“志”是记述的意思， “异”指奇异的故事。全书有短篇小说491篇，内容十分广泛，多谈狐、魔、花、妖，以此来概括当时的社会关系，反映了17世纪中国的社会面貌。书中写的是一个花妖鬼狐的世界，既有对如漆墨黑的社会现实的不满，又有对怀才不遇、仕途难攀的不平；既有对贪宫污吏狼狈为奸的鞭笞，又有对勇于反抗，敢于复仇的平民的称赞；而数量最多、质量上乘、写得最美最动人的是那些人与狐妖、人与鬼神以及人与人之间的纯真爱情的篇章。 (来自百度百科) (Su",
       "cover": "https://www.archive.org/download/LibrivoxCdCoverArt16/Liaozhai_Zhiyi_1205.jpg",
       "duration": 11200,
       "source": "LibriVox",
       "sourceUrl": "https://librivox.org/liaozhai-zhiyi-by-pu-songling-0906/",
+      "contentRating": "13+",
+      "contentWarning": "中国志怪文学，含鬼怪、异闻与民间传说。",
       "chapters": [
         {
           "id": "librivox-1952-155757",

@@ -23,7 +23,7 @@ LIBRIVOX_BOOKS = [
     {"id": 15726, "category": "悬疑推理"},
     {"id": 271, "category": "恐怖惊悚", "contentRating": "16+", "contentWarning": "哥特恐怖题材，含吸血鬼与惊悚情节。"},
     {"id": 977, "category": "恐怖惊悚", "contentRating": "16+", "contentWarning": "哥特恐怖题材，含吸血鬼与惊悚情节。"},
-    {"id": 1952, "category": "中国古典"},
+    {"id": 1952, "category": "恐怖惊悚", "contentRating": "13+", "contentWarning": "中国志怪文学，含鬼怪、异闻与民间传说。"},
     {"id": 871, "category": "哲学经典"},
     {"id": 6123, "category": "现当代文学"},
     {"id": 6026, "category": "现当代文学"},

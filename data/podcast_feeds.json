@@ -31,6 +31,8 @@
   {"id":"keep-talking","category":"职场教育","feed":"https://feed.xyzfm.space/uydkftwpn7cu"},
   {"id":"new-energy-car","category":"汽车出行","feed":"https://feed.xyzfm.space/ygfuemblqtrt"},
   {"id":"legal-dolphin","category":"法律常识","feed":"https://www.ximalaya.com/album/96705789.xml"},
+  {"id":"minjian-ghost-stories","category":"恐怖惊悚","feed":"http://www.ximalaya.com/album/40065770.xml","title":"免费民间鬼故事","author":"雨田故事","contentRating":"13+","contentWarning":"中文民间鬼故事与灵异传说，含惊悚情节。","sourceUrl":"https://shenglianfm.com/podcast/1527900351"},
+  {"id":"yeelok-spirit-special","category":"恐怖惊悚","feed":"https://s1.proxy.wavpub.com/yeeloklytj.xml","title":"灵异特辑｜每期一个心跳的故事","author":"怡楽电台","contentRating":"13+","contentWarning":"中文灵异故事与超自然叙事，含惊悚情节。","sourceUrl":"https://shenglianfm.com/podcast/1501850281"},
   {"id":"uncanny","category":"悬疑推理","feed":"https://podcasts.files.bbci.co.uk/m0010x7c.rss","title":"Uncanny","author":"BBC Radio 4","contentRating":"13+","contentWarning":"超自然调查与悬疑叙事，部分单集涉及诡异事件。"},
   {"id":"the-magnus-archives","category":"恐怖惊悚","feed":"https://feeds.acast.com/public/shows/themagnusarchives","title":"The Magnus Archives","author":"Rusty Quill","contentRating":"16+","contentWarning":"恐怖小说与惊悚音效，建议 16 岁以上收听。"}
 ]

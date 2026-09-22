@@ -36,11 +36,18 @@ for name, key, minimum in (("audiobooks.json", "books", 20), ("podcasts.json", "
 feeds = json.loads((ROOT / "data" / "podcast_feeds.json").read_text(encoding="utf-8"))
 if any(item.get("id") == "bowuzhi" for item in feeds):
     raise SystemExit("removed broken bowuzhi feed is still present")
+required_horror_feeds = {"minjian-ghost-stories", "yeelok-spirit-special"}
+if not required_horror_feeds.issubset({item.get("id") for item in feeds}):
+    raise SystemExit("Chinese horror podcast feeds are incomplete")
+
+books = json.loads((ROOT / "data" / "audiobooks.json").read_text(encoding="utf-8")).get("books", [])
+if not any(item.get("id") == "librivox-1952" and item.get("category") == "恐怖惊悚" for item in books):
+    raise SystemExit("Chinese horror audiobook entry is missing")
 
 local_refs = set(re.findall(r'(?:src|href)="((?:scripts|styles|assets)/[^"?]+)', index))
 missing_refs = sorted(ref for ref in local_refs if not (ROOT / ref).is_file())
 if missing_refs:
     raise SystemExit(f"missing local index assets: {missing_refs}")
 
-book_count = len(json.loads((ROOT / "data" / "audiobooks.json").read_text(encoding="utf-8")).get("books", []))
+book_count = len(books)
 print(f"PASS static Pages gate: {len(feeds)} podcast feeds, {book_count} books")
