@@ -311,10 +311,13 @@
         ? `${accessFor(item) === "direct" ? "国内直连" : "境外源"} · ${item.category || "其他"} · ${tracks.length} 章`
         : `${item.category || "其他"} · ${tracks.length} 个最新单集`;
       const resumeHint = resumed?.item.id === item.id ? ` · 续听 ${formatTime(resumed.position)}` : "";
-      return `<button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
-        <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
-        <span><strong>${escapeHtml(item.title)}${item.contentRating ? ` <em class="catalog-rating">${escapeHtml(item.contentRating)}</em>` : ""}</strong><span>${escapeHtml(secondary + resumeHint)}</span></span>
-      </button>`;
+      return `<div class="catalog-card-row">
+        <button class="catalog-card${state.selected?.id === item.id ? " active" : ""}" type="button" data-catalog-id="${escapeHtml(item.id)}">
+          <img class="catalog-cover" src="${escapeHtml(item.cover || fallbackCover)}" alt="" loading="lazy">
+          <span><strong>${escapeHtml(item.title)}${item.contentRating ? ` <em class="catalog-rating">${escapeHtml(item.contentRating)}</em>` : ""}</strong><span>${escapeHtml(secondary + resumeHint)}</span></span>
+        </button>
+        <button class="catalog-queue-btn" type="button" data-queue-item-id="${escapeHtml(item.id)}" aria-label="将 ${escapeHtml(item.title)} 的第一集加入接下来播放" title="加入第一集/第一章">＋</button>
+      </div>`;
     }).join("");
     grid.querySelectorAll("img").forEach(image => image.addEventListener("error", () => { image.src = fallbackCover; }, { once: true }));
   }
@@ -520,6 +523,11 @@
     renderCatalog();
   });
   grid.addEventListener("click", event => {
+    const queueButton = event.target.closest("[data-queue-item-id]");
+    if (queueButton) {
+      window.radioQueue?.addOnDemand?.(state.mode, queueButton.dataset.queueItemId, 0);
+      return;
+    }
     const card = event.target.closest("[data-catalog-id]");
     if (card) selectItem(card.dataset.catalogId);
   });

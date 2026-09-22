@@ -5,6 +5,36 @@
   align-items: stretch;
 }
 
+.catalog-card-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.catalog-card-row .catalog-card {
+  min-width: 0;
+}
+
+.catalog-queue-btn {
+  min-height: 42px;
+  align-self: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--weak);
+  background: rgba(34, 34, 58, .52);
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.catalog-queue-btn:hover,
+.catalog-queue-btn:focus-visible {
+  border-color: rgba(245, 166, 35, .42);
+  color: var(--accent);
+  background: rgba(245, 166, 35, .07);
+}
+
 .episode-queue-btn {
   min-height: 64px;
   border: 1px solid var(--line);
@@ -97,6 +127,7 @@
 }
 
 @media (max-width: 520px) {
+  .catalog-card-row { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px; }
   .episode-row { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px; }
   .episode-queue-btn { min-height: 58px; }
   .queue-sheet-header { padding: 16px 16px 12px; }
