@@ -441,6 +441,24 @@
     .btn-primary { border-color: var(--accent); color: #251704; background: var(--accent); }
     .btn-primary:hover:not(:disabled) { color: #251704; background: #ffc158; }
 
+    .queue-toggle {
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 12px;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      font-size: 10px;
+      font-weight: 750;
+    }
+    .queue-toggle:hover, .queue-toggle:focus-visible { border-color: rgba(245, 166, 35, .45); color: var(--accent); background: rgba(245, 166, 35, .06); }
+    .queue-toggle strong { min-width: 18px; padding: 2px 5px; border-radius: 999px; color: #251704; background: var(--accent); font-size: 9px; line-height: 1.2; }
+
     .shortcut-hint { margin: 16px 0 0; color: var(--weak); font-size: 10px; line-height: 1.5; }
 
     .on-demand-tools { margin-top: 16px; }
@@ -631,6 +649,8 @@
 
     .favorite-btn { position: absolute; z-index: 2; top: 14px; right: 10px; width: 34px; height: 34px; border: 0; border-radius: 8px; color: var(--weak); background: transparent; cursor: pointer; font-size: 18px; }
     .favorite-btn:hover, .favorite-btn.active { color: var(--accent); background: rgba(245, 166, 35, .08); }
+    .queue-add-btn { position: absolute; z-index: 2; top: 14px; right: 44px; width: 34px; height: 34px; border: 0; border-radius: 8px; color: var(--weak); background: transparent; cursor: pointer; font-size: 20px; line-height: 1; }
+    .queue-add-btn:hover, .queue-add-btn:focus-visible { color: var(--accent); background: rgba(245, 166, 35, .08); }
     .badge { padding: 3px 7px; border: 1px solid var(--line); border-radius: 6px; border-color: var(--line); color: var(--weak); background: rgba(26, 26, 46, .55); font-size: 9px; font-weight: 800; }
     .health-badge.ok { color: var(--success); }
     .health-badge.down { color: var(--danger); }
@@ -801,6 +821,9 @@
 
     .dock-volume { display: grid; grid-template-columns: auto minmax(80px, 180px) 38px; align-items: center; justify-content: end; gap: 9px; color: var(--weak); font-size: 10px; }
     .dock-volume input { width: 100%; }
+    .dock-queue-toggle { min-height: 34px; display: inline-flex; align-items: center; gap: 3px; padding: 0 7px; border: 1px solid var(--line); border-radius: 8px; color: var(--muted); background: transparent; cursor: pointer; font-size: 14px; }
+    .dock-queue-toggle:hover, .dock-queue-toggle:focus-visible { border-color: rgba(245, 166, 35, .45); color: var(--accent); }
+    .dock-queue-toggle span { min-width: 10px; color: var(--accent); font-size: 9px; font-weight: 800; }
 
     .toast { position: fixed; z-index: 50; left: 50%; bottom: calc(var(--player-height) + 18px); max-width: calc(100% - 32px); padding: 11px 16px; transform: translate(-50%, 20px); border: 1px solid rgba(245, 166, 35, .26); border-radius: 8px; color: var(--text); background: var(--panel-2); box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; font-size: 12px; }
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
@@ -1098,6 +1121,11 @@
             <button class="btn btn-primary" id="playToggleBtn" type="button" disabled>▶ 播放</button>
             <button class="btn" id="nextBtn" type="button" disabled aria-label="下一个频道" title="下一个频道">→</button>
           </div>
+          <button class="queue-toggle" id="queueToggleBtn" type="button" aria-haspopup="dialog" aria-expanded="false">
+            <span aria-hidden="true">☷</span>
+            <span>接下来播放</span>
+            <strong id="queueCount" aria-label="队列项目数">0</strong>
+          </button>
           <div class="on-demand-tools" id="onDemandTools" hidden>
             <div class="progress-row">
               <span id="elapsedTime">00:00</span>
@@ -1245,6 +1273,7 @@
       </div>
 
       <div class="dock-volume">
+        <button class="dock-queue-toggle" id="dockQueueToggleBtn" type="button" aria-label="打开接下来播放" aria-haspopup="dialog" aria-expanded="false">☷<span id="dockQueueCount">0</span></button>
         <span aria-hidden="true">◕</span>
         <input id="dockVolume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="底部播放器音量">
         <strong id="dockVolumeText">80%</strong>
@@ -1671,6 +1700,7 @@
               </span>
               <span class="ch-meta"><span class="region">${station.region}</span><span class="badge">${stationFormat(station)}</span>${healthLabel}${recentLabel ? `<span class="badge">${recentLabel}</span>` : ""}</span>
             </button>
+            <button class="queue-add-btn" type="button" data-queue-live-index="${index}" aria-label="将 ${station.name} 加入接下来播放" title="加入接下来播放">＋</button>
             <button class="favorite-btn${isFavorite ? " active" : ""}" type="button" data-favorite-index="${index}" aria-label="${isFavorite ? "取消收藏" : "收藏"} ${station.name}" title="${isFavorite ? "取消收藏" : "收藏"}">${isFavorite ? "★" : "☆"}</button>
           </li>
         `;
@@ -1820,6 +1850,7 @@
     }
 
     function stepStation(direction) {
+      if (direction > 0 && window.radioQueue?.playNext?.()) return;
       if (playbackKind !== "live" && onDemandControls) {
         onDemandControls.step(direction);
         return;
@@ -1850,6 +1881,11 @@
     });
 
     channelList.addEventListener("click", event => {
+      const queueButton = event.target.closest("[data-queue-live-index]");
+      if (queueButton) {
+        window.radioQueue?.addLive?.(Number(queueButton.dataset.queueLiveIndex));
+        return;
+      }
       const favoriteButton = event.target.closest("[data-favorite-index]");
       if (favoriteButton) {
         toggleFavorite(Number(favoriteButton.dataset.favoriteIndex));
@@ -1992,6 +2028,12 @@
       setStatus("音源暂时不可用", "error");
       setPlaybackControls("retry");
     });
+    audio.addEventListener("ended", () => {
+      if (playbackKind === "live" && !window.radioQueue?.playNext?.()) {
+        setStatus("直播已结束", "ok");
+        setPlaybackControls("paused");
+      }
+    });
 
     window.addEventListener("online", () => {
       if (currentIndex >= 0 && statusState === "error") {
@@ -2071,6 +2113,28 @@
     updateMetrics();
     registerPageOpen();
     loadStationHealth();
+
+    window.radioPlayback = {
+      addLiveSource(index) {
+        const station = stations[index];
+        if (!station) return null;
+        return {
+          id: `live:${stationId(station)}`,
+          kind: "live",
+          stationId: stationId(station),
+          title: station.name,
+          subtitle: `${categories[station.cat].label} · ${station.region}`,
+          cover: "assets/three-quarter-mark.svg",
+        };
+      },
+      playLive(stationKey) {
+        const index = stationIndexFromId(stationKey);
+        if (index < 0) return false;
+        loadStation(index);
+        return true;
+      },
+      notify: showToast,
+    };
   </script>
   <script src="scripts/on-demand.js?v=20260917-mobile-controls-1"></script>
 </body>

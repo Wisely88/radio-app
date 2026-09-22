@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260922-product-polish-1";
+  const version = "20260922-play-queue-1";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the
@@ -28,6 +28,7 @@
   loadStyle("styles/mobile-tune.css");
   loadStyle("styles/mobile-player-controls.css");
   loadStyle("styles/product-polish.css");
+  loadStyle("styles/play-queue.css");
 
   function loadScript(src) {
     return new Promise((resolve, reject) => {
@@ -61,6 +62,7 @@
 
   loadScript("scripts/on-demand-core.js")
     .then(() => loadScript("scripts/multimode.js"))
+    .then(() => loadScript("scripts/play-queue.js"))
     .then(() => loadScript("scripts/scene-entry-fix.js"))
     .then(() => settleSceneScroll(switchedTo))
     .catch(error => console.error("Dream FM UI bootstrap failed", error));

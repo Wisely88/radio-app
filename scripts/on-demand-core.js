@@ -319,7 +319,7 @@
     grid.querySelectorAll("img").forEach(image => image.addEventListener("error", () => { image.src = fallbackCover; }, { once: true }));
   }
 
-  function selectItem(id) {
+  function selectItem(id, options = {}) {
     const item = currentItems().find(candidate => candidate.id === id);
     if (!item) return;
     state.selected = item;
@@ -348,14 +348,14 @@
         ? `第 ${track.number || index + 1} 章`
         : formatDate(track.publishedAt);
       if (resumable) subtitle += ` · 续听至 ${formatTime(saved.position)}`;
-      return `<li><button class="episode-button${resumable ? " has-resume" : ""}" type="button" data-track-index="${index}">
+      return `<li class="episode-row"><button class="episode-button${resumable ? " has-resume" : ""}" type="button" data-track-index="${index}">
         <span class="episode-number">${state.mode === "audiobooks" ? String(track.number || index + 1).padStart(2, "0") : "▶"}</span>
         <span class="episode-copy"><strong>${escapeHtml(track.title)}</strong><span>${escapeHtml(subtitle)}</span></span>
         <span class="episode-duration">${formatTime(track.duration)}</span>
-      </button></li>`;
+      </button><button class="episode-queue-btn" type="button" data-queue-track-index="${index}" aria-label="将 ${escapeHtml(track.title)} 加入接下来播放" title="加入接下来播放">＋</button></li>`;
     }).join("");
     detail.hidden = false;
-    detail.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (options.focus !== false) detail.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function setMediaSession(item, track) {
@@ -458,6 +458,43 @@
 
   onDemandControls = { play, toggle, step };
 
+  window.radioPlayback = window.radioPlayback || {};
+  window.radioPlayback.addOnDemandSource = (mode, itemId, trackIndex) => {
+    const items = mode === "audiobooks" ? state.audiobooks : state.podcasts;
+    const item = items.find(candidate => candidate.id === itemId);
+    const track = tracksFor(item)[trackIndex];
+    if (!item || !track) return null;
+    return {
+      id: `${mode}:${item.id}:${track.id || trackIndex}`,
+      kind: "on-demand",
+      mode,
+      itemId: item.id,
+      trackId: track.id || "",
+      trackIndex,
+      title: track.title,
+      subtitle: `${item.title} · ${mode === "audiobooks" ? `第 ${track.number || trackIndex + 1} 章` : `第 ${trackIndex + 1} 集`}`,
+      cover: item.cover || fallbackCover,
+    };
+  };
+  window.radioPlayback.playOnDemand = async entry => {
+    if (!entry || !["audiobooks", "podcasts"].includes(entry.mode)) return false;
+    try {
+      await loadCatalogs();
+      const items = entry.mode === "audiobooks" ? state.audiobooks : state.podcasts;
+      const item = items.find(candidate => candidate.id === entry.itemId);
+      const tracks = tracksFor(item);
+      const indexById = entry.trackId ? tracks.findIndex(track => track.id === entry.trackId) : -1;
+      const trackIndex = indexById >= 0 ? indexById : Number(entry.trackIndex);
+      if (!item || !tracks[trackIndex]) return false;
+      setMode(entry.mode, true, { focus: false });
+      selectItem(item.id, { focus: false });
+      loadTrack(trackIndex, item, entry.mode);
+      return true;
+    } catch {
+      return false;
+    }
+  };
+
   modeButtons.forEach(button => button.addEventListener("click", () => setMode(button.dataset.contentMode)));
   document.querySelectorAll("[data-nav-cat]").forEach(button => button.addEventListener("click", () => setMode("live")));
   document.querySelector(".hero-secondary").addEventListener("click", () => setMode("live"));
@@ -495,6 +532,11 @@
     loadTrack(resumed.trackIndex, resumed.item, state.mode);
   });
   episodeList.addEventListener("click", event => {
+    const queueButton = event.target.closest("[data-queue-track-index]");
+    if (queueButton && state.selected) {
+      window.radioQueue?.addOnDemand?.(state.mode, state.selected.id, Number(queueButton.dataset.queueTrackIndex));
+      return;
+    }
     const button = event.target.closest("[data-track-index]");
     if (button) loadTrack(Number(button.dataset.trackIndex));
   });
@@ -536,6 +578,7 @@
     const tracks = tracksFor(item);
     const finishedTrack = tracks[state.trackIndex];
     if (finishedTrack) clearResume(finishedTrack, mode);
+    if (window.radioQueue?.playNext?.()) return;
     if (state.trackIndex + 1 < tracks.length) {
       loadTrack(state.trackIndex + 1, item, mode);
     } else {

@@ -1,0 +1,111 @@
+.episode-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 42px;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.episode-queue-btn {
+  min-height: 64px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--weak);
+  background: rgba(34, 34, 58, .52);
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.episode-queue-btn:hover,
+.episode-queue-btn:focus-visible {
+  border-color: rgba(245, 166, 35, .42);
+  color: var(--accent);
+  background: rgba(245, 166, 35, .07);
+}
+
+.queue-sheet[hidden] { display: none; }
+.queue-sheet { position: fixed; z-index: 80; inset: 0; }
+.queue-sheet-backdrop { position: absolute; inset: 0; background: rgba(4, 5, 10, .62); }
+.queue-sheet-panel {
+  position: absolute;
+  top: max(18px, env(safe-area-inset-top));
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(calc(var(--player-height) + 18px), env(safe-area-inset-bottom));
+  width: min(420px, calc(100vw - 36px));
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(240, 240, 240, .16);
+  border-radius: 12px;
+  background: #1a1d25;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .44);
+}
+.queue-sheet-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 20px 20px 14px; border-bottom: 1px solid var(--line); }
+.queue-sheet-header p { margin: 0 0 5px; color: var(--accent); font: 700 9px/1.2 Georgia, serif; letter-spacing: .12em; }
+.queue-sheet-header h2 { margin: 0; font-size: 20px; }
+.queue-sheet-actions { display: flex; gap: 6px; }
+.queue-clear-btn,
+.queue-close-btn,
+.queue-item-play,
+.queue-item-remove {
+  min-height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  font-size: 10px;
+}
+.queue-clear-btn { padding: 0 9px; }
+.queue-close-btn { width: 34px; font-size: 19px; line-height: 1; }
+.queue-clear-btn:hover:not(:disabled),
+.queue-close-btn:hover,
+.queue-item-remove:hover,
+.queue-item-play:hover,
+.queue-clear-btn:focus-visible,
+.queue-close-btn:focus-visible,
+.queue-item-remove:focus-visible,
+.queue-item-play:focus-visible { border-color: rgba(245, 166, 35, .48); color: var(--accent); }
+.queue-clear-btn:disabled { opacity: .38; cursor: not-allowed; }
+.queue-sheet-status { margin: 0; padding: 13px 20px; border-bottom: 1px solid var(--line); color: var(--weak); font-size: 11px; line-height: 1.55; }
+.queue-list { flex: 1 1 auto; display: grid; align-content: start; gap: 8px; margin: 0; padding: 12px; overflow: auto; list-style: none; }
+.queue-item { display: grid; grid-template-columns: 24px 42px minmax(0, 1fr) auto; gap: 10px; align-items: center; min-height: 68px; padding: 9px; border: 1px solid var(--line); border-radius: 9px; background: #20242e; }
+.queue-order { color: var(--weak); font-size: 10px; font-variant-numeric: tabular-nums; text-align: center; }
+.queue-art { width: 42px; height: 42px; border-radius: 6px; background: #11131a; object-fit: cover; }
+.queue-copy { min-width: 0; }
+.queue-copy strong,
+.queue-copy span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.queue-copy strong { color: var(--text); font-size: 12px; }
+.queue-copy span { margin-top: 5px; color: var(--weak); font-size: 10px; }
+.queue-item-controls { display: grid; gap: 5px; }
+.queue-item-play,
+.queue-item-remove { min-width: 42px; padding: 0 7px; }
+.queue-item-play { border-color: rgba(245, 166, 35, .36); color: var(--accent); }
+.queue-empty { min-height: 150px; display: grid; place-items: center; padding: 20px; border: 1px dashed var(--line); border-radius: 9px; color: var(--weak); font-size: 12px; text-align: center; }
+
+@media (max-width: 899px) {
+  .queue-sheet-panel {
+    top: auto;
+    right: 0;
+    bottom: calc(var(--player-height) + var(--mm-mobile-nav));
+    left: 0;
+    width: auto;
+    max-height: min(72dvh, 620px);
+    border-right: 0;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .episode-row { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px; }
+  .episode-queue-btn { min-height: 58px; }
+  .queue-sheet-header { padding: 16px 16px 12px; }
+  .queue-sheet-status { padding: 10px 16px; }
+  .queue-list { padding: 10px; }
+  .queue-item { grid-template-columns: 20px 38px minmax(0, 1fr); gap: 8px; }
+  .queue-item-controls { grid-column: 2 / -1; grid-template-columns: 1fr 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .queue-sheet-panel { scroll-behavior: auto; }
+}
