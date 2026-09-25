@@ -156,8 +156,8 @@ body.multimode-ready { transition: padding .22s ease; }
 .mm-mode-chip button { min-height: 30px; padding: 0 10px; border: 0; border-radius: 999px; color: var(--muted); background: transparent; cursor: pointer; font-size: 9px; }
 .mm-mode-chip button:hover { color: var(--accent); background: rgba(245,166,35,.08); }
 
-/* Desktop workbench */
-@media (min-width: 1200px) {
+/* Desktop workbench: keep this aligned with the 900px desktop-mode breakpoint in multimode.js. */
+@media (min-width: 900px) {
   body[data-ui="desktop"] .mm-desktop-rail { display: block; }
   body[data-ui="desktop"] .site-header .site-nav { opacity: .22; transition: opacity .2s ease; }
   body[data-ui="desktop"] .site-header:hover .site-nav { opacity: 1; }
