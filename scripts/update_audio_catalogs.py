@@ -221,7 +221,46 @@ def parse_audiobook_feed(feed_config: dict[str, str]) -> dict[str, object]:
     }
 
 
-def build_audiobooks(config_path: Path) -> tuple[list[dict[str, object]], list[str]]:
+def previous_entries(path: Path, key: str) -> dict[str, dict[str, object]]:
+    """Return the last published entries for transient-source fallback."""
+    if not path.is_file():
+        return {}
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    entries = payload.get(key)
+    if not isinstance(entries, list):
+        return {}
+    return {
+        str(entry["id"]): entry
+        for entry in entries
+        if isinstance(entry, dict) and isinstance(entry.get("id"), str)
+    }
+
+
+def append_previous(
+    entries: list[dict[str, object]],
+    previous: dict[str, dict[str, object]],
+    entry_id: str,
+    warnings: list[str],
+    source_label: str,
+    error: Exception,
+) -> None:
+    fallback = previous.get(entry_id)
+    if fallback is None:
+        warnings.append(f"{source_label}: {type(error).__name__}: {error}")
+        return
+    entries.append(fallback)
+    warnings.append(
+        f"{source_label}: {type(error).__name__}: {error}; preserved previous catalog entry"
+    )
+
+
+def build_audiobooks(
+    config_path: Path,
+    previous: dict[str, dict[str, object]],
+) -> tuple[list[dict[str, object]], list[str]]:
     feed_configs = json.loads(config_path.read_text(encoding="utf-8"))
     books = []
     warnings = []
@@ -233,13 +272,27 @@ def build_audiobooks(config_path: Path) -> tuple[list[dict[str, object]], list[s
                 if book:
                     books.append(book)
             except Exception as exc:
-                warnings.append(f"audiobook librivox-{config['id']}: {type(exc).__name__}: {exc}")
+                append_previous(
+                    books,
+                    previous,
+                    f"librivox-{config['id']}",
+                    warnings,
+                    f"audiobook librivox-{config['id']}",
+                    exc,
+                )
         feed_futures = [pool.submit(parse_audiobook_feed, feed) for feed in feed_configs]
         for feed, future in zip(feed_configs, feed_futures):
             try:
                 books.append(future.result())
             except Exception as exc:
-                warnings.append(f"audiobook {feed['id']}: {type(exc).__name__}: {exc}")
+                append_previous(
+                    books,
+                    previous,
+                    f"rssbook-{feed['id']}",
+                    warnings,
+                    f"audiobook {feed['id']}",
+                    exc,
+                )
     if len(books) < 20:
         raise RuntimeError(f"Only {len(books)} valid audiobooks were generated")
     books.sort(key=lambda book: 0 if book.get("access") == "direct" else 1)
@@ -293,7 +346,11 @@ def parse_podcast(feed_config: dict[str, str], episode_limit: int) -> dict[str, 
     }
 
 
-def build_podcasts(config_path: Path, episode_limit: int) -> tuple[list[dict[str, object]], list[str]]:
+def build_podcasts(
+    config_path: Path,
+    episode_limit: int,
+    previous: dict[str, dict[str, object]],
+) -> tuple[list[dict[str, object]], list[str]]:
     feeds = json.loads(config_path.read_text(encoding="utf-8"))
     shows = []
     warnings = []
@@ -303,7 +360,14 @@ def build_podcasts(config_path: Path, episode_limit: int) -> tuple[list[dict[str
             try:
                 shows.append(future.result())
             except Exception as exc:
-                warnings.append(f"{feed['id']}: {type(exc).__name__}: {exc}")
+                append_previous(
+                    shows,
+                    previous,
+                    feed["id"],
+                    warnings,
+                    str(feed["id"]),
+                    exc,
+                )
     if len(shows) < 6:
         raise RuntimeError(f"Only {len(shows)} valid podcast feeds were generated")
     return shows, warnings
@@ -323,8 +387,14 @@ def main() -> int:
     args = parser.parse_args()
 
     generated_at = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
-    audiobooks, audiobook_warnings = build_audiobooks(args.audiobook_feeds)
-    podcasts, podcast_warnings = build_podcasts(args.feeds, max(1, args.episode_limit))
+    previous_books = previous_entries(args.output_dir / "audiobooks.json", "books")
+    previous_shows = previous_entries(args.output_dir / "podcasts.json", "shows")
+    audiobooks, audiobook_warnings = build_audiobooks(args.audiobook_feeds, previous_books)
+    podcasts, podcast_warnings = build_podcasts(
+        args.feeds,
+        max(1, args.episode_limit),
+        previous_shows,
+    )
     write_json(args.output_dir / "audiobooks.json", {
         "generatedAt": generated_at,
         "source": "LibriVox API and public audiobook RSS feeds",

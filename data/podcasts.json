@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T13:34:49+00:00",
+  "generatedAt": "2026-09-25T06:38:48+00:00",
   "source": "Public podcast RSS feeds",
   "shows": [
     {
@@ -13,6 +13,14 @@
       "sourceUrl": "https://feeds.storyfm.cn/storyfm.xml",
       "feedUrl": "https://feeds.storyfm.cn/storyfm.xml",
       "episodes": [
+        {
+          "id": "story-fm-5b21ea05055a48",
+          "title": "E911.万人工厂消失后，他的 200 万张照片成了时代档案",
+          "description": "故事FM ❜ 第 911 期 今天的节目开始之前说个通知，故事FM 和 腾讯研究院 将于 10 月 31 日在 深圳 举办一场故事开放麦，我们希望能邀请几位和 AI 有故事的朋友，来深圳线下，讲述自己在与 AI 的关系中，如何重新理解爱、死亡跟梦想的故事。 如果你关于 AI 有很多想说的话，欢迎扫描下方二维码或者点击这里提交你的故事，如果你的故事被选中，我们会联系邀请你来深圳线下见面。 爱哲按： 2010 年的夏天，我正在南方周末北京站实习，编辑部当时讨论的最多的一个选题，就是富士康工人连续跳楼事件。当时全国的媒体都在关注和报道这一系列的惨剧，这些报道让",
+          "publishedAt": "2026-09-23T23:00:00+00:00",
+          "duration": 2589,
+          "url": "https://tk.wavpub.com/WPTK_PmpVcJJN000XVmFW.mp3"
+        },
         {
           "id": "story-fm-7cde831addae46",
           "title": "E910.我在菲律宾被关押的 41 天",
@@ -68,14 +76,6 @@
           "publishedAt": "2026-08-21T12:42:55+00:00",
           "duration": 2356,
           "url": "https://tk.wavpub.com/WPTK_KmjXn4bA4N3DoxC9-ab626171fec3.mp3"
-        },
-        {
-          "id": "story-fm-53577137b8ea76",
-          "title": "「灵魂的瓦解」｜柏林墙与史塔西4",
-          "description": "故事FM ❜ 柏林墙与史塔西 爱哲按： 史塔西真正可怕的地方，也许并不只是把一个人关进监狱。 上一集，我们讲到 Peter 因为哥哥的史塔西档案，卖掉舞蹈学校，搬到柏林，成为了一个专注于史塔西受害者的历史学者。而当他越往下研究，越发现，史塔西的控制并不只发生在监狱里。 他们还会通过监视、孤立和心理操纵，让一个人的生活一点点失去秩序。 今天这一集，我们将从 Peter 的故事出发，讲到史塔西所谓的「瓦解」（Zersetzung），也会认识另一位亲历者卡尔·海因茨·邦贝格（Karl-Heinz Bomberg）。 卡尔是一名医生，也是一位创作批判性歌曲的音乐",
-          "publishedAt": "2026-08-19T09:47:51+00:00",
-          "duration": 2918,
-          "url": "https://tk.wavpub.com/WPTK_LZ0JlbJ9Qhj8Z6Mw-46a6c3cb1c88.mp3"
         }
       ]
     },
@@ -707,6 +707,14 @@
       "feedUrl": "https://www.ximalaya.com/album/46587439.xml",
       "episodes": [
         {
+          "id": "business-is-like-this-1c7022fdcbd144",
+          "title": "Vol.276 做月嫂育儿嫂的姐姐，都有故事",
+          "description": "英语里有一句俗语，it takes a village to raise a child。意思就是养育需要整个社会的支持。这个理念落到中国城市的实际中，其实并不那么田园牧歌。在现有的产假制度，以及社会的幼儿养育服务基础下，一个城市里的双职工夫妻，想要仅靠自己的时间和精力承担起养育孩子的大部分工作，很难。 他们往往需要依靠父母的支持，或是购买购买服务，很多时候是两者兼有。 所谓购买服务，其实就是请阿姨。阿姨其实是一个非常有中国特色和时代特色的名词。一些在中国工作的外国人，都会直接把它翻译成拼音“ayi”。这说明他们觉得这个概念无法直接用nanny等单词指代",
+          "publishedAt": "2026-09-23T23:00:00+00:00",
+          "duration": 6789,
+          "url": "https://jt.ximalaya.com//GKwRIDoOiZ9TA0aacwTcSIg7.m4a?channel=rss&album_id=46587439&track_id=1017890906&uid=296309989&jt=https://aod.cos.tx.xmcdn.com/storages/b413-audiofreehighqps/71/EB/GKwRIDoOiZ9TA0aacwTcSIg7.m4a"
+        },
+        {
           "id": "business-is-like-this-63e0ab089d6c08",
           "title": "商业小样50 | 都在讨论家务机器人，不如关心到底有什么家务",
           "description": "在人形机器人和具身智能的浪潮中，人们往往会想象一个美好的未来：一个像超能陆战队里大白一样的全能机器人，帮我解决家中所有家务。但实际情况中，一个专精的、能真实解决场景问题的产品， 可能 才是 当下 符合真实 家务需求 的。 扫地机器人就是 这样一个产品 ， 它已经成功进入数以亿计的家庭 。但一个成熟的产品，也同样会面临一个挑战：激烈的市场竞争。本期的主角科沃斯，在众多不同的新场景，洞悉用户痛点，演进自己的特长，这为它带来了第二增长曲线。 感谢科沃斯对本期节目的支持。 科沃斯是中国领先的多品类家用服务机器人品牌，已在服务机器人领域扎根了26年，连续11年稳居",
@@ -761,14 +769,6 @@
           "publishedAt": "2026-08-26T23:00:00+00:00",
           "duration": 5623,
           "url": "https://jt.ximalaya.com//GKwRIUEOZMdWAraPHwTNFFhK.m4a?channel=rss&album_id=46587439&track_id=1008880863&uid=296309989&jt=https://aod.cos.tx.xmcdn.com/storages/7c41-audiofreehighqps/AA/75/GKwRIUEOZMdWAraPHwTNFFhK.m4a"
-        },
-        {
-          "id": "business-is-like-this-cded70266d799d",
-          "title": "商业小样47 | “健身做题家”的新欢HYROX，到底有什么护城河？",
-          "description": "在大城市的运动人群里，HYROX如今的热度完全不亚于前两年的飞盘。令人在意的是，HYROX的创始人没有发明任何新Game，它只是把健身房里已有的训练动作组合在一起，出了一套“考题”，结果受到“健身做题家”的追捧。问题是，这样一套诞生不到十年、毫无原创、十分容易复制的游戏规则，凭什么变成一个年收入上亿欧元的赛事品牌？为什么没有模仿者与其竞争？HYROX的护城河究竟是什么？ | 主播 | 肖文杰、约小亚 | 延伸资料 | HYROX - HYROX Single Rulebook（Season 26/27） 《OMR Podcast》- Fitness-Ra",
-          "publishedAt": "2026-08-23T23:00:00+00:00",
-          "duration": 835,
-          "url": "https://jt.ximalaya.com//GKwRIMAOYNsKAGc4ugTLWLB7.m4a?channel=rss&album_id=46587439&track_id=1008179335&uid=296309989&jt=https://aod.cos.tx.xmcdn.com/storages/5fa9-audiofreehighqps/03/B8/GKwRIMAOYNsKAGc4ugTLWLB7.m4a"
         }
       ]
     },
@@ -938,6 +938,14 @@
       "feedUrl": "https://feeds.fireside.fm/sv101/rss",
       "episodes": [
         {
+          "id": "sv101-3418f4d0ebde1d",
+          "title": "E252｜硅谷睡眠外挂：富人的玩具，还是预防医疗的入口？｜对话Eight Sleep创始人",
+          "description": "【本期节目由Eight Sleep赞助播出】 在这个健康意识崛起的时代，我们越来越愿意花大价钱管理自己的身体。睡眠，就是其中最重要的方面之一。 与手表、戒指等可穿戴设备不同，Eight Sleep的产品是一张能够自动控温的智能床套。马斯克、扎克伯格、Bryan Johnson、Sam Altman，都是它的用户。多名职业运动员，也习惯带着它去比赛。这张售价约两万元的智能床套，究竟替我们做了什么？ 这期播客，我们邀请了Eight Sleep的两位创始人，Matteo Franceschetti和Alex Zatarain，聊聊睡眠科技和文化。 他们说，现代",
+          "publishedAt": "2026-09-24T00:00:00+00:00",
+          "duration": 3272,
+          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/833a6b89-e6a1-4d61-a3b3-46f4d664894e.mp3"
+        },
+        {
           "id": "sv101-49502f13ddf728",
           "title": "外滩大会线下圆桌｜敢把钱包交给AI吗？聊聊Agent交易爆发前夜的信任基建",
           "description": "本期节目来自2026 Inclusion·外滩大会主论坛圆桌——“当Agent成为交易主体”。 Agent的爆发不止于应用层，当应用不断涌现，底层的交易和支付方式也在被重写。今年的AI交易正沿着两条线同时展开：一条是Agent帮人完成任务，比如今年6月上线的AI版支付宝，一句话就能打车、点咖啡；另一条是Agent-to-Agent，比如两个月前，Mastercard发布了专为机器间支付设计的网络服务。 当Agent从对话走向办事、从推荐走向交易，“信任”成了绕不开的关键词。它替你花出的每一分钱，都真的经过了你授权吗？发起交易的Agent究竟是谁？它的支付",
@@ -992,14 +1000,6 @@
           "publishedAt": "2026-08-01T00:00:00+00:00",
           "duration": 4032,
           "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/5fd236d7-9a72-4b15-9e84-e83ceadd1b41.mp3"
-        },
-        {
-          "id": "sv101-5ed3f2fc7ba9a4",
-          "title": "E245｜藏在大模型背后的新闻人：GPT们的回复是这样写出来的",
-          "description": "当你觉得AI“懂你”的那一刻——精准抓住一个你自己都没说清的情绪，问出一个让你陷入沉思的问题——你以为那来自数据中心的芯片、模型里的参数、程序员敲下的代码，但真相是，那些问进你心坎里的问题、让你会心一笑的遣词造句，背后站着一群人：他们曾是记者、编辑和纪录片导演，如今藏在大语言模型之后，有一个鲜为人知的名字——内容工程师（Content Engineer）。 当模型能力日益趋同，真正决定用户去留的，已不再是参数，而是它能否让人觉得“懂我”。那些“只可意会、不可言传”的语感与共情，正被一群文字工作者拆解成一套可以装进AI的规则。 本期《硅谷101》播客，我们",
-          "publishedAt": "2026-07-24T00:00:00+00:00",
-          "duration": 2760,
-          "url": "https://aphid.fireside.fm/d/1437767933/f0f20376-8faf-4940-b920-84af6c734e2d/5aeaeb64-9165-4271-9884-23329b511e11.mp3"
         }
       ]
     },
@@ -1014,6 +1014,14 @@
       "sourceUrl": "https://feed.xyzfm.space/yxuruh3f9mc4",
       "feedUrl": "https://feed.xyzfm.space/yxuruh3f9mc4",
       "episodes": [
+        {
+          "id": "random-books-7e785da427ff99",
+          "title": "277.从提醒你，到替你办：Today想把Personal AI带到哪一步？",
+          "description": "🎙【本期嘉宾】高策、Suki 高策（Today 技术负责人） Suki（Today founding PM） 主播：潘乱（「乱翻书」主理人） 💡【温馨提醒】 Today 中国版于9月24日下午18：00正式在国内首发上线 。 基础版永久免费使用。 新用户注册即领1亿token，畅享1个月Pro权益。 Today是一个会在使用中逐渐了解你的AI助理，把你的每件事都放在心上。开会前准备资料、出发前安排旅行，这些繁琐的事情可以找它。学习、健康和个人财务这些需要长期跟进的事情，也可以让它一起关心。遇到值得留意的变化，它会告诉你。有时候你还没开口，它已经能根据之前",
+          "publishedAt": "2026-09-24T05:46:12+00:00",
+          "duration": 5981,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6ab4b804e742e36efcbab131/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lub_XeKQnXJr6Psdo-utmiUig6M6.m4a"
+        },
         {
           "id": "random-books-96a3334315621e",
           "title": "276.当AI给出所有答案，年轻人如何找到自己的问题？",
@@ -1069,14 +1077,6 @@
           "publishedAt": "2026-08-01T07:44:43+00:00",
           "duration": 5829,
           "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a6da28d1b5e24969ce72d4c/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lmb4DgcgOv3mR4CN7ciKBgHpfrO4.m4a"
-        },
-        {
-          "id": "random-books-6a50057fea106d",
-          "title": "269.卷规模 VS 卷创作：真人短剧的两种生存模式",
-          "description": "🎙【本期嘉宾】侯超、李佳佳 侯超（日新阅益文化董事长） 李佳佳（刚刚好影视董事长） 主播：潘乱（「乱翻书」主理人） 🎬 本期视频播客同步上线于@潘乱的视频号、哔哩哔哩、微博、小红书、Youtube等平台。 ⏰【时间线】 一、生产方式的分化 02:46 为什么西安、郑州成了短剧之都？ 05:03 一个月200多部，产能天花板在哪，怎么管理？ 07:00 钱、本子、导演、编剧、演员从哪来？ 08:07 「第一是本金安全，第二是利润规模」 08:33 短剧从付费转免费，创作团队，公司流程有哪些变化？ 11:32 反脸谱化，人物关系做扎实 13:57 从男频到女",
-          "publishedAt": "2026-07-09T10:32:06+00:00",
-          "duration": 4297,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/61358d971c5d56efe5bcb5d2/6a4f777d1e32575f5eb3cbc1/media.xyzcdn.net/61358d971c5d56efe5bcb5d2/lmwHgQD0rgE4mr0FWP5QPR2scWXt.m4a"
         }
       ]
     },
@@ -1246,6 +1246,14 @@
       "feedUrl": "https://feed.xyzfm.space/nfm8cu8deycn",
       "episodes": [
         {
+          "id": "beyond-code-a9f80af68aad57",
+          "title": "GeekPlux 染发、勾股考足球教练、Randy 新产品、Grok Bot 使用",
+          "description": "隔了很久的一次闲聊，没有主题。从 GeekPlux 染发说起，聊到网球、攀岩和握力，再聊到每个人最近怎么用 AI，最后落到学习、钱和做内容。 本期主播：Randy、GeekPlux、勾股 代码之外 Beyond Code 是一档由 GeekPlux、Randy 和勾股共同主持的程序员闲聊播客节目。 节目地址： https://beyondcodefm.com 也收录在 https://bento.me/beyondcode 视频版在 YouTube 和哔哩哔哩搜索「代码之外」。 欢迎在 https://forms.office.com/r/RknWt97",
+          "publishedAt": "2026-09-23T06:10:08+00:00",
+          "duration": 8344,
+          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/6ab36ba9f04646b3a955d7a3/media.xyzcdn.net/6194d973c14c9a0db82de1ea/lmhhAcPLZfruZOPp9PppRU3_3gh8.m4a"
+        },
+        {
           "id": "beyond-code-2fd07da1696c7e",
           "title": "在现场看世界杯，每分钟50美金的观赛体验！看世界杯的都不是真球迷！",
           "description": "本期节目，我们从 GeekPlux 在亚特兰大现场观看世界杯小组赛聊起。 一张原价 600 美金的门票，到了比赛当天同位置涨到约 4000 美金；一场西班牙对沙特的比赛，也从「家门口凑个热闹」变成了一次非常难忘的现场体验。 我们聊了从买票、坐地铁、进场、安检、球场氛围，到 7 万人一起欢呼时的声浪；也聊了为什么电视上看起来「很慢」的足球，到了现场会变得如此快、如此有压迫感。 这期不只是一次看球流水账。我们也借世界杯聊到了足球为什么会成为世界第一运动：它的规则简单、门槛低、偶然性强，也承载了太多国家、身份、童年、家庭和普通人的英雄梦想。 此外，我们还聊到：",
@@ -1300,14 +1308,6 @@
           "publishedAt": "2026-03-22T12:54:37+00:00",
           "duration": 4974,
           "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/69bfe0323c625cc5ae9343da/media.xyzcdn.net/6194d973c14c9a0db82de1ea/luDtEPUxXjvuWwb1MYCDjn_w8rKy.m4a"
-        },
-        {
-          "id": "beyond-code-0b815602814751",
-          "title": "谷歌编程之夏，一次真正进入开源世界的机会 (Google Summer of Code, GSoC)",
-          "description": "很多人第一次知道 Google Summer of Code（GSoC，谷歌编程之夏），都是靠学长学姐、论坛帖子，或者某次偶然刷到的经验分享。它在中文互联网里一直不算高调，但对很多人来说，却是一次真正改变技术路径、职业方向，甚至价值观的经历。 这期节目，我们邀请了三位参加过 GSoC 的嘉宾，一起聊聊他们当年是怎么知道这个项目、怎么申请上、做了什么项目，以及这段经历后来如何影响了他们的学习、工作和对“开源”这件事的理解。 有人因此第一次真正理解大型开源项目是怎么协作起来的；有人在和海外 mentor 的交流中建立了技术自信；也有人直到很多年后回头看，才意",
-          "publishedAt": "2026-03-16T03:37:31+00:00",
-          "duration": 5371,
-          "url": "https://dts-api.xiaoyuzhoufm.com/track/6194d973c14c9a0db82de1ea/69b77801f8b8079bfa8f66a2/media.xyzcdn.net/6194d973c14c9a0db82de1ea/ljBiFDJ8JpcfXieo2Iheceydj0-D.m4a"
         }
       ]
     },
@@ -1322,6 +1322,22 @@
       "sourceUrl": "https://www.ximalaya.com/album/51076156.xml",
       "feedUrl": "https://www.ximalaya.com/album/51076156.xml",
       "episodes": [
+        {
+          "id": "morning-coffee-316fb422d1ae6f",
+          "title": "月饼市场持续降温，豆包缩减对话业务团队",
+          "description": "今年中秋前夕，主要门店的月饼销售额和销售量都同比下滑超过 40%，市场连续第二年下行。 豆包是目前国内日活跃用户数最高的 AI 应用，但今年以来，对话产品的商业化难题越来越明显。 此外，你会听到更多与日常生活息息相关的商业科技动态： 沃尔玛超市和山姆同时调整采购负责人 亚马逊封锁 Meta 的 AI 购物助手 皇家加勒比计划收购度假村 还有阿里巴巴、谷歌、苹果和 GAP 的最新变化，欢迎收听！ �「 图拉斯 × 声动早咖啡」联名礼盒限时售卖中️ 礼盒包含总价值750多元的图拉斯三合一随身充（10000毫安，45w 快充），融入了早咖啡经典配色的随心带和随",
+          "publishedAt": "2026-09-23T23:00:00+00:00",
+          "duration": 713,
+          "url": "https://jt.ximalaya.com//GKwRIJEOiZBPAFghRwTcP-VI.m4a?channel=rss&album_id=51076156&track_id=1017879242&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/c144-audiofreehighqps/C1/01/GKwRIJEOiZBPAFghRwTcP-VI.m4a"
+        },
+        {
+          "id": "morning-coffee-418a3b6dfaa9b3",
+          "title": "一辆「小电驴」卖到三四千元，小牛、九号如何实现电动两轮车高端化？",
+          "description": "今年上半年，电动两轮车的传统巨头——雅迪和爱玛，都面临营收和利润的双重下滑。不过，主攻高端市场的九号公司、小牛电动以及极核，销量还在继续增长。过去一直走性价比路线的电动两轮车行业，为什么这几年卖得好的，反而是更高端的产品呢？本期轻解读就与之相关 [05:40]。在各种出行工具的智能化功能上，你最看重哪个方面呢？在评论区和我们一起聊聊吧。 本期还有关于诺和诺德、派拉蒙、DeepSeek 和智谱的新动态 [01:53]，欢迎收听！ 花几块钱「打个公交」！为什么很多城市都有了网约公交？ 在青少年播客「Knock Knock 世界」，听到全球新鲜事，还能成为青少",
+          "publishedAt": "2026-09-22T23:00:00+00:00",
+          "duration": 982,
+          "url": "https://jt.ximalaya.com//GKwRIJIOiElEAHlgUATbtZwR.m4a?channel=rss&album_id=51076156&track_id=1017641937&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/4c34-audiofreehighqps/E6/0B/GKwRIJIOiElEAHlgUATbtZwR.m4a"
+        },
         {
           "id": "morning-coffee-8b9f253da49a74",
           "title": "京沪高铁中秋节前出现降价，新百伦起诉迪卡侬侵权",
@@ -1369,22 +1385,6 @@
           "publishedAt": "2026-09-14T23:00:00+00:00",
           "duration": 808,
           "url": "https://jt.ximalaya.com//GKwRIMAOfaUyAGPjkQTXYnc5.m4a?channel=rss&album_id=51076156&track_id=1014854463&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/caf5-audiofreehighqps/D4/99/GKwRIMAOfaUyAGPjkQTXYnc5.m4a"
-        },
-        {
-          "id": "morning-coffee-ae95467eb22784",
-          "title": "图拉斯｜把校徽印上卫衣 T 恤，美国大学如何把授权校名做成一门生意？",
-          "description": "本周节目由图拉斯冠名播出。图拉斯，让新机体验更进一步 9月9日，图拉斯官宣续约品牌大使 papi 酱，并随后发布全新创意短片，希望大家能从熟悉的日常出发，和图拉斯一起，就酱创造。（https://sourl.co/6wDGWR） papi 从熟悉的日常里捕捉细微感受，图拉斯也持续从真实使用场景里发现需求，让产品迭代使用更顺手。 如果你准备换新机，想让体验一步到位，可以选择 Q3AirPro（https://sourl.co/fA5HQb）、小冰块X （https://sourl.co/B3nFX9）和 原感膜（https://sourl.co/hgWKY",
-          "publishedAt": "2026-09-13T23:00:00+00:00",
-          "duration": 1124,
-          "url": "https://jt.ximalaya.com//GKwRIUEOfFR-AIrtuQTWy_IT.m4a?channel=rss&album_id=51076156&track_id=1014464166&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/473e-audiofreehighqps/FF/D4/GKwRIUEOfFR-AIrtuQTWy_IT.m4a"
-        },
-        {
-          "id": "morning-coffee-d735c9d6acc238",
-          "title": "咖啡豆｜从飞机潜艇走进日常生活，钛为什么成了水杯的热门材料？",
-          "description": "感谢图拉斯对本期咖啡豆的支持！图拉斯新色系全家族，为 iPhone18 系列配齐增效拍档：O3AirBios「雾果红」（https://sourl.co/qQH5vp）、Q3AirPro「山岚紫」（https://sourl.co/pRMaNX）、大眼仔智能充电器（https://sourl.co/CqdeLd）、小冰块X（https://sourl.co/6TyU4M）、原感膜（https://sourl.co/L8g95u），和新机共赴新篇，加倍耀眼。 恭喜本期的咖啡豆「錒鎐」获得由图拉斯送出的「大眼仔屏显款充电器」。希望在图拉斯的陪伴下，去发现记录",
-          "publishedAt": "2026-09-10T23:00:00+00:00",
-          "duration": 848,
-          "url": "https://jt.ximalaya.com//GKwRIUEOeHXHAGjcsATVTQsl.m4a?channel=rss&album_id=51076156&track_id=1013725042&uid=168606226&jt=https://aod.cos.tx.xmcdn.com/storages/5ea1-audiofreehighqps/2D/4A/GKwRIUEOeHXHAGjcsATVTQsl.m4a"
         }
       ]
     },
@@ -1477,6 +1477,14 @@
       "feedUrl": "https://proxy.wavpub.com/caffebreve.xml",
       "episodes": [
         {
+          "id": "half-latte-73aaa263c3b904",
+          "title": "No.220 互联网系列大结局：贾公下周回国日，乐视宏图未倒时 | 中国互联网故事 29",
+          "description": "主播 | 刘飞 潇磊 2016 年，贾跃亭站在美国艺术宫的舞台上，向全世界展示自己的“生态帝国”：电视、手机、体育、影视、云计算、汽车…… 他想做的不只是一家公司，而是一整套未来生活方式。 那一年，乐视市值突破千亿，超级电视卖遍全国，手机挑战苹果小米，体育版权横扫国内，新能源汽车也已经驶向未来。 如果故事停在这里，贾跃亭可能会成为中国互联网历史上最具想象力的创业者之一。 但商业世界最残酷的地方在于，它不会奖励“看见未来的人”，只会奖励“活到未来的人”。 这是中国互联网系列第 29 期，也是系列大结局。我们将从一个县城青年开始，重新走进贾跃亭和乐视的黄金时",
+          "publishedAt": "2026-09-23T12:00:00+00:00",
+          "duration": 9400,
+          "url": "https://tk.wavpub.com/WPTK_TURDWhuf0PzfUflf.m4a"
+        },
+        {
           "id": "half-latte-50f356036c9d63",
           "title": "No.219 ️ 快递江湖三十年：桐庐帮、淘宝、拼多多与价格战",
           "description": "主播 | 潇磊 刘飞 ———— 2025年，全国快递业务量接近2000亿件；申通、圆通、中通、韵达这四家同出一县的企业占比超过一半。什么县？浙江桐庐。为什么？ 这期节目把时间拨回20世纪90年代，从杭州外贸公司的报关文件说起，讲几位年轻人怎么靠绿皮火车和自行车，把一趟跑腿生意做成覆盖全国的快递网络。 本期节目，我们将复盘： • 申通怎么来的，韵达、圆通和中通又怎样从亲缘、同学和乡缘关系中相继发展起来的； • 在邮政专营与“黑快递”执法之间，民营快递如何等到2009年新《邮政法》给出的正式身份； • 加盟制、班车、转运中心、有偿派费与二级中转补贴，怎样把几",
@@ -1531,14 +1539,6 @@
           "publishedAt": "2026-08-05T12:00:00+00:00",
           "duration": 10671,
           "url": "https://tk.wavpub.com/WPDL_zyEnADsGgGwEuRnuezmwmgGgSVqnUnvJXnrgrccFdRkZASmPqHGqSwhVvA-28.m4a"
-        },
-        {
-          "id": "half-latte-8c6bb5a28dfb06",
-          "title": "No.212 曾经的精神角落：豆瓣、知乎、贴吧、虎扑 | 中国互联网故事25",
-          "description": "主播 | 刘飞 潇磊 有些互联网产品，我们每天都在用，却很少对它们产生感情；还有一些网站，可能已经很久没有打开，却始终像一间时时想念的旧房间。 豆瓣、知乎、贴吧、虎扑，曾经承载了文艺青年、知识分子、追星族、游戏玩家和无数小众爱好者的日常交流。它们拥有最忠诚的用户、最独特的文化，也创造过许多影响至今的内容和网络语言。可奇怪的是，这些最像「精神家园」的社区，往往也是互联网行业里最难赚钱的一批公司。 到底是时代辜负了它们，还是社区从诞生的那一天起，就埋下了自己的难题？ 这一期，我们回到中文互联网曾经最热闹、也最有人情味的几个角落。 来杯半拿铁，咱们边喝边唠。 ",
-          "publishedAt": "2026-07-29T12:00:00+00:00",
-          "duration": 11211,
-          "url": "https://tk.wavpub.com/WPDL_rcFZxnBrLPLprHnsPnLZRBALqKtNPztCLRWDssqcMeWtqSmtPXszyvZCYT-f7.m4a"
         }
       ]
     },
@@ -1785,6 +1785,14 @@
       "feedUrl": "https://www.ximalaya.com/album/3558668.xml",
       "episodes": [
         {
+          "id": "blackwater-park-573dd54318ac68",
+          "title": "《柯蒂斯总统》总统的工作是专门处理怪物",
+          "description": "",
+          "publishedAt": "2026-09-25T02:00:00+00:00",
+          "duration": 7514,
+          "url": "https://jt.ximalaya.com//GKwRIW4Oir4bA6A6vATcsZhd.m4a?channel=rss&album_id=3558668&track_id=1018089976&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/b978-audiofreehighqps/4A/48/GKwRIW4Oir4bA6A6vATcsZhd.m4a"
+        },
+        {
           "id": "blackwater-park-12c457b6dde761",
           "title": "《瑞克和莫蒂》第九季：最后的瑞克森林和梦幻之地",
           "description": "瑞克和莫蒂前往一个偏远的外星星球，试图采集那里一棵树上的特殊树液。然而，这棵名为“典狱长”的树展现出智慧，并将他们二人捕获。作为采集树液的惩罚，“典狱长”将瑞克和莫蒂放逐到地下，使他们退化成单细胞生物。他们很快发现自己可以迅速进化成更复杂的生物，但如果死亡，就会重新变回单细胞生物。最终，瑞克成功进化成狒狒，并组织其他囚犯试图攀爬“典狱长”的树干越狱。然而，“典狱长”挫败了所有逃跑尝试。莫蒂尝试以食草动物和植物的身份生活。作为一棵树，他成功到达地面，却又被“典狱长”放逐回地下。瑞克和莫蒂意识到他们被困的加速生命循环仅仅是为了给典狱长提供营养，于是他们组织其",
@@ -1839,14 +1847,6 @@
           "publishedAt": "2026-08-07T02:00:00+00:00",
           "duration": 9044,
           "url": "https://jt.ximalaya.com//GKwRIRwOSlo1BF01ygTC_fCy.m4a?channel=rss&album_id=3558668&track_id=1004994974&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/5237-audiofreehighqps/B5/10/GKwRIRwOSlo1BF01ygTC_fCy.m4a"
-        },
-        {
-          "id": "blackwater-park-9d650d0facabe4",
-          "title": "《蜘蛛侠：崭新之日》漫威水准回归！",
-          "description": "《蜘蛛侠：崭新之日》漫威水准回归！ 本期节目感谢七西赞助播出！ 【感谢七西S16pro碟枕支持本期节目，点击优惠直达：https://mo.m.tmall.com/page/37571915?shop_id=521104390】 或去淘宝搜[七西旗舰店]跟客服报暗号“黑水公园”获取哦~ 碟枕体验图 我自己睡七西蝶枕Pro两年了，以前睡普通枕头，早上醒来脖子又僵又酸，翻来覆去总觉得肩颈悬空着。换了这款之后，第一次体会到什么叫“枕头在托着你的脖子睡觉”。 家里要是有经常落枕的、肩颈紧张的、一觉睡醒反而更累的，尤其上班族和熬夜党，这个枕头真值得试试。很多睡眠不",
-          "publishedAt": "2026-07-30T16:39:35+00:00",
-          "duration": 6271,
-          "url": "https://jt.ximalaya.com//GKwRIaIOQUIAAwabHwS_kMj4.m4a?channel=rss&album_id=3558668&track_id=1003766263&uid=40763963&jt=https://aod.cos.tx.xmcdn.com/storages/3305-audiofreehighqps/46/F6/GKwRIaIOQUIAAwabHwS_kMj4.m4a"
         }
       ]
     },
@@ -2170,6 +2170,14 @@
       "feedUrl": "https://www.ximalaya.com/album/26640504.xml",
       "episodes": [
         {
+          "id": "fit4life-674331413c1ca5",
+          "title": "530 - 聪明久了也得蠢一下！来比划比划智商低谷呢？",
+          "description": "在和别人打电话的时候满世界找手机；站起来走到另一个房间忘了自己要干嘛，然后重复动作试图唤醒记忆；被一类不会做的数学题困扰了一辈子。你有没有过类似的时刻？逐渐衰退的记忆和从未被唤醒的智商死点，真是把我们困得死死的。或许你厌蠢，但我不信这期节目讲到的几个卡点你从未遇到过！不管是不理解还是真可爱，请原谅我们被智商死点困住的人生。 02:00 说好只是演戏，我却当了真。 04:51 在电梯里见证老板的犯蠢时刻我该帮他还是该笑他？ 11:20 科学训练、全力以赴，做了最充足的准备，却输在不会算数上面。 26:27 换算，这是一个已经困扰我四十年的卡点！ 33:44",
+          "publishedAt": "2026-09-23T13:00:00+00:00",
+          "duration": 3106,
+          "url": "https://jt.ximalaya.com//GKwRIMAOiWj8AX-r4wTcL6zx.m4a?channel=rss&album_id=26640504&track_id=1017855649&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/7d1e-audiofreehighqps/8B/AE/GKwRIMAOiWj8AX-r4wTcL6zx.m4a"
+        },
+        {
           "id": "fit4life-46c953d4d6fce1",
           "title": "529 - 早秋吃练睡，我不信你这样做还能睡不好！",
           "description": "【直播预告】9月17日14:00开始，一直到夜里好几点，这个季度的直播马拉松又来了。大家记得在小红书@fit4life预约。本期节目推荐的部分好东西也会直播间出现，姥姥姥爷在直播间等大家！ 在经历出差倒时差以后姥爷对调整睡眠又有了新体会；经过新的血糖实验和减脂，姥姥也有新办法分享给大家。所以关于如何更好的吃练睡，以及有哪些好东西能有所帮助，她们会在本期节目里一一推荐。 03:41 我不信你这样做还能睡不好！ 31:28 这不是咖啡，这是咖啡大保健！ 34:37 下滑看姥爷美背，练对太重要了。 44:07 不能说我也要说，这是我吃过最好吃的玉米！ 美背在这",
@@ -2224,14 +2232,6 @@
           "publishedAt": "2026-07-22T13:00:00+00:00",
           "duration": 3592,
           "url": "https://jt.ximalaya.com//GKwRIUEONkuxAbvPGQS7PHRz.m4a?channel=rss&album_id=26640504&track_id=1002290908&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/8d20-audiofreehighqps/D2/82/GKwRIUEONkuxAbvPGQS7PHRz.m4a"
-        },
-        {
-          "id": "fit4life-c502c1176fb4cf",
-          "title": "522 - 最近的生活点滴｜抓耳挠腮，竟然总结不出一个主题",
-          "description": "你们有没有过那种时候？好不容易空闲下来，觉得时间不能浪费，然后掏出手机想要攻略一下去哪里尽情放松。结果翻了一小时也没找到答案，又为此感到不服，于是夺门而出——不知道去哪，总之不能坐以待毙。果然，出门以后百无聊赖，在自己最熟悉的附近遛弯儿看人、抓耳挠腮，最后老老实实回家躺在床上，思忖着究竟是什么时候，线下的精致生活离你远去了？欲望和行动力都被谁偷走了？ 这就是成年人的无奈吧，想要重返二十岁的激情，又不懂城市最in的文化。然后强行支棱着硬玩儿一通，发现格格不入灰头土脸。好不容易等到一个婚礼场合，兴奋准备，又发现自己好像太过隆重。请大家给我们留言，讲讲你的闲暇",
-          "publishedAt": "2026-07-08T12:41:38+00:00",
-          "duration": 3087,
-          "url": "https://jt.ximalaya.com//GKwRIJEOJAjxAX1SIASzb9PH.m4a?channel=rss&album_id=26640504&track_id=999397203&uid=102487658&jt=https://aod.cos.tx.xmcdn.com/storages/0c44-audiofreehighqps/23/7E/GKwRIJEOJAjxAX1SIASzb9PH.m4a"
         }
       ]
     },
@@ -2717,6 +2717,14 @@
       "contentWarning": "恐怖小说与惊悚音效，建议 16 岁以上收听。",
       "episodes": [
         {
+          "id": "the-magnus-archives-5ce438e744cefb",
+          "title": "The Magnus Protocol 56 – Structural Assessments",
+          "description": "CAT2RC2256-19062019-02072024 architecture (recursive) -/- isolation Incident Elements: · isolation · decay · temporal/spatial distortion · altered reality Transcripts available at https://rustyquill.com/transcripts/the-magnus-protocol/ You can find a complete list of our Kickstar",
+          "publishedAt": "2026-09-24T14:45:00+00:00",
+          "duration": 1294,
+          "url": "https://sphinx.acast.com/p/acast/s/themagnusarchives/e/6aabcb32fca3d5c77bfb48b9/media.mp3"
+        },
+        {
           "id": "the-magnus-archives-ac431fd5440f1c",
           "title": "The Magnus Protocol 55 - Blind Spots",
           "description": "CATXXXX-XXXXXXXX-XXXXXXXX ERROR (Unknown Source) Incident Elements: · human experimentation · depersonalisation · loss of identity · imprisonment Transcripts available at https://rustyquill.com/transcripts/the-magnus-protocol/ You can find a complete list of our Kickstarter backe",
@@ -2771,14 +2779,6 @@
           "publishedAt": "2026-08-10T15:06:08+00:00",
           "duration": 804,
           "url": "https://sphinx.acast.com/p/acast/s/themagnusarchives/e/6a79e8db5a90490c34e50eb8/media.mp3"
-        },
-        {
-          "id": "the-magnus-archives-4c14586c9c1b2a",
-          "title": "The Magnus Protocol 52 - Oversight",
-          "description": "CATXXXX-XXXXXXXX-XXXXXXXX ERROR (Unknown Source) Incident Elements: · Being hunted · Cleithrophobia (fear of confinement) · Nyctophobia (fear of the dark) · Death · Grief · Manipulation · SFX: gunshots Transcripts available at https://rustyquill.com/transcripts/the-magnus-protoco",
-          "publishedAt": "2026-07-30T14:45:00+00:00",
-          "duration": 1502,
-          "url": "https://sphinx.acast.com/p/acast/s/themagnusarchives/e/6a675d65c02856ded18bceb1/media.mp3"
         }
       ]
     }
