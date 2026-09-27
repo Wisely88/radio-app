@@ -20,6 +20,8 @@ if "navigator.serviceWorker.register" not in (ROOT / "scripts" / "on-demand.js")
     raise SystemExit("missing service worker registration")
 if "live/4915/64k.mp3" in index or "live/4936/64k.mp3" not in index:
     raise SystemExit("Jiangsu music station source is not pinned to the verified PlayFM897 stream")
+if "live/5022397/64k.mp3" in index or "live/20500149/64k.mp3" not in index:
+    raise SystemExit("Huayu music station source is not pinned to the verified Liangguang stream")
 
 for relative in ["manifest.webmanifest", "sw.js", "assets/three-quarter-mark.svg"]:
     if not (ROOT / relative).is_file():
