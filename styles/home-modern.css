@@ -148,13 +148,23 @@ summary:focus-visible {
   .hero-aside-meta span { font-size: 9px; }
   .hero-fraction { opacity: .18; }
   .experience { width: min(100% - 32px, 680px); padding-top: 58px; }
-  .home-bento { grid-template-columns: 1fr; }
-  .bento-brief { min-height: 230px; }
+  .home-bento { grid-template-columns: 1fr; align-items: start; }
+  .bento-brief { min-height: 0; height: auto; }
   .bento-brief h3 { margin-top: 18px; }
   .channels-panel, .on-demand-panel { margin-top: 58px; }
 }
 
 @media (max-width: 520px) {
+  body[data-ui="mobile"]:not(.drive-mode) .hero {
+    height: 320px !important;
+    min-height: 320px !important;
+  }
+  body[data-ui="mobile"]:not(.drive-mode) .hero-inner {
+    align-items: flex-start !important;
+    padding-top: 72px !important;
+    padding-bottom: 26px !important;
+  }
+  body[data-ui="mobile"]:not(.drive-mode) .hero-content { width: 78%; }
   .hero-aside { right: 12px; width: 92px; }
   .hero-aside-kicker { font-size: 8px; }
   .hero-aside-meta span { display: none; }
