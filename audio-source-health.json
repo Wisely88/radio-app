@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-27T09:35:28+00:00",
+  "generatedAt": "2026-09-28T10:15:24+00:00",
   "sourceCount": 79,
-  "availableCount": 79,
+  "availableCount": 77,
   "sources": {
     "audiobook|alice-wonderland-cn": {
       "ok": true,
@@ -10,7 +10,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5091,
+      "latencyMs": 3818,
       "error": ""
     },
     "audiobook|andersen-fairy-tales-cn": {
@@ -20,7 +20,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4589,
+      "latencyMs": 4013,
       "error": ""
     },
     "audiobook|brief-history-time-cn": {
@@ -30,7 +30,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3908,
+      "latencyMs": 3744,
       "error": ""
     },
     "audiobook|cat-country-cn": {
@@ -40,7 +40,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4141,
+      "latencyMs": 2998,
       "error": ""
     },
     "audiobook|dream-red-chamber": {
@@ -50,7 +50,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4828,
+      "latencyMs": 4550,
       "error": ""
     },
     "audiobook|europe-history-stories": {
@@ -60,7 +60,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3619,
+      "latencyMs": 3412,
       "error": ""
     },
     "audiobook|fifteen-strings-cn": {
@@ -70,7 +70,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3135,
+      "latencyMs": 3189,
       "error": ""
     },
     "audiobook|gadfly-cn": {
@@ -80,7 +80,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4123,
+      "latencyMs": 4407,
       "error": ""
     },
     "audiobook|general-history-china": {
@@ -90,7 +90,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4054,
+      "latencyMs": 14283,
       "error": ""
     },
     "audiobook|grimms-fairy-tales-cn": {
@@ -100,7 +100,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3475,
+      "latencyMs": 3365,
       "error": ""
     },
     "audiobook|jane-eyre-cn": {
@@ -110,7 +110,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4168,
+      "latencyMs": 4645,
       "error": ""
     },
     "audiobook|journey-west": {
@@ -120,7 +120,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4780,
+      "latencyMs": 4493,
       "error": ""
     },
     "audiobook|librivox-14135": {
@@ -132,34 +132,22 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 8766,
+      "latencyMs": 14356,
       "error": ""
     },
     "audiobook|librivox-15726": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 525,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9389,
-      "error": ""
+      "latencyMs": 20269,
+      "error": "HTTP 525"
     },
     "audiobook|librivox-1800": {
-      "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
-      "audioOk": true,
-      "audioChecked": 2,
-      "audioPassed": 2,
-      "latencyMs": 14931,
-      "error": ""
-    },
-    "audiobook|librivox-1952": {
       "ok": true,
       "feedOk": false,
       "feedStatus": 0,
@@ -168,10 +156,10 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 15872,
+      "latencyMs": 17398,
       "error": "TimeoutError: The read operation timed out"
     },
-    "audiobook|librivox-200": {
+    "audiobook|librivox-1952": {
       "ok": true,
       "feedOk": true,
       "feedStatus": 200,
@@ -180,46 +168,34 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9972,
+      "latencyMs": 14189,
       "error": ""
+    },
+    "audiobook|librivox-200": {
+      "ok": true,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 17696,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-20249": {
       "ok": true,
       "feedOk": false,
-      "feedStatus": 0,
+      "feedStatus": 525,
       "metadataOk": false,
       "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 16234,
-      "error": "TimeoutError: The read operation timed out"
+      "latencyMs": 16919,
+      "error": "HTTP 525"
     },
     "audiobook|librivox-2291": {
-      "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
-      "audioOk": true,
-      "audioChecked": 2,
-      "audioPassed": 2,
-      "latencyMs": 14019,
-      "error": ""
-    },
-    "audiobook|librivox-253": {
-      "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
-      "audioOk": true,
-      "audioChecked": 2,
-      "audioPassed": 2,
-      "latencyMs": 13675,
-      "error": ""
-    },
-    "audiobook|librivox-271": {
       "ok": true,
       "feedOk": false,
       "feedStatus": 0,
@@ -228,10 +204,22 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 15925,
+      "latencyMs": 17794,
       "error": "TimeoutError: The read operation timed out"
     },
-    "audiobook|librivox-47": {
+    "audiobook|librivox-253": {
+      "ok": true,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
+      "audioOk": true,
+      "audioChecked": 2,
+      "audioPassed": 2,
+      "latencyMs": 17086,
+      "error": "TimeoutError: The read operation timed out"
+    },
+    "audiobook|librivox-271": {
       "ok": true,
       "feedOk": true,
       "feedStatus": 200,
@@ -240,8 +228,20 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 13181,
+      "latencyMs": 15246,
       "error": ""
+    },
+    "audiobook|librivox-47": {
+      "ok": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
+      "audioOk": false,
+      "audioChecked": 2,
+      "audioPassed": 1,
+      "latencyMs": 27554,
+      "error": "TimeoutError: The read operation timed out; HTTP 500"
     },
     "audiobook|librivox-56": {
       "ok": true,
@@ -252,7 +252,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 10682,
+      "latencyMs": 10718,
       "error": ""
     },
     "audiobook|librivox-59": {
@@ -264,7 +264,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 12213,
+      "latencyMs": 10195,
       "error": ""
     },
     "audiobook|librivox-6026": {
@@ -276,7 +276,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 15875,
+      "latencyMs": 18646,
       "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6123": {
@@ -288,7 +288,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 16289,
+      "latencyMs": 17046,
       "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6224": {
@@ -300,20 +300,20 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 10881,
+      "latencyMs": 15787,
       "error": ""
     },
     "audiobook|librivox-64": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9017,
-      "error": ""
+      "latencyMs": 17656,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-65": {
       "ok": true,
@@ -324,7 +324,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 10750,
+      "latencyMs": 12306,
       "error": ""
     },
     "audiobook|librivox-6940": {
@@ -336,7 +336,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9886,
+      "latencyMs": 11464,
       "error": ""
     },
     "audiobook|librivox-81": {
@@ -348,7 +348,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9820,
+      "latencyMs": 14798,
       "error": ""
     },
     "audiobook|librivox-83": {
@@ -360,7 +360,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 12207,
+      "latencyMs": 11189,
       "error": ""
     },
     "audiobook|librivox-86": {
@@ -372,20 +372,20 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 10361,
+      "latencyMs": 10711,
       "error": ""
     },
     "audiobook|librivox-871": {
       "ok": true,
-      "feedOk": false,
-      "feedStatus": 0,
-      "metadataOk": false,
-      "usingCatalogFallback": true,
+      "feedOk": true,
+      "feedStatus": 200,
+      "metadataOk": true,
+      "usingCatalogFallback": false,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 16428,
-      "error": "TimeoutError: The read operation timed out"
+      "latencyMs": 11765,
+      "error": ""
     },
     "audiobook|librivox-90": {
       "ok": true,
@@ -396,22 +396,10 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 14130,
+      "latencyMs": 9844,
       "error": ""
     },
     "audiobook|librivox-9414": {
-      "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
-      "audioOk": true,
-      "audioChecked": 2,
-      "audioPassed": 2,
-      "latencyMs": 12588,
-      "error": ""
-    },
-    "audiobook|librivox-977": {
       "ok": true,
       "feedOk": false,
       "feedStatus": 0,
@@ -420,8 +408,20 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 16115,
+      "latencyMs": 17559,
       "error": "TimeoutError: The read operation timed out"
+    },
+    "audiobook|librivox-977": {
+      "ok": false,
+      "feedOk": true,
+      "feedStatus": 200,
+      "metadataOk": true,
+      "usingCatalogFallback": false,
+      "audioOk": false,
+      "audioChecked": 2,
+      "audioPassed": 0,
+      "latencyMs": 81721,
+      "error": "URLError: <urlopen error _ssl.c:993: The handshake operation timed out>; URLError: <urlopen error _ssl.c:993: The handshake operation timed out>"
     },
     "audiobook|little-prince-cn": {
       "ok": true,
@@ -430,7 +430,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4115,
+      "latencyMs": 4378,
       "error": ""
     },
     "audiobook|romance-three-kingdoms": {
@@ -440,7 +440,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4338,
+      "latencyMs": 4732,
       "error": ""
     },
     "audiobook|thirty-nine-steps-cn": {
@@ -450,7 +450,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5691,
+      "latencyMs": 4245,
       "error": ""
     },
     "audiobook|three-hundred-tang-poems-cn": {
@@ -460,7 +460,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3232,
+      "latencyMs": 4717,
       "error": ""
     },
     "audiobook|twenty-thousand-leagues-cn": {
@@ -470,7 +470,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5187,
+      "latencyMs": 4694,
       "error": ""
     },
     "audiobook|water-margin": {
@@ -480,7 +480,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4985,
+      "latencyMs": 4273,
       "error": ""
     },
     "podcast|beyond-code": {
@@ -490,7 +490,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1163,
+      "latencyMs": 942,
       "error": ""
     },
     "podcast|beyond-football": {
@@ -500,7 +500,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5509,
+      "latencyMs": 6317,
       "error": ""
     },
     "podcast|blackwater-park": {
@@ -510,7 +510,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3957,
+      "latencyMs": 4083,
       "error": ""
     },
     "podcast|buheshiyi": {
@@ -520,7 +520,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1972,
+      "latencyMs": 2557,
       "error": ""
     },
     "podcast|business-is-like-this": {
@@ -530,7 +530,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5844,
+      "latencyMs": 5234,
       "error": ""
     },
     "podcast|dive-in": {
@@ -540,7 +540,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4984,
+      "latencyMs": 4217,
       "error": ""
     },
     "podcast|dscience": {
@@ -550,7 +550,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 33916,
+      "latencyMs": 42239,
       "error": ""
     },
     "podcast|fit4life": {
@@ -560,7 +560,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 11304,
+      "latencyMs": 4972,
       "error": ""
     },
     "podcast|grand-tour": {
@@ -570,7 +570,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4231,
+      "latencyMs": 4156,
       "error": ""
     },
     "podcast|half-latte": {
@@ -580,7 +580,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5532,
+      "latencyMs": 7594,
       "error": ""
     },
     "podcast|huzuohuyou": {
@@ -590,7 +590,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2530,
+      "latencyMs": 2971,
       "error": ""
     },
     "podcast|keep-talking": {
@@ -600,7 +600,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1566,
+      "latencyMs": 1084,
       "error": ""
     },
     "podcast|legal-dolphin": {
@@ -610,7 +610,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3665,
+      "latencyMs": 4108,
       "error": ""
     },
     "podcast|lets-talk": {
@@ -620,7 +620,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5058,
+      "latencyMs": 4112,
       "error": ""
     },
     "podcast|mianji": {
@@ -630,7 +630,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1755,
+      "latencyMs": 1261,
       "error": ""
     },
     "podcast|minjian-ghost-stories": {
@@ -640,7 +640,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4628,
+      "latencyMs": 6324,
       "error": ""
     },
     "podcast|morning-coffee": {
@@ -650,7 +650,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 7530,
+      "latencyMs": 5309,
       "error": ""
     },
     "podcast|naive-not-naive": {
@@ -660,7 +660,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1146,
+      "latencyMs": 907,
       "error": ""
     },
     "podcast|name-the-question": {
@@ -670,7 +670,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1308,
+      "latencyMs": 872,
       "error": ""
     },
     "podcast|new-energy-car": {
@@ -680,7 +680,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1143,
+      "latencyMs": 988,
       "error": ""
     },
     "podcast|random-books": {
@@ -690,7 +690,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1481,
+      "latencyMs": 955,
       "error": ""
     },
     "podcast|ritanwuyu": {
@@ -700,7 +700,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1505,
+      "latencyMs": 2410,
       "error": ""
     },
     "podcast|self-evolution": {
@@ -710,7 +710,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1175,
+      "latencyMs": 1042,
       "error": ""
     },
     "podcast|shengdongjixi": {
@@ -720,7 +720,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 231,
+      "latencyMs": 752,
       "error": ""
     },
     "podcast|steve-says": {
@@ -730,7 +730,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1525,
+      "latencyMs": 1187,
       "error": ""
     },
     "podcast|story-fm": {
@@ -740,7 +740,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 11238,
+      "latencyMs": 15613,
       "error": ""
     },
     "podcast|sv101": {
@@ -750,7 +750,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 189,
+      "latencyMs": 694,
       "error": ""
     },
     "podcast|tech-stew": {
@@ -760,7 +760,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2968,
+      "latencyMs": 3698,
       "error": ""
     },
     "podcast|the-magnus-archives": {
@@ -770,7 +770,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1157,
+      "latencyMs": 3528,
       "error": ""
     },
     "podcast|uncanny": {
@@ -780,7 +780,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5224,
+      "latencyMs": 6103,
       "error": ""
     },
     "podcast|vibration": {
@@ -790,7 +790,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4077,
+      "latencyMs": 4556,
       "error": ""
     },
     "podcast|wenhuayouxian": {
@@ -800,7 +800,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 8087,
+      "latencyMs": 8172,
       "error": ""
     },
     "podcast|whats-next-tech": {
@@ -810,7 +810,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 205,
+      "latencyMs": 671,
       "error": ""
     },
     "podcast|yeelok-spirit-special": {
@@ -820,7 +820,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5086,
+      "latencyMs": 5593,
       "error": ""
     },
     "podcast|youzhiyouxing": {
@@ -830,7 +830,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2420,
+      "latencyMs": 928,
       "error": ""
     },
     "podcast|zonghengsihai": {
@@ -840,7 +840,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4895,
+      "latencyMs": 4754,
       "error": ""
     }
   }
