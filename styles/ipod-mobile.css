@@ -1,0 +1,76 @@
+/* Mobile iPod-inspired playback surface. Audio state remains owned by index.html. */
+.ipod-wheel { display: none; }
+
+@media (max-width: 520px) {
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .now-card {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px !important;
+    padding: 18px 16px !important;
+    border-radius: 22px;
+    background: linear-gradient(145deg, var(--panel-2), var(--panel));
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .vinyl-stage {
+    order: 1;
+    justify-items: center;
+    gap: 8px;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .vinyl {
+    width: 142px !important;
+    height: 142px !important;
+    min-width: 142px !important;
+    min-height: 142px !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .vinyl-stage > span { display: block !important; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .now-column { display: contents; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .eyebrow { order: 2; justify-content: center; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .now-playing { order: 3; text-align: center; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .station-name { font-size: 22px !important; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .station-desc { -webkit-line-clamp: 2; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .main-control { order: 4; width: 100%; margin-top: 0 !important; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .queue-toggle { order: 5; align-self: center; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .ipod-wheel {
+    order: 6;
+    width: 124px;
+    height: 124px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-self: center;
+    place-items: center;
+    border: 1px solid rgba(240, 240, 240, .14);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 166, 35, .15) 0 24%, transparent 25% 100%), #17172a;
+    box-shadow: inset 0 0 0 8px rgba(240, 240, 240, .035), 0 14px 28px rgba(5, 5, 16, .25);
+    touch-action: none;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: var(--muted);
+    background: transparent;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button:first-child { grid-column: 1; grid-row: 2; }
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button:nth-child(2) { grid-column: 2; grid-row: 2; color: var(--accent); font-size: 16px; }
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button:last-child { grid-column: 3; grid-row: 2; }
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button:hover,
+  body[data-ui="mobile"]:not(.drive-mode) .ipod-wheel button:focus-visible { color: var(--accent); background: rgba(245, 166, 35, .12); }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .on-demand-tools { order: 7; }
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .player-options { order: 8; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ipod-wheel button { transition: none !important; }
+}

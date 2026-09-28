@@ -14,7 +14,8 @@ const SHELL = [
   "./styles/mobile-player-controls.css",
   "./styles/product-polish.css",
   "./styles/play-queue.css",
-  "./styles/home-modern.css"
+  "./styles/home-modern.css",
+  "./styles/ipod-mobile.css"
 ];
 
 const DATA_FILES = [
