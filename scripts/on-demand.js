@@ -71,6 +71,7 @@
     .then(() => loadScript("scripts/multimode.js"))
     .then(() => loadScript("scripts/play-queue.js"))
     .then(() => loadScript("scripts/scene-entry-fix.js"))
+    .then(() => loadScript("scripts/ipod-mobile.js"))
     .then(() => settleSceneScroll(switchedTo))
     .catch(error => console.error("Dream FM UI bootstrap failed", error));
 })();

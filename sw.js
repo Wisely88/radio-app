@@ -9,6 +9,7 @@ const SHELL = [
   "./scripts/multimode.js",
   "./scripts/play-queue.js",
   "./scripts/scene-entry-fix.js",
+  "./scripts/ipod-mobile.js",
   "./styles/multimode.css",
   "./styles/mobile-tune.css",
   "./styles/mobile-player-controls.css",
