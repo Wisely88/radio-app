@@ -325,9 +325,10 @@
   function selectItem(id, options = {}) {
     const item = currentItems().find(candidate => candidate.id === id);
     if (!item) return;
-    state.selected = item;
-    state.trackIndex = -1;
-    renderCatalog();
+    const update = () => {
+      state.selected = item;
+      state.trackIndex = -1;
+      renderCatalog();
     const tracks = tracksFor(item);
     document.getElementById("detailCover").src = item.cover || fallbackCover;
     document.getElementById("detailTitle").textContent = item.title;
@@ -357,8 +358,14 @@
         <span class="episode-duration">${formatTime(track.duration)}</span>
       </button><button class="episode-queue-btn" type="button" data-queue-track-index="${index}" aria-label="将 ${escapeHtml(track.title)} 加入接下来播放" title="加入接下来播放">＋</button></li>`;
     }).join("");
-    detail.hidden = false;
-    if (options.focus !== false) detail.scrollIntoView({ behavior: "smooth", block: "start" });
+      detail.hidden = false;
+    };
+    if (document.startViewTransition) {
+      document.startViewTransition(update);
+    } else {
+      update();
+    }
+    if (options.focus !== false) window.setTimeout(() => detail.scrollIntoView({ behavior: "smooth", block: "start" }), 0);
   }
 
   function setMediaSession(item, track) {

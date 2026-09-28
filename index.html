@@ -1070,6 +1070,7 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
+  <link rel="stylesheet" href="styles/home-modern.css">
 </head>
 <body>
   <header class="site-header">
@@ -1111,6 +1112,11 @@
           </div>
           <div class="hero-quick" id="heroQuick" aria-label="常用频道"></div>
         </div>
+        <aside class="hero-aside" aria-label="电台概览">
+          <div class="hero-aside-kicker">SIGNAL / 01</div>
+          <div class="hero-aside-mark"><img src="assets/three-quarter-mark.svg" alt=""></div>
+          <div class="hero-aside-meta"><strong>真实声音，持续抵达</strong><span>电台 · 有声书 · 播客</span></div>
+        </aside>
         <div class="hero-fraction" aria-hidden="true">3/4</div>
       </div>
       <a class="hero-scroll" href="#radioApp">进入电台 <span aria-hidden="true">↓</span></a>
@@ -1131,6 +1137,7 @@
         <button class="content-mode" type="button" data-content-mode="podcasts" aria-pressed="false">播客</button>
       </nav>
 
+      <div class="home-bento">
       <section class="player now-card" aria-labelledby="playerHeading">
         <div class="vinyl-stage" aria-hidden="true">
           <div class="vinyl" id="vinylRecord">
@@ -1220,6 +1227,18 @@
           </details>
         </div>
       </section>
+
+        <aside class="bento-brief" aria-label="首页导览">
+          <p class="bento-index">02 / LISTENING ROOM</p>
+          <h3>从一段真实信号开始</h3>
+          <p>精选直播、文学作品与独立播客，在同一张桌面上切换当下与想象。</p>
+          <dl class="bento-stats">
+            <div><dt id="bentoStationCount">0</dt><dd>个频道</dd></div>
+            <div><dt>3</dt><dd>种内容</dd></div>
+          </dl>
+          <a class="bento-link" href="#stations">浏览声音目录 <span aria-hidden="true">↗</span></a>
+        </aside>
+      </div>
 
       <section class="channels-panel" id="stations" aria-labelledby="channelHeading">
         <div class="list-header">
@@ -1661,6 +1680,8 @@
     function updateMetrics() {
       document.getElementById("stationTotal").textContent = stations.length;
       document.getElementById("heroStationCount").textContent = stations.length;
+      const bentoCount = document.getElementById("bentoStationCount");
+      if (bentoCount) bentoCount.textContent = stations.length;
       document.getElementById("favoriteTotal").textContent = favorites.length;
       document.getElementById("currentFormat").textContent = currentIndex >= 0 ? stationFormat(stations[currentIndex]) : "--";
       renderHeroQuick();
