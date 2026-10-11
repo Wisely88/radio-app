@@ -17,21 +17,6 @@
   const switchedTo = sessionStorage.getItem(MODE_SWITCH_KEY);
   if (switchedTo && "scrollRestoration" in history) history.scrollRestoration = "manual";
 
-  function loadStyle(href) {
-    const style = document.createElement("link");
-    style.rel = "stylesheet";
-    style.href = `${href}?v=${version}`;
-    document.head.appendChild(style);
-  }
-
-  loadStyle("styles/multimode.css");
-  loadStyle("styles/mobile-tune.css");
-  loadStyle("styles/mobile-player-controls.css");
-  loadStyle("styles/product-polish.css");
-  loadStyle("styles/play-queue.css");
-  loadStyle("styles/home-modern.css");
-  loadStyle("styles/ipod-mobile.css");
-
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
     navigator.serviceWorker.register("./sw.js", { scope: "./" })
       .catch(error => console.warn("Dream FM offline shell unavailable", error));
