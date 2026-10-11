@@ -170,11 +170,18 @@
 
   function loadCatalogs() {
     if (state.catalogLoadPromise) return state.catalogLoadPromise;
-    state.catalogLoadPromise = Promise.all([
-      fetch("data/audiobooks.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("有声书目录读取失败"); return response.json(); }),
-      fetch("data/podcasts.json", { cache: "no-store" }).then(response => { if (!response.ok) throw new Error("播客目录读取失败"); return response.json(); }),
-      fetch("audio-source-health.json", { cache: "no-store" }).then(response => response.ok ? response.json() : null).catch(() => null),
-    ]).then(([audiobooks, podcasts, audioHealth]) => {
+    // P1-5: 先取 tiny 的版本文件，再用 ?v= 版本串拉目录；版本串让 SW 走 cache-first，
+    // 目录不变时直接命中缓存，不再每次 no-store 全量重拉 962KB。
+    state.catalogLoadPromise = fetch("data/catalog-version.json", { cache: "no-store" })
+      .then(response => response.ok ? response.json() : null).catch(() => null)
+      .then(versionInfo => {
+        const v = versionInfo && versionInfo.version ? `?v=${encodeURIComponent(versionInfo.version)}` : "";
+        return Promise.all([
+          fetch(`data/audiobooks.json${v}`).then(response => { if (!response.ok) throw new Error("有声书目录读取失败"); return response.json(); }),
+          fetch(`data/podcasts.json${v}`).then(response => { if (!response.ok) throw new Error("播客目录读取失败"); return response.json(); }),
+          fetch("audio-source-health.json", { cache: "no-store" }).then(response => response.ok ? response.json() : null).catch(() => null),
+        ]);
+      }).then(([audiobooks, podcasts, audioHealth]) => {
       state.audiobooks = Array.isArray(audiobooks.books) ? audiobooks.books : [];
       state.podcasts = Array.isArray(podcasts.shows) ? podcasts.shows : [];
       state.catalogMeta = { audiobooks, podcasts };

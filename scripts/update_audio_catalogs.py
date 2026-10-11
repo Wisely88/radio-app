@@ -405,6 +405,12 @@ def main() -> int:
         "source": "Public podcast RSS feeds",
         "shows": podcasts,
     })
+    # P1-5: 版本指针（tiny）。前端先取它，再用 ?v=<version> 拉目录，
+    # 配合 SW 对版本化 URL 的 cache-first，避免每次全量重拉 962KB。
+    write_json(args.output_dir / "catalog-version.json", {
+        "version": generated_at,
+        "files": ["audiobooks.json", "podcasts.json"],
+    })
     print(f"Generated {len(audiobooks)} audiobooks and {len(podcasts)} podcast shows")
     for warning in audiobook_warnings + podcast_warnings:
         print(f"WARNING {warning}")

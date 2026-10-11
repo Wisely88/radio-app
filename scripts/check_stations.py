@@ -25,6 +25,34 @@ def station_id(station: dict[str, str]) -> str:
     return "|".join((station["cat"], station["region"], station["name"]))
 
 
+def parse_bitrate(headers) -> int | None:
+    """P3-11: 从 Shoutcast/Icecast 响应头提取码率（kbps）。"""
+    for key in ("icy-br", "ice-bitrate"):
+        value = headers.get(key)
+        if value:
+            try:
+                return int(float(str(value).strip()))
+            except ValueError:
+                continue
+    return None
+
+
+def parse_codec(headers, url: str) -> str | None:
+    """P3-11: 从 Content-Type / URL 推断编码。"""
+    content_type = (headers.get("content-type") or "").lower()
+    if "mpegurl" in content_type or url.lower().split("?")[0].endswith(".m3u8"):
+        return "hls"
+    if "opus" in content_type:
+        return "opus"
+    if "ogg" in content_type:
+        return "ogg"
+    if "aac" in content_type or "mp4" in content_type:
+        return "aac"
+    if "mpeg" in content_type:
+        return "mp3"
+    return None
+
+
 def check_station(station: dict[str, str], timeout: float) -> tuple[str, dict[str, object]]:
     started = time.monotonic()
     request = urllib.request.Request(
@@ -37,10 +65,14 @@ def check_station(station: dict[str, str], timeout: float) -> tuple[str, dict[st
     )
     status = 0
     error = ""
+    bitrate: int | None = None
+    codec: str | None = None
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:
             status = int(response.status or 200)
             response.read(512)
+            bitrate = parse_bitrate(response.headers)
+            codec = parse_codec(response.headers, station["url"])
         ok = 200 <= status < 400
     except urllib.error.HTTPError as exc:
         status = int(exc.code)
@@ -55,6 +87,8 @@ def check_station(station: dict[str, str], timeout: float) -> tuple[str, dict[st
         "status": status,
         "latencyMs": round((time.monotonic() - started) * 1000),
         "error": error,
+        "bitrate": bitrate,
+        "codec": codec,
     }
 
 
