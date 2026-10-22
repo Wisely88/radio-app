@@ -116,14 +116,14 @@ body.multimode-ready { transition: padding .22s ease; }
   right: 0;
   bottom: 0;
   left: 0;
-  height: var(--mm-mobile-nav);
-  padding: 5px max(8px, env(safe-area-inset-right)) max(5px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+  height: calc(var(--mm-mobile-nav) + env(safe-area-inset-bottom, 0px));
+  padding: 5px max(8px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
   border-top: 1px solid rgba(240,240,240,.11);
   background: rgba(22,22,40,.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
-.mm-mobile-nav-inner { height: 100%; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
+.mm-mobile-nav-inner { height: var(--mm-mobile-nav); display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; }
 .mm-mobile-btn {
   min-width: 0;
   display: grid;
@@ -188,7 +188,7 @@ body[data-ui="desktop"].has-played .hero-scroll { display: none; }
 
 /* Mobile app shell */
 @media (max-width: 899px) {
-  body[data-ui="mobile"] { padding-bottom: calc(var(--player-height) + var(--mm-mobile-nav) + 14px); }
+  body[data-ui="mobile"] { padding-bottom: calc(var(--player-height) + var(--mm-mobile-nav) + env(safe-area-inset-bottom, 0px) + 14px); }
   body[data-ui="mobile"] .mm-mobile-nav { display: block; }
   body[data-ui="mobile"] .site-header { height: 58px; }
   body[data-ui="mobile"] .site-nav { display: none; }
@@ -209,7 +209,7 @@ body[data-ui="desktop"].has-played .hero-scroll { display: none; }
   body[data-ui="mobile"] .player-options { display: none; }
   body[data-ui="mobile"] .channels-panel,
   body[data-ui="mobile"] .on-demand-panel { margin-top: 34px; }
-  body[data-ui="mobile"] .sticky-player { bottom: var(--mm-mobile-nav); }
+  body[data-ui="mobile"] .sticky-player { bottom: calc(var(--mm-mobile-nav) + env(safe-area-inset-bottom, 0px)); }
   body[data-ui="mobile"] .sticky-inner { width: calc(100% - 20px); }
   body[data-ui="mobile"] .dock-station span { max-width: 48vw; }
 }

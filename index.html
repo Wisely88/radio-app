@@ -1483,6 +1483,8 @@
     const LAST_STATION_KEY = "xiaowei-radio-last-station-v1";
     const DRIVE_MODE_KEY = "xiaowei-radio-drive-mode-v1";
     const RECENT_TIMES_KEY = "xiaowei-radio-recent-times-v1";
+    const PLAYBACK_KIND_KEY = "xiaowei-radio-playback-kind-v1";
+    const CONTENT_MODE_KEY = "xiaowei-radio-content-mode-v1";
 
     const audio = document.getElementById("audio");
     const channelList = document.getElementById("channelList");
@@ -1537,6 +1539,12 @@
     }
 
     function stationIndexFromId(id) {
+      if (!id && id !== 0) return -1;
+      if (typeof id === "number" && id >= 0 && id < stations.length) return id;
+      if (typeof id === "string" && /^\d+$/.test(id)) {
+        const num = parseInt(id, 10);
+        if (num >= 0 && num < stations.length) return num;
+      }
       return stations.findIndex(station => stationId(station) === id);
     }
 
@@ -1882,6 +1890,7 @@
       if (!station) return;
 
       playbackKind = "live";
+      localStorage.setItem(PLAYBACK_KIND_KEY, "live");
       document.body.classList.remove("on-demand-playing");
       document.getElementById("onDemandTools").hidden = true;
       document.getElementById("signalLabel").textContent = "LIVE SIGNAL";
@@ -1964,7 +1973,11 @@
         onDemandControls.toggle();
         return;
       }
-      if (currentIndex < 0) return;
+      if (currentIndex < 0) {
+        const preferredIndex = recents[0] ?? favorites[0] ?? 0;
+        loadStation(preferredIndex);
+        return;
+      }
       if (statusState === "error" || (!audio.hasAttribute("src") && !hls)) loadStation(currentIndex);
       else if (audio.paused) playCurrent();
       else audio.pause();
@@ -1977,10 +1990,21 @@
         return;
       }
       const visible = filteredIndexes();
-      if (!visible.length) return;
+      if (!visible.length) {
+        if (stations.length) {
+          const nextIndex = currentIndex < 0 ? 0 : (currentIndex + direction + stations.length) % stations.length;
+          loadStation(nextIndex);
+        }
+        return;
+      }
       const position = visible.indexOf(currentIndex);
-      const nextPosition = position < 0 ? 0 : (position + direction + visible.length) % visible.length;
-      loadStation(visible[nextPosition]);
+      let nextIndex;
+      if (position >= 0) {
+        nextIndex = visible[(position + direction + visible.length) % visible.length];
+      } else {
+        nextIndex = direction > 0 ? visible[0] : visible[visible.length - 1];
+      }
+      loadStation(nextIndex);
     }
 
     function toggleFavorite(index) {
@@ -2052,9 +2076,14 @@
     }
 
     function restoreLastStation() {
-      const index = stationIndexFromId(localStorage.getItem(LAST_STATION_KEY));
-      if (index < 0) return;
-      prepareStation(index, "上次收听");
+      const raw = localStorage.getItem(LAST_STATION_KEY);
+      const index = stationIndexFromId(raw);
+      if (index >= 0) {
+        prepareStation(index, "上次收听");
+      } else {
+        const preferred = recents[0] ?? favorites[0] ?? 0;
+        prepareStation(preferred, "准备播放");
+      }
     }
 
     searchInput.addEventListener("input", updateSearchState);
@@ -2067,6 +2096,12 @@
     dockNextBtn.addEventListener("click", () => stepStation(1));
 
     heroListenBtn.addEventListener("click", () => {
+      if (playbackKind !== "live" && onDemandControls) {
+        onDemandControls.play();
+        const onDemandSec = document.getElementById("onDemandPanel");
+        onDemandSec?.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
       const targetIndex = currentIndex >= 0 ? currentIndex : recents[0] ?? favorites[0] ?? 0;
       if (currentIndex === targetIndex && (audio.hasAttribute("src") || hls)) playCurrent();
       else loadStation(targetIndex);
@@ -2221,7 +2256,26 @@
       localStorage.removeItem(SLEEP_TIMER_KEY);
     }
 
-    restoreLastStation();
+    const savedKind = localStorage.getItem(PLAYBACK_KIND_KEY);
+    const savedContentMode = localStorage.getItem(CONTENT_MODE_KEY);
+    const isOnDemandPrior = savedKind === "audiobooks" || savedKind === "podcasts" || savedKind === "audiobook" || savedKind === "podcast" || savedContentMode === "audiobooks" || savedContentMode === "podcasts";
+
+    if (!isOnDemandPrior) {
+      restoreLastStation();
+    } else {
+      playbackKind = savedKind === "podcasts" || savedKind === "podcast" || savedContentMode === "podcasts" ? "podcast" : "audiobook";
+      document.body.classList.add("on-demand-playing");
+      document.getElementById("signalLabel").textContent = "ON DEMAND";
+      document.getElementById("stationCategory").textContent = playbackKind === "podcast" ? "◉ 播客 · 上次收听" : "📖 有声书 · 上次收听";
+      document.getElementById("stationName").textContent = "正在读取收听记录…";
+      document.getElementById("stationDesc").textContent = "点击播放继续上次内容";
+      dockStationName.textContent = "正在读取记录…";
+      dockStationMeta.textContent = playbackKind === "podcast" ? "播客 · 点播" : "有声书 · 声音书房";
+      setStatus("上次收听");
+      setPlaybackControls("paused");
+      playToggleBtn.disabled = false;
+      dockPlayBtn.disabled = false;
+    }
     const driveRequested = new URLSearchParams(location.search).get("drive") === "1" || localStorage.getItem(DRIVE_MODE_KEY) === "1";
     if (driveRequested) setDriveMode(true);
     renderTabs();

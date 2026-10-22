@@ -1,4 +1,4 @@
-const CACHE_NAME = "dreamfm-pages-shell-v3";
+const CACHE_NAME = "dreamfm-pages-shell-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -16,7 +16,8 @@ const SHELL = [
   "./styles/product-polish.css",
   "./styles/play-queue.css",
   "./styles/home-modern.css",
-  "./styles/ipod-mobile.css"
+  "./styles/ipod-mobile.css",
+  "./styles/mode-switch.css"
 ];
 
 const DATA_FILES = [

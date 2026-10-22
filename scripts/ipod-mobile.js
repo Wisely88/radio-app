@@ -14,6 +14,29 @@
     button.addEventListener("click", () => trigger(button.dataset.ipodAction));
   });
 
+  const selectBtn = wheel.querySelector('[data-ipod-action="select"]');
+  const syncSelectIcon = () => {
+    const mainBtn = document.getElementById("playToggleBtn");
+    const state = mainBtn?.dataset?.playbackState;
+    if (!selectBtn) return;
+    if (state === "playing") {
+      selectBtn.textContent = "⏸";
+      selectBtn.setAttribute("aria-label", "暂停");
+    } else if (state === "retry") {
+      selectBtn.textContent = "↻";
+      selectBtn.setAttribute("aria-label", "重试播放");
+    } else {
+      selectBtn.textContent = "▶";
+      selectBtn.setAttribute("aria-label", "播放");
+    }
+  };
+
+  const playToggleBtn = document.getElementById("playToggleBtn");
+  if (playToggleBtn) {
+    new MutationObserver(syncSelectIcon).observe(playToggleBtn, { attributes: true, attributeFilter: ["data-playback-state", "aria-pressed"] });
+  }
+  syncSelectIcon();
+
   let startX = 0;
   let startY = 0;
   let tracking = false;
