@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T08:40:33+00:00",
+  "generatedAt": "2026-10-23T08:36:31+00:00",
   "stationCount": 68,
   "availableCount": 68,
   "stations": {
     "audio|上海|阿基米德故事会": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1746,
+      "latencyMs": 2201,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -14,7 +14,7 @@
     "audio|华语|德云社相声合集": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1043,
+      "latencyMs": 356,
       "error": "",
       "bitrate": 128,
       "codec": "mp3"
@@ -22,7 +22,7 @@
     "audio|四川|成都故事广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 5419,
+      "latencyMs": 1627,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -30,7 +30,7 @@
     "audio|山东|济南故事广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2252,
+      "latencyMs": 2495,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -38,7 +38,7 @@
     "audio|河北|河北故事广播": {
       "ok": true,
       "status": 206,
-      "latencyMs": 1486,
+      "latencyMs": 1043,
       "error": "",
       "bitrate": null,
       "codec": "hls"
@@ -46,7 +46,7 @@
     "audio|河北|衡水交通评书广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4536,
+      "latencyMs": 1553,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -54,7 +54,7 @@
     "general|全国|CNR-5 中华之声": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3000,
+      "latencyMs": 4812,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -62,7 +62,7 @@
     "general|北京|北京文艺广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2839,
+      "latencyMs": 4371,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -70,7 +70,7 @@
     "general|国际|CRI HIT FM 88.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4449,
+      "latencyMs": 2853,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -78,7 +78,7 @@
     "general|安徽|安徽小说评书广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1797,
+      "latencyMs": 2097,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -86,7 +86,7 @@
     "general|广东|茂名综合广播 FM101.1": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4329,
+      "latencyMs": 3189,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -94,7 +94,7 @@
     "general|江苏省|江苏财经广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 5324,
+      "latencyMs": 2085,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -102,7 +102,7 @@
     "general|淮安|淮安经济生活广播 FM105": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1740,
+      "latencyMs": 6658,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -110,7 +110,7 @@
     "general|湾区|CNR-7 华夏之声": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2021,
+      "latencyMs": 1853,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -118,7 +118,7 @@
     "music|上海|上海动感101": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2265,
+      "latencyMs": 4576,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -126,7 +126,7 @@
     "music|上海|上海经典947": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1593,
+      "latencyMs": 2023,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -134,7 +134,7 @@
     "music|上海|上海经典金曲 FM103.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3147,
+      "latencyMs": 5282,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -142,7 +142,7 @@
     "music|全国|CNR-3 音乐之声": {
       "ok": true,
       "status": 206,
-      "latencyMs": 1148,
+      "latencyMs": 2153,
       "error": "",
       "bitrate": null,
       "codec": "hls"
@@ -150,7 +150,7 @@
     "music|北京|北京音乐广播 FM97.4": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4099,
+      "latencyMs": 3155,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -158,7 +158,7 @@
     "music|华语|CityFM 城市音乐台": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2090,
+      "latencyMs": 2151,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -166,7 +166,7 @@
     "music|华语|两广之声音乐台": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4155,
+      "latencyMs": 3129,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -174,7 +174,7 @@
     "music|南京|南京音乐广播 FM105.8": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2541,
+      "latencyMs": 2283,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -182,7 +182,7 @@
     "music|国际|Radio Paradise": {
       "ok": true,
       "status": 200,
-      "latencyMs": 145,
+      "latencyMs": 167,
       "error": "",
       "bitrate": 320,
       "codec": "aac"
@@ -190,7 +190,7 @@
     "music|国际|华夏古典音乐": {
       "ok": true,
       "status": 200,
-      "latencyMs": 584,
+      "latencyMs": 635,
       "error": "",
       "bitrate": 128,
       "codec": "mp3"
@@ -198,7 +198,7 @@
     "music|天津|天津音乐广播 FM99": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2749,
+      "latencyMs": 2273,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -206,7 +206,7 @@
     "music|常州|常州音乐广播 FM93.5": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2802,
+      "latencyMs": 1504,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -214,7 +214,7 @@
     "music|广东|广东音乐之声": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1943,
+      "latencyMs": 4454,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -222,7 +222,7 @@
     "music|江苏|江苏经典流行音乐广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 5724,
+      "latencyMs": 3175,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -230,7 +230,7 @@
     "music|江苏|江苏音乐广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2028,
+      "latencyMs": 2835,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -238,7 +238,7 @@
     "music|浙江|浙江音乐调频968": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2226,
+      "latencyMs": 3063,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -246,7 +246,7 @@
     "music|深圳|深圳飞扬971": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2005,
+      "latencyMs": 1614,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -254,7 +254,7 @@
     "news|上海|上海新闻广播 FM93.4": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2114,
+      "latencyMs": 5440,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -262,7 +262,7 @@
     "news|上海|上海第一财经 FM90.9": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2132,
+      "latencyMs": 2579,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -270,7 +270,7 @@
     "news|全国|CNR-1 中国之声": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4182,
+      "latencyMs": 1419,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -278,7 +278,7 @@
     "news|全国|CNR-2 经济之声": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1748,
+      "latencyMs": 2575,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -286,7 +286,7 @@
     "news|全国|环球资讯广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3868,
+      "latencyMs": 4862,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -294,7 +294,7 @@
     "news|北京|北京新闻广播 AM828": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4350,
+      "latencyMs": 3312,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -302,7 +302,7 @@
     "news|四川|四川新闻广播 FM106.1": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2419,
+      "latencyMs": 2366,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -310,7 +310,7 @@
     "news|国际|BBC World Service": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1376,
+      "latencyMs": 1680,
       "error": "",
       "bitrate": 56,
       "codec": "mp3"
@@ -318,7 +318,7 @@
     "news|国际|CGTN Radio": {
       "ok": true,
       "status": 200,
-      "latencyMs": 415,
+      "latencyMs": 569,
       "error": "",
       "bitrate": null,
       "codec": "hls"
@@ -326,7 +326,7 @@
     "news|国际|REPLAY NEWS 中文": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1768,
+      "latencyMs": 1577,
       "error": "",
       "bitrate": 128,
       "codec": "mp3"
@@ -334,7 +334,7 @@
     "news|国际|轻松调频 CRI EZFM": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1092,
+      "latencyMs": 970,
       "error": "",
       "bitrate": null,
       "codec": "hls"
@@ -342,7 +342,7 @@
     "news|常州|常州新闻广播 FM103.4": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1269,
+      "latencyMs": 1844,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -350,7 +350,7 @@
     "news|广东|广东新闻广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4996,
+      "latencyMs": 2891,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -358,7 +358,7 @@
     "news|广东|广东珠江经济台": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2680,
+      "latencyMs": 2366,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -366,7 +366,7 @@
     "news|徐州|徐州新闻综合广播 FM93": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2268,
+      "latencyMs": 3912,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -374,7 +374,7 @@
     "news|无锡|无锡新闻综合广播 FM93.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2655,
+      "latencyMs": 2828,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -382,7 +382,7 @@
     "news|江苏省|江苏新闻广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3209,
+      "latencyMs": 3065,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -390,7 +390,7 @@
     "news|江西|江西新闻广播 FM104.4": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4109,
+      "latencyMs": 2096,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -398,7 +398,7 @@
     "news|苏州|苏州新闻广播 FM91.1": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3519,
+      "latencyMs": 1742,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -406,7 +406,7 @@
     "news|镇江|镇江综合广播 FM104": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3740,
+      "latencyMs": 3104,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -414,7 +414,7 @@
     "traffic|上海|上海交通广播 FM105.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3105,
+      "latencyMs": 2567,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -422,7 +422,7 @@
     "traffic|全国|中国交通广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 4086,
+      "latencyMs": 2663,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -430,7 +430,7 @@
     "traffic|北京|北京交通广播 FM103.9": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3219,
+      "latencyMs": 2203,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -438,7 +438,7 @@
     "traffic|南通|南通交通广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1569,
+      "latencyMs": 2670,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -446,7 +446,7 @@
     "traffic|南通|南通私家车广播 FM106.1": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3407,
+      "latencyMs": 1348,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -454,7 +454,7 @@
     "traffic|四川|四川交通广播 FM101.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3750,
+      "latencyMs": 3059,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -462,7 +462,7 @@
     "traffic|安徽|安徽交通广播 FM90.8": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1873,
+      "latencyMs": 3349,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -470,7 +470,7 @@
     "traffic|常州|常州交通广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1109,
+      "latencyMs": 2314,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -478,7 +478,7 @@
     "traffic|广东|广东交通之声 FM105.2": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2916,
+      "latencyMs": 1741,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -486,7 +486,7 @@
     "traffic|扬州|扬州交通广播 FM103.5": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1522,
+      "latencyMs": 3373,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -494,7 +494,7 @@
     "traffic|江苏省|江苏交通广播": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1942,
+      "latencyMs": 1640,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -502,7 +502,7 @@
     "traffic|淮安|淮安车生活广播 FM100.6": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1969,
+      "latencyMs": 1947,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -510,7 +510,7 @@
     "traffic|深圳|深圳交通广播 FM106.2": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2647,
+      "latencyMs": 2367,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -518,7 +518,7 @@
     "traffic|湖北|湖北楚天交通广播 FM92.7": {
       "ok": true,
       "status": 206,
-      "latencyMs": 1381,
+      "latencyMs": 1767,
       "error": "",
       "bitrate": null,
       "codec": "hls"
@@ -526,7 +526,7 @@
     "traffic|盐城|盐城交通广播 FM105.3": {
       "ok": true,
       "status": 200,
-      "latencyMs": 1248,
+      "latencyMs": 3357,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -534,7 +534,7 @@
     "traffic|连云港|连云港交通广播 FM92.7": {
       "ok": true,
       "status": 200,
-      "latencyMs": 2513,
+      "latencyMs": 2011,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
@@ -542,7 +542,7 @@
     "traffic|郑州|郑州交通广播 FM91.2": {
       "ok": true,
       "status": 200,
-      "latencyMs": 3103,
+      "latencyMs": 4185,
       "error": "",
       "bitrate": null,
       "codec": "mp3"
