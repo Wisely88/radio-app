@@ -8,11 +8,11 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; media-src https: blob:; connect-src 'self' https:; font-src 'self' data:; worker-src 'self' blob:; manifest-src 'self'; base-uri 'self'; form-action 'none'">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="assets/three-quarter-mark.svg?v=20260922-brand-2">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
   <link rel="icon" href="assets/three-quarter-mark.svg?v=20260922-brand-2" type="image/svg+xml">
   <title>3/4梦想电台 · Wisely’s Dream FM</title>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js"></script>
   <style>
 
     /* 3/4梦想电台 brand system */
@@ -1100,7 +1100,19 @@
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
-  <link rel="stylesheet" href="styles/home-modern.css">
+  <link rel="stylesheet" href="styles/multimode.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/mobile-tune.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/mobile-player-controls.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/product-polish.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/play-queue.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/home-modern.css?v=20260928-ipod-mobile-1">
+  <link rel="stylesheet" href="styles/ipod-mobile.css?v=20260928-ipod-mobile-1">
+  <style>
+    /* P0-P3 优化新增样式 */
+    #vizCanvas { display: block; width: 100%; max-width: 340px; height: 64px; margin: 10px auto 0; border-radius: 8px; background: rgba(0,0,0,.25); }
+    #vizCanvas[hidden] { display: none; }
+    .quality-row[hidden] { display: none; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -1175,6 +1187,7 @@
           </div>
           <span id="signalLabel">LIVE SIGNAL</span>
         </div>
+        <canvas id="vizCanvas" width="340" height="64" hidden aria-label="音频频谱可视化"></canvas>
 
         <div class="now-column">
           <div class="eyebrow">
@@ -1239,6 +1252,22 @@
             </select>
             <button class="timer-btn" id="sleepTimerBtn" type="button">启动</button>
             <span class="timer-status" id="sleepTimerStatus" aria-live="polite">未设置</span>
+          </div>
+
+          <div class="timer-row quality-row" id="qualityRow" hidden>
+            <label for="qualitySelect">码率</label>
+            <select class="timer-select" id="qualitySelect" aria-label="HLS 码率选择">
+              <option value="auto" selected>自动</option>
+              <option value="high">高清</option>
+              <option value="low">流畅</option>
+            </select>
+            <span class="timer-status" id="qualityStatus" aria-live="polite"></span>
+          </div>
+
+          <div class="timer-row">
+            <span>可视化</span>
+            <button class="timer-btn" id="vizToggleBtn" type="button" aria-pressed="false">频谱可视化</button>
+            <span class="timer-status" id="vizStatus" aria-live="polite"></span>
           </div>
 
           <div class="format-stats" aria-label="频道概览">
@@ -1541,6 +1570,12 @@
     const sleepTimerSelect = document.getElementById("sleepTimerSelect");
     const sleepTimerBtn = document.getElementById("sleepTimerBtn");
     const sleepTimerStatus = document.getElementById("sleepTimerStatus");
+    const qualityRow = document.getElementById("qualityRow");
+    const qualitySelect = document.getElementById("qualitySelect");
+    const qualityStatus = document.getElementById("qualityStatus");
+    const vizCanvas = document.getElementById("vizCanvas");
+    const vizToggleBtn = document.getElementById("vizToggleBtn");
+    const vizStatus = document.getElementById("vizStatus");
     const dockPrevBtn = document.getElementById("dockPrevBtn");
     const dockPlayBtn = document.getElementById("dockPlayBtn");
     const dockNextBtn = document.getElementById("dockNextBtn");
@@ -1560,6 +1595,13 @@
     let hlsNetworkRetries = 0;
     let hlsMediaRecoveries = 0;
     let stationLoadToken = 0;
+    // P0-P3 优化新增状态
+    let hlsLoadPromise = null;      // hls.js 按需加载（P1-3）
+    let nativeRetries = 0;          // 原生流重试计数（P2-7）
+    let nativeRetryTimer = null;
+    let audioErrorToken = 0;        // audio error 事件的 loadToken 校验
+    let autoFailoverHops = 0;       // 自动故障转移跳数（P2-6）
+    const HLS_QUALITY_KEY = "dreamfm-hls-quality-v1";
     let currentIndex = -1;
     let activeCat = "all";
     let statusState = "";
@@ -1851,12 +1893,18 @@
           ? recents
           : stations.map((_, index) => index);
 
-      return base.filter(index => {
+      const list = base.filter(index => {
         const station = stations[index];
         if (!station) return false;
         if (!['all', 'favorites', 'recent'].includes(activeCat) && station.cat !== activeCat) return false;
         if (!query) return true;
         return `${station.name} ${station.desc} ${station.region} ${categories[station.cat].label}`.toLowerCase().includes(query);
+      });
+      // P3-11: 同分类内按码率降序（健康检查提供 bitrate；无数据时保持原顺序，sort 稳定）
+      const bitrateOf = i => stationHealth?.[stationId(stations[i])]?.bitrate ?? -1;
+      return list.sort((a, b) => {
+        if (stations[a].cat !== stations[b].cat) return 0;
+        return bitrateOf(b) - bitrateOf(a);
       });
     }
 
@@ -1913,9 +1961,134 @@
     function destroyHls() {
       window.clearTimeout(hlsRetryTimer);
       hlsRetryTimer = null;
+      if (qualityRow) qualityRow.hidden = true;
       if (hls) {
         hls.destroy();
         hls = null;
+      }
+    }
+
+    // P1-3: hls.js 按需加载（UMD 构建，失败时 reject 供调用方处理）
+    function ensureHls() {
+      if (window.Hls) return Promise.resolve(window.Hls);
+      if (!hlsLoadPromise) {
+        hlsLoadPromise = new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = "https://cdn.jsdelivr.net/npm/hls.js@1.6.16/dist/hls.min.js";
+          script.onload = () => (window.Hls ? resolve(window.Hls) : reject(new Error("Hls missing")));
+          script.onerror = () => reject(new Error("hls.js 加载失败"));
+          document.head.appendChild(script);
+        }).catch(error => { hlsLoadPromise = null; throw error; });
+      }
+      return hlsLoadPromise;
+    }
+
+    // P3-9: 应用已保存的 HLS 码率偏好
+    function applyHlsQuality() {
+      if (!hls || !hls.levels || !hls.levels.length) return;
+      const q = qualitySelect.value;
+      if (q === "high") hls.nextLevel = hls.levels.length - 1;
+      else if (q === "low") hls.nextLevel = 0;
+      else hls.nextLevel = -1;
+      const level = hls.levels[hls.nextLevel] || hls.levels[hls.currentLevel];
+      qualityStatus.textContent = q === "auto" ? "" : (level ? `${Math.round((level.bitrate || 0) / 1000)}k` : "");
+    }
+
+    // P2-6: 自动故障转移——当前台彻底失败后切到同分类下一个健康台
+    function autoFailover() {
+      const current = stations[currentIndex];
+      autoFailoverHops += 1;
+      if (!current || !stationHealth || autoFailoverHops > 2) {
+        setStatus("音源暂时不可用，点击重试", "error");
+        setPlaybackControls("retry");
+        return;
+      }
+      const total = stations.length;
+      for (let step = 1; step < total; step++) {
+        const i = (currentIndex + step) % total;
+        const candidate = stations[i];
+        if (candidate.cat !== current.cat) continue;
+        if (stationHealth[stationId(candidate)]?.ok) {
+          showToast(`原频道暂时不可用，已自动切换到${candidate.name}`);
+          loadStation(i, { auto: true });
+          return;
+        }
+      }
+      setStatus("同分类暂无可用频道，点击重试", "error");
+      setPlaybackControls("retry");
+    }
+
+    // P3-10: 频谱可视化（默认关闭）。
+    // 为避免破坏不支持 CORS 的电台，crossorigin 仅在可视化开启且 CORS 探测通过后才动态设置。
+    let vizAC = null, vizAnalyser = null, vizRAF = 0, vizEnabled = false;
+    async function probeCors(url) {
+      try {
+        await fetch(url, { method: "HEAD", mode: "cors", cache: "no-store" });
+        return true;
+      } catch { return false; }
+    }
+    function drawViz() {
+      if (!vizEnabled || !vizAnalyser) return;
+      const ctx2d = vizCanvas.getContext("2d");
+      const data = new Uint8Array(vizAnalyser.frequencyBinCount);
+      const W = vizCanvas.width, H = vizCanvas.height, bars = 48, bw = W / bars;
+      (function frame() {
+        if (!vizEnabled) return;
+        vizRAF = requestAnimationFrame(frame);
+        vizAnalyser.getByteFrequencyData(data);
+        ctx2d.clearRect(0, 0, W, H);
+        ctx2d.fillStyle = "#F5A623";
+        for (let i = 0; i < bars; i++) {
+          const v = data[Math.floor(i * data.length / bars)] / 255;
+          const h = Math.max(2, v * H);
+          ctx2d.fillRect(i * bw + 1, H - h, bw - 2, h);
+        }
+      })();
+    }
+    async function setViz(on) {
+      if (on === vizEnabled) return;
+      if (!on) {
+        vizEnabled = false;
+        cancelAnimationFrame(vizRAF);
+        vizCanvas.hidden = true;
+        vizToggleBtn.setAttribute("aria-pressed", "false");
+        vizToggleBtn.textContent = "频谱可视化";
+        vizStatus.textContent = "";
+        if (audio.getAttribute("crossorigin") !== null) {
+          audio.removeAttribute("crossorigin");
+          if (playbackKind === "live" && currentIndex >= 0) loadStation(currentIndex);
+        }
+        return;
+      }
+      const station = stations[currentIndex];
+      if (!station || playbackKind !== "live") { showToast("请先选择一个直播频道"); return; }
+      if (!(await probeCors(station.url))) {
+        showToast("该电台不支持跨域可视化，已回退普通播放");
+        return;
+      }
+      try {
+        if (!vizAC) {
+          const AC = window.AudioContext || window.webkitAudioContext;
+          if (!AC) throw new Error("no-webaudio");
+          vizAC = new AC();
+          const srcNode = vizAC.createMediaElementSource(audio); // 整个生命周期只能创建一次
+          vizAnalyser = vizAC.createAnalyser();
+          vizAnalyser.fftSize = 256;
+          vizAnalyser.smoothingTimeConstant = 0.8;
+          srcNode.connect(vizAnalyser);
+          vizAnalyser.connect(vizAC.destination);
+        }
+        if (vizAC.state === "suspended") await vizAC.resume();
+        audio.setAttribute("crossorigin", "anonymous");
+        vizEnabled = true;
+        vizCanvas.hidden = false;
+        vizToggleBtn.setAttribute("aria-pressed", "true");
+        vizToggleBtn.textContent = "关闭可视化";
+        vizStatus.textContent = "频谱开";
+        loadStation(currentIndex); // 以 CORS 模式重载当前台
+        drawViz();
+      } catch (error) {
+        showToast("该电台不支持跨域可视化，已回退普通播放");
       }
     }
 
@@ -1959,9 +2132,10 @@
       localStorage.setItem(RECENT_TIMES_KEY, JSON.stringify(recentTimes));
     }
 
-    function loadStation(index) {
+    function loadStation(index, opts = {}) {
       const station = stations[index];
       if (!station) return;
+      if (!opts.auto) autoFailoverHops = 0;
 
       playbackKind = "live";
       localStorage.setItem(PLAYBACK_KIND_KEY, "live");
@@ -1995,46 +2169,61 @@
       pendingPlayRecord = true;
       hlsNetworkRetries = 0;
       hlsMediaRecoveries = 0;
+      nativeRetries = 0;
+      window.clearTimeout(nativeRetryTimer);
       const loadToken = ++stationLoadToken;
+      audioErrorToken = loadToken;
       setStatus("连接中", "loading");
 
-      if (isHls(station.url) && window.Hls && Hls.isSupported()) {
-        hls = new Hls({ enableWorker: true, lowLatencyMode: false });
-        hls.loadSource(station.url);
-        hls.attachMedia(audio);
-        hls.on(Hls.Events.MANIFEST_PARSED, playCurrent);
-        hls.on(Hls.Events.ERROR, (_event, data) => {
-          if (!data.fatal || loadToken !== stationLoadToken || !hls) return;
-          if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
-            if (hlsNetworkRetries < 2) {
-              hlsNetworkRetries += 1;
-              const delay = hlsNetworkRetries * 1500;
-              setStatus(`网络波动，${Math.round(delay / 1000)} 秒后重连`, "loading");
-              window.clearTimeout(hlsRetryTimer);
-              hlsRetryTimer = window.setTimeout(() => {
-                if (loadToken !== stationLoadToken || !hls) return;
-                hls.stopLoad();
-                hls.loadSource(station.url);
-                hls.startLoad(-1);
-              }, delay);
-            } else {
-              setStatus("音源连接失败，点击重试", "error");
-              setPlaybackControls("retry");
-            }
-          } else if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
-            if (hlsMediaRecoveries < 1) {
-              hlsMediaRecoveries += 1;
-              setStatus("正在恢复音频", "loading");
-              hls.recoverMediaError();
-            } else {
-              setStatus("音频解码失败，点击重试", "error");
-              setPlaybackControls("retry");
-            }
-          } else {
-            destroyHls();
-            setStatus("HLS 播放失败，点击重试", "error");
-            setPlaybackControls("retry");
+      if (isHls(station.url)) {
+        // P1-3: HLS 播放器按需加载；P3-9: 显示码率选择
+        qualityRow.hidden = false;
+        setStatus("正在加载播放器", "loading");
+        ensureHls().then(HlsCtor => {
+          if (loadToken !== stationLoadToken) return;
+          if (!HlsCtor.isSupported()) {
+            audio.src = station.url;
+            playCurrent();
+            return;
           }
+          hls = new HlsCtor({ enableWorker: true, lowLatencyMode: false });
+          hls.loadSource(station.url);
+          hls.attachMedia(audio);
+          hls.on(HlsCtor.Events.MANIFEST_PARSED, () => { applyHlsQuality(); playCurrent(); });
+          hls.on(HlsCtor.Events.ERROR, (_event, data) => {
+            if (!data.fatal || loadToken !== stationLoadToken || !hls) return;
+            if (data.type === HlsCtor.ErrorTypes.NETWORK_ERROR) {
+              if (hlsNetworkRetries < 2) {
+                hlsNetworkRetries += 1;
+                const delay = hlsNetworkRetries * 1500;
+                setStatus(`网络波动，${Math.round(delay / 1000)} 秒后重连`, "loading");
+                window.clearTimeout(hlsRetryTimer);
+                hlsRetryTimer = window.setTimeout(() => {
+                  if (loadToken !== stationLoadToken || !hls) return;
+                  hls.stopLoad();
+                  hls.loadSource(station.url);
+                  hls.startLoad(-1);
+                }, delay);
+              } else {
+                autoFailover();
+              }
+            } else if (data.type === HlsCtor.ErrorTypes.MEDIA_ERROR) {
+              if (hlsMediaRecoveries < 1) {
+                hlsMediaRecoveries += 1;
+                setStatus("正在恢复音频", "loading");
+                hls.recoverMediaError();
+              } else {
+                autoFailover();
+              }
+            } else {
+              destroyHls();
+              autoFailover();
+            }
+          });
+        }).catch(() => {
+          if (loadToken !== stationLoadToken) return;
+          setStatus("播放器组件加载失败，点击重试", "error");
+          setPlaybackControls("retry");
         });
       } else {
         audio.src = station.url;
@@ -2312,14 +2501,34 @@
       setPlaybackControls("paused");
     });
     audio.addEventListener("error", () => {
-      setStatus("音源暂时不可用", "error");
-      setPlaybackControls("retry");
+      if (audioErrorToken !== stationLoadToken) return; // 过期切台产生的 error，忽略
+      if (hls) return; // HLS 分支由 hls.on(ERROR) 统一处理
+      // P2-7: 原生流失败也做延迟重试（与 HLS 分支对齐），用尽后走自动故障转移
+      if (nativeRetries < 2) {
+        nativeRetries += 1;
+        const delay = nativeRetries * 1500;
+        setStatus(`网络波动，${Math.round(delay / 1000)} 秒后重连`, "loading");
+        window.clearTimeout(nativeRetryTimer);
+        const token = audioErrorToken;
+        nativeRetryTimer = window.setTimeout(() => {
+          if (token !== stationLoadToken) return;
+          audio.load();
+          playCurrent();
+        }, delay);
+      } else {
+        autoFailover();
+      }
     });
     audio.addEventListener("ended", () => {
       if (playbackKind === "live") {
         setStatus("直播已结束", "ok");
         setPlaybackControls("paused");
       }
+    });
+
+    // P2-8: 页面从后台返回时立即校准睡眠定时（后台 interval 可能被节流）
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && sleepTimerDeadline) updateSleepTimer();
     });
 
     window.addEventListener("online", () => {
@@ -2432,6 +2641,19 @@
       playToggleBtn.disabled = false;
       dockPlayBtn.disabled = false;
     }
+
+    // P3-9: 码率偏好恢复与切换
+    qualitySelect.value = localStorage.getItem(HLS_QUALITY_KEY) || "auto";
+    qualitySelect.addEventListener("change", () => {
+      localStorage.setItem(HLS_QUALITY_KEY, qualitySelect.value);
+      applyHlsQuality();
+      showToast(`码率已切换为${qualitySelect.selectedOptions[0].textContent}`);
+    });
+
+    // P3-10: 频谱可视化开关
+    vizToggleBtn.addEventListener("click", () => setViz(!vizEnabled));
+
+    restoreLastStation();
     const driveRequested = new URLSearchParams(location.search).get("drive") === "1" || localStorage.getItem(DRIVE_MODE_KEY) === "1";
     if (driveRequested) setDriveMode(true);
     renderTabs();
