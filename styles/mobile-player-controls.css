@@ -1,5 +1,6 @@
 /* Mobile player controls restore: keep volume + sleep timer visible without restoring desktop-only stats. */
 @media (max-width: 520px) {
+  body[data-ui="mobile"]:not(.drive-mode) .mobile-settings-toggle { display: none; }
   body[data-ui="mobile"]:not(.drive-mode) .player-options {
     display: grid !important;
     grid-column: 1 / -1 !important;

@@ -1,4 +1,4 @@
-const CACHE_NAME = "dreamfm-pages-shell-v6";
+const CACHE_NAME = "dreamfm-pages-shell-v7";
 const SHELL = [
   "./",
   "./index.html",

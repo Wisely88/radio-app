@@ -2,6 +2,50 @@
 .ipod-wheel { display: none; }
 
 @media (max-width: 520px) {
+  body[data-ui="mobile"]:not(.drive-mode) .hero-aside { display: none !important; }
+
+  body[data-ui="mobile"]:not(.drive-mode) .mobile-settings-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    color: var(--muted);
+    background: rgba(26, 26, 46, .42);
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .player-options:not(.mobile-settings-open) .quality-row,
+  body[data-ui="mobile"]:not(.drive-mode) .player-options:not(.mobile-settings-open) .viz-row { display: none !important; }
+
+  body[data-ui="mobile"]:not(.drive-mode) .tabs {
+    gap: 8px !important;
+    padding-bottom: 8px !important;
+    padding-inline: 1px 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .tabs::-webkit-scrollbar { display: none; }
+  body[data-ui="mobile"]:not(.drive-mode) .tab { scroll-snap-align: start; flex: 0 0 auto; }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .player-options {
+    gap: 8px !important;
+    margin-top: 4px !important;
+    padding-top: 8px !important;
+  }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .volume-row,
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .timer-row { min-height: 34px; }
+
+  body[data-ui="mobile"]:not(.drive-mode) .home-bento .mobile-settings-toggle[aria-expanded="true"] {
+    color: var(--accent);
+    border-color: rgba(245, 166, 35, .38);
+  }
   body[data-ui="mobile"]:not(.drive-mode) .bento-brief {
     display: none !important;
   }

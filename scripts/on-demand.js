@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20261031-final-delivery-1";
+  const version = "20261031-mobile-polish-1";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the

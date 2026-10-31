@@ -1264,7 +1264,8 @@
             <span class="timer-status" id="qualityStatus" aria-live="polite"></span>
           </div>
 
-          <div class="timer-row">
+          <button class="mobile-settings-toggle" id="mobileSettingsToggle" type="button" aria-expanded="false">更多播放设置</button>
+          <div class="timer-row viz-row">
             <span>可视化</span>
             <button class="timer-btn" id="vizToggleBtn" type="button" aria-pressed="false">频谱可视化</button>
             <span class="timer-status" id="vizStatus" aria-live="polite"></span>
@@ -2425,6 +2426,15 @@
     let lastNonZeroVolume = 0.8;
     const muteToggleBtn = document.getElementById("muteToggleBtn");
     const dockMuteBtn = document.getElementById("dockMuteBtn");
+    const mobileSettingsToggle = document.getElementById("mobileSettingsToggle");
+    const playerOptions = document.querySelector(".player-options");
+
+    mobileSettingsToggle?.addEventListener("click", () => {
+      const open = !playerOptions?.classList.contains("mobile-settings-open");
+      playerOptions?.classList.toggle("mobile-settings-open", open);
+      mobileSettingsToggle.setAttribute("aria-expanded", String(open));
+      mobileSettingsToggle.textContent = open ? "收起播放设置" : "更多播放设置";
+    });
 
     function syncVolumeUI() {
       const effectiveVolume = audio.muted ? 0 : audio.volume;
