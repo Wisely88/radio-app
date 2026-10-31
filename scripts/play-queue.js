@@ -13,6 +13,7 @@
   ].filter(Boolean);
   let queue = readQueue();
   let lastFocusedElement = null;
+  const focusableSelector = "button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex='-1'])";
 
   const panel = document.createElement("section");
   panel.className = "queue-sheet";
@@ -24,10 +25,10 @@
     <div class="queue-sheet-backdrop" data-queue-close></div>
     <div class="queue-sheet-panel">
       <header class="queue-sheet-header">
-        <div>
-          <p>ON-DEMAND QUEUE</p>
-          <h2 id="queueSheetTitle">接下来播放</h2>
-        </div>
+      <div>
+        <p>PLAYBACK QUEUE</p>
+        <h2 id="queueSheetTitle">接下来播放</h2>
+      </div>
         <div class="queue-sheet-actions">
           <button class="queue-clear-btn" type="button" data-queue-clear>清空</button>
           <button class="queue-close-btn" type="button" data-queue-close aria-label="关闭接下来播放">×</button>
@@ -46,18 +47,29 @@
     try {
       const saved = JSON.parse(localStorage.getItem(QUEUE_KEY));
       if (!Array.isArray(saved)) return [];
-      return saved.map(normalizeEntry).filter(entry => entry?.kind === "on-demand").slice(0, MAX_QUEUE_ITEMS);
+      return saved.map(normalizeEntry).filter(Boolean).slice(0, MAX_QUEUE_ITEMS);
     } catch {
       return [];
     }
   }
 
   function normalizeEntry(value) {
-    if (!value || typeof value !== "object" || value.kind !== "on-demand") return null;
+    if (!value || typeof value !== "object") return null;
     const id = String(value.id || "").slice(0, 500);
     const title = String(value.title || "未命名内容").slice(0, 300);
     const subtitle = String(value.subtitle || "").slice(0, 300);
     if (!id) return null;
+    if (value.kind === "live") {
+      const stationId = String(value.stationId || "").slice(0, 500);
+      const stationIndex = Number(value.stationIndex);
+      if (!stationId && (!Number.isInteger(stationIndex) || stationIndex < 0)) return null;
+      return {
+        id, kind: "live", stationId, stationIndex: Number.isInteger(stationIndex) ? stationIndex : -1,
+        title, subtitle,
+        cover: String(value.cover || "assets/three-quarter-mark.svg").slice(0, 1000),
+      };
+    }
+    if (value.kind !== "on-demand") return null;
     const mode = value.mode === "audiobooks" ? "audiobooks" : value.mode === "podcasts" ? "podcasts" : "";
     const itemId = String(value.itemId || "").slice(0, 500);
     const trackId = String(value.trackId || "").slice(0, 500);
@@ -143,6 +155,9 @@
     if (!panel.hidden) return;
     lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     panel.hidden = false;
+    document.querySelector("main")?.setAttribute("inert", "");
+    document.querySelector(".sticky-player")?.setAttribute("inert", "");
+    document.querySelector(".mm-mobile-nav")?.setAttribute("inert", "");
     queueToggleButtons.forEach(button => button.setAttribute("aria-expanded", "true"));
     render();
     panel.querySelector(".queue-close-btn")?.focus();
@@ -151,6 +166,9 @@
   function close() {
     if (panel.hidden) return;
     panel.hidden = true;
+    document.querySelector("main")?.removeAttribute("inert");
+    document.querySelector(".sticky-player")?.removeAttribute("inert");
+    document.querySelector(".mm-mobile-nav")?.removeAttribute("inert");
     queueToggleButtons.forEach(button => button.setAttribute("aria-expanded", "false"));
     lastFocusedElement?.focus?.();
   }
@@ -177,6 +195,9 @@
   }
 
   async function playEntry(entry) {
+    if (entry?.kind === "live") {
+      return Boolean(window.radioPlayback?.playLive?.(entry));
+    }
     const result = window.radioPlayback?.playOnDemand?.(entry);
     return result === true || await result;
   }
@@ -229,15 +250,36 @@
     }
   });
   document.addEventListener("keydown", event => {
-    if (event.key === "Escape" && !panel.hidden) {
+    if (panel.hidden) return;
+    if (event.key === "Escape") {
       event.preventDefault();
       close();
+      return;
+    }
+    if (event.key !== "Tab") return;
+    const focusables = [...panel.querySelectorAll(focusableSelector)].filter(element => element.offsetParent !== null);
+    if (!focusables.length) {
+      event.preventDefault();
+      panel.querySelector(".queue-close-btn")?.focus();
+      return;
+    }
+    const first = focusables[0];
+    const last = focusables[focusables.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
     }
   });
 
   window.radioQueue = {
     addOnDemand(mode, itemId, trackIndex) {
       return add(window.radioPlayback?.addOnDemandSource?.(mode, itemId, trackIndex));
+    },
+    addLive(index) {
+      return add(window.radioPlayback?.addLiveSource?.(index));
     },
     playNext() {
       return consume(0);

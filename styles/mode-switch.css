@@ -2,8 +2,8 @@
 .mm-scene-switcher {
   position: fixed;
   z-index: 70;
-  top: 84px;
-  right: 14px;
+  top: 17px;
+  right: 18px;
   font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 

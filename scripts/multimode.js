@@ -66,8 +66,12 @@
   }
 
   function activateLiveCategory(category) {
-    activateContent("live");
-    window.setTimeout(() => click(`[data-cat="${category}"]`), 20);
+    click('[data-content-mode="live"]');
+    window.setTimeout(() => {
+      click(`[data-cat="${category}"]`);
+      byId("stations")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      syncChrome();
+    }, 30);
   }
 
   function focusSearch() {
@@ -77,6 +81,11 @@
   }
 
   function toggleFavoriteCurrent() {
+    if (window.radioPlayback?.toggleFavoriteCurrent) {
+      window.radioPlayback.toggleFavoriteCurrent();
+      syncChrome();
+      return;
+    }
     const active = $(".channel.active");
     const button = active?.closest(".channel-row")?.querySelector(".favorite-btn");
     button?.click();
@@ -262,17 +271,45 @@
       byId("mmNowState").textContent = status;
       byId("mmNowState").classList.toggle("playing", playing);
     }
-    byId("mmNowDisc")?.classList.toggle("playing", status.includes("直播") || status === "播放中");
+    const mmDisc = byId("mmNowDisc");
+    if (mmDisc) {
+      mmDisc.classList.toggle("playing", status.includes("直播") || status === "播放中");
+      const mainImg = byId("vinylRecord")?.querySelector("img");
+      const discImg = mmDisc.querySelector("img");
+      if (mainImg && discImg && discImg.getAttribute("src") !== mainImg.getAttribute("src")) {
+        discImg.src = mainImg.getAttribute("src") || "assets/three-quarter-mark.svg";
+      }
+      mmDisc.classList.toggle("on-demand-cover", Boolean(byId("vinylRecord")?.classList.contains("on-demand-cover")));
+    }
 
     const mainPlay = byId("playToggleBtn")?.textContent?.trim();
     const mmPlay = $(".mm-now-controls [data-mm-action='play']");
     if (mmPlay && mainPlay) mmPlay.textContent = mainPlay;
 
+    const mmFav = $(".mm-now-actions [data-mm-action='favorite']");
+    if (mmFav && window.radioPlayback?.isCurrentFavorite) {
+      const isFav = window.radioPlayback.isCurrentFavorite();
+      mmFav.textContent = isFav ? "★ 已收藏当前" : "☆ 收藏当前";
+    }
+
     const contentMode = currentContentMode();
+    const activeTabCat = $(".tab.active")?.dataset.cat || "all";
     $$(".mm-rail-btn, .mm-mobile-btn").forEach(button => {
       const action = button.dataset.mmAction;
-      const contentAction = ["live", "audiobooks", "podcasts"].includes(action);
-      button.classList.toggle("active", contentAction && action === contentMode);
+      let isActive = false;
+      if (action === "favorites") {
+        isActive = contentMode === "live" && activeTabCat === "favorites";
+      } else if (action === "recent") {
+        isActive = contentMode === "live" && activeTabCat === "recent";
+      } else if (action?.startsWith("cat-")) {
+        isActive = contentMode === "live" && activeTabCat === action.slice(4);
+      } else if (action === "live") {
+        const inSpecialMobileTab = button.classList.contains("mm-mobile-btn") && activeTabCat === "favorites";
+        isActive = contentMode === "live" && !inSpecialMobileTab;
+      } else if (action === "audiobooks" || action === "podcasts") {
+        isActive = action === contentMode;
+      }
+      button.classList.toggle("active", isActive);
     });
   }
 

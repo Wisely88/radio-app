@@ -3,6 +3,7 @@
 
   const wheel = document.getElementById("ipodWheel");
   if (!wheel) return;
+  document.body.classList.add("ipod-ready");
 
   const trigger = action => {
     const target = action === "prev" ? "#prevBtn" : action === "next" ? "#nextBtn" : "#playToggleBtn";

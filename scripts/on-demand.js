@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const version = "20260928-ipod-mobile-1";
+  const version = "20261023-ux-overhaul-1";
   const MODE_SWITCH_KEY = "dreamfm-mode-switch-target-v1";
 
   // Capture scene selections before multimode.js handles the click. This lets the
@@ -29,7 +29,6 @@
   loadStyle("styles/mobile-player-controls.css");
   loadStyle("styles/product-polish.css");
   loadStyle("styles/play-queue.css");
-  loadStyle("styles/home-modern.css");
   loadStyle("styles/ipod-mobile.css");
 
   if ("serviceWorker" in navigator && location.protocol !== "file:") {
