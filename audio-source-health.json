@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T03:31:31+00:00",
+  "generatedAt": "2026-11-24T03:34:47+00:00",
   "sourceCount": 79,
   "availableCount": 66,
   "sources": {
@@ -10,7 +10,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3275,
+      "latencyMs": 4050,
       "error": ""
     },
     "audiobook|andersen-fairy-tales-cn": {
@@ -20,7 +20,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3545,
+      "latencyMs": 5104,
       "error": ""
     },
     "audiobook|brief-history-time-cn": {
@@ -30,7 +30,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3123,
+      "latencyMs": 3432,
       "error": ""
     },
     "audiobook|cat-country-cn": {
@@ -40,7 +40,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3602,
+      "latencyMs": 5690,
       "error": ""
     },
     "audiobook|dream-red-chamber": {
@@ -50,7 +50,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4804,
+      "latencyMs": 4725,
       "error": ""
     },
     "audiobook|europe-history-stories": {
@@ -60,7 +60,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4181,
+      "latencyMs": 3242,
       "error": ""
     },
     "audiobook|fifteen-strings-cn": {
@@ -70,7 +70,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2892,
+      "latencyMs": 3317,
       "error": ""
     },
     "audiobook|gadfly-cn": {
@@ -80,7 +80,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4733,
+      "latencyMs": 4085,
       "error": ""
     },
     "audiobook|general-history-china": {
@@ -90,7 +90,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4327,
+      "latencyMs": 2974,
       "error": ""
     },
     "audiobook|grimms-fairy-tales-cn": {
@@ -100,7 +100,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 13908,
+      "latencyMs": 2989,
       "error": ""
     },
     "audiobook|jane-eyre-cn": {
@@ -110,7 +110,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5078,
+      "latencyMs": 6002,
       "error": ""
     },
     "audiobook|journey-west": {
@@ -120,308 +120,308 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5058,
+      "latencyMs": 4650,
       "error": ""
     },
     "audiobook|librivox-14135": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 717,
-      "error": ""
+      "latencyMs": 15948,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-15726": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1158,
-      "error": ""
+      "latencyMs": 16367,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-1800": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1065,
-      "error": ""
+      "latencyMs": 15966,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-1952": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1048,
-      "error": ""
+      "latencyMs": 16121,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-200": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 906,
-      "error": ""
+      "latencyMs": 15523,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-20249": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1375,
-      "error": ""
+      "latencyMs": 16169,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-2291": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 957,
-      "error": ""
+      "latencyMs": 17452,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-253": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 728,
-      "error": ""
+      "latencyMs": 15921,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-271": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1153,
-      "error": ""
+      "latencyMs": 15873,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-47": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1000,
-      "error": ""
+      "latencyMs": 16211,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-56": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2196,
-      "error": ""
+      "latencyMs": 15802,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-59": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4647,
-      "error": ""
+      "latencyMs": 24618,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6026": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 749,
-      "error": ""
+      "latencyMs": 15780,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6123": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1053,
-      "error": ""
+      "latencyMs": 16454,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6224": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1250,
-      "error": ""
+      "latencyMs": 15790,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-64": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 776,
-      "error": ""
+      "latencyMs": 16030,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-65": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1016,
-      "error": ""
+      "latencyMs": 15841,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-6940": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1062,
-      "error": ""
+      "latencyMs": 16028,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-81": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 871,
-      "error": ""
+      "latencyMs": 15938,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-83": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1208,
-      "error": ""
+      "latencyMs": 16674,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-86": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1156,
-      "error": ""
+      "latencyMs": 16191,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-871": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1141,
-      "error": ""
+      "latencyMs": 16906,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-90": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1058,
-      "error": ""
+      "latencyMs": 15933,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-9414": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1143,
-      "error": ""
+      "latencyMs": 16057,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|librivox-977": {
       "ok": true,
-      "feedOk": true,
-      "feedStatus": 200,
-      "metadataOk": true,
-      "usingCatalogFallback": false,
+      "feedOk": false,
+      "feedStatus": 0,
+      "metadataOk": false,
+      "usingCatalogFallback": true,
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1119,
-      "error": ""
+      "latencyMs": 16365,
+      "error": "TimeoutError: The read operation timed out"
     },
     "audiobook|little-prince-cn": {
       "ok": true,
@@ -430,7 +430,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3754,
+      "latencyMs": 3973,
       "error": ""
     },
     "audiobook|romance-three-kingdoms": {
@@ -440,7 +440,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5004,
+      "latencyMs": 4243,
       "error": ""
     },
     "audiobook|thirty-nine-steps-cn": {
@@ -450,7 +450,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4917,
+      "latencyMs": 4477,
       "error": ""
     },
     "audiobook|three-hundred-tang-poems-cn": {
@@ -460,7 +460,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3823,
+      "latencyMs": 2873,
       "error": ""
     },
     "audiobook|twenty-thousand-leagues-cn": {
@@ -470,7 +470,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 6889,
+      "latencyMs": 4492,
       "error": ""
     },
     "audiobook|water-margin": {
@@ -480,7 +480,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5329,
+      "latencyMs": 5371,
       "error": ""
     },
     "podcast|beyond-code": {
@@ -490,7 +490,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 603,
+      "latencyMs": 421,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|beyond-football": {
@@ -500,7 +500,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 6424,
+      "latencyMs": 9439,
       "error": ""
     },
     "podcast|blackwater-park": {
@@ -510,7 +510,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4696,
+      "latencyMs": 4629,
       "error": ""
     },
     "podcast|buheshiyi": {
@@ -520,7 +520,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 375,
+      "latencyMs": 1251,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|business-is-like-this": {
@@ -530,7 +530,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 13668,
+      "latencyMs": 7786,
       "error": ""
     },
     "podcast|dive-in": {
@@ -540,7 +540,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4046,
+      "latencyMs": 7111,
       "error": ""
     },
     "podcast|dscience": {
@@ -550,7 +550,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 24120,
+      "latencyMs": 22898,
       "error": ""
     },
     "podcast|fit4life": {
@@ -560,7 +560,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3471,
+      "latencyMs": 15301,
       "error": ""
     },
     "podcast|grand-tour": {
@@ -570,7 +570,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 21763,
+      "latencyMs": 4412,
       "error": ""
     },
     "podcast|half-latte": {
@@ -580,7 +580,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 6369,
+      "latencyMs": 7968,
       "error": ""
     },
     "podcast|huzuohuyou": {
@@ -590,7 +590,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 1350,
+      "latencyMs": 1505,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|keep-talking": {
@@ -600,7 +600,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 310,
+      "latencyMs": 357,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|legal-dolphin": {
@@ -610,7 +610,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 13111,
+      "latencyMs": 3360,
       "error": ""
     },
     "podcast|lets-talk": {
@@ -620,7 +620,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4225,
+      "latencyMs": 4095,
       "error": ""
     },
     "podcast|mianji": {
@@ -630,7 +630,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 307,
+      "latencyMs": 354,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|minjian-ghost-stories": {
@@ -640,7 +640,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 4062,
+      "latencyMs": 14083,
       "error": ""
     },
     "podcast|morning-coffee": {
@@ -650,7 +650,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 17392,
+      "latencyMs": 5491,
       "error": ""
     },
     "podcast|naive-not-naive": {
@@ -660,7 +660,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 342,
+      "latencyMs": 350,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|name-the-question": {
@@ -670,7 +670,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 313,
+      "latencyMs": 345,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|new-energy-car": {
@@ -680,7 +680,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 313,
+      "latencyMs": 348,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|random-books": {
@@ -690,7 +690,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 363,
+      "latencyMs": 356,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|ritanwuyu": {
@@ -700,7 +700,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 316,
+      "latencyMs": 1096,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|self-evolution": {
@@ -710,7 +710,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 317,
+      "latencyMs": 342,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|shengdongjixi": {
@@ -720,7 +720,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1002,
+      "latencyMs": 795,
       "error": ""
     },
     "podcast|steve-says": {
@@ -730,7 +730,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 309,
+      "latencyMs": 529,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|story-fm": {
@@ -740,7 +740,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9195,
+      "latencyMs": 10287,
       "error": ""
     },
     "podcast|sv101": {
@@ -750,7 +750,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 970,
+      "latencyMs": 411,
       "error": ""
     },
     "podcast|tech-stew": {
@@ -760,7 +760,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3918,
+      "latencyMs": 3632,
       "error": ""
     },
     "podcast|the-magnus-archives": {
@@ -770,7 +770,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 2182,
+      "latencyMs": 1231,
       "error": ""
     },
     "podcast|uncanny": {
@@ -780,7 +780,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 6884,
+      "latencyMs": 4828,
       "error": ""
     },
     "podcast|vibration": {
@@ -790,7 +790,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 5047,
+      "latencyMs": 6809,
       "error": ""
     },
     "podcast|wenhuayouxian": {
@@ -800,7 +800,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 9906,
+      "latencyMs": 9457,
       "error": ""
     },
     "podcast|whats-next-tech": {
@@ -810,7 +810,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 1874,
+      "latencyMs": 1854,
       "error": ""
     },
     "podcast|yeelok-spirit-special": {
@@ -820,7 +820,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 6373,
+      "latencyMs": 4962,
       "error": ""
     },
     "podcast|youzhiyouxing": {
@@ -830,7 +830,7 @@
       "audioOk": false,
       "audioChecked": 0,
       "audioPassed": 0,
-      "latencyMs": 309,
+      "latencyMs": 383,
       "error": "XML parse: ParseError: syntax error: line 1, column 0"
     },
     "podcast|zonghengsihai": {
@@ -840,7 +840,7 @@
       "audioOk": true,
       "audioChecked": 2,
       "audioPassed": 2,
-      "latencyMs": 3742,
+      "latencyMs": 10661,
       "error": ""
     }
   }
